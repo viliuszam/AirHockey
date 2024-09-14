@@ -5,6 +5,7 @@
         this.x = startX;
         this.y = startY;
         this.nickname = nickname;
+        this.score = 0;
     }
 
     move(x, y) {
@@ -22,6 +23,6 @@
         ctx.font = "16px Arial";
         ctx.fillStyle = "black";
         ctx.textAlign = "center";
-        ctx.fillText(this.nickname, this.x, this.y - 30);
+        ctx.fillText(`${this.nickname} (${this.score})`, this.x, this.y - 30);
     }
 }

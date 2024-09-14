@@ -11,6 +11,9 @@ let playerId;
 let keys = { w: false, a: false, s: false, d: false };
 let isMoving = false;
 
+export let scoreMessage = null;
+let scoreMessageTimeout = null;
+
 createRoomBtn.addEventListener('click', function () {
     const roomCode = roomCodeInput.value;
     const nickname = document.getElementById('nickname').value;
@@ -104,6 +107,17 @@ document.addEventListener('keyup', function (event) {
     if (event.key === 's') keys.s = false;
     if (event.key === 'd') keys.d = false;
     isMoving = keys.w || keys.a || keys.s || keys.d;
+});
+
+connection.on("GoalScored", function (scoringPlayer, player1Score, player2Score) {
+    scoreMessage = `${scoringPlayer} scores!`;
+    clearTimeout(scoreMessageTimeout);
+    scoreMessageTimeout = setTimeout(() => scoreMessage = null, 2000);
+
+    player1.score = player1Score;
+    player2.score = player2Score;
+
+    drawGame(roomCode);
 });
 
 function sendInputState() {

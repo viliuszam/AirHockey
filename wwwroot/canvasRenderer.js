@@ -1,5 +1,6 @@
 ﻿import { Player } from './player.js';
 import { Puck } from './puck.js';
+import { scoreMessage } from './game.js';
 
 let canvas = document.getElementById("gameCanvas");
 let ctx = canvas.getContext("2d");
@@ -30,7 +31,15 @@ function drawGame(roomCode) {
     ctx.font = "20px Arial";
     ctx.fillStyle = "black";
     ctx.textAlign = "center";
+    ctx.fillText(`${player1.nickname} (${player1.score}) - ${player2.nickname} (${player2.score})`, canvas.width / 2, canvas.height - 30);
+
     ctx.fillText(`Room: ${roomCode}`, canvas.width / 2, canvas.height - 10);
+
+    if (scoreMessage) {
+        ctx.font = "30px Arial";
+        ctx.fillStyle = "red";
+        ctx.fillText(scoreMessage, canvas.width / 2, canvas.height / 2);
+    }
 }
 
 function updatePlayerPosition(playerId, x, y) {

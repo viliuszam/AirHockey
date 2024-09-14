@@ -20,6 +20,11 @@ namespace AirHockey.Services
         private const float MIN_Y = 0f;
         private const float MAX_Y = 541f;
 
+        // vartu dimensijos
+        private const float GOAL_WIDTH = 25f;
+        private const float GOAL_Y_MIN = 180f; 
+        private const float GOAL_Y_MAX = 365f;
+
         public GameService(IHubContext<GameHub> hubContext)
         {
             _hubContext = hubContext;
@@ -52,6 +57,35 @@ namespace AirHockey.Services
             }
         }
 
+        private Player? GetScorer(Game game)
+        {
+            Puck puck = game.Puck;
+            if (puck.X <= GOAL_WIDTH && puck.Y >= GOAL_Y_MIN && puck.Y <= GOAL_Y_MAX)
+            {
+                return game.Player2;
+            }
+
+            if (puck.X >= (MAX_X - GOAL_WIDTH) && puck.Y >= GOAL_Y_MIN && puck.Y <= GOAL_Y_MAX)
+            {
+                return game.Player1;
+            }
+
+            return null;
+        }
+
+        private void CheckGoal(Game game)
+        {
+            Player scorer = GetScorer(game);
+            if (scorer != null)
+            { 
+                game.GoalScored(scorer);
+
+                _hubContext.Clients.Group(game.Room.RoomCode).SendAsync("GoalScored", PlayerNicknames[scorer.Id], game.Player1Score, game.Player2Score);
+
+                Console.WriteLine($"{scorer.Nickname} scored! Score is now {game.Player1Score} - {game.Player2Score}");
+            }
+        }
+
         private async void GameLoop(object sender, ElapsedEventArgs e)
         {
             foreach (var game in Games.Values)
@@ -63,6 +97,7 @@ namespace AirHockey.Services
                     game.Puck.Update();
 
                     HandleCollisions(game);
+                    CheckGoal(game);
 
                     game.Player1.ConstrainToBounds(MIN_X, MIN_Y, MAX_X, MAX_Y);
                     game.Player2.ConstrainToBounds(MIN_X, MIN_Y, MAX_X, MAX_Y);
