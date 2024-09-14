@@ -6,6 +6,8 @@
         public string Color { get; set; }
         private readonly float maxSpeed = 4f;
 
+        public string Nickname { get; set; }
+
         public Player(string id, string color, float X, float Y)
         {
             Id = id;

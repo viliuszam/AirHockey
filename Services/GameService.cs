@@ -9,6 +9,8 @@ namespace AirHockey.Services
     {
         private static ConcurrentDictionary<string, Room> Rooms = new();
         private static ConcurrentDictionary<string, Game> Games = new();
+        // perdaryt sita
+        private static ConcurrentDictionary<string, string> PlayerNicknames = new();
         private readonly IHubContext<GameHub> _hubContext;
         private System.Timers.Timer gameLoopTimer;
 
@@ -76,6 +78,16 @@ namespace AirHockey.Services
                     Console.WriteLine($"Error in game loop: {ex.Message}");
                 }
             }
+        }
+
+        public void AddPlayerNickname(string connectionId, string nickname)
+        {
+            PlayerNicknames[connectionId] = nickname;
+        }
+
+        public string GetPlayerNickname(string connectionId)
+        {
+            return PlayerNicknames.GetValueOrDefault(connectionId);
         }
 
         public ConcurrentDictionary<string, Room> GetRooms()

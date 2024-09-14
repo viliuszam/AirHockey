@@ -1,5 +1,5 @@
 ﻿import { connection, createRoom, joinRoom, roomCode } from './signalrConnection.js';
-import { drawGame, updatePlayerPosition, updatePuckPosition } from './canvasRenderer.js';
+import { drawGame, updatePlayerPosition, updatePuckPosition, player1, player2 } from './canvasRenderer.js';
 
 const roomCodeInput = document.getElementById('roomCode');
 const createRoomBtn = document.getElementById('createRoomBtn');
@@ -13,21 +13,23 @@ let isMoving = false;
 
 createRoomBtn.addEventListener('click', function () {
     const roomCode = roomCodeInput.value;
-    if (roomCode) {
-        createRoom(roomCode);
+    const nickname = document.getElementById('nickname').value;
+    if (roomCode && nickname) {
+        createRoom(roomCode, nickname);
         startGameUI();
     } else {
-        alert("Please enter a room code.");
+        alert("Please enter a room code and a nickname.");
     }
 });
 
 joinRoomBtn.addEventListener('click', function () {
     const roomCode = roomCodeInput.value;
-    if (roomCode) {
-        joinRoom(roomCode);
+    const nickname = document.getElementById('nickname').value;
+    if (roomCode && nickname) {
+        joinRoom(roomCode, nickname);
         startGameUI();
     } else {
-        alert("Please enter a room code.");
+        alert("Please enter a room code and a nickname.");
     }
 });
 
@@ -52,7 +54,10 @@ connection.on("RoomNotFound", function (message) {
     resetGameUI();
 });
 
-connection.on("StartGame", function () {
+connection.on("StartGame", function (player1Nickname, player2Nickname) {
+    //TODO: perdaryt vardu perdavima
+    player1.nickname = player1Nickname;
+    player2.nickname = player2Nickname;
     console.log("Game is starting!");
     startGame();
 });
@@ -70,7 +75,7 @@ connection.on("UpdateGameState", function (player1X, player1Y, player2X, player2
     updatePlayerPosition("Player2", player2X, player2Y);
     updatePuckPosition(puckX, puckY);
 
-    drawGame();
+    drawGame(roomCode);
 
     console.log(`Received game state: Player1 (${player1X}, ${player1Y}), Player2 (${player2X}, ${player2Y}), Puck (${puckX}, ${puckY})`);
 });
@@ -81,7 +86,7 @@ connection.on("PlayerDisconnected", function (message) {
 });
 
 function startGame() {
-    drawGame();
+    drawGame(roomCode);
     startInputLoop();
 }
 

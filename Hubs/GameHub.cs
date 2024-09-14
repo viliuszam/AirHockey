@@ -12,19 +12,19 @@ public class GameHub : Hub
         _gameService = gameService;
     }
 
-    public async Task CreateRoom(string roomCode)
+    public async Task CreateRoom(string roomCode, string nickname)
     {
         if (!_gameService.RoomExists(roomCode))
         {
             var room = new Room(roomCode);
             room.Players.Add(Context.ConnectionId);
+
+            _gameService.AddPlayerNickname(Context.ConnectionId, nickname);
+
             _gameService.AddRoom(room);
-
             await Groups.AddToGroupAsync(Context.ConnectionId, roomCode);
-            Console.WriteLine($"Room {roomCode} created and Player 1 joined");
 
-            await Clients.Caller.SendAsync("AssignPlayer", "Player1");
-
+            await Clients.Caller.SendAsync("AssignPlayer", "Player1", nickname);
             await Clients.Caller.SendAsync("WaitingForPlayer");
         }
         else
@@ -33,7 +33,7 @@ public class GameHub : Hub
         }
     }
 
-    public async Task JoinRoom(string roomCode)
+    public async Task JoinRoom(string roomCode, string nickname)
     {
         var room = _gameService.GetRoom(roomCode);
         if (room != null)
@@ -46,15 +46,21 @@ public class GameHub : Hub
 
             string player = room.Players.Count == 0 ? "Player1" : "Player2";
             room.Players.Add(Context.ConnectionId);
-            await Groups.AddToGroupAsync(Context.ConnectionId, roomCode);
-            Console.WriteLine($"{player} joined room {roomCode}");
 
-            await Clients.Caller.SendAsync("AssignPlayer", player);
+            _gameService.AddPlayerNickname(Context.ConnectionId, nickname);
+
+            await Groups.AddToGroupAsync(Context.ConnectionId, roomCode);
+            await Clients.Caller.SendAsync("AssignPlayer", player, nickname);
 
             if (room.Players.Count == 2)
             {
                 _gameService.CreateGame(room);
-                await Clients.Group(roomCode).SendAsync("StartGame");
+                //TODO: perdaryt kad butu player klasej, dabar viskas atskirai sukuriama
+                string player1Nickname = _gameService.GetPlayerNickname(room.Players[0]);
+                string player2Nickname = _gameService.GetPlayerNickname(room.Players[1]);
+
+                await Clients.Group(roomCode).SendAsync("StartGame", player1Nickname, player2Nickname);
+
             }
         }
         else

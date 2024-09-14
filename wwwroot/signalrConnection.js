@@ -10,20 +10,20 @@ connection.start().then(function () {
     return console.error(err.toString());
 });
 
-function createRoom(code) {
+function createRoom(code, nickname) {
     roomCode = code;
-    connection.invoke("CreateRoom", roomCode)
+    connection.invoke("CreateRoom", roomCode, nickname)
         .then(() => {
-            console.log(`Room ${roomCode} created`);
+            console.log(`Room ${roomCode} created with nickname ${nickname}`);
         })
         .catch(err => console.error(err.toString()));
 }
 
-function joinRoom(code) {
+function joinRoom(code, nickname) {
     roomCode = code;
-    connection.invoke("JoinRoom", roomCode)
+    connection.invoke("JoinRoom", roomCode, nickname)
         .then(() => {
-            console.log(`Joined room ${roomCode}`);
+            console.log(`Joined room ${roomCode} with nickname ${nickname}`);
         })
         .catch(err => console.error(err.toString()));
 }
