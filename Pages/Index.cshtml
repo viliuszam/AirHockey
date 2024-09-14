@@ -1,0 +1,38 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2D Air Hockey Game</title>
+</head>
+<body>
+    <h1>Air Hockey Game</h1>
+
+    <div id="room-selection">
+        <label for="roomCode">Enter Room Code:</label>
+        <input type="text" id="roomCode" placeholder="e.g., ABC123">
+        <button id="createRoomBtn">Create Room</button>
+        <button id="joinRoomBtn">Join Room</button>
+    </div>
+
+    <div id="game-container" style="display: none;">
+        <canvas id="gameCanvas" width="855" height="541"></canvas>
+    </div>
+
+    <!-- SignalR JavaScript client -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/7.0.5/signalr.min.js"></script>
+
+    <!-- Game scripts -->
+    <script type="module" src="~/game.js"></script>
+    <script type="module" src="~/signalrConnection.js"></script>
+    <script type="module" src="~/player.js"></script>
+    <script type="module" src="~/puck.js"></script>
+    <script type="module" src="~/canvasRenderer.js"></script>
+</body>
+</html>
+
+
