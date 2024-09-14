@@ -12,6 +12,12 @@ namespace AirHockey.Services
         private readonly IHubContext<GameHub> _hubContext;
         private System.Timers.Timer gameLoopTimer;
 
+        // stalo dimensijos
+        private const float MIN_X = 0f;
+        private const float MAX_X = 855f;
+        private const float MIN_Y = 0f;
+        private const float MAX_Y = 541f;
+
         public GameService(IHubContext<GameHub> hubContext)
         {
             _hubContext = hubContext;
@@ -27,21 +33,48 @@ namespace AirHockey.Services
             Games[room.RoomCode] = game;
         }
 
+        private void HandleCollisions(Game game)
+        {
+            // visi imanomi susidurimo atvejai
+            if (game.Player1.IsColliding(game.Player2))
+            {
+                game.Player1.ResolveCollision(game.Player2);
+            }
+            if (game.Player1.IsColliding(game.Puck))
+            {
+                game.Player1.ResolveCollision(game.Puck);
+            }
+            if (game.Player2.IsColliding(game.Puck))
+            {
+                game.Player2.ResolveCollision(game.Puck);
+            }
+        }
+
         private async void GameLoop(object sender, ElapsedEventArgs e)
         {
             foreach (var game in Games.Values)
             {
-                game.Player1.Update();
-                game.Player2.Update();
-                game.Puck.Update();
+                try
+                {
+                    game.Player1.Update();
+                    game.Player2.Update();
+                    game.Puck.Update();
 
-                Console.WriteLine($"Sending state for game {game.Room.RoomCode}: Player1({game.Player1.X}, {game.Player1.Y}), " +
-                  $"Player2({game.Player2.X}, {game.Player2.Y}), Puck({game.Puck.X}, {game.Puck.Y})");
+                    HandleCollisions(game);
 
-                await _hubContext.Clients.Group(game.Room.RoomCode).SendAsync("UpdateGameState",
-                    game.Player1.X, game.Player1.Y,
-                    game.Player2.X, game.Player2.Y,
-                    game.Puck.X, game.Puck.Y);
+                    game.Player1.ConstrainToBounds(MIN_X, MIN_Y, MAX_X, MAX_Y);
+                    game.Player2.ConstrainToBounds(MIN_X, MIN_Y, MAX_X, MAX_Y);
+                    game.Puck.ConstrainToBounds(MIN_X, MIN_Y, MAX_X, MAX_Y);
+
+                    await _hubContext.Clients.Group(game.Room.RoomCode).SendAsync("UpdateGameState",
+                        game.Player1.X, game.Player1.Y,
+                        game.Player2.X, game.Player2.Y,
+                        game.Puck.X, game.Puck.Y);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error in game loop: {ex.Message}");
+                }
             }
         }
 

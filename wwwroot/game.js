@@ -9,6 +9,7 @@ const roomSelectionContainer = document.getElementById('room-selection');
 
 let playerId;
 let keys = { w: false, a: false, s: false, d: false };
+let isMoving = false;
 
 createRoomBtn.addEventListener('click', function () {
     const roomCode = roomCodeInput.value;
@@ -81,6 +82,7 @@ connection.on("PlayerDisconnected", function (message) {
 
 function startGame() {
     drawGame();
+    startInputLoop();
 }
 
 document.addEventListener('keydown', function (event) {
@@ -88,7 +90,7 @@ document.addEventListener('keydown', function (event) {
     if (event.key === 'a') keys.a = true;
     if (event.key === 's') keys.s = true;
     if (event.key === 'd') keys.d = true;
-    sendInputState();
+    isMoving = true;
 });
 
 document.addEventListener('keyup', function (event) {
@@ -96,7 +98,7 @@ document.addEventListener('keyup', function (event) {
     if (event.key === 'a') keys.a = false;
     if (event.key === 's') keys.s = false;
     if (event.key === 'd') keys.d = false;
-    sendInputState();
+    isMoving = keys.w || keys.a || keys.s || keys.d;
 });
 
 function sendInputState() {
@@ -108,3 +110,10 @@ function sendInputState() {
     }
 }
 
+function startInputLoop() {
+    setInterval(() => {
+        if (isMoving) {
+            sendInputState();
+        }
+    }, 16); // 60 kartu per sekunde siuncia inputus
+}
