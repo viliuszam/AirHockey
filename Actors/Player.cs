@@ -1,12 +1,16 @@
-﻿namespace AirHockey.Actors
+﻿using AirHockey.Actors.Powerups;
+
+namespace AirHockey.Actors
 {
     public class Player : Entity
     {
         public string Id { get; set; }
         public string Color { get; set; }
-        private readonly float maxSpeed = 4f;
+        public float MaxSpeed = 4f;
 
         public string Nickname { get; set; }
+
+        public Powerup ActivePowerup { get; set; }
 
         public Player(string id, string color, float X, float Y)
         {
@@ -23,8 +27,8 @@
         {
             Move();
             ApplyFriction();
-            VelocityX = Math.Clamp(VelocityX, -maxSpeed, maxSpeed);
-            VelocityY = Math.Clamp(VelocityY, -maxSpeed, maxSpeed);
+            VelocityX = Math.Clamp(VelocityX, -MaxSpeed, MaxSpeed);
+            VelocityY = Math.Clamp(VelocityY, -MaxSpeed, MaxSpeed);
         }
 
         public void Accelerate(float xDirection, float yDirection)
@@ -32,6 +36,16 @@
             VelocityX += xDirection * Acceleration;
             VelocityY += yDirection * Acceleration;
         }
+
+        public void UsePowerup()
+        {
+            if (ActivePowerup != null)
+            {
+                ActivePowerup.Activate(this);
+                ActivePowerup = null;
+            }
+        }
+
     }
 
 }

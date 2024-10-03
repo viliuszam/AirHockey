@@ -2,7 +2,7 @@
 {
     public class Puck : Entity
     {
-        private readonly float maxSpeed = 15f;
+        public float MaxSpeed = 15f;
 
         public Puck()
         {
@@ -23,9 +23,9 @@
         private void CapVelocity()
         {
             float currentSpeed = (float)Math.Sqrt(VelocityX * VelocityX + VelocityY * VelocityY);
-            if (currentSpeed > maxSpeed)
+            if (currentSpeed > MaxSpeed)
             {
-                float scale = maxSpeed / currentSpeed;
+                float scale = MaxSpeed / currentSpeed;
                 VelocityX *= scale;
                 VelocityY *= scale;
             }
