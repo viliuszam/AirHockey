@@ -1,48 +1,35 @@
 ﻿using AirHockey.Actors;
+using AirHockey.Managers;
 using Microsoft.AspNetCore.SignalR;
-using System.Collections.Concurrent;
 using System.Timers;
 
 namespace AirHockey.Services
 {
     public class GameService
     {
-        private static ConcurrentDictionary<string, Room> Rooms = new();
-        private static ConcurrentDictionary<string, Game> Games = new();
-        // perdaryt sita
-        private static ConcurrentDictionary<string, string> PlayerNicknames = new();
         private readonly IHubContext<GameHub> _hubContext;
         private System.Timers.Timer gameLoopTimer;
 
-        // stalo dimensijos
         private const float MIN_X = 0f;
         private const float MAX_X = 855f;
         private const float MIN_Y = 0f;
         private const float MAX_Y = 541f;
 
-        // vartu dimensijos
         private const float GOAL_WIDTH = 25f;
-        private const float GOAL_Y_MIN = 180f; 
+        private const float GOAL_Y_MIN = 180f;
         private const float GOAL_Y_MAX = 365f;
 
         public GameService(IHubContext<GameHub> hubContext)
         {
             _hubContext = hubContext;
 
-            gameLoopTimer = new System.Timers.Timer(16);  // 16*60 ~ apie 60 fps
+            gameLoopTimer = new System.Timers.Timer(16);  // 16*60 ~ apie 60 FPS
             gameLoopTimer.Elapsed += GameLoop;
             gameLoopTimer.Start();
         }
 
-        public void CreateGame(Room room)
-        {
-            var game = new Game(room);
-            Games[room.RoomCode] = game;
-        }
-
         private void HandleCollisions(Game game)
         {
-            // visi imanomi susidurimo atvejai
             if (game.Player1.IsColliding(game.Player2))
             {
                 game.Player1.ResolveCollision(game.Player2);
@@ -77,10 +64,12 @@ namespace AirHockey.Services
         {
             Player scorer = GetScorer(game);
             if (scorer != null)
-            { 
+            {
                 game.GoalScored(scorer);
 
-                _hubContext.Clients.Group(game.Room.RoomCode).SendAsync("GoalScored", PlayerNicknames[scorer.Id], game.Player1Score, game.Player2Score);
+                string roomCode = game.Room.RoomCode;
+                var playerNicknames = GameSessionManager.Instance.PlayerNicknames;
+                _hubContext.Clients.Group(roomCode).SendAsync("GoalScored", playerNicknames[scorer.Id], game.Player1Score, game.Player2Score);
 
                 Console.WriteLine($"{scorer.Nickname} scored! Score is now {game.Player1Score} - {game.Player2Score}");
             }
@@ -88,7 +77,7 @@ namespace AirHockey.Services
 
         private async void GameLoop(object sender, ElapsedEventArgs e)
         {
-            foreach (var game in Games.Values)
+            foreach (var game in GameSessionManager.Instance.ActiveGames.Values)
             {
                 try
                 {
@@ -113,34 +102,6 @@ namespace AirHockey.Services
                     Console.WriteLine($"Error in game loop: {ex.Message}");
                 }
             }
-        }
-
-        public void AddPlayerNickname(string connectionId, string nickname)
-        {
-            PlayerNicknames[connectionId] = nickname;
-        }
-
-        public string GetPlayerNickname(string connectionId)
-        {
-            return PlayerNicknames.GetValueOrDefault(connectionId);
-        }
-
-        public ConcurrentDictionary<string, Room> GetRooms()
-        {
-            return Rooms;
-        }
-
-        public Room GetRoom(string roomCode) => Rooms.GetValueOrDefault(roomCode);
-        public Game GetGame(string roomCode) => Games.GetValueOrDefault(roomCode);
-
-        public bool RoomExists(string roomCode) => Rooms.ContainsKey(roomCode);
-
-        public void AddRoom(Room room) => Rooms[room.RoomCode] = room;
-
-        public void RemoveRoom(string roomCode)
-        {
-            Rooms.TryRemove(roomCode, out _);
-            Games.TryRemove(roomCode, out _);
         }
     }
 }

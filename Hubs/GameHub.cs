@@ -1,4 +1,5 @@
 ﻿using AirHockey.Actors;
+using AirHockey.Managers;
 using AirHockey.Services;
 using Microsoft.AspNetCore.SignalR;
 using System.Threading.Tasks;
@@ -14,16 +15,15 @@ public class GameHub : Hub
 
     public async Task CreateRoom(string roomCode, string nickname)
     {
-        if (!_gameService.RoomExists(roomCode))
+        if (!GameSessionManager.Instance.RoomExists(roomCode))
         {
             var room = new Room(roomCode);
             room.Players.Add(Context.ConnectionId);
 
-            _gameService.AddPlayerNickname(Context.ConnectionId, nickname);
+            GameSessionManager.Instance.AddPlayerNickname(Context.ConnectionId, nickname);
+            GameSessionManager.Instance.AddRoom(room);
 
-            _gameService.AddRoom(room);
             await Groups.AddToGroupAsync(Context.ConnectionId, roomCode);
-
             await Clients.Caller.SendAsync("AssignPlayer", "Player1", nickname);
             await Clients.Caller.SendAsync("WaitingForPlayer");
         }
@@ -35,7 +35,7 @@ public class GameHub : Hub
 
     public async Task JoinRoom(string roomCode, string nickname)
     {
-        var room = _gameService.GetRoom(roomCode);
+        var room = GameSessionManager.Instance.GetRoom(roomCode);
         if (room != null)
         {
             if (room.Players.Count >= 2)
@@ -47,20 +47,19 @@ public class GameHub : Hub
             string player = room.Players.Count == 0 ? "Player1" : "Player2";
             room.Players.Add(Context.ConnectionId);
 
-            _gameService.AddPlayerNickname(Context.ConnectionId, nickname);
+            GameSessionManager.Instance.AddPlayerNickname(Context.ConnectionId, nickname);
 
             await Groups.AddToGroupAsync(Context.ConnectionId, roomCode);
             await Clients.Caller.SendAsync("AssignPlayer", player, nickname);
 
             if (room.Players.Count == 2)
             {
-                _gameService.CreateGame(room);
-                //TODO: perdaryt kad butu player klasej, dabar viskas atskirai sukuriama
-                string player1Nickname = _gameService.GetPlayerNickname(room.Players[0]);
-                string player2Nickname = _gameService.GetPlayerNickname(room.Players[1]);
+                GameSessionManager.Instance.StartNewGame(room);
+
+                string player1Nickname = GameSessionManager.Instance.GetPlayerNickname(room.Players[0]);
+                string player2Nickname = GameSessionManager.Instance.GetPlayerNickname(room.Players[1]);
 
                 await Clients.Group(roomCode).SendAsync("StartGame", player1Nickname, player2Nickname);
-
             }
         }
         else
@@ -73,7 +72,7 @@ public class GameHub : Hub
     {
         Console.WriteLine($"Received input from {playerId} in room {roomCode}: Up={up}, Down={down}, Left={left}, Right={right}");
 
-        var game = _gameService.GetGame(roomCode);
+        var game = GameSessionManager.Instance.GetGame(roomCode);
         if (game != null)
         {
             var player = playerId == "Player1" ? game.Player1 : game.Player2;
@@ -89,15 +88,16 @@ public class GameHub : Hub
 
     public override async Task OnDisconnectedAsync(Exception exception)
     {
-        foreach (var room in _gameService.GetRooms().Values)
+        foreach (var room in GameSessionManager.Instance.ActiveRooms.Values)
         {
             if (room.Players.Contains(Context.ConnectionId))
             {
                 room.Players.Remove(Context.ConnectionId);
                 await Groups.RemoveFromGroupAsync(Context.ConnectionId, room.RoomCode);
+
                 if (room.Players.Count == 0)
                 {
-                    _gameService.RemoveRoom(room.RoomCode);
+                    GameSessionManager.Instance.RemoveRoom(room.RoomCode);
                     Console.WriteLine($"Room {room.RoomCode} deleted as no players remain.");
                 }
                 else
