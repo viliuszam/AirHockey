@@ -12,7 +12,7 @@ namespace AirHockey.Actors
 
         public Powerup ActivePowerup { get; set; }
 
-        public Player(string id, string color, float X, float Y)
+        public Player(string id, string color, float X, float Y, string nickname)
         {
             Id = id;
             Color = color;
@@ -21,6 +21,7 @@ namespace AirHockey.Actors
             this.Y = Y;
             Radius = 20f;
             Mass = 1f;
+            Nickname = nickname;
         }
 
         public override void Update()

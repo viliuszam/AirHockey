@@ -13,7 +13,7 @@ let isMoving = false;
 
 export let scoreMessage = null;
 let scoreMessageTimeout = null;
-
+let isGameActive = false;
 createRoomBtn.addEventListener('click', function () {
     const roomCode = roomCodeInput.value;
     const nickname = document.getElementById('nickname').value;
@@ -49,6 +49,7 @@ connection.on("AssignPlayer", function (player) {
 function resetGameUI() {
     roomSelectionContainer.style.display = 'block';
     gameContainer.style.display = 'none';
+    isGameActive = false;
     console.log("UI reset");
 }
 
@@ -57,10 +58,19 @@ connection.on("RoomNotFound", function (message) {
     resetGameUI();
 });
 
-connection.on("StartGame", function (player1Nickname, player2Nickname) {
+connection.on("UpdateScores", function (player1Score, player2Score) {
+    player1.score = player1Score;
+    player2.score = player2Score;
+
+    drawGame(roomCode);
+});
+
+connection.on("StartGame", function (player1Nickname, player2Nickname, player1Score, player2Score) {
     //TODO: perdaryt vardu perdavima
     player1.nickname = player1Nickname;
     player2.nickname = player2Nickname;
+    player1.score = player1Score;
+    player2.score = player2Score;
     console.log("Game is starting!");
     startGame();
 });
@@ -85,10 +95,14 @@ connection.on("UpdateGameState", function (player1X, player1Y, player2X, player2
 
 connection.on("PlayerDisconnected", function (message) {
     alert(message);
+    this.playerId = null;
+    this.roomCode = null;
+    isGameActive = false; 
     resetGameUI();
 });
 
 function startGame() {
+    isGameActive = true;
     drawGame(roomCode);
     startInputLoop();
 }
@@ -121,7 +135,7 @@ connection.on("GoalScored", function (scoringPlayer, player1Score, player2Score)
 });
 
 function sendInputState() {
-    if (roomCode && playerId) {
+    if (isGameActive && roomCode != null && playerId != null) {
         connection.invoke("UpdateInput", roomCode, playerId, keys.w, keys.s, keys.a, keys.d)
             .catch(function (err) {
                 console.error("Error sending input state:", err.toString());
@@ -130,8 +144,9 @@ function sendInputState() {
 }
 
 function startInputLoop() {
+    isGameActive = true;
     setInterval(() => {
-        if (isMoving) {
+        if (isGameActive && isMoving) {
             sendInputState();
         }
     }, 16); // 60 kartu per sekunde siuncia inputus

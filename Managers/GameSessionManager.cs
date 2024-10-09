@@ -11,13 +11,10 @@ namespace AirHockey.Managers
         public ConcurrentDictionary<string, Room> ActiveRooms { get; private set; }
         public ConcurrentDictionary<string, Game> ActiveGames { get; private set; }
 
-        public ConcurrentDictionary<string, string> PlayerNicknames { get; private set; }
-
         private GameSessionManager()
         {
             ActiveRooms = new ConcurrentDictionary<string, Room>();
             ActiveGames = new ConcurrentDictionary<string, Game>();
-            PlayerNicknames = new ConcurrentDictionary<string, string>();
         }
 
         public static GameSessionManager Instance
@@ -42,8 +39,8 @@ namespace AirHockey.Managers
 
         public void RemoveRoom(string roomCode)
         {
-            ActiveRooms.TryRemove(roomCode, out _);
             EndGame(roomCode);
+            ActiveRooms.TryRemove(roomCode, out _);
         }
 
         public Room GetRoom(string roomCode)
@@ -54,16 +51,6 @@ namespace AirHockey.Managers
         public bool RoomExists(string roomCode)
         {
             return ActiveRooms.ContainsKey(roomCode);
-        }
-
-        public void AddPlayerNickname(string connectionId, string nickname)
-        {
-            PlayerNicknames[connectionId] = nickname;
-        }
-
-        public string GetPlayerNickname(string connectionId)
-        {
-            return PlayerNicknames.GetValueOrDefault(connectionId);
         }
 
         public void StartNewGame(Room room)

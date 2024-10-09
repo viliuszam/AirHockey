@@ -3,8 +3,6 @@
     public class Game
     {
         public Room Room { get; private set; }
-        public Player Player1 { get; set; }
-        public Player Player2 { get; set; }
         public Puck Puck { get; set; }
         public int Player1Score { get; set; } = 0;
         public int Player2Score { get; set; } = 0;
@@ -12,14 +10,12 @@
         public Game(Room room)
         {
             Room = room;
-            Player1 = new Player(room.Players[0], "red", 227, 260);
-            Player2 = new Player(room.Players[1], "blue", 633, 260);
             Puck = new Puck();
         }
 
         public void GoalScored(Player scorer)
         {
-            if (scorer == Player1)
+            if (scorer == Room.Players[0]) //Player1
                 Player1Score++;
             else
                 Player2Score++;
@@ -34,19 +30,21 @@
             Puck.VelocityX = 0;
             Puck.VelocityY = 0;
 
-            Player1.X = 227;
-            Player1.Y = 260;
-            Player2.X = 633;
-            Player2.Y = 260;
+            Room.Players[0].X = 227;
+            Room.Players[0].Y = 260;
+            Room.Players[1].X = 633;
+            Room.Players[1].Y = 260;
 
-            Player1.VelocityX = 0;
-            Player1.VelocityY = 0;
-            Player2.VelocityX = 0;
-            Player2.VelocityY = 0;
+            Room.Players[0].VelocityX = 0;
+            Room.Players[0].VelocityY = 0;
+            Room.Players[1].VelocityX = 0;
+            Room.Players[1].VelocityY = 0;
         }
 
         public void StartGame()
         {
+            Player1Score = 0;
+            Player2Score = 0;
         }
     }
 }

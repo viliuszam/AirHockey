@@ -2,7 +2,6 @@
 using AirHockey.Managers;
 using AirHockey.Services;
 using Microsoft.AspNetCore.SignalR;
-using System.Threading.Tasks;
 
 public class GameHub : Hub
 {
@@ -18,14 +17,20 @@ public class GameHub : Hub
         if (!GameSessionManager.Instance.RoomExists(roomCode))
         {
             var room = new Room(roomCode);
-            room.Players.Add(Context.ConnectionId);
+            var player = new Player(Context.ConnectionId, "red", 227, 260, nickname);
+            room.AddPlayer(player);
 
-            GameSessionManager.Instance.AddPlayerNickname(Context.ConnectionId, nickname);
             GameSessionManager.Instance.AddRoom(room);
 
             await Groups.AddToGroupAsync(Context.ConnectionId, roomCode);
-            await Clients.Caller.SendAsync("AssignPlayer", "Player1", nickname);
+            await Clients.Caller.SendAsync("AssignPlayer", Context.ConnectionId, nickname);
             await Clients.Caller.SendAsync("WaitingForPlayer");
+
+            var game = GameSessionManager.Instance.GetGame(roomCode);
+            if (game != null)
+            {
+                await Clients.Caller.SendAsync("UpdateScores", game.Player1Score, game.Player2Score);
+            }
         }
         else
         {
@@ -38,28 +43,29 @@ public class GameHub : Hub
         var room = GameSessionManager.Instance.GetRoom(roomCode);
         if (room != null)
         {
-            if (room.Players.Count >= 2)
+            if (room.IsRoomFull())
             {
                 await Clients.Caller.SendAsync("RoomFull", "Room is full. You cannot join.");
                 return;
             }
 
-            string player = room.Players.Count == 0 ? "Player1" : "Player2";
-            room.Players.Add(Context.ConnectionId);
-
-            GameSessionManager.Instance.AddPlayerNickname(Context.ConnectionId, nickname);
+            var player = new Player(Context.ConnectionId, "blue", 633, 260, nickname);
+            room.AddPlayer(player);
 
             await Groups.AddToGroupAsync(Context.ConnectionId, roomCode);
-            await Clients.Caller.SendAsync("AssignPlayer", player, nickname);
+            await Clients.Caller.SendAsync("AssignPlayer", Context.ConnectionId, nickname);
 
-            if (room.Players.Count == 2)
+            if (room.IsRoomFull())
             {
                 GameSessionManager.Instance.StartNewGame(room);
 
-                string player1Nickname = GameSessionManager.Instance.GetPlayerNickname(room.Players[0]);
-                string player2Nickname = GameSessionManager.Instance.GetPlayerNickname(room.Players[1]);
+                string player1Nickname = room.Players[0].Nickname;
+                string player2Nickname = room.Players[1].Nickname;
 
-                await Clients.Group(roomCode).SendAsync("StartGame", player1Nickname, player2Nickname);
+                var game = GameSessionManager.Instance.GetGame(roomCode);
+
+                await Clients.Group(roomCode).SendAsync("StartGame",
+                    player1Nickname, player2Nickname, game.Player1Score, game.Player2Score);
             }
         }
         else
@@ -68,21 +74,24 @@ public class GameHub : Hub
         }
     }
 
-    public async Task UpdateInput(string roomCode, string playerId, bool up, bool down, bool left, bool right)
+    public async Task UpdateInput(string roomCode, string connectionId, bool up, bool down, bool left, bool right)
     {
-        Console.WriteLine($"Received input from {playerId} in room {roomCode}: Up={up}, Down={down}, Left={left}, Right={right}");
+        Console.WriteLine($"Received input from {connectionId} in room {roomCode}: Up={up}, Down={down}, Left={left}, Right={right}");
 
         var game = GameSessionManager.Instance.GetGame(roomCode);
         if (game != null)
         {
-            var player = playerId == "Player1" ? game.Player1 : game.Player2;
+            var player = game.Room.GetPlayerById(connectionId);
 
-            float xDirection = (left ? -1 : 0) + (right ? 1 : 0);
-            float yDirection = (up ? -1 : 0) + (down ? 1 : 0);
+            if (player != null)
+            {
+                float xDirection = (left ? -1 : 0) + (right ? 1 : 0);
+                float yDirection = (up ? -1 : 0) + (down ? 1 : 0);
 
-            Console.WriteLine($"Player {playerId} accelerates in direction: ({xDirection}, {yDirection})");
+                Console.WriteLine($"Player {connectionId} accelerates in direction: ({xDirection}, {yDirection})");
 
-            player.Accelerate(xDirection, yDirection);
+                player.Accelerate(xDirection, yDirection);
+            }
         }
     }
 
@@ -90,23 +99,29 @@ public class GameHub : Hub
     {
         foreach (var room in GameSessionManager.Instance.ActiveRooms.Values)
         {
-            if (room.Players.Contains(Context.ConnectionId))
+            if (room.Players.Any(p => p.Id == Context.ConnectionId))
             {
-                room.Players.Remove(Context.ConnectionId);
-                await Groups.RemoveFromGroupAsync(Context.ConnectionId, room.RoomCode);
+                var player = room.GetPlayerById(Context.ConnectionId);
+                if (player != null)
+                {
+                    room.RemovePlayer(Context.ConnectionId);
 
-                if (room.Players.Count == 0)
-                {
+                    if (room.Players.Count > 0)
+                    {
+                        await Clients.Group(room.RoomCode).SendAsync("PlayerDisconnected", "Opponent has disconnected. Game canceled.");
+                    }
+
                     GameSessionManager.Instance.RemoveRoom(room.RoomCode);
-                    Console.WriteLine($"Room {room.RoomCode} deleted as no players remain.");
+
+                    await Groups.RemoveFromGroupAsync(Context.ConnectionId, room.RoomCode);
+
+                    Console.WriteLine($"Room {room.RoomCode} disbanded due to player disconnection.");
+
+                    break;
                 }
-                else
-                {
-                    await Clients.Group(room.RoomCode).SendAsync("PlayerDisconnected", "Opponent has disconnected. Game canceled.");
-                }
-                break;
             }
         }
+
         await base.OnDisconnectedAsync(exception);
     }
 }
