@@ -1,5 +1,5 @@
 ﻿import { connection, createRoom, joinRoom, roomCode } from './signalrConnection.js';
-import { drawGame, updatePlayerPosition, updatePuckPosition, player1, player2 } from './canvasRenderer.js';
+import { drawGame, updatePlayerPosition, updatePuckPosition, player1, player2, addWall, updateWallPosition  } from './canvasRenderer.js';
 
 const roomCodeInput = document.getElementById('roomCode');
 const createRoomBtn = document.getElementById('createRoomBtn');
@@ -83,14 +83,16 @@ connection.on("RoomFull", function (message) {
     alert(message);
 });
 
-connection.on("UpdateGameState", function (player1X, player1Y, player2X, player2Y, puckX, puckY) {
+connection.on("UpdateGameState", function (player1X, player1Y, player2X, player2Y, puckX, puckY, sentWalls) {
     updatePlayerPosition("Player1", player1X, player1Y);
     updatePlayerPosition("Player2", player2X, player2Y);
     updatePuckPosition(puckX, puckY);
+    updateWallPosition(sentWalls);
 
     drawGame(roomCode);
-
-    console.log(`Received game state: Player1 (${player1X}, ${player1Y}), Player2 (${player2X}, ${player2Y}), Puck (${puckX}, ${puckY})`);
+    sentWalls.forEach(wall => {
+        console.log(`Wall Id: ${wall.id}, X: ${wall.x}, Y: ${wall.y}, Width: ${wall.width}, Height: ${wall.height}, Type: ${wall.name}`);
+    });
 });
 
 connection.on("PlayerDisconnected", function (message) {
@@ -133,6 +135,12 @@ connection.on("GoalScored", function (scoringPlayer, player1Score, player2Score)
 
     drawGame(roomCode);
 });
+
+connection.on("AddWall", function (wallId, x, y, width, height, wallType) {
+    addWall(wallId, x, y, width, height, wallType); 
+    drawGame(roomCode); 
+});
+
 
 function sendInputState() {
     if (isGameActive && roomCode != null && playerId != null) {

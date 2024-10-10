@@ -64,6 +64,12 @@ public class GameHub : Hub
 
                 var game = GameSessionManager.Instance.GetGame(roomCode);
 
+                _gameService.GenerateWalls(room);
+                foreach (var wall in room.Walls)
+                {
+                    await Clients.Group(roomCode).SendAsync("AddWall", wall.Id, wall.X, wall.Y, wall.Width, wall.Height, wall.GetType().Name);
+                }
+
                 await Clients.Group(roomCode).SendAsync("StartGame",
                     player1Nickname, player2Nickname, game.Player1Score, game.Player2Score);
             }

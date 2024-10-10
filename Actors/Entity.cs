@@ -52,7 +52,7 @@ namespace AirHockey.Actors
             Y += VelocityY;
         }
 
-        public bool IsColliding(Entity other)
+        public virtual bool IsColliding(Entity other)
         {
             float dx = X - other.X;
             float dy = Y - other.Y;
@@ -60,7 +60,7 @@ namespace AirHockey.Actors
             return distance < (Radius + other.Radius);
         }
 
-        public void ResolveCollision(Entity other)
+        public virtual void ResolveCollision(Entity other)
         {
             // elastiniu susidurimu kopypasta tiesiai is stackoverflow
 
@@ -100,7 +100,7 @@ namespace AirHockey.Actors
             other.VelocityY *= energyFactor;
         }
 
-        public void ConstrainToBounds(float minX, float minY, float maxX, float maxY)
+        public virtual void ConstrainToBounds(float minX, float minY, float maxX, float maxY)
         {
             if (X - Radius < minX)
             {

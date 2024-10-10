@@ -1,9 +1,12 @@
-﻿namespace AirHockey.Actors
+﻿using AirHockey.Actors.Walls;
+
+namespace AirHockey.Actors
 {
     public class Room
     {
         public string RoomCode { get; private set; }
         public List<Player> Players { get; private set; }
+        public List<Wall> Walls { get; set; } = new List<Wall>();
 
         public Room(string roomCode)
         {
