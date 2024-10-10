@@ -1,5 +1,5 @@
 ﻿import { connection, createRoom, joinRoom, roomCode } from './signalrConnection.js';
-import { drawGame, updatePlayerPosition, updatePuckPosition, player1, player2, addWall, updateWallPosition  } from './canvasRenderer.js';
+import { drawGame, updatePlayerPosition, updatePuckPosition, player1, player2, addWall, updateWallPosition, clearWalls } from './canvasRenderer.js';
 
 const roomCodeInput = document.getElementById('roomCode');
 const createRoomBtn = document.getElementById('createRoomBtn');
@@ -99,7 +99,8 @@ connection.on("PlayerDisconnected", function (message) {
     alert(message);
     this.playerId = null;
     this.roomCode = null;
-    isGameActive = false; 
+    isGameActive = false;
+    clearWalls();
     resetGameUI();
 });
 

@@ -23,6 +23,10 @@ function addWall(wallId, x, y, width, height, wallType) {
     walls.push(new Wall(wallId, x, y, width, height, wallType));
 }
 
+export function clearWalls() {
+    walls = [];
+}
+
 function updateWallPosition(sentWalls) {
     sentWalls.forEach(sentWall => {
         let matchingWall = walls.find(wall => wall.wallId == sentWall.id); 

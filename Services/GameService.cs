@@ -12,7 +12,7 @@ namespace AirHockey.Services
         private readonly IHubContext<GameHub> _hubContext;
         private System.Timers.Timer gameLoopTimer;
 
-        private const float MIN_X = 0f;
+        private const float MIN_X = 0f; 
         private const float MAX_X = 855f;
         private const float MIN_Y = 0f;
         private const float MAX_Y = 541f;
