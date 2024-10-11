@@ -1,5 +1,5 @@
 ﻿using AirHockey.Actors.Powerups;
-
+using AirHockey.Actors.Buffs;
 namespace AirHockey.Actors
 {
     public class Player : Entity
@@ -46,7 +46,10 @@ namespace AirHockey.Actors
                 ActivePowerup = null;
             }
         }
-
+        public void ApplyBuff(IBuff buff)
+        {
+            buff.ApplyBuff(this);
+        }
     }
 
 }
