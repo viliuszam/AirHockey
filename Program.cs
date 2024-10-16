@@ -1,3 +1,4 @@
+using AirHockey.Analytics;
 using AirHockey.Services;
 
 namespace AirHockey
@@ -10,6 +11,8 @@ namespace AirHockey
 
             builder.Services.AddControllersWithViews();
             builder.Services.AddSignalR();
+            //services.AddSingleton<IGameAnalytics, ConsoleLoggerAdapter>();
+            builder.Services.AddSingleton<IGameAnalytics>(sp => new FileLoggerAdapter("./"));
             builder.Services.AddSingleton<GameService>();
             builder.Services.AddRazorPages();
 

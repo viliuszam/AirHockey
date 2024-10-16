@@ -62,7 +62,7 @@ namespace AirHockey.Actors
 
         public virtual void ResolveCollision(Entity other)
         {
-            // elastiniu susidurimu kopypasta tiesiai is stackoverflow
+            // tampriu susidurimu kopypasta tiesiai is stackoverflow
 
             float dx = other.X - X;
             float dy = other.Y - Y;

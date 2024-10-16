@@ -1,5 +1,6 @@
 ﻿using AirHockey.Actors;
 using AirHockey.Actors.Walls;
+using AirHockey.Analytics;
 using AirHockey.Managers;
 using Microsoft.AspNetCore.SignalR;
 using System.Drawing;
@@ -9,6 +10,7 @@ namespace AirHockey.Services
 {
     public class GameService
     {
+        private readonly IGameAnalytics _analytics;
         private readonly IHubContext<GameHub> _hubContext;
         private System.Timers.Timer gameLoopTimer;
 
@@ -21,9 +23,10 @@ namespace AirHockey.Services
         private const float GOAL_Y_MIN = 180f;
         private const float GOAL_Y_MAX = 365f;
 
-        public GameService(IHubContext<GameHub> hubContext)
+        public GameService(IHubContext<GameHub> hubContext, IGameAnalytics analytics)
         {
             _hubContext = hubContext;
+            _analytics = analytics;
 
             gameLoopTimer = new System.Timers.Timer(16);  // 16*60 ~ apie 60 FPS
             gameLoopTimer.Elapsed += GameLoop;
@@ -105,6 +108,14 @@ namespace AirHockey.Services
 
                 await _hubContext.Clients.Group(roomCode).SendAsync("GoalScored",
                     scorer.Nickname, game.Player1Score, game.Player2Score);
+
+                // log goal
+                _analytics.LogEvent(roomCode, "GoalScored", new Dictionary<string, object>
+                {
+                    { "ScoringPlayer", scorer.Nickname },
+                    { "Score", $"{game.Player1Score} - {game.Player2Score}" },
+                    { "TimeStamp", DateTime.Now }
+                });
 
                 Console.WriteLine($"{scorer.Nickname} scored! Score is now {game.Player1Score} - {game.Player2Score}");
             }
