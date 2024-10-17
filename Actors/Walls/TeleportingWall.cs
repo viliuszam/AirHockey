@@ -46,5 +46,13 @@ namespace AirHockey.Actors.Walls
                 lastTeleportedEntity = null;
             }
         }
+        public Entity? GetLast()
+        {
+            return lastTeleportedEntity;
+        }
+        public void SetLast(Entity entity)
+        {
+            lastTeleportedEntity = entity;
+        }
     }
 }

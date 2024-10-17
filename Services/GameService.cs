@@ -2,9 +2,13 @@
 using AirHockey.Actors.Walls;
 using AirHockey.Analytics;
 using AirHockey.Managers;
+using AirHockey.Observers;
+using AirHockey.Strategies;
 using Microsoft.AspNetCore.SignalR;
+using System.Collections;
 using System.Drawing;
 using System.Timers;
+using System.Xml.Linq;
 
 namespace AirHockey.Services
 {
@@ -13,7 +17,10 @@ namespace AirHockey.Services
         private readonly IGameAnalytics _analytics;
         private readonly IHubContext<GameHub> _hubContext;
         private System.Timers.Timer gameLoopTimer;
-
+        ResetPositionObserver _resetOb;
+        ScoreObserver _scoreOb;
+        private ICollision collisions;
+        //SoundEffectObserver _soundOb;
         private const float MIN_X = 0f; 
         private const float MAX_X = 855f;
         private const float MIN_Y = 0f;
@@ -23,62 +30,74 @@ namespace AirHockey.Services
         private const float GOAL_Y_MIN = 180f;
         private const float GOAL_Y_MAX = 365f;
 
-        public GameService(IHubContext<GameHub> hubContext, IGameAnalytics analytics)
+        public GameService(IHubContext<GameHub> hubContext, IGameAnalytics analytics, ICollision col)
         {
             _hubContext = hubContext;
             _analytics = analytics;
-
             gameLoopTimer = new System.Timers.Timer(16);  // 16*60 ~ apie 60 FPS
             gameLoopTimer.Elapsed += GameLoop;
             gameLoopTimer.Start();
+            _resetOb = new ResetPositionObserver();
+            _scoreOb = new ScoreObserver(analytics, hubContext);
+            //_soundOb = new SoundEffectObserver("test.mp3");
+            collisions = col;
         }
-
+        public void SetStrategy(ICollision newCollisionStrategy)
+        {
+            collisions = newCollisionStrategy;
+        }
         private void HandleCollisions(Game game)
         {
             var player1 = game.Room.Players[0];
             var player2 = game.Room.Players[1];
             var puck = game.Puck;
-
+            SetStrategy(new BaseCollision());
             if (player1.IsColliding(player2))
             {
-                player1.ResolveCollision(player2);
+                collisions.ResolveCollision(player1, player2);
             }
-
             if (player1.IsColliding(puck))
             {
-                player1.ResolveCollision(puck);
+                collisions.ResolveCollision(player1, puck);
             }
             if (player2.IsColliding(puck))
             {
-                player2.ResolveCollision(puck);
+                collisions.ResolveCollision(player2,puck);
             }
-
             foreach (var wall in game.Room.Walls)
             {
+                if (wall is QuickSandWall) SetStrategy(new QuickCollision());
+                else if (wall is TeleportingWall) SetStrategy(new TeleportCollision());
+                else if (wall is ScrollingWall) SetStrategy(new ScrolingCollision());
+                else if (wall is BouncyWall) SetStrategy(new BouncyCollision());
+                else SetStrategy(new WallCollision());
                 if (wall.IsColliding(player1))
                 {
-                    wall.ResolveCollision(player1);
+                    collisions.ResolveCollision(wall,player1);
                 }
                 if (wall.IsColliding(player2))
                 {
-                    wall.ResolveCollision(player2);
+                    collisions.ResolveCollision(wall, player2);
                 }
                 if (wall.IsColliding(puck))
                 {
-                    wall.ResolveCollision(puck);
+                    collisions.ResolveCollision(wall, puck);
                 }
 
                 foreach (var otherWall in game.Room.Walls)
                 {
+                    if (wall is QuickSandWall) SetStrategy(new QuickCollision());
+                    else if (wall is TeleportingWall) SetStrategy(new TeleportCollision());
+                    else if (wall is ScrollingWall) SetStrategy(new ScrolingCollision());
+                    else if (wall is BouncyWall) SetStrategy(new BouncyCollision());
+                    else SetStrategy(new WallCollision());
                     if (wall != otherWall && wall.IsColliding(otherWall))
                     {
                         wall.ResolveCollision(otherWall);
-
                     }
                 }
             }
         }
-
         private Player? GetScorer(Game game)
         {
             var player1 = game.Room.Players[0];
@@ -103,30 +122,21 @@ namespace AirHockey.Services
             if (scorer != null)
             {
                 game.GoalScored(scorer);
-
-                string roomCode = game.Room.RoomCode;
-
-                await _hubContext.Clients.Group(roomCode).SendAsync("GoalScored",
-                    scorer.Nickname, game.Player1Score, game.Player2Score);
-
-                // log goal
-                _analytics.LogEvent(roomCode, "GoalScored", new Dictionary<string, object>
-                {
-                    { "ScoringPlayer", scorer.Nickname },
-                    { "Score", $"{game.Player1Score} - {game.Player2Score}" },
-                    { "TimeStamp", DateTime.Now }
-                });
-
-                Console.WriteLine($"{scorer.Nickname} scored! Score is now {game.Player1Score} - {game.Player2Score}");
             }
         }
-
         private async void GameLoop(object sender, ElapsedEventArgs e)
         {
             foreach (var game in GameSessionManager.Instance.ActiveGames.Values)
             {
                 try
                 {
+                    if (!game.HasObservers) // You can implement a flag in the Game class to track this
+                    {
+                        game.RegisterObserver(_resetOb);
+                        game.RegisterObserver(_scoreOb);
+                        //game.RegisterObserver(_soundOb);
+                        game.HasObservers = true; // Set flag to avoid registering again
+                    }
                     var player1 = game.Room.Players[0];
                     var player2 = game.Room.Players[1];
                     var puck = game.Puck;
@@ -349,5 +359,6 @@ namespace AirHockey.Services
 
             return true;
         }
+
     }
 }

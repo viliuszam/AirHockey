@@ -1,4 +1,6 @@
-﻿namespace AirHockey.Actors
+﻿using AirHockey.Observers;
+
+namespace AirHockey.Actors
 {
     public class Game
     {
@@ -7,10 +9,30 @@
         public int Player1Score { get; set; } = 0;
         public int Player2Score { get; set; } = 0;
 
+        private List<IGoalObserver> observers = new List<IGoalObserver>();
+        public bool HasObservers { get; set; } = false;
         public Game(Room room)
         {
             Room = room;
             Puck = new Puck();
+        }
+
+        public void RegisterObserver(IGoalObserver observer)
+        {
+            observers.Add(observer);
+        }
+
+        public void UnregisterObserver(IGoalObserver observer)
+        {
+            observers.Remove(observer);
+        }
+
+        public void NotifyObservers(Player scorer)
+        {
+            foreach (var observer in observers)
+            {
+                observer.OnGoalScored(scorer, this);
+            }
         }
 
         public void GoalScored(Player scorer)
@@ -20,25 +42,7 @@
             else
                 Player2Score++;
 
-            ResetPositions();
-        }
-
-        private void ResetPositions()
-        {
-            Puck.X = 855 / 2;
-            Puck.Y = 541 / 2;
-            Puck.VelocityX = 0;
-            Puck.VelocityY = 0;
-
-            Room.Players[0].X = 227;
-            Room.Players[0].Y = 260;
-            Room.Players[1].X = 633;
-            Room.Players[1].Y = 260;
-
-            Room.Players[0].VelocityX = 0;
-            Room.Players[0].VelocityY = 0;
-            Room.Players[1].VelocityX = 0;
-            Room.Players[1].VelocityY = 0;
+            NotifyObservers(scorer);
         }
 
         public void StartGame()

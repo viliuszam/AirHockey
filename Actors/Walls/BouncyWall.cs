@@ -127,6 +127,13 @@ namespace AirHockey.Actors.Walls
                 Move();
             }
         }
-
+        public bool getMove()
+        {
+            return Movable;
+        }
+        public float GetBounce()
+        {
+            return BounceFactor;
+        }
     }
 }

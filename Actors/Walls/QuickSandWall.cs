@@ -17,5 +17,10 @@ namespace AirHockey.Actors.Walls
 
         public override void Update(){}
 
+        public float GetSlowFactor()
+        {
+            return SlowFactor;
+        }
+
     }
 }
