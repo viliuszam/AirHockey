@@ -1,5 +1,5 @@
 ﻿import { connection, createRoom, joinRoom, roomCode } from './signalrConnection.js';
-import { drawGame, updatePlayerPosition, updatePuckPosition, player1, player2, addWall, updateWallPosition, clearWalls } from './canvasRenderer.js';
+import { drawGame, updatePlayerPosition, updatePuckPosition, player1, player2, addWall, updateWallPosition, clearWalls, addPowerup } from './canvasRenderer.js';
 
 const roomCodeInput = document.getElementById('roomCode');
 const createRoomBtn = document.getElementById('createRoomBtn');
@@ -8,7 +8,7 @@ const gameContainer = document.getElementById('game-container');
 const roomSelectionContainer = document.getElementById('room-selection');
 
 let playerId;
-let keys = { w: false, a: false, s: false, d: false };
+let keys = { w: false, a: false, s: false, d: false, e: false};
 let isMoving = false;
 
 export let scoreMessage = null;
@@ -90,9 +90,9 @@ connection.on("UpdateGameState", function (player1X, player1Y, player2X, player2
     updateWallPosition(sentWalls);
 
     drawGame(roomCode);
-    sentWalls.forEach(wall => {
-        console.log(`Wall Id: ${wall.id}, X: ${wall.x}, Y: ${wall.y}, Width: ${wall.width}, Height: ${wall.height}, Type: ${wall.name}`);
-    });
+    //sentWalls.forEach(wall => {
+    //    console.log(`Wall Id: ${wall.id}, X: ${wall.x}, Y: ${wall.y}, Width: ${wall.width}, Height: ${wall.height}, Type: ${wall.name}`);
+    //});
 });
 
 connection.on("PlayerDisconnected", function (message) {
@@ -101,6 +101,7 @@ connection.on("PlayerDisconnected", function (message) {
     this.roomCode = null;
     isGameActive = false;
     clearWalls();
+    clearPowerups();
     resetGameUI();
 });
 
@@ -115,7 +116,8 @@ document.addEventListener('keydown', function (event) {
     if (event.key === 'a') keys.a = true;
     if (event.key === 's') keys.s = true;
     if (event.key === 'd') keys.d = true;
-    isMoving = true;
+    if (event.key === 'e') keys.e = true;
+    isMoving = keys.w || keys.a || keys.s || keys.d;
 });
 
 document.addEventListener('keyup', function (event) {
@@ -123,6 +125,7 @@ document.addEventListener('keyup', function (event) {
     if (event.key === 'a') keys.a = false;
     if (event.key === 's') keys.s = false;
     if (event.key === 'd') keys.d = false;
+    if (event.key === 'e') keys.e = false;
     isMoving = keys.w || keys.a || keys.s || keys.d;
 });
 
@@ -142,10 +145,15 @@ connection.on("AddWall", function (wallId, x, y, width, height, wallType) {
     drawGame(roomCode); 
 });
 
+connection.on("AddPowerup", function (powerupId, x, y, powerupType) {
+    addPowerup(powerupId, x, y, powerupType);
+    drawGame(roomCode);
+});
 
 function sendInputState() {
     if (isGameActive && roomCode != null && playerId != null) {
-        connection.invoke("UpdateInput", roomCode, playerId, keys.w, keys.s, keys.a, keys.d)
+        console.log("Sending input:" + roomCode + " " + playerId + " " + keys.w + " " + keys.s + " " + keys.a + " " + keys.d + " " + keys.e);
+        connection.invoke("UpdateInput", roomCode, playerId, keys.w, keys.s, keys.a, keys.d, keys.e)
             .catch(function (err) {
                 console.error("Error sending input state:", err.toString());
             });

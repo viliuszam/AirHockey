@@ -1,4 +1,5 @@
 ﻿using AirHockey.Actors.Walls;
+using AirHockey.Actors.Powerups;
 
 namespace AirHockey.Actors
 {
@@ -7,6 +8,7 @@ namespace AirHockey.Actors
         public string RoomCode { get; private set; }
         public List<Player> Players { get; private set; }
         public List<Wall> Walls { get; set; } = new List<Wall>();
+        public List<Powerup> Powerups { get; set; } = new List<Powerup>();
 
         public Room(string roomCode)
         {
