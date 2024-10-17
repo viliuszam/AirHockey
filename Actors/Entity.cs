@@ -60,46 +60,6 @@ namespace AirHockey.Actors
             return distance < (Radius + other.Radius);
         }
 
-        public virtual void ResolveCollision(Entity other)
-        {
-            // tampriu susidurimu kopypasta tiesiai is stackoverflow
-
-            float dx = other.X - X;
-            float dy = other.Y - Y;
-            float distance = (float)Math.Sqrt(dx * dx + dy * dy);
-
-            if (distance == 0) return;
-
-            float overlap = (Radius + other.Radius) - distance;
-
-            float totalMass = Mass + other.Mass;
-            float moveX = (overlap * dx) / distance;
-            float moveY = (overlap * dy) / distance;
-
-            X -= moveX * (other.Mass / totalMass);
-            Y -= moveY * (other.Mass / totalMass);
-            other.X += moveX * (Mass / totalMass);
-            other.Y += moveY * (Mass / totalMass);
-
-            float nx = dx / distance;
-            float ny = dy / distance;
-
-            float kx = VelocityX - other.VelocityX;
-            float ky = VelocityY - other.VelocityY;
-            float p = 2.0f * (nx * kx + ny * ky) / (Mass + other.Mass);
-
-            VelocityX -= p * other.Mass * nx;
-            VelocityY -= p * other.Mass * ny;
-            other.VelocityX += p * Mass * nx;
-            other.VelocityY += p * Mass * ny;
-
-            float energyFactor = 1.1f;
-            VelocityX *= energyFactor;
-            VelocityY *= energyFactor;
-            other.VelocityX *= energyFactor;
-            other.VelocityY *= energyFactor;
-        }
-
         public virtual void ConstrainToBounds(float minX, float minY, float maxX, float maxY)
         {
             if (X - Radius < minX)

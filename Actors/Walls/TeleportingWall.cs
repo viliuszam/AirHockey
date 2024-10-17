@@ -24,21 +24,6 @@ namespace AirHockey.Actors.Walls
             return false;
         }
 
-        public override void ResolveCollision(Entity other)
-        {
-            if (!IsLinked || LinkedWall == null) return;
-            if (lastTeleportedEntity == other) return;
-            if(other is Wall){
-                return;
-            }
-            other.X = LinkedWall.X + LinkedWall.Width / 2;
-            other.Y = LinkedWall.Y + LinkedWall.Height / 2;
-
-            LinkedWall.lastTeleportedEntity = other;
-            lastTeleportedEntity = other;
-
-        }
-
         public override void Update()
         {
             if (lastTeleportedEntity != null)

@@ -9,12 +9,6 @@ namespace AirHockey.Actors.Walls
         {
         }
 
-        public override void ResolveCollision(Entity other)
-        {
-            other.VelocityX = other.VelocityX * SlowFactor;
-            other.VelocityY = other.VelocityY * SlowFactor;
-        }
-
         public override void Update(){}
 
         public float GetSlowFactor()

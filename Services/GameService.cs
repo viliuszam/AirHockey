@@ -93,7 +93,7 @@ namespace AirHockey.Services
                     else SetStrategy(new WallCollision());
                     if (wall != otherWall && wall.IsColliding(otherWall))
                     {
-                        wall.ResolveCollision(otherWall);
+                        collisions.ResolveCollision(wall,otherWall);
                     }
                 }
             }
