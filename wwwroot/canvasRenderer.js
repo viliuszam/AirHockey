@@ -2,6 +2,7 @@
 import { Puck } from './puck.js';
 import { scoreMessage } from './game.js';
 import { Wall } from './wall.js';
+import { Powerup } from './powerup.js';
 
 let canvas = document.getElementById("gameCanvas");
 let ctx = canvas.getContext("2d");
@@ -10,6 +11,7 @@ export let player1 = new Player("Player1", "red", 100, 200);
 export let player2 = new Player("Player2", "blue", 700, 200);
 let puck = new Puck(400, 270);
 let walls = [];
+let powerups = [];
 
 const tableImage = new Image();
 tableImage.src = "table.png";
@@ -23,8 +25,16 @@ function addWall(wallId, x, y, width, height, wallType) {
     walls.push(new Wall(wallId, x, y, width, height, wallType));
 }
 
+function addPowerup(powerupId, x, y, powerupType) {
+    powerups.push(new Powerup(powerupId, x, y, powerupType));
+}
+
 export function clearWalls() {
     walls = [];
+}
+
+export function clearPowerups() {
+    powerups = [];
 }
 
 function updateWallPosition(sentWalls) {
@@ -45,6 +55,7 @@ function drawGame(roomCode) {
     }
 
     walls.forEach(wall => wall.render(ctx));
+    powerups.forEach(powerup => powerup.render(ctx));
     player1.render(ctx);
     player2.render(ctx);
     puck.render(ctx);
@@ -65,8 +76,14 @@ function drawGame(roomCode) {
 
 function updatePlayerPosition(playerId, x, y) {
     if (playerId === "Player1") {
+        const dx = x - player1.x;
+        const dy = y - player1.y;
+        player1.setAngleFacing(dx, dy);
         player1.move(x, y);
     } else if (playerId === "Player2") {
+        const dx = x - player2.x;
+        const dy = y - player2.y;
+        player2.setAngleFacing(dx, dy);
         player2.move(x, y);
     }
 }
@@ -75,4 +92,4 @@ function updatePuckPosition(x, y) {
     puck.move(x, y);
 }
 
-export { drawGame, updatePlayerPosition, updatePuckPosition, addWall, updateWallPosition };
+export { drawGame, updatePlayerPosition, updatePuckPosition, addWall, updateWallPosition, addPowerup };

@@ -1,23 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\37061\\Desktop\\AirHockey\\AirHockey.csproj": {}
+    "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\AirHockey.csproj": {}
   },
   "projects": {
-    "C:\\Users\\37061\\Desktop\\AirHockey\\AirHockey.csproj": {
+    "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\AirHockey.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\37061\\Desktop\\AirHockey\\AirHockey.csproj",
+        "projectUniqueName": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\AirHockey.csproj",
         "projectName": "AirHockey",
-        "projectPath": "C:\\Users\\37061\\Desktop\\AirHockey\\AirHockey.csproj",
-        "packagesPath": "C:\\Users\\37061\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\37061\\Desktop\\AirHockey\\obj\\",
+        "projectPath": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\AirHockey.csproj",
+        "packagesPath": "C:\\Users\\armin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\37061\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\armin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -72,7 +73,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

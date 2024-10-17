@@ -1,5 +1,6 @@
 ﻿using AirHockey.Actors.Powerups;
 using AirHockey.Actors.Buffs;
+using Microsoft.Extensions.Diagnostics.HealthChecks;
 namespace AirHockey.Actors
 {
     public class Player : Entity
@@ -7,12 +8,12 @@ namespace AirHockey.Actors
         public string Id { get; set; }
         public string Color { get; set; }
         public float MaxSpeed = 4f;
-
+        public float AngleFacing { get; set; }
         public string Nickname { get; set; }
+        public Room Room { get; private set; }
+        public Powerup? ActivePowerup { get; set; }
 
-        public Powerup ActivePowerup { get; set; }
-
-        public Player(string id, string color, float X, float Y, string nickname)
+        public Player(string id, string color, float X, float Y, string nickname, Room room)
         {
             Id = id;
             Color = color;
@@ -21,6 +22,8 @@ namespace AirHockey.Actors
             this.Y = Y;
             Radius = 20f;
             Mass = 1f;
+            Room = room;
+            AngleFacing = 0f;
             Nickname = nickname;
         }
 
@@ -36,6 +39,10 @@ namespace AirHockey.Actors
         {
             VelocityX += xDirection * Acceleration;
             VelocityY += yDirection * Acceleration;
+            if (VelocityX != 0 || VelocityY != 0)
+            {
+                AngleFacing = (float)Math.Atan2(VelocityY, VelocityX);
+            }
         }
 
         public void UsePowerup()

@@ -1,5 +1,6 @@
 ﻿using AirHockey.Actors;
 using AirHockey.Actors.Walls;
+using AirHockey.Actors.Powerups;
 using AirHockey.Analytics;
 using AirHockey.Managers;
 using Microsoft.AspNetCore.SignalR;
@@ -75,6 +76,19 @@ namespace AirHockey.Services
                         wall.ResolveCollision(otherWall);
 
                     }
+                }
+            }
+            foreach (var powerup in game.Room.Powerups)
+            {
+                if (powerup.IsColliding(player1))
+                {
+                    powerup.ResolveCollision(player1);
+                    
+                }
+                if (powerup.IsColliding(player2))
+                {
+                    powerup.ResolveCollision(player2);
+                    
                 }
             }
         }
@@ -176,7 +190,7 @@ namespace AirHockey.Services
         private static Random random = new Random();
         public void GenerateWalls(Room room)
         {
-            int numberOfWalls = random.Next(1, 10);
+            int numberOfWalls = random.Next(1, 3);
 
             AbstractWallFactory StaticWallFactory = new StaticWallFactory();
             AbstractWallFactory DynamicWallFactory = new DynamicWallFactory();
@@ -310,7 +324,7 @@ namespace AirHockey.Services
                         default:
                             break;
                     }
-                }
+               }
             }
 
             foreach (var newWall in wallsToAdd)
@@ -318,7 +332,13 @@ namespace AirHockey.Services
                 room.Walls.Add(newWall);
             }
         }
-
+        
+        public void SpawnPowerups (Room room)
+        {
+            PowerupFactory PowerupFactory = new();
+            room.Powerups.Add(PowerupFactory.CreatePowerup(227 + 50, 260, 1, "Dash"));
+            room.Powerups.Add(PowerupFactory.CreatePowerup(227 + 150, 260 + 50, 1, "Freeze"));
+        }
         private bool IsPositionValid(Wall wall, Room room, List<Wall> wallsToAdd)
         {
             // Define exclusion zones around players and puck (25x25 space around them)
