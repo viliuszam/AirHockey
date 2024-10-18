@@ -5,8 +5,8 @@
         private readonly float speedMultiplier;
         private readonly float duration;
 
-        public SpeedPowerup(float x, float y, float multiplier = 2f, float duration = 5f)
-            : base(x, y)
+        public SpeedPowerup(float x, float y, int id, float multiplier = 2f, float duration = 5f)
+            : base(x, y, id)
         {
             speedMultiplier = multiplier;
             this.duration = duration;
@@ -25,6 +25,11 @@
                 timer.Stop();
             };
             timer.Start();
+        }
+
+        public override void Update()
+        {
+            throw new NotImplementedException();
         }
     }
 }

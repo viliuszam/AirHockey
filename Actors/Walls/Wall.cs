@@ -15,6 +15,9 @@ namespace AirHockey.Actors.Walls
             Height = height;
         }
 
+        public Wall() {}
+
+
 
         public override bool IsColliding(Entity other)
         {

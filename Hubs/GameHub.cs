@@ -17,7 +17,7 @@ public class GameHub : Hub
         if (!GameSessionManager.Instance.RoomExists(roomCode))
         {
             var room = new Room(roomCode);
-            var player = new Player(Context.ConnectionId, "red", 227, 260, nickname);
+            var player = new Player(Context.ConnectionId, "red", 227, 260, nickname, room);
             room.AddPlayer(player);
 
             GameSessionManager.Instance.AddRoom(room);
@@ -49,7 +49,7 @@ public class GameHub : Hub
                 return;
             }
 
-            var player = new Player(Context.ConnectionId, "blue", 633, 260, nickname);
+            var player = new Player(Context.ConnectionId, "blue", 633, 260, nickname, room);
             room.AddPlayer(player);
 
             await Groups.AddToGroupAsync(Context.ConnectionId, roomCode);
@@ -69,7 +69,13 @@ public class GameHub : Hub
                 {
                     await Clients.Group(roomCode).SendAsync("AddWall", wall.Id, wall.X, wall.Y, wall.Width, wall.Height, wall.GetType().Name);
                 }
-
+                _gameService.SpawnPowerups(room);
+                foreach (var powerup in room.Powerups)
+                {
+                    Console.WriteLine($"Powerup id: {powerup.Id}");
+                    Console.WriteLine($"X: {powerup.X}, Y: {powerup.Y}");
+                    await Clients.Group(roomCode).SendAsync("AddPowerup", powerup.Id, powerup.X, powerup.Y, powerup.GetType().Name);
+                }
                 await Clients.Group(roomCode).SendAsync("StartGame",
                     player1Nickname, player2Nickname, game.Player1Score, game.Player2Score);
             }
@@ -80,9 +86,9 @@ public class GameHub : Hub
         }
     }
 
-    public async Task UpdateInput(string roomCode, string connectionId, bool up, bool down, bool left, bool right)
+    public async Task UpdateInput(string roomCode, string connectionId, bool up, bool down, bool left, bool right, bool powerup)
     {
-        Console.WriteLine($"Received input from {connectionId} in room {roomCode}: Up={up}, Down={down}, Left={left}, Right={right}");
+        Console.WriteLine($"Received input from {connectionId} in room {roomCode}: Up={up}, Down={down}, Left={left}, Right={right}, Powerup={powerup}");
 
         var game = GameSessionManager.Instance.GetGame(roomCode);
         if (game != null)
@@ -93,6 +99,11 @@ public class GameHub : Hub
             {
                 float xDirection = (left ? -1 : 0) + (right ? 1 : 0);
                 float yDirection = (up ? -1 : 0) + (down ? 1 : 0);
+
+                if (powerup)
+                {
+                    player.UsePowerup();
+                }
 
                 Console.WriteLine($"Player {connectionId} accelerates in direction: ({xDirection}, {yDirection})");
 
