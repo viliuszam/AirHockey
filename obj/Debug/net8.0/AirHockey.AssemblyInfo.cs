@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AirHockey")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+591c3da6cdccfbb71f307232cbd0c6cf42662efa")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5d003ee11ff01c3e4387eac587c3b07624f4f7db")]
 [assembly: System.Reflection.AssemblyProductAttribute("AirHockey")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AirHockey")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

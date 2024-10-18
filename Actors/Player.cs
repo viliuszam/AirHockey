@@ -1,5 +1,4 @@
 ﻿using AirHockey.Actors.Powerups;
-using AirHockey.Actors.Buffs;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 namespace AirHockey.Actors
 {
@@ -52,10 +51,6 @@ namespace AirHockey.Actors
                 ActivePowerup.Activate(this);
                 ActivePowerup = null;
             }
-        }
-        public void ApplyBuff(IBuff buff)
-        {
-            buff.ApplyBuff(this);
         }
     }
 
