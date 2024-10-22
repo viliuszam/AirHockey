@@ -1,5 +1,7 @@
 ﻿using AirHockey.Actors;
 
+// Room stebi Powerup, Sienu busena
+
 namespace AirHockey.Observers
 {
     public interface IGoalObserver

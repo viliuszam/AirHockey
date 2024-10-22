@@ -1,20 +1,23 @@
-﻿using AirHockey.Observers;
+﻿using AirHockey.Effects;
+using AirHockey.Observers;
 
 namespace AirHockey.Actors
 {
     public class Game
     {
         public Room Room { get; private set; }
-        public Puck Puck { get; set; }
         public int Player1Score { get; set; } = 0;
         public int Player2Score { get; set; } = 0;
 
         private List<IGoalObserver> observers = new List<IGoalObserver>();
         public bool HasObservers { get; set; } = false;
+
+        public List<EnvironmentalEffect> ActiveEffects;
+
         public Game(Room room)
         {
             Room = room;
-            Puck = new Puck();
+            ActiveEffects = new List<EnvironmentalEffect>();
         }
 
         public void RegisterObserver(IGoalObserver observer)

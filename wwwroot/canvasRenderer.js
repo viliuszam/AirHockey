@@ -12,6 +12,7 @@ export let player2 = new Player("Player2", "blue", 700, 200);
 let puck = new Puck(400, 270);
 let walls = [];
 let powerups = [];
+let effects = [];
 
 const tableImage = new Image();
 tableImage.src = "table.png";
@@ -37,6 +38,18 @@ export function clearPowerups() {
     powerups = [];
 }
 
+function addEffect(effectType, duration, behavior, x, y, radius) {
+    if (effectType === 'LocalFieldEffect') {
+        effects.push(new LocalFieldEffect(effectType, duration, behavior, x, y, radius));
+    } else if (effectType === 'GlobalFieldEffect') {
+        effects.push(new GlobalFieldEffect(effectType, duration, behavior));
+    }
+}
+
+export function clearEffects() {
+    effects = [];
+}
+
 function updateWallPosition(sentWalls) {
     sentWalls.forEach(sentWall => {
         let matchingWall = walls.find(wall => wall.wallId == sentWall.id); 
@@ -46,6 +59,115 @@ function updateWallPosition(sentWalls) {
     });
 }
 
+export function updateEffects(activeEffects) {
+    clearEffects();
+    activeEffects.forEach(effect => {
+        addEffect(
+            effect.effectType,
+            effect.duration,
+            effect.behavior,
+            effect.x,
+            effect.y,
+            effect.radius
+        );
+    });
+}
+
+class LocalFieldEffect {
+    constructor(effectType, duration, behavior, x, y, radius) {
+        this.effectType = effectType;
+        this.duration = duration;
+        this.behavior = behavior;
+        this.x = x;
+        this.y = y;
+        this.radius = radius;
+    }
+
+    render(ctx) {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
+
+        if (this.behavior.startsWith("LOW_GRAVITY")) {
+            ctx.fillStyle = 'rgba(255, 165, 0, 0.5)';
+            ctx.strokeStyle = 'rgba(255, 165, 0, 1)';
+        } else if (this.behavior.startsWith("WIND")) {
+            ctx.fillStyle = 'rgba(135, 206, 250, 0.5)';
+            ctx.strokeStyle = 'rgba(135, 206, 250, 1)';
+        }
+
+        ctx.fill();
+        ctx.lineWidth = 2;
+        ctx.stroke();
+        ctx.closePath();
+
+        if (this.behavior.startsWith("WIND")) {
+            let windAngle = parseFloat(this.behavior.split(',')[1]);
+            this.renderWindIcon(ctx, windAngle);
+        }
+    }
+
+    renderWindIcon(ctx, angle) {
+        ctx.save();
+        ctx.translate(this.x, this.y);
+        ctx.rotate(angle);
+
+        ctx.beginPath();
+        ctx.moveTo(0, 0);
+        ctx.lineTo(20, 0);
+        ctx.lineTo(15, -5);
+        ctx.moveTo(20, 0);
+        ctx.lineTo(15, 5);
+        ctx.strokeStyle = 'rgba(0, 0, 0, 0.7)';
+        ctx.lineWidth = 2;
+        ctx.stroke();
+        ctx.closePath();
+
+        ctx.restore();
+    }
+}
+
+class GlobalFieldEffect {
+    constructor(effectType, duration, behavior) {
+        this.effectType = effectType;
+        this.duration = duration;
+        this.behavior = behavior;
+    }
+
+    render(ctx) {
+        if (this.behavior.startsWith("LOW_GRAVITY")) {
+            ctx.fillStyle = 'rgba(255, 165, 0, 0.2)'; 
+        } else if (this.behavior.startsWith("WIND")) {
+            ctx.fillStyle = 'rgba(135, 206, 250, 0.2)';
+        }
+
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        if (this.behavior.startsWith("WIND")) {
+            let windAngle = parseFloat(this.behavior.split(',')[1]); 
+            this.renderWindIcon(ctx, windAngle);
+        }
+    }
+
+    renderWindIcon(ctx, angle) {
+        ctx.save();
+        ctx.translate(canvas.width / 2, canvas.height / 2); 
+        ctx.rotate(angle);
+
+        ctx.beginPath();
+        ctx.moveTo(0, 0);
+        ctx.lineTo(50, 0); 
+        ctx.lineTo(40, -10);
+        ctx.moveTo(50, 0);
+        ctx.lineTo(40, 10);
+        ctx.strokeStyle = 'rgba(0, 0, 0, 0.7)'; 
+        ctx.lineWidth = 3;
+        ctx.stroke();
+        ctx.closePath();
+
+        ctx.restore();
+    }
+}
+
 function drawGame(roomCode) {
 
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -53,6 +175,8 @@ function drawGame(roomCode) {
     if (tableImageLoaded) {
         ctx.drawImage(tableImage, 0, 0, 855, 541);
     }
+
+    effects.forEach(effect => effect.render(ctx));
 
     walls.forEach(wall => wall.render(ctx));
     powerups.forEach(powerup => powerup.render(ctx));

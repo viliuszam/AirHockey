@@ -1,5 +1,5 @@
 ﻿import { connection, createRoom, joinRoom, roomCode } from './signalrConnection.js';
-import { drawGame, updatePlayerPosition, updatePuckPosition, player1, player2, addWall, updateWallPosition, clearWalls, addPowerup } from './canvasRenderer.js';
+import { drawGame, updatePlayerPosition, updatePuckPosition, player1, player2, addWall, updateWallPosition, clearWalls, addPowerup, updateEffects } from './canvasRenderer.js';
 
 const roomCodeInput = document.getElementById('roomCode');
 const createRoomBtn = document.getElementById('createRoomBtn');
@@ -83,13 +83,18 @@ connection.on("RoomFull", function (message) {
     alert(message);
 });
 
-connection.on("UpdateGameState", function (player1X, player1Y, player2X, player2Y, puckX, puckY, sentWalls) {
+connection.on("UpdateGameState", function (player1X, player1Y, player2X, player2Y, puckX, puckY, sentWalls, activeEffects) {
     updatePlayerPosition("Player1", player1X, player1Y);
     updatePlayerPosition("Player2", player2X, player2Y);
     updatePuckPosition(puckX, puckY);
     updateWallPosition(sentWalls);
+    updateEffects(activeEffects);
 
     drawGame(roomCode);
+    //console.log("effects: " + activeEffects);
+    //activeEffects.forEach(eff => {
+    //    console.log(`effect: ${eff.EffectType} ${eff.Duration} ${eff.Behavior} ${eff.X} ${eff.Y} ${eff.Radius}`);
+    //});
     //sentWalls.forEach(wall => {
     //    console.log(`Wall Id: ${wall.id}, X: ${wall.x}, Y: ${wall.y}, Width: ${wall.width}, Height: ${wall.height}, Type: ${wall.name}`);
     //});

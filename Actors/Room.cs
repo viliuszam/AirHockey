@@ -9,11 +9,13 @@ namespace AirHockey.Actors
         public List<Player> Players { get; private set; }
         public List<Wall> Walls { get; set; } = new List<Wall>();
         public List<Powerup> Powerups { get; set; } = new List<Powerup>();
+        public Puck Puck { get; set; }
 
         public Room(string roomCode)
         {
             RoomCode = roomCode;
             Players = new List<Player>();
+            Puck = new Puck();
         }
 
         public void AddPlayer(Player player)

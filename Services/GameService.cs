@@ -10,6 +10,10 @@ using System.Collections;
 using System.Drawing;
 using System.Timers;
 using System.Xml.Linq;
+using AirHockey.Effects;
+using System.Threading;
+using AirHockey.Effects.Areas;
+using AirHockey.Effects.Behaviors;
 
 namespace AirHockey.Services
 {
@@ -31,6 +35,8 @@ namespace AirHockey.Services
         private const float GOAL_Y_MIN = 180f;
         private const float GOAL_Y_MAX = 365f;
 
+        private const int maxEffects = 5;
+
         public GameService(IHubContext<GameHub> hubContext, IGameAnalytics analytics, ICollision col)
         {
             _hubContext = hubContext;
@@ -51,7 +57,7 @@ namespace AirHockey.Services
         {
             var player1 = game.Room.Players[0];
             var player2 = game.Room.Players[1];
-            var puck = game.Puck;
+            var puck = game.Room.Puck;
             SetStrategy(new BaseCollision());
             if (player1.IsColliding(player2))
             {
@@ -112,11 +118,86 @@ namespace AirHockey.Services
                 }
             }
         }
+
+        public void UpdateEnvironmentalEffects(Game game)
+        {
+            if (ShouldAddNewEffect(game) 
+                && GetRandomEffect(game.ActiveEffects) is var newEffect && newEffect != null)
+            {
+                Console.WriteLine($"Adding effect with ID: {newEffect.ID}");
+                game.ActiveEffects.Add(newEffect);
+            }
+
+            for (int i = game.ActiveEffects.Count - 1; i >= 0; i--)
+            {
+                var effect = game.ActiveEffects[i];
+
+                effect.ApplyEffect(game.Room);
+
+                /*
+                if (effect is LocalFieldEffect localFieldEffect)
+                {
+                    localFieldEffect.ApplyEffect(game.Room);
+                }
+
+                if (effect is GlobalFieldEffect globalFieldEffect)
+                {
+                    globalFieldEffect.ApplyEffect(game.Room);
+                }*/
+
+                effect.Duration--;
+                if (effect.Duration <= 0)
+                {
+                    effect.RemoveEffect(game.Room);
+                    game.ActiveEffects.RemoveAt(i);
+                }
+            }
+        }
+
+        private bool ShouldAddNewEffect(Game game)
+        {
+            if (game.ActiveEffects.Count >= maxEffects)
+            {
+                return false;
+            }
+
+            return new Random().NextDouble() < 0.005;
+        }
+
+        private EnvironmentalEffect? GetRandomEffect(List<EnvironmentalEffect> exclusions)
+        {
+            float GetRandomX() => (float)(random.NextDouble() * (MAX_X - MIN_X) + MIN_X);
+            float GetRandomY() => (float)(random.NextDouble() * (MAX_Y - MIN_Y) + MIN_Y);
+
+            var effects = new List<EnvironmentalEffect>
+            {
+                //new GlobalFieldEffect(1, new LowGravityBehavior(), 60 * 5, false),
+                //new GlobalFieldEffect(2, new WindBehavior(), 60 * 5, true),
+                new LocalFieldEffect(3, new LowGravityBehavior(), 60 * 3, GetRandomX(), GetRandomY(), 100f, false),
+                new LocalFieldEffect(4, new WindBehavior(), 60 * 3, GetRandomX(), GetRandomY(), 70f, true),
+                new LocalFieldEffect(5, new LowGravityBehavior(), 60 * 3, GetRandomX(), GetRandomY(), 100f, false),
+                new LocalFieldEffect(6, new WindBehavior(), 60 * 3, GetRandomX(), GetRandomY(), 80f, true),
+                new LocalFieldEffect(7, new LowGravityBehavior(), 60 * 3, GetRandomX(), GetRandomY(), 100f, false),
+                new LocalFieldEffect(8, new WindBehavior(), 60 * 3, GetRandomX(), GetRandomY(), 65f, true),
+                new LocalFieldEffect(9, new LowGravityBehavior(), 60 * 3, GetRandomX(), GetRandomY(), 120f, false),
+                new LocalFieldEffect(10, new WindBehavior(), 60 * 3, GetRandomX(), GetRandomY(), 75f, true)
+            };
+
+            var availableEffects = effects.Where(effect =>
+                !exclusions.Any(exclusion => exclusion.ID == effect.ID)
+            ).ToList();
+
+            if (availableEffects.Count == 0)
+                return null;
+
+            return effects[new Random().Next(availableEffects.Count)];
+        }
+
         private Player? GetScorer(Game game)
         {
             var player1 = game.Room.Players[0];
             var player2 = game.Room.Players[1];
-            var puck = game.Puck;
+            var puck = game.Room.Puck;
             if (puck.X <= GOAL_WIDTH && puck.Y >= GOAL_Y_MIN && puck.Y <= GOAL_Y_MAX)
             {
                 return player2;
@@ -138,22 +219,23 @@ namespace AirHockey.Services
                 game.GoalScored(scorer);
             }
         }
+
         private async void GameLoop(object sender, ElapsedEventArgs e)
         {
             foreach (var game in GameSessionManager.Instance.ActiveGames.Values)
             {
                 try
                 {
-                    if (!game.HasObservers) // You can implement a flag in the Game class to track this
+                    if (!game.HasObservers)
                     {
                         game.RegisterObserver(_resetOb);
                         game.RegisterObserver(_scoreOb);
                         //game.RegisterObserver(_soundOb);
-                        game.HasObservers = true; // Set flag to avoid registering again
+                        game.HasObservers = true;
                     }
                     var player1 = game.Room.Players[0];
                     var player2 = game.Room.Players[1];
-                    var puck = game.Puck;
+                    var puck = game.Room.Puck;
 
                     player1.Update();
                     player2.Update();
@@ -185,11 +267,25 @@ namespace AirHockey.Services
                         })
                         .ToList();
 
+                    UpdateEnvironmentalEffects(game);
+
+                    var activeEffects = game.ActiveEffects
+                        .Select(eff => new
+                        {
+                            EffectType = eff.GetType().Name,
+                            Duration = eff.Duration,
+                            Behavior = eff.GetBehavior().Identifier(),
+                            X = (eff is LocalFieldEffect ? (eff as LocalFieldEffect).X : 0),
+                            Y = (eff is LocalFieldEffect ? (eff as LocalFieldEffect).Y : 0),
+                            Radius = (eff is LocalFieldEffect ? (eff as LocalFieldEffect).Radius : 0),
+
+                        })
+                        .ToList();
 
                     await _hubContext.Clients.Group(game.Room.RoomCode).SendAsync("UpdateGameState",
                         player1.X, player1.Y,
                         player2.X, player2.Y,
-                        game.Puck.X, game.Puck.Y, sentWalls);
+                        game.Room.Puck.X, game.Room.Puck.Y, sentWalls, activeEffects);
                 }
                 catch (Exception ex)
                 {
@@ -200,7 +296,7 @@ namespace AirHockey.Services
         private static Random random = new Random();
         public void GenerateWalls(Room room)
         {
-            int numberOfWalls = random.Next(1, 15);
+            int numberOfWalls = random.Next(3, 6);
 
             AbstractWallFactory abstractWallFactory;
 

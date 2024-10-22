@@ -6,10 +6,11 @@ namespace AirHockey.Observers
     {
         public void OnGoalScored(Player scorer, Game game)
         {
-            game.Puck.X = 855 / 2;
-            game.Puck.Y = 541 / 2;
-            game.Puck.VelocityX = 0;
-            game.Puck.VelocityY = 0;
+            Puck puck = game.Room.Puck;
+            puck.X = 855 / 2;
+            puck.Y = 541 / 2;
+            puck.VelocityX = 0;
+            puck.VelocityY = 0;
 
             game.Room.Players[0].X = 227;
             game.Room.Players[0].Y = 260;
