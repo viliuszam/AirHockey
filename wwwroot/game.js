@@ -1,5 +1,5 @@
 ﻿import { connection, createRoom, joinRoom, roomCode } from './signalrConnection.js';
-import { drawGame, updatePlayerPosition, updatePuckPosition, player1, player2, addWall, updateWallPosition, clearWalls, addPowerup, updateEffects } from './canvasRenderer.js';
+import { drawGame, updatePlayerPosition, updatePuckPosition, player1, player2, addWall, updateWallPosition, clearWalls, addPowerup, updateEffects, updatePowerups, updatePlayerActivePowerups } from './canvasRenderer.js';
 
 const roomCodeInput = document.getElementById('roomCode');
 const createRoomBtn = document.getElementById('createRoomBtn');
@@ -83,12 +83,14 @@ connection.on("RoomFull", function (message) {
     alert(message);
 });
 
-connection.on("UpdateGameState", function (player1X, player1Y, player2X, player2Y, puckX, puckY, sentWalls, activeEffects) {
+connection.on("UpdateGameState", function (player1X, player1Y, player2X, player2Y, puckX, puckY, sentWalls, activeEffects, activePowerups, playerActivePowerups) {
     updatePlayerPosition("Player1", player1X, player1Y);
     updatePlayerPosition("Player2", player2X, player2Y);
     updatePuckPosition(puckX, puckY);
     updateWallPosition(sentWalls);
     updateEffects(activeEffects);
+    updatePowerups(activePowerups);
+    updatePlayerActivePowerups(playerActivePowerups);
 
     drawGame(roomCode);
     //console.log("effects: " + activeEffects);
@@ -150,8 +152,8 @@ connection.on("AddWall", function (wallId, x, y, width, height, wallType) {
     drawGame(roomCode); 
 });
 
-connection.on("AddPowerup", function (powerupId, x, y, powerupType) {
-    addPowerup(powerupId, x, y, powerupType);
+connection.on("AddPowerup", function (powerupId, x, y, powerupType, isActive) {
+    addPowerup(powerupId, x, y, powerupType, isActive);
     drawGame(roomCode);
 });
 

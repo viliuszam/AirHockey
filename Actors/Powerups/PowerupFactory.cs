@@ -10,8 +10,8 @@
                     return new DashPowerup(x, y, id);
                 case "Freeze":
                     return new FreezePowerup(x, y, id);
-                case "Projectile":
-                    return new ProjectilePowerup(x, y, id);
+                case "Push":
+                    return new PushPowerup(x, y, id);
                 default:
                     throw new ArgumentException("Invalid powerup type");
             }

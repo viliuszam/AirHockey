@@ -104,19 +104,19 @@ namespace AirHockey.Services
                     }
                 }
             }
+
             foreach (var powerup in game.Room.Powerups)
             {
                 if (powerup.IsColliding(player1))
                 {
                     powerup.ResolveCollision(player1);
-                    
                 }
                 if (powerup.IsColliding(player2))
                 {
                     powerup.ResolveCollision(player2);
-                    
                 }
             }
+            
         }
 
         public void UpdateEnvironmentalEffects(Game game)
@@ -255,6 +255,23 @@ namespace AirHockey.Services
                     puck.ConstrainToBounds(MIN_X, MIN_Y, MAX_X, MAX_Y);
 
 
+                    var activePowerups = game.Room.Powerups
+                        .Select(powerup => new
+                        {
+                            powerup.Id,
+                            powerup.X,
+                            powerup.Y,
+                            powerup.GetType().Name,
+                            powerup.IsActive
+                        })
+                        .ToList();
+
+                    var playerActivePowerups = new List<string>
+                    {
+                        player1.ActivePowerup?.GetType().Name ?? string.Empty,
+                        player2.ActivePowerup?.GetType().Name ?? string.Empty
+                    };
+
                     var sentWalls = game.Room.Walls
                         .Select(wall => new
                         {
@@ -285,7 +302,7 @@ namespace AirHockey.Services
                     await _hubContext.Clients.Group(game.Room.RoomCode).SendAsync("UpdateGameState",
                         player1.X, player1.Y,
                         player2.X, player2.Y,
-                        game.Room.Puck.X, game.Room.Puck.Y, sentWalls, activeEffects);
+                        game.Room.Puck.X, game.Room.Puck.Y, sentWalls, activeEffects, activePowerups, playerActivePowerups);
                 }
                 catch (Exception ex)
                 {
@@ -293,6 +310,7 @@ namespace AirHockey.Services
                 }
             }
         }
+
         private static Random random = new Random();
         public void GenerateWalls(Room room)
         {
@@ -421,14 +439,89 @@ namespace AirHockey.Services
                 room.Walls.Add(newWall);
             }
         }
-        
-        public void SpawnPowerups (Room room)
+
+        public void SpawnPowerups(Room room)
         {
-            PowerupFactory PowerupFactory = new();
-            room.Powerups.Add(PowerupFactory.CreatePowerup(227 + 50, 260, 1, "Dash"));
-            room.Powerups.Add(PowerupFactory.CreatePowerup(227 + 150, 260 + 50, 1, "Freeze"));
+            int numberOfPowerups = random.Next(2, 5); // Random number of powerups between 2 and 4
+            PowerupFactory powerupFactory = new PowerupFactory();
+
+            List<Powerup> powerupsToAdd = new List<Powerup>();
+
+            for (int i = 0; i < numberOfPowerups; i++)
+            {
+                Powerup? powerup = null;
+                bool isValidPosition = false;
+
+                while (!isValidPosition)
+                {
+                    float x = (float)(50 + random.NextDouble() * (705 - 50));
+                    float y = (float)(50 + random.NextDouble() * (391 - 50));
+
+                    string powerupType = GetRandomPowerupType(); // Randomly select a powerup type (e.g., Dash, Freeze)
+
+                    powerup = powerupFactory.CreatePowerup(x, y, 1, powerupType);
+
+                    // Ensure the powerup does not collide with walls or other powerups
+                    if (IsPowerupPositionValid(powerup, room, powerupsToAdd))
+                    {
+                        powerupsToAdd.Add(powerup);
+                        isValidPosition = true;
+                    }
+                }
+            }
+
+            foreach (var newPowerup in powerupsToAdd)
+            {
+                room.Powerups.Add(newPowerup);
+            }
         }
-        
+
+        private string GetRandomPowerupType()
+        {
+            string[] powerupTypes = { "Dash", "Freeze", "Push" };
+            return powerupTypes[random.Next(powerupTypes.Length)];
+        }
+
+        private bool IsPowerupPositionValid(Powerup powerup, Room room, List<Powerup> powerupsToAdd)
+        {
+            // Define exclusion zones around players and puck (similar to walls)
+            var exclusionZones = new List<Rectangle>
+            {
+                new Rectangle(175, 220, 100, 100),  // Player 1
+                new Rectangle(575, 220, 100, 100),  // Player 2
+                new Rectangle(375, 220, 100, 100)   // Puck
+            };
+
+            // Check if the powerup collides with any exclusion zone
+            foreach (var exclusionZone in exclusionZones)
+            {
+                if (powerup.IsColliding(exclusionZone))
+                {
+                    return false;
+                }
+            }
+
+            // Check if the powerup is colliding with existing walls
+            foreach (var wall in room.Walls)
+            {
+                if (powerup.IsColliding(wall))
+                {
+                    return false;
+                }
+            }
+
+            // Check if the powerup is colliding with any other powerups
+            foreach (var existingPowerup in powerupsToAdd)
+            {
+                if (powerup.IsColliding(existingPowerup))
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
         private bool IsPositionValid(Wall wall, Room room, List<Wall> wallsToAdd)
         {
             // Define exclusion zones around players and puck (25x25 space around them)

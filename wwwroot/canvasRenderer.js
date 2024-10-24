@@ -26,8 +26,8 @@ function addWall(wallId, x, y, width, height, wallType) {
     walls.push(new Wall(wallId, x, y, width, height, wallType));
 }
 
-function addPowerup(powerupId, x, y, powerupType) {
-    powerups.push(new Powerup(powerupId, x, y, powerupType));
+function addPowerup(powerupId, x, y, powerupType, isActive) {
+    powerups.push(new Powerup(powerupId, x, y, powerupType, isActive));
 }
 
 export function clearWalls() {
@@ -58,6 +58,25 @@ function updateWallPosition(sentWalls) {
         }
     });
 }
+
+function updatePowerups(activePowerups) {
+    clearPowerups();
+    activePowerups.forEach(powerup => {
+        addPowerup(
+            powerup.id,
+            powerup.x,
+            powerup.y,
+            powerup.name,
+            powerup.isActive
+        );
+    });
+}
+
+function updatePlayerActivePowerups(playerActivePowerups) {
+    player1.activePowerup = playerActivePowerups[0];
+    player2.activePowerup = playerActivePowerups[1];
+}
+
 
 export function updateEffects(activeEffects) {
     clearEffects();
@@ -216,4 +235,4 @@ function updatePuckPosition(x, y) {
     puck.move(x, y);
 }
 
-export { drawGame, updatePlayerPosition, updatePuckPosition, addWall, updateWallPosition, addPowerup };
+export { drawGame, updatePlayerPosition, updatePuckPosition, addWall, updateWallPosition, addPowerup, updatePowerups, updatePlayerActivePowerups };

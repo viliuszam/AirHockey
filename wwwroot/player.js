@@ -7,6 +7,7 @@
         this.nickname = nickname;
         this.score = 0;
         this.angleFacing = 0;
+        this.activePowerup = "";
     }
 
     move(x, y) {
@@ -58,5 +59,25 @@
         ctx.fillStyle = "black";
         ctx.textAlign = "center";
         ctx.fillText(`${this.nickname} (${this.score})`, this.x, this.y - 30);
+
+        // Draw powerup if active
+        if (this.activePowerup) {
+            // Draw background for better visibility
+            const powerupText = `⚡ ${this.activePowerup}`;
+            const textMetrics = ctx.measureText(powerupText);
+            const padding = 5;
+
+            ctx.fillStyle = "rgba(255, 255, 255, 0.7)";
+            ctx.fillRect(
+                this.x - textMetrics.width / 2 - padding,
+                this.y - 55 - padding,
+                textMetrics.width + padding * 2,
+                22
+            );
+
+            // Draw powerup text
+            ctx.fillStyle = "#FF6B00";
+            ctx.fillText(powerupText, this.x, this.y - 55);
+        }
     }
 }

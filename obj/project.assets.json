@@ -1541,6 +1541,7 @@
       "path": "system.io/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -1686,6 +1687,7 @@
       "path": "system.reflection/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -1847,6 +1849,7 @@
       "path": "system.reflection.primitives/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -1903,6 +1906,7 @@
       "path": "system.runtime/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -2119,6 +2123,7 @@
       "path": "system.text.encoding/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -2226,6 +2231,7 @@
       "path": "system.threading.tasks/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -2323,41 +2329,24 @@
     ]
   },
   "packageFolders": {
-<<<<<<< HEAD
-    "C:\\Users\\37061\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
-=======
-    "C:\\Users\\juliu\\.nuget\\packages\\": {},
+    "C:\\Users\\armin\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
->>>>>>> 3e03017d9d72a5d818c266db1c8d653278e535f0
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
-      "projectUniqueName": "C:\\Users\\37061\\Desktop\\AirHockey\\AirHockey.csproj",
+      "projectUniqueName": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\AirHockey.csproj",
       "projectName": "AirHockey",
-      "projectPath": "C:\\Users\\37061\\Desktop\\AirHockey\\AirHockey.csproj",
-      "packagesPath": "C:\\Users\\37061\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\37061\\Desktop\\AirHockey\\obj\\",
-=======
-      "projectUniqueName": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\AirHockey.csproj",
-      "projectName": "AirHockey",
-      "projectPath": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\AirHockey.csproj",
-      "packagesPath": "C:\\Users\\juliu\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\obj\\",
->>>>>>> 3e03017d9d72a5d818c266db1c8d653278e535f0
+      "projectPath": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\AirHockey.csproj",
+      "packagesPath": "C:\\Users\\armin\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-<<<<<<< HEAD
-        "C:\\Users\\37061\\AppData\\Roaming\\NuGet\\NuGet.Config",
-=======
-        "C:\\Users\\juliu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\armin\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
->>>>>>> 3e03017d9d72a5d818c266db1c8d653278e535f0
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2365,7 +2354,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -2421,12 +2409,16 @@
             "privateAssets": "all"
           }
         },
-<<<<<<< HEAD
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
-=======
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
->>>>>>> 3e03017d9d72a5d818c266db1c8d653278e535f0
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

@@ -52,14 +52,6 @@ namespace AirHockey.Actors
                 ActivePowerup = null;
             }
         }
-<<<<<<< HEAD
-        /*
-        public void ApplyBuff(IBuff buff)
-        {
-            buff.ApplyBuff(this);
-        }*/
-=======
->>>>>>> 3e03017d9d72a5d818c266db1c8d653278e535f0
     }
 
 }
