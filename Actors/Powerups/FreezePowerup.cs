@@ -2,10 +2,10 @@
 {
     public class FreezePowerup : Powerup
     {
-        private readonly float _freezeDuration;
+        public float FreezeDuration;
         public FreezePowerup(float x, float y, int id, float freezeDuration = 10f) : base(x, y, id)
         {
-            _freezeDuration = freezeDuration;
+            FreezeDuration = freezeDuration;
         }
 
         public override void Activate(Player player)
@@ -15,13 +15,23 @@
             enemyPlayer.MaxSpeed = 0;
             enemyPlayer.VelocityX *= 0;
             enemyPlayer.VelocityY *= 0;
-            System.Timers.Timer timer = new(_freezeDuration * 1000);
+            System.Timers.Timer timer = new(FreezeDuration * 1000);
             timer.Elapsed += (sender, e) =>
             {
                 enemyPlayer.MaxSpeed = prevSpeed;
                 timer.Stop();
             };
             timer.Start();
+        }
+
+        public override Powerup CloneDeep()
+        {
+            return new FreezePowerup(this.X, this.Y, this.Id, this.FreezeDuration);
+        }
+
+        public override Powerup CloneShallow()
+        {
+            return (FreezePowerup)this.MemberwiseClone();
         }
 
         public override void Update()

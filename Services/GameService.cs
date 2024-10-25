@@ -14,6 +14,7 @@ using AirHockey.Effects;
 using System.Threading;
 using AirHockey.Effects.Areas;
 using AirHockey.Effects.Behaviors;
+using AirHockey.Actors.Powerups.PowerupDecorators;
 
 namespace AirHockey.Services
 {
@@ -261,15 +262,15 @@ namespace AirHockey.Services
                             powerup.Id,
                             powerup.X,
                             powerup.Y,
-                            powerup.GetType().Name,
+                            powerup.GetBaseType().Name,
                             powerup.IsActive
                         })
                         .ToList();
 
                     var playerActivePowerups = new List<string>
                     {
-                        player1.ActivePowerup?.GetType().Name ?? string.Empty,
-                        player2.ActivePowerup?.GetType().Name ?? string.Empty
+                        player1.ActivePowerup?.GetBaseType().Name ?? string.Empty,
+                        player2.ActivePowerup?.GetBaseType().Name ?? string.Empty
                     };
 
                     var sentWalls = game.Room.Walls
@@ -442,14 +443,18 @@ namespace AirHockey.Services
 
         public void SpawnPowerups(Room room)
         {
-            int numberOfPowerups = random.Next(2, 5); // Random number of powerups between 2 and 4
+            int numberOfPowerups = random.Next(2, 5);
             PowerupFactory powerupFactory = new PowerupFactory();
+
+            Powerup dashPrototype = powerupFactory.CreatePowerup(0, 0, 1, "Dash");
+            Powerup freezePrototype = powerupFactory.CreatePowerup(0, 0, 2, "Freeze");
+            Powerup pushPrototype = powerupFactory.CreatePowerup(0, 0, 3, "Push");
 
             List<Powerup> powerupsToAdd = new List<Powerup>();
 
             for (int i = 0; i < numberOfPowerups; i++)
             {
-                Powerup? powerup = null;
+                Powerup powerup = null;
                 bool isValidPosition = false;
 
                 while (!isValidPosition)
@@ -457,11 +462,27 @@ namespace AirHockey.Services
                     float x = (float)(50 + random.NextDouble() * (705 - 50));
                     float y = (float)(50 + random.NextDouble() * (391 - 50));
 
-                    string powerupType = GetRandomPowerupType(); // Randomly select a powerup type (e.g., Dash, Freeze)
+                    string powerupType = GetRandomPowerupType();
 
-                    powerup = powerupFactory.CreatePowerup(x, y, 1, powerupType);
+                    switch (powerupType)
+                    {
+                        case "Dash":
+                            powerup = dashPrototype.CloneDeep();
+                            break;
+                        case "Freeze":
+                            powerup = freezePrototype.CloneDeep();
+                            break;
+                        case "Push":
+                            powerup = pushPrototype.CloneDeep();
+                            break;
+                    }
 
-                    // Ensure the powerup does not collide with walls or other powerups
+                    powerup.X = x;
+                    powerup.Y = y;
+                    powerup.Id = i + 1;
+
+                    powerup = ApplyRandomDecorators(powerup);
+
                     if (IsPowerupPositionValid(powerup, room, powerupsToAdd))
                     {
                         powerupsToAdd.Add(powerup);
@@ -475,7 +496,29 @@ namespace AirHockey.Services
                 room.Powerups.Add(newPowerup);
             }
         }
+        private Powerup ApplyRandomDecorators(Powerup powerup)
+        {
+            float duration = 5f; // Duration for the effects of the decorators
 
+            // Example: randomly decide to apply speed multiplier, mass multiplier, or acceleration multiplier
+            if (random.NextDouble() < 0.5) // 50% chance to apply a speed multiplier
+            {
+                float speedMultiplier = random.Next(2, 4); // Random multiplier between 2 and 4
+                powerup = new SpeedMultiplierDecorator(powerup, speedMultiplier, duration);
+            }
+            if (random.NextDouble() < 0.5) // 50% chance to apply a mass multiplier
+            {
+                float massMultiplier = random.Next(2, 4); // Random multiplier between 2 and 4
+                powerup = new MassMultiplierDecorator(powerup, massMultiplier, duration);
+            }
+            if (random.NextDouble() < 0.5) // 50% chance to apply an acceleration multiplier
+            {
+                float accelerationMultiplier = random.Next(2, 4); // Random multiplier between 2 and 4
+                powerup = new AccelerationMultiplierDecorator(powerup, accelerationMultiplier, duration);
+            }
+
+            return powerup;
+        }
         private string GetRandomPowerupType()
         {
             string[] powerupTypes = { "Dash", "Freeze", "Push" };
@@ -484,7 +527,6 @@ namespace AirHockey.Services
 
         private bool IsPowerupPositionValid(Powerup powerup, Room room, List<Powerup> powerupsToAdd)
         {
-            // Define exclusion zones around players and puck (similar to walls)
             var exclusionZones = new List<Rectangle>
             {
                 new Rectangle(175, 220, 100, 100),  // Player 1
@@ -492,7 +534,7 @@ namespace AirHockey.Services
                 new Rectangle(375, 220, 100, 100)   // Puck
             };
 
-            // Check if the powerup collides with any exclusion zone
+
             foreach (var exclusionZone in exclusionZones)
             {
                 if (powerup.IsColliding(exclusionZone))

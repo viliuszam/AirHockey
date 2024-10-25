@@ -39,5 +39,15 @@ namespace AirHockey.Actors.Powerups
         }
 
         public abstract void Activate(Player player);
+
+        public abstract Powerup CloneShallow();
+
+        public abstract Powerup CloneDeep();
+
+        public virtual Type GetBaseType()
+        {
+            return this.GetType();
+        }
+
     }
 }

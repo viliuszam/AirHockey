@@ -74,7 +74,7 @@ public class GameHub : Hub
                 {
                     Console.WriteLine($"Powerup id: {powerup.Id}");
                     Console.WriteLine($"X: {powerup.X}, Y: {powerup.Y}");
-                    await Clients.Group(roomCode).SendAsync("AddPowerup", powerup.Id, powerup.X, powerup.Y, powerup.GetType().Name, powerup.IsActive);
+                    await Clients.Group(roomCode).SendAsync("AddPowerup", powerup.Id, powerup.X, powerup.Y, powerup.GetBaseType().Name, powerup.IsActive);
                 }
                 await Clients.Group(roomCode).SendAsync("StartGame",
                     player1Nickname, player2Nickname, game.Player1Score, game.Player2Score);
