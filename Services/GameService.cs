@@ -15,6 +15,7 @@ using System.Threading;
 using AirHockey.Effects.Areas;
 using AirHockey.Effects.Behaviors;
 using AirHockey.Actors.Powerups.PowerupDecorators;
+using AirHockey.Actors.Command;
 
 namespace AirHockey.Services
 {
@@ -38,6 +39,8 @@ namespace AirHockey.Services
 
         private const int maxEffects = 5;
 
+        private List<ICommand> commandLists = new List<ICommand>();
+
         public GameService(IHubContext<GameHub> hubContext, IGameAnalytics analytics, ICollision col)
         {
             _hubContext = hubContext;
@@ -54,6 +57,32 @@ namespace AirHockey.Services
         {
             collisions = newCollisionStrategy;
         }
+
+        private void InitializeCommands(Game game)
+        {
+
+            commandLists.Clear(); 
+
+            var player1 = game.Room.Players[0];
+            var player2 = game.Room.Players[1];
+            var puck = game.Room.Puck;
+
+            var player1MoveCommand = new MoveCommand(player1, new Queue<(float X, float Y, float timestamp)>());
+            var player2MoveCommand = new MoveCommand(player2, new Queue<(float X, float Y, float timestamp)>());
+            var puckMoveCommand = new MoveCommand(puck, new Queue<(float X, float Y, float timestamp)>());
+
+            commandLists.Add(player1MoveCommand);
+            commandLists.Add(player2MoveCommand);
+            commandLists.Add(puckMoveCommand);
+        }
+
+        private void TrackEntityMovement()
+        {
+            foreach(ICommand commandList in commandLists){
+                commandList.Execute();
+            }
+        }
+
         private void HandleCollisions(Game game)
         {
             var player1 = game.Room.Players[0];
@@ -78,17 +107,42 @@ namespace AirHockey.Services
                 else if (wall is TeleportingWall) SetStrategy(new TeleportCollision());
                 else if (wall is ScrollingWall) SetStrategy(new ScrolingCollision());
                 else if (wall is BouncyWall) SetStrategy(new BouncyCollision());
+                else if (wall is UndoWall) SetStrategy(new UndoCollision());
+
                 else SetStrategy(new WallCollision());
                 if (wall.IsColliding(player1))
                 {
-                    collisions.ResolveCollision(wall,player1);
+                    if (wall is UndoWall undoWall)
+                    {
+                        if(undoWall.isActive()){
+                            UndoOnCollision(player1);
+                            undoWall.setInactive();
+                        }
+                    }
+                    collisions.ResolveCollision(wall, player1);
                 }
+
                 if (wall.IsColliding(player2))
                 {
+                    if (wall is UndoWall undoWall)
+                    {
+                        if(undoWall.isActive()){
+                            UndoOnCollision(player2);
+                            undoWall.setInactive();
+                        }
+                    }
                     collisions.ResolveCollision(wall, player2);
                 }
+
                 if (wall.IsColliding(puck))
                 {
+                    if (wall is UndoWall undoWall)
+                    {
+                        if(undoWall.isActive()){
+                            UndoOnCollision(puck);
+                            undoWall.setInactive();
+                        }
+                    }
                     collisions.ResolveCollision(wall, puck);
                 }
 
@@ -98,6 +152,8 @@ namespace AirHockey.Services
                     else if (wall is TeleportingWall) SetStrategy(new TeleportCollision());
                     else if (wall is ScrollingWall) SetStrategy(new ScrolingCollision());
                     else if (wall is BouncyWall) SetStrategy(new BouncyCollision());
+                    else if (wall is UndoWall) SetStrategy(new UndoCollision());
+
                     else SetStrategy(new WallCollision());
                     if (wall != otherWall && wall.IsColliding(otherWall))
                     {
@@ -118,6 +174,18 @@ namespace AirHockey.Services
                 }
             }
             
+        }
+
+        private void UndoOnCollision(Entity entity)
+        {
+            foreach (var command in commandLists)
+            {
+                if (command is MoveCommand moveCommand && moveCommand.getEntity() == entity)
+                {
+                    moveCommand.Undo();
+                    break;
+                }
+            }
         }
 
         public void UpdateEnvironmentalEffects(Game game)
@@ -227,6 +295,12 @@ namespace AirHockey.Services
             {
                 try
                 {
+                    if (!game.IsInitialized)
+                    {
+                        InitializeCommands(game);
+                        game.IsInitialized = true;
+                    }
+
                     if (!game.HasObservers)
                     {
                         game.RegisterObserver(_resetOb);
@@ -242,6 +316,8 @@ namespace AirHockey.Services
                     player2.Update();
                     puck.Update();
                     
+                    TrackEntityMovement();
+
                     foreach (var wall in game.Room.Walls)
                     {
                         wall.Update();
@@ -334,7 +410,7 @@ namespace AirHockey.Services
                     float y = (float)(20 + random.NextDouble() * (391 - 20));
                     float width = (float)(10 + random.NextDouble() * (150 - 10));
                     float height = width > 75 ? (float)(10 + random.NextDouble() * (75 - 10)) : (float)(75 + random.NextDouble() * (150 - 75));
-                    int wallType = random.Next(1, 7);
+                    int wallType = random.Next(1, 8);
 
                     isValidPosition = true;
 
@@ -423,6 +499,15 @@ namespace AirHockey.Services
                         case 6:
                             abstractWallFactory = AbstractWallFactory.GetFactory(isDynamic: true);
                             wall = abstractWallFactory.CreateWall(i, width, height, "Scrolling", x, y);
+                            if (IsPositionValid(wall, room, wallsToAdd))
+                            {
+                                wallsToAdd.Add(wall);
+                                i++;
+                            }
+                            break;
+                        case 7:
+                            abstractWallFactory = AbstractWallFactory.GetFactory(isDynamic: false);
+                            wall = abstractWallFactory.CreateWall(i, width, height, "Undo", x, y);
                             if (IsPositionValid(wall, room, wallsToAdd))
                             {
                                 wallsToAdd.Add(wall);

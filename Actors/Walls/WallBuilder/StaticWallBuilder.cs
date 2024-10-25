@@ -10,7 +10,7 @@ namespace AirHockey.Actors.Walls.WallBuilder
         private float _Y;
         private float _Acceleration;
         private float _Mass;
-        private readonly string[] _allowedTypes = { "Teleporting", "QuickSand", "Standard", "Bouncy" };
+        private readonly string[] _allowedTypes = { "Teleporting", "QuickSand", "Standard", "Bouncy", "Undo" };
 
         public IWallBuilder SetId(int id)
         {
@@ -59,6 +59,7 @@ namespace AirHockey.Actors.Walls.WallBuilder
             {
                 case "Teleporting":
                 case "QuickSand":
+                case "Undo":
                     _Mass = 0f;
                     break;
                 case "Standard":
@@ -88,7 +89,9 @@ namespace AirHockey.Actors.Walls.WallBuilder
                     break;
                 case "Bouncy":
                     wall = new BouncyWall(_id, _width, _height, false);
-
+                    break;
+                case "Undo":
+                    wall = new UndoWall(_id, _width, _height);
                     break;
                 default:
                     throw new ArgumentException("Invalid wall type");

@@ -11,6 +11,7 @@ namespace AirHockey.Actors
 
         private List<IGoalObserver> observers = new List<IGoalObserver>();
         public bool HasObservers { get; set; } = false;
+        public bool IsInitialized { get; set; } = false;
 
         public List<EnvironmentalEffect> ActiveEffects;
 

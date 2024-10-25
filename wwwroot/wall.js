@@ -46,6 +46,10 @@ export class Wall {
                 ctx.fillStyle = 'blue';
                 ctx.fillRect(this.x, this.y, this.width, this.height);
                 break;
+            case 'UndoWall':
+                ctx.fillStyle = 'red';
+                ctx.fillRect(this.x, this.y, this.width, this.height);
+                break;
             default:
                 ctx.fillStyle = 'gray';
                 ctx.fillRect(this.x, this.y, this.width, this.height);
