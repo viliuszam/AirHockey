@@ -7,6 +7,16 @@ namespace AirHockey.Actors.Walls
         private int currentIter = 0;
         private int iterCount = 1000;
 
+        public int GetIter()
+        {
+            return this.iterCount;
+        }
+
+        public string GetDirection()
+        {
+            return this.direction;
+        }
+
         public ScrollingWall(int id, float width, float height)
             : base(id, width, height)
         {

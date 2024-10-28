@@ -10,7 +10,11 @@
 
         public override void Activate(Player player)
         {
-            var enemyPlayer = player.Id == player.Room.Players[0].Id ? player.Room.Players[1] : player.Room.Players[0];
+            var enemyPlayer = player.Room?.Players.FirstOrDefault(p => p.Id != player.Id);
+            if (enemyPlayer == null)
+            {
+                throw new InvalidOperationException("No valid enemy player found in the room. " + player.Room.Players.Count);
+            }
             var prevSpeed = enemyPlayer.MaxSpeed;
             enemyPlayer.MaxSpeed = 0;
             enemyPlayer.VelocityX *= 0;

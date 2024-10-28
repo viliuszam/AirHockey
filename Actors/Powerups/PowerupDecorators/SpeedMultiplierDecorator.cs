@@ -1,36 +1,45 @@
 ﻿namespace AirHockey.Actors.Powerups.PowerupDecorators
 {
+    using System;
     using System.Timers;
+
     public class SpeedMultiplierDecorator : PowerupDecorator
     {
         private readonly float _speedMultiplier;
         private readonly float _duration;
+        private readonly Timer _timer;
+        private float _originalSpeed;
 
-        public SpeedMultiplierDecorator(Powerup powerup, float speedMultiplier, float duration) : base(powerup)
+        public SpeedMultiplierDecorator(Powerup powerup, float speedMultiplier, float duration)
+            : this(powerup, speedMultiplier, duration, new Timer(duration * 1000)) { }
+
+        public SpeedMultiplierDecorator(Powerup powerup, float speedMultiplier, float duration, Timer timer)
+            : base(powerup)
         {
             _speedMultiplier = speedMultiplier;
             _duration = duration;
+            _timer = timer;
         }
 
         public override void Activate(Player player)
         {
-            float originalSpeed = player.MaxSpeed;
-
+            _originalSpeed = player.MaxSpeed;
             WrappedPowerup.Activate(player);
-
             player.MaxSpeed *= _speedMultiplier;
 
             Console.WriteLine($"{WrappedPowerup.GetBaseType().Name} activated with speed multiplier! New Speed: {player.MaxSpeed}");
 
-            Timer timer = new Timer(_duration * 1000);
-            timer.Elapsed += (sender, e) =>
-            {
-                player.MaxSpeed = originalSpeed;
-                timer.Stop();
-                timer.Dispose();
-                Console.WriteLine($"{WrappedPowerup.GetBaseType().Name} speed effect ended. Speed reverted to: {player.MaxSpeed}");
-            };
-            timer.Start();
+            _timer.Elapsed += (sender, e) => ResetSpeed(player);
+            _timer.Start();
+        }
+
+        // Separate reset method for testability
+        public void ResetSpeed(Player player)
+        {
+            player.MaxSpeed = _originalSpeed;
+            _timer.Stop();
+            _timer.Dispose();
+            Console.WriteLine($"{WrappedPowerup.GetBaseType().Name} speed effect ended. Speed reverted to: {player.MaxSpeed}");
         }
 
         public override Powerup CloneShallow()
@@ -45,7 +54,7 @@
 
         public override void Update()
         {
-            
+            // Additional update logic if necessary
         }
     }
 }

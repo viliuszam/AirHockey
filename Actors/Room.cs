@@ -6,7 +6,7 @@ namespace AirHockey.Actors
     public class Room
     {
         public string RoomCode { get; private set; }
-        public List<Player> Players { get; private set; }
+        public List<Player> Players { get; set; }
         public List<Wall> Walls { get; set; } = new List<Wall>();
         public List<Powerup> Powerups { get; set; } = new List<Powerup>();
         public Puck Puck { get; set; }

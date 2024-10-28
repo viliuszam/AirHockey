@@ -9,6 +9,11 @@ namespace AirHockey.Actors.Walls
         private int currentIter = 500;
         private int iterCount = 500;
 
+        public int GetIter()
+        {
+            return this.iterCount;
+        }
+
         public UndoWall(int id, float width, float height)
             : base(id, width, height)
         {
@@ -16,7 +21,7 @@ namespace AirHockey.Actors.Walls
 
         public override void Update(){
             if(!active){
-                if(currentIter == iterCount){
+                if(currentIter >= iterCount){
                     active = true;
                 }
                 else{
