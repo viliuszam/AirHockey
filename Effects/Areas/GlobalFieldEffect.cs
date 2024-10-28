@@ -24,7 +24,7 @@ namespace AirHockey.Effects.Areas
                     _behavior.Execute(entity);
                 }
 
-                isApplied = false;
+                isApplied = true;
             }
 
         }
