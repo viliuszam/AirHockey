@@ -107,20 +107,6 @@ namespace AirHockey.Strategies
 
                     other.VelocityX *= a.GetBounce();
                     other.VelocityY *= a.GetBounce();
-
-                    if (a.getMove())
-                    {
-                        a.X -= nx * overlap * wallMoveRatio;
-                        a.Y -= ny * overlap * wallMoveRatio;
-
-                        float velocityTransferRatio = other.Mass / totalMass;
-
-                        a.VelocityX += -other.VelocityX * velocityTransferRatio;
-                        a.VelocityY += -other.VelocityY * velocityTransferRatio;
-
-                        a.VelocityX *= a.GetBounce();
-                        a.VelocityY *= a.GetBounce();
-                    }
                 }
             }
         }

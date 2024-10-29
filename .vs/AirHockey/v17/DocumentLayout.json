@@ -1,315 +1,289 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\",
+  "WorkspaceRootPath": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\",
   "Documents": [
     {
-<<<<<<< Updated upstream
-      "AbsoluteMoniker": "D:0:0:{20266D35-43A8-4173-81F4-6DC784EB5C82}|AirHockeyTests\\AirHockeyTests.csproj|c:\\users\\armin\\desktop\\airhockey\\airhockey\\airhockeytests\\services\\gameservicetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{20266D35-43A8-4173-81F4-6DC784EB5C82}|AirHockeyTests\\AirHockeyTests.csproj|solutionrelative:airhockeytests\\services\\gameservicetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\juliu\\desktop\\testavimas\\airhockey\\strategies\\undocollision.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|solutionrelative:strategies\\undocollision.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{20266D35-43A8-4173-81F4-6DC784EB5C82}|AirHockeyTests\\AirHockeyTests.csproj|c:\\users\\armin\\desktop\\airhockey\\airhockey\\airhockeytests\\effects\\areas\\localfieldeffecttests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{20266D35-43A8-4173-81F4-6DC784EB5C82}|AirHockeyTests\\AirHockeyTests.csproj|solutionrelative:airhockeytests\\effects\\areas\\localfieldeffecttests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-=======
-      "AbsoluteMoniker": "D:0:0:{20266D35-43A8-4173-81F4-6DC784EB5C82}|AirHockeyTests\\AirHockeyTests.csproj|c:\\users\\37061\\desktop\\airhockey\\airhockeytests\\integration\\gamehubintegrationtests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{20266D35-43A8-4173-81F4-6DC784EB5C82}|AirHockeyTests\\AirHockeyTests.csproj|solutionrelative:airhockeytests\\integration\\gamehubintegrationtests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
->>>>>>> Stashed changes
+      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\juliu\\desktop\\testavimas\\airhockey\\strategies\\bouncycollision.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|solutionrelative:strategies\\bouncycollision.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{20266D35-43A8-4173-81F4-6DC784EB5C82}|AirHockeyTests\\AirHockeyTests.csproj|c:\\users\\armin\\desktop\\airhockey\\airhockey\\airhockeytests\\effects\\areas\\globalfieldeffecttests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{20266D35-43A8-4173-81F4-6DC784EB5C82}|AirHockeyTests\\AirHockeyTests.csproj|solutionrelative:airhockeytests\\effects\\areas\\globalfieldeffecttests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-<<<<<<< Updated upstream
-      "AbsoluteMoniker": "D:0:0:{20266D35-43A8-4173-81F4-6DC784EB5C82}|AirHockeyTests\\AirHockeyTests.csproj|c:\\users\\armin\\desktop\\airhockey\\airhockey\\airhockeytests\\effects\\behaviors\\lowgravitybehaviortests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{20266D35-43A8-4173-81F4-6DC784EB5C82}|AirHockeyTests\\AirHockeyTests.csproj|solutionrelative:airhockeytests\\effects\\behaviors\\lowgravitybehaviortests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{20266D35-43A8-4173-81F4-6DC784EB5C82}|AirHockeyTests\\AirHockeyTests.csproj|c:\\users\\armin\\desktop\\airhockey\\airhockey\\airhockeytests\\effects\\behaviors\\windbehaviortests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{20266D35-43A8-4173-81F4-6DC784EB5C82}|AirHockeyTests\\AirHockeyTests.csproj|solutionrelative:airhockeytests\\effects\\behaviors\\windbehaviortests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\armin\\desktop\\airhockey\\airhockey\\effects\\environmentaleffect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|solutionrelative:effects\\environmentaleffect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\armin\\desktop\\airhockey\\airhockey\\effects\\behaviors\\windbehavior.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|solutionrelative:effects\\behaviors\\windbehavior.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\armin\\desktop\\airhockey\\airhockey\\effects\\behaviors\\lowgravitybehavior.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|solutionrelative:effects\\behaviors\\lowgravitybehavior.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\armin\\desktop\\airhockey\\airhockey\\managers\\gamesessionmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|solutionrelative:managers\\gamesessionmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\armin\\desktop\\airhockey\\airhockey\\strategies\\basecollision.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|solutionrelative:strategies\\basecollision.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{20266D35-43A8-4173-81F4-6DC784EB5C82}|AirHockeyTests\\AirHockeyTests.csproj|c:\\users\\armin\\desktop\\airhockey\\airhockey\\airhockeytests\\integration\\gamehubintegrationtests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{20266D35-43A8-4173-81F4-6DC784EB5C82}|AirHockeyTests\\AirHockeyTests.csproj|solutionrelative:airhockeytests\\integration\\gamehubintegrationtests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\armin\\desktop\\airhockey\\airhockey\\hubs\\gamehub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|solutionrelative:hubs\\gamehub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{20266D35-43A8-4173-81F4-6DC784EB5C82}|AirHockeyTests\\AirHockeyTests.csproj|c:\\users\\armin\\desktop\\airhockey\\airhockey\\airhockeytests\\actors\\powerups\\powerupfactorytests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{20266D35-43A8-4173-81F4-6DC784EB5C82}|AirHockeyTests\\AirHockeyTests.csproj|solutionrelative:airhockeytests\\actors\\powerups\\powerupfactorytests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\armin\\desktop\\airhockey\\airhockey\\wwwroot\\game.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|solutionrelative:wwwroot\\game.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\armin\\desktop\\airhockey\\airhockey\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\armin\\desktop\\airhockey\\airhockey\\wwwroot\\canvasrenderer.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|solutionrelative:wwwroot\\canvasrenderer.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\armin\\desktop\\airhockey\\airhockey\\actors\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|solutionrelative:actors\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{20266D35-43A8-4173-81F4-6DC784EB5C82}|AirHockeyTests\\AirHockeyTests.csproj|c:\\users\\armin\\desktop\\airhockey\\airhockey\\airhockeytests\\managers\\gamesessionmanagertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{20266D35-43A8-4173-81F4-6DC784EB5C82}|AirHockeyTests\\AirHockeyTests.csproj|solutionrelative:airhockeytests\\managers\\gamesessionmanagertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\armin\\desktop\\airhockey\\airhockey\\actors\\puck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|solutionrelative:actors\\puck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\armin\\desktop\\airhockey\\airhockey\\actors\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|solutionrelative:actors\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\armin\\desktop\\airhockey\\airhockey\\effects\\areas\\localfieldeffect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|solutionrelative:effects\\areas\\localfieldeffect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\armin\\desktop\\airhockey\\airhockey\\effects\\areas\\globalfieldeffect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|solutionrelative:effects\\areas\\globalfieldeffect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\armin\\desktop\\airhockey\\airhockey\\actors\\room.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|solutionrelative:actors\\room.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\armin\\desktop\\airhockey\\airhockey\\actors\\entity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|solutionrelative:actors\\entity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\armin\\desktop\\airhockey\\airhockey\\effects\\ieffectbehavior.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|solutionrelative:effects\\ieffectbehavior.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{20266D35-43A8-4173-81F4-6DC784EB5C82}|AirHockeyTests\\AirHockeyTests.csproj|c:\\users\\armin\\desktop\\airhockey\\airhockey\\airhockeytests\\unittest1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{20266D35-43A8-4173-81F4-6DC784EB5C82}|AirHockeyTests\\AirHockeyTests.csproj|solutionrelative:airhockeytests\\unittest1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{20266D35-43A8-4173-81F4-6DC784EB5C82}|AirHockeyTests\\AirHockeyTests.csproj|c:\\users\\armin\\desktop\\airhockey\\airhockey\\airhockeytests\\analytics\\loggers\\fileloggertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{20266D35-43A8-4173-81F4-6DC784EB5C82}|AirHockeyTests\\AirHockeyTests.csproj|solutionrelative:airhockeytests\\analytics\\loggers\\fileloggertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{20266D35-43A8-4173-81F4-6DC784EB5C82}|AirHockeyTests\\AirHockeyTests.csproj|c:\\users\\armin\\desktop\\airhockey\\airhockey\\airhockeytests\\analytics\\loggers\\consoleloggertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{20266D35-43A8-4173-81F4-6DC784EB5C82}|AirHockeyTests\\AirHockeyTests.csproj|solutionrelative:airhockeytests\\analytics\\loggers\\consoleloggertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{20266D35-43A8-4173-81F4-6DC784EB5C82}|AirHockeyTests\\AirHockeyTests.csproj|c:\\users\\armin\\desktop\\airhockey\\airhockey\\airhockeytests\\analytics\\fileloggeradaptertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{20266D35-43A8-4173-81F4-6DC784EB5C82}|AirHockeyTests\\AirHockeyTests.csproj|solutionrelative:airhockeytests\\analytics\\fileloggeradaptertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\armin\\desktop\\airhockey\\airhockey\\analytics\\fileloggeradapter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|solutionrelative:analytics\\fileloggeradapter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\armin\\desktop\\airhockey\\airhockey\\analytics\\consoleloggeradapter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|solutionrelative:analytics\\consoleloggeradapter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\armin\\desktop\\airhockey\\airhockey\\analytics\\loggers\\filelogger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|solutionrelative:analytics\\loggers\\filelogger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{20266D35-43A8-4173-81F4-6DC784EB5C82}|AirHockeyTests\\AirHockeyTests.csproj|c:\\users\\armin\\desktop\\airhockey\\airhockey\\airhockeytests\\actors\\command\\movecommandtests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{20266D35-43A8-4173-81F4-6DC784EB5C82}|AirHockeyTests\\AirHockeyTests.csproj|solutionrelative:airhockeytests\\actors\\command\\movecommandtests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\armin\\desktop\\airhockey\\airhockey\\analytics\\loggers\\consolelogger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|solutionrelative:analytics\\loggers\\consolelogger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\armin\\desktop\\airhockey\\airhockey\\analytics\\igameanalytics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|solutionrelative:analytics\\igameanalytics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-=======
-      "AbsoluteMoniker": "D:0:0:{20266D35-43A8-4173-81F4-6DC784EB5C82}|AirHockeyTests\\AirHockeyTests.csproj|c:\\users\\37061\\desktop\\airhockey\\airhockeytests\\airhockeytests.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
-      "RelativeMoniker": "D:0:0:{20266D35-43A8-4173-81F4-6DC784EB5C82}|AirHockeyTests\\AirHockeyTests.csproj|solutionrelative:airhockeytests\\airhockeytests.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\37061\\desktop\\airhockey\\airhockey.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
-      "RelativeMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|solutionrelative:airhockey.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{20266D35-43A8-4173-81F4-6DC784EB5C82}|AirHockeyTests\\AirHockeyTests.csproj|c:\\users\\37061\\desktop\\airhockey\\airhockeytests\\actors\\powerups\\pushpoweruptests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{20266D35-43A8-4173-81F4-6DC784EB5C82}|AirHockeyTests\\AirHockeyTests.csproj|solutionrelative:airhockeytests\\actors\\powerups\\pushpoweruptests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\37061\\desktop\\airhockey\\actors\\powerups\\pushpowerup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|solutionrelative:actors\\powerups\\pushpowerup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\37061\\desktop\\airhockey\\actors\\powerups\\powerupfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|solutionrelative:actors\\powerups\\powerupfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
->>>>>>> Stashed changes
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\armin\\desktop\\airhockey\\airhockey\\actors\\command\\movecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|solutionrelative:actors\\command\\movecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-<<<<<<< Updated upstream
-      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\armin\\desktop\\airhockey\\airhockey\\actors\\powerups\\powerupdecorators\\speedmultiplierdecorator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|solutionrelative:actors\\powerups\\powerupdecorators\\speedmultiplierdecorator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\armin\\desktop\\airhockey\\airhockey\\actors\\powerups\\powerupdecorators\\powerupdecorator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|solutionrelative:actors\\powerups\\powerupdecorators\\powerupdecorator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\armin\\desktop\\airhockey\\airhockey\\actors\\powerups\\powerupdecorators\\massmultiplierdecorator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|solutionrelative:actors\\powerups\\powerupdecorators\\massmultiplierdecorator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\armin\\desktop\\airhockey\\airhockey\\actors\\powerups\\powerupdecorators\\accelerationmultiplierdecorator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|solutionrelative:actors\\powerups\\powerupdecorators\\accelerationmultiplierdecorator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\armin\\desktop\\airhockey\\airhockey\\actors\\powerups\\pushpowerup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|solutionrelative:actors\\powerups\\pushpowerup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\armin\\desktop\\airhockey\\airhockey\\actors\\powerups\\dashpowerup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|solutionrelative:actors\\powerups\\dashpowerup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\armin\\desktop\\airhockey\\airhockey\\actors\\powerups\\powerup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|solutionrelative:actors\\powerups\\powerup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-=======
-      "AbsoluteMoniker": "D:0:0:{20266D35-43A8-4173-81F4-6DC784EB5C82}|AirHockeyTests\\AirHockeyTests.csproj|c:\\users\\37061\\desktop\\airhockey\\airhockeytests\\actors\\command\\movecommandtests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{20266D35-43A8-4173-81F4-6DC784EB5C82}|AirHockeyTests\\AirHockeyTests.csproj|solutionrelative:airhockeytests\\actors\\command\\movecommandtests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{20266D35-43A8-4173-81F4-6DC784EB5C82}|AirHockeyTests\\AirHockeyTests.csproj|c:\\users\\37061\\desktop\\airhockey\\airhockeytests\\actors\\walls\\wallbuilder\\staticwallbuildertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{20266D35-43A8-4173-81F4-6DC784EB5C82}|AirHockeyTests\\AirHockeyTests.csproj|solutionrelative:airhockeytests\\actors\\walls\\wallbuilder\\staticwallbuildertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{20266D35-43A8-4173-81F4-6DC784EB5C82}|AirHockeyTests\\AirHockeyTests.csproj|c:\\users\\37061\\desktop\\airhockey\\airhockeytests\\actors\\walls\\wallbuilder\\dynamicwallbuildertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{20266D35-43A8-4173-81F4-6DC784EB5C82}|AirHockeyTests\\AirHockeyTests.csproj|solutionrelative:airhockeytests\\actors\\walls\\wallbuilder\\dynamicwallbuildertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{20266D35-43A8-4173-81F4-6DC784EB5C82}|AirHockeyTests\\AirHockeyTests.csproj|c:\\users\\37061\\desktop\\airhockey\\airhockeytests\\actors\\powerups\\freezepoweruptests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{20266D35-43A8-4173-81F4-6DC784EB5C82}|AirHockeyTests\\AirHockeyTests.csproj|solutionrelative:airhockeytests\\actors\\powerups\\freezepoweruptests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
->>>>>>> Stashed changes
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\armin\\desktop\\airhockey\\airhockey\\actors\\powerups\\freezepowerup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|solutionrelative:actors\\powerups\\freezepowerup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-<<<<<<< Updated upstream
-      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\armin\\desktop\\airhockey\\airhockey\\actors\\powerups\\powerupfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|solutionrelative:actors\\powerups\\powerupfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\armin\\desktop\\airhockey\\airhockey\\wwwroot\\player.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|solutionrelative:wwwroot\\player.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\armin\\desktop\\airhockey\\airhockey\\wwwroot\\powerup.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|solutionrelative:wwwroot\\powerup.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\armin\\desktop\\airhockey\\airhockey\\actors\\walls\\wall.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|solutionrelative:actors\\walls\\wall.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\armin\\desktop\\airhockey\\airhockey\\strategies\\teleportcollision.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|solutionrelative:strategies\\teleportcollision.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\armin\\desktop\\airhockey\\airhockey\\strategies\\scrolingcollision.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\juliu\\desktop\\testavimas\\airhockey\\strategies\\scrolingcollision.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|solutionrelative:strategies\\scrolingcollision.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\armin\\desktop\\airhockey\\airhockey\\strategies\\quickcollision.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\juliu\\desktop\\testavimas\\airhockey\\strategies\\quickcollision.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|solutionrelative:strategies\\quickcollision.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\armin\\desktop\\airhockey\\airhockey\\strategies\\icollision.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{20266D35-43A8-4173-81F4-6DC784EB5C82}|AirHockeyTests\\AirHockeyTests.csproj|c:\\users\\juliu\\desktop\\testavimas\\airhockey\\airhockeytests\\strategies\\wallcollisiontests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{20266D35-43A8-4173-81F4-6DC784EB5C82}|AirHockeyTests\\AirHockeyTests.csproj|solutionrelative:airhockeytests\\strategies\\wallcollisiontests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{20266D35-43A8-4173-81F4-6DC784EB5C82}|AirHockeyTests\\AirHockeyTests.csproj|c:\\users\\juliu\\desktop\\testavimas\\airhockey\\airhockeytests\\strategies\\teleportcollisiontests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{20266D35-43A8-4173-81F4-6DC784EB5C82}|AirHockeyTests\\AirHockeyTests.csproj|solutionrelative:airhockeytests\\strategies\\teleportcollisiontests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{20266D35-43A8-4173-81F4-6DC784EB5C82}|AirHockeyTests\\AirHockeyTests.csproj|c:\\users\\juliu\\desktop\\testavimas\\airhockey\\airhockeytests\\strategies\\scrolingcollisiontests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{20266D35-43A8-4173-81F4-6DC784EB5C82}|AirHockeyTests\\AirHockeyTests.csproj|solutionrelative:airhockeytests\\strategies\\scrolingcollisiontests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{20266D35-43A8-4173-81F4-6DC784EB5C82}|AirHockeyTests\\AirHockeyTests.csproj|c:\\users\\juliu\\desktop\\testavimas\\airhockey\\airhockeytests\\strategies\\quickcollisiontests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{20266D35-43A8-4173-81F4-6DC784EB5C82}|AirHockeyTests\\AirHockeyTests.csproj|solutionrelative:airhockeytests\\strategies\\quickcollisiontests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{20266D35-43A8-4173-81F4-6DC784EB5C82}|AirHockeyTests\\AirHockeyTests.csproj|c:\\users\\juliu\\desktop\\testavimas\\airhockey\\airhockeytests\\strategies\\bouncycollisiontests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{20266D35-43A8-4173-81F4-6DC784EB5C82}|AirHockeyTests\\AirHockeyTests.csproj|solutionrelative:airhockeytests\\strategies\\bouncycollisiontests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{20266D35-43A8-4173-81F4-6DC784EB5C82}|AirHockeyTests\\AirHockeyTests.csproj|c:\\users\\juliu\\desktop\\testavimas\\airhockey\\airhockeytests\\strategies\\basecollisiontests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{20266D35-43A8-4173-81F4-6DC784EB5C82}|AirHockeyTests\\AirHockeyTests.csproj|solutionrelative:airhockeytests\\strategies\\basecollisiontests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{20266D35-43A8-4173-81F4-6DC784EB5C82}|AirHockeyTests\\AirHockeyTests.csproj|c:\\users\\juliu\\desktop\\testavimas\\airhockey\\airhockeytests\\services\\gameservicetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{20266D35-43A8-4173-81F4-6DC784EB5C82}|AirHockeyTests\\AirHockeyTests.csproj|solutionrelative:airhockeytests\\services\\gameservicetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{20266D35-43A8-4173-81F4-6DC784EB5C82}|AirHockeyTests\\AirHockeyTests.csproj|c:\\users\\juliu\\desktop\\testavimas\\airhockey\\airhockeytests\\effects\\areas\\localfieldeffecttests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{20266D35-43A8-4173-81F4-6DC784EB5C82}|AirHockeyTests\\AirHockeyTests.csproj|solutionrelative:airhockeytests\\effects\\areas\\localfieldeffecttests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{20266D35-43A8-4173-81F4-6DC784EB5C82}|AirHockeyTests\\AirHockeyTests.csproj|c:\\users\\juliu\\desktop\\testavimas\\airhockey\\airhockeytests\\effects\\areas\\globalfieldeffecttests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{20266D35-43A8-4173-81F4-6DC784EB5C82}|AirHockeyTests\\AirHockeyTests.csproj|solutionrelative:airhockeytests\\effects\\areas\\globalfieldeffecttests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{20266D35-43A8-4173-81F4-6DC784EB5C82}|AirHockeyTests\\AirHockeyTests.csproj|c:\\users\\juliu\\desktop\\testavimas\\airhockey\\airhockeytests\\effects\\behaviors\\lowgravitybehaviortests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{20266D35-43A8-4173-81F4-6DC784EB5C82}|AirHockeyTests\\AirHockeyTests.csproj|solutionrelative:airhockeytests\\effects\\behaviors\\lowgravitybehaviortests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{20266D35-43A8-4173-81F4-6DC784EB5C82}|AirHockeyTests\\AirHockeyTests.csproj|c:\\users\\juliu\\desktop\\testavimas\\airhockey\\airhockeytests\\effects\\behaviors\\windbehaviortests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{20266D35-43A8-4173-81F4-6DC784EB5C82}|AirHockeyTests\\AirHockeyTests.csproj|solutionrelative:airhockeytests\\effects\\behaviors\\windbehaviortests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\juliu\\desktop\\testavimas\\airhockey\\effects\\environmentaleffect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|solutionrelative:effects\\environmentaleffect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\juliu\\desktop\\testavimas\\airhockey\\effects\\behaviors\\windbehavior.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|solutionrelative:effects\\behaviors\\windbehavior.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\juliu\\desktop\\testavimas\\airhockey\\effects\\behaviors\\lowgravitybehavior.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|solutionrelative:effects\\behaviors\\lowgravitybehavior.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\juliu\\desktop\\testavimas\\airhockey\\managers\\gamesessionmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|solutionrelative:managers\\gamesessionmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\juliu\\desktop\\testavimas\\airhockey\\strategies\\basecollision.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|solutionrelative:strategies\\basecollision.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{20266D35-43A8-4173-81F4-6DC784EB5C82}|AirHockeyTests\\AirHockeyTests.csproj|c:\\users\\juliu\\desktop\\testavimas\\airhockey\\airhockeytests\\integration\\gamehubintegrationtests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{20266D35-43A8-4173-81F4-6DC784EB5C82}|AirHockeyTests\\AirHockeyTests.csproj|solutionrelative:airhockeytests\\integration\\gamehubintegrationtests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\juliu\\desktop\\testavimas\\airhockey\\hubs\\gamehub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|solutionrelative:hubs\\gamehub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{20266D35-43A8-4173-81F4-6DC784EB5C82}|AirHockeyTests\\AirHockeyTests.csproj|c:\\users\\juliu\\desktop\\testavimas\\airhockey\\airhockeytests\\actors\\powerups\\powerupfactorytests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{20266D35-43A8-4173-81F4-6DC784EB5C82}|AirHockeyTests\\AirHockeyTests.csproj|solutionrelative:airhockeytests\\actors\\powerups\\powerupfactorytests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\juliu\\desktop\\testavimas\\airhockey\\wwwroot\\game.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|solutionrelative:wwwroot\\game.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\juliu\\desktop\\testavimas\\airhockey\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\juliu\\desktop\\testavimas\\airhockey\\wwwroot\\canvasrenderer.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|solutionrelative:wwwroot\\canvasrenderer.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\juliu\\desktop\\testavimas\\airhockey\\actors\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|solutionrelative:actors\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{20266D35-43A8-4173-81F4-6DC784EB5C82}|AirHockeyTests\\AirHockeyTests.csproj|c:\\users\\juliu\\desktop\\testavimas\\airhockey\\airhockeytests\\managers\\gamesessionmanagertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{20266D35-43A8-4173-81F4-6DC784EB5C82}|AirHockeyTests\\AirHockeyTests.csproj|solutionrelative:airhockeytests\\managers\\gamesessionmanagertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\juliu\\desktop\\testavimas\\airhockey\\actors\\puck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|solutionrelative:actors\\puck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\juliu\\desktop\\testavimas\\airhockey\\actors\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|solutionrelative:actors\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\juliu\\desktop\\testavimas\\airhockey\\effects\\areas\\localfieldeffect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|solutionrelative:effects\\areas\\localfieldeffect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\juliu\\desktop\\testavimas\\airhockey\\effects\\areas\\globalfieldeffect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|solutionrelative:effects\\areas\\globalfieldeffect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\juliu\\desktop\\testavimas\\airhockey\\actors\\room.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|solutionrelative:actors\\room.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\juliu\\desktop\\testavimas\\airhockey\\actors\\entity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|solutionrelative:actors\\entity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\juliu\\desktop\\testavimas\\airhockey\\effects\\ieffectbehavior.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|solutionrelative:effects\\ieffectbehavior.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{20266D35-43A8-4173-81F4-6DC784EB5C82}|AirHockeyTests\\AirHockeyTests.csproj|c:\\users\\juliu\\desktop\\testavimas\\airhockey\\airhockeytests\\unittest1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{20266D35-43A8-4173-81F4-6DC784EB5C82}|AirHockeyTests\\AirHockeyTests.csproj|solutionrelative:airhockeytests\\unittest1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{20266D35-43A8-4173-81F4-6DC784EB5C82}|AirHockeyTests\\AirHockeyTests.csproj|c:\\users\\juliu\\desktop\\testavimas\\airhockey\\airhockeytests\\analytics\\loggers\\fileloggertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{20266D35-43A8-4173-81F4-6DC784EB5C82}|AirHockeyTests\\AirHockeyTests.csproj|solutionrelative:airhockeytests\\analytics\\loggers\\fileloggertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{20266D35-43A8-4173-81F4-6DC784EB5C82}|AirHockeyTests\\AirHockeyTests.csproj|c:\\users\\juliu\\desktop\\testavimas\\airhockey\\airhockeytests\\analytics\\loggers\\consoleloggertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{20266D35-43A8-4173-81F4-6DC784EB5C82}|AirHockeyTests\\AirHockeyTests.csproj|solutionrelative:airhockeytests\\analytics\\loggers\\consoleloggertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{20266D35-43A8-4173-81F4-6DC784EB5C82}|AirHockeyTests\\AirHockeyTests.csproj|c:\\users\\juliu\\desktop\\testavimas\\airhockey\\airhockeytests\\analytics\\fileloggeradaptertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{20266D35-43A8-4173-81F4-6DC784EB5C82}|AirHockeyTests\\AirHockeyTests.csproj|solutionrelative:airhockeytests\\analytics\\fileloggeradaptertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\juliu\\desktop\\testavimas\\airhockey\\analytics\\fileloggeradapter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|solutionrelative:analytics\\fileloggeradapter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\juliu\\desktop\\testavimas\\airhockey\\analytics\\consoleloggeradapter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|solutionrelative:analytics\\consoleloggeradapter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\juliu\\desktop\\testavimas\\airhockey\\analytics\\loggers\\filelogger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|solutionrelative:analytics\\loggers\\filelogger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{20266D35-43A8-4173-81F4-6DC784EB5C82}|AirHockeyTests\\AirHockeyTests.csproj|c:\\users\\juliu\\desktop\\testavimas\\airhockey\\airhockeytests\\actors\\command\\movecommandtests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{20266D35-43A8-4173-81F4-6DC784EB5C82}|AirHockeyTests\\AirHockeyTests.csproj|solutionrelative:airhockeytests\\actors\\command\\movecommandtests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\juliu\\desktop\\testavimas\\airhockey\\analytics\\loggers\\consolelogger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|solutionrelative:analytics\\loggers\\consolelogger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\juliu\\desktop\\testavimas\\airhockey\\analytics\\igameanalytics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|solutionrelative:analytics\\igameanalytics.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\juliu\\desktop\\testavimas\\airhockey\\actors\\command\\movecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|solutionrelative:actors\\command\\movecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\juliu\\desktop\\testavimas\\airhockey\\actors\\powerups\\powerupdecorators\\speedmultiplierdecorator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|solutionrelative:actors\\powerups\\powerupdecorators\\speedmultiplierdecorator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\juliu\\desktop\\testavimas\\airhockey\\actors\\powerups\\powerupdecorators\\powerupdecorator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|solutionrelative:actors\\powerups\\powerupdecorators\\powerupdecorator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\juliu\\desktop\\testavimas\\airhockey\\actors\\powerups\\powerupdecorators\\massmultiplierdecorator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|solutionrelative:actors\\powerups\\powerupdecorators\\massmultiplierdecorator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\juliu\\desktop\\testavimas\\airhockey\\actors\\powerups\\powerupdecorators\\accelerationmultiplierdecorator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|solutionrelative:actors\\powerups\\powerupdecorators\\accelerationmultiplierdecorator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\juliu\\desktop\\testavimas\\airhockey\\actors\\powerups\\pushpowerup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|solutionrelative:actors\\powerups\\pushpowerup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\juliu\\desktop\\testavimas\\airhockey\\actors\\powerups\\dashpowerup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|solutionrelative:actors\\powerups\\dashpowerup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\juliu\\desktop\\testavimas\\airhockey\\actors\\powerups\\powerup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|solutionrelative:actors\\powerups\\powerup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\juliu\\desktop\\testavimas\\airhockey\\actors\\powerups\\freezepowerup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|solutionrelative:actors\\powerups\\freezepowerup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\juliu\\desktop\\testavimas\\airhockey\\actors\\powerups\\powerupfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|solutionrelative:actors\\powerups\\powerupfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\juliu\\desktop\\testavimas\\airhockey\\wwwroot\\player.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|solutionrelative:wwwroot\\player.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\juliu\\desktop\\testavimas\\airhockey\\wwwroot\\powerup.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|solutionrelative:wwwroot\\powerup.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\juliu\\desktop\\testavimas\\airhockey\\actors\\walls\\wall.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|solutionrelative:actors\\walls\\wall.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\juliu\\desktop\\testavimas\\airhockey\\strategies\\teleportcollision.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|solutionrelative:strategies\\teleportcollision.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\juliu\\desktop\\testavimas\\airhockey\\strategies\\icollision.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|solutionrelative:strategies\\icollision.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-=======
-      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\37061\\desktop\\airhockey\\actors\\walls\\wallbuilder\\dynamicwallbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|solutionrelative:actors\\walls\\wallbuilder\\dynamicwallbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{20266D35-43A8-4173-81F4-6DC784EB5C82}|AirHockeyTests\\AirHockeyTests.csproj|c:\\users\\37061\\desktop\\airhockey\\airhockeytests\\actors\\walls\\dynamicwallfactorytests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{20266D35-43A8-4173-81F4-6DC784EB5C82}|AirHockeyTests\\AirHockeyTests.csproj|solutionrelative:airhockeytests\\actors\\walls\\dynamicwallfactorytests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
->>>>>>> Stashed changes
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\armin\\desktop\\airhockey\\airhockey\\actors\\walls\\wallbuilder\\staticwallbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\juliu\\desktop\\testavimas\\airhockey\\actors\\walls\\wallbuilder\\staticwallbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|solutionrelative:actors\\walls\\wallbuilder\\staticwallbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-<<<<<<< Updated upstream
-      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\armin\\desktop\\airhockey\\airhockey\\actors\\walls\\wallbuilder\\iwallbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\juliu\\desktop\\testavimas\\airhockey\\actors\\walls\\wallbuilder\\iwallbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|solutionrelative:actors\\walls\\wallbuilder\\iwallbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\armin\\desktop\\airhockey\\airhockey\\actors\\walls\\dynamicwallfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\juliu\\desktop\\testavimas\\airhockey\\actors\\walls\\dynamicwallfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|solutionrelative:actors\\walls\\dynamicwallfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\armin\\desktop\\airhockey\\airhockey\\actors\\walls\\abstractwallfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\juliu\\desktop\\testavimas\\airhockey\\actors\\walls\\abstractwallfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|solutionrelative:actors\\walls\\abstractwallfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\armin\\desktop\\airhockey\\airhockey\\wwwroot\\puck.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\juliu\\desktop\\testavimas\\airhockey\\wwwroot\\puck.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|solutionrelative:wwwroot\\puck.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\armin\\desktop\\airhockey\\airhockey\\wwwroot\\signalrconnection.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\juliu\\desktop\\testavimas\\airhockey\\wwwroot\\signalrconnection.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|solutionrelative:wwwroot\\signalrconnection.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-=======
-      "AbsoluteMoniker": "D:0:0:{20266D35-43A8-4173-81F4-6DC784EB5C82}|AirHockeyTests\\AirHockeyTests.csproj|c:\\users\\37061\\desktop\\airhockey\\airhockeytests\\actors\\walls\\teleportingwalltests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{20266D35-43A8-4173-81F4-6DC784EB5C82}|AirHockeyTests\\AirHockeyTests.csproj|solutionrelative:airhockeytests\\actors\\walls\\teleportingwalltests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
->>>>>>> Stashed changes
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\armin\\desktop\\airhockey\\airhockey\\actors\\walls\\teleportingwall.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\juliu\\desktop\\testavimas\\airhockey\\actors\\walls\\teleportingwall.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|solutionrelative:actors\\walls\\teleportingwall.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-<<<<<<< Updated upstream
-      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\armin\\desktop\\airhockey\\airhockey\\actors\\walls\\staticwallfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\juliu\\desktop\\testavimas\\airhockey\\actors\\walls\\staticwallfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|solutionrelative:actors\\walls\\staticwallfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\armin\\desktop\\airhockey\\airhockey\\actors\\walls\\standardwall.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\juliu\\desktop\\testavimas\\airhockey\\actors\\walls\\standardwall.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|solutionrelative:actors\\walls\\standardwall.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\armin\\desktop\\airhockey\\airhockey\\actors\\walls\\scrollingwall.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\juliu\\desktop\\testavimas\\airhockey\\actors\\walls\\scrollingwall.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|solutionrelative:actors\\walls\\scrollingwall.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\armin\\desktop\\airhockey\\airhockey\\actors\\walls\\bouncywall.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|c:\\users\\juliu\\desktop\\testavimas\\airhockey\\actors\\walls\\bouncywall.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4F385F89-130A-4E57-9284-E4424F08D166}|AirHockey.csproj|solutionrelative:actors\\walls\\bouncywall.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -317,10 +291,6 @@
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\37061\\Desktop\\AirHockey\\obj\\Release\\net8.0\\AirHockey.AssemblyInfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-=======
-      "AbsoluteMoniker": "D:0:0:{20266D35-43A8-4173-81F4-6DC784EB5C82}|AirHockeyTests\\AirHockeyTests.csproj|c:\\users\\37061\\desktop\\airhockey\\airhockeytests\\actors\\walls\\walltests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{20266D35-43A8-4173-81F4-6DC784EB5C82}|AirHockeyTests\\AirHockeyTests.csproj|solutionrelative:airhockeytests\\actors\\walls\\walltests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
->>>>>>> Stashed changes
     }
   ],
   "DocumentGroupContainers": [
@@ -330,551 +300,574 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-<<<<<<< Updated upstream
+              "DocumentIndex": 0,
+              "Title": "UndoCollision.cs",
+              "DocumentMoniker": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\Strategies\\UndoCollision.cs",
+              "RelativeDocumentMoniker": "Strategies\\UndoCollision.cs",
+              "ToolTip": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\Strategies\\UndoCollision.cs",
+              "RelativeToolTip": "Strategies\\UndoCollision.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-29T21:45:46.06Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "BouncyCollision.cs",
+              "DocumentMoniker": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\Strategies\\BouncyCollision.cs",
+              "RelativeDocumentMoniker": "Strategies\\BouncyCollision.cs",
+              "ToolTip": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\Strategies\\BouncyCollision.cs",
+              "RelativeToolTip": "Strategies\\BouncyCollision.cs",
+              "ViewState": "AQIAAFgAAAAAAAAAAAAgwGwAAAA1AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-29T21:45:36.975Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "WindBehaviorTests.cs",
-              "DocumentMoniker": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\AirHockeyTests\\Effects\\Behaviors\\WindBehaviorTests.cs",
-              "RelativeDocumentMoniker": "AirHockeyTests\\Effects\\Behaviors\\WindBehaviorTests.cs",
-              "ToolTip": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\AirHockeyTests\\Effects\\Behaviors\\WindBehaviorTests.cs",
-              "RelativeToolTip": "AirHockeyTests\\Effects\\Behaviors\\WindBehaviorTests.cs",
-              "ViewState": "AQIAAEoAAAAAAAAAAAAqwF8AAAA+AAAA",
+              "Title": "WallCollisionTests.cs",
+              "DocumentMoniker": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\AirHockeyTests\\Strategies\\WallCollisionTests.cs",
+              "RelativeDocumentMoniker": "AirHockeyTests\\Strategies\\WallCollisionTests.cs",
+              "ToolTip": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\AirHockeyTests\\Strategies\\WallCollisionTests.cs",
+              "RelativeToolTip": "AirHockeyTests\\Strategies\\WallCollisionTests.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-28T17:24:29.683Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{004be353-6879-467c-9d1e-9ac23cdf6d49}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "GameServiceTests.cs",
-              "DocumentMoniker": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\AirHockeyTests\\Services\\GameServiceTests.cs",
-              "RelativeDocumentMoniker": "AirHockeyTests\\Services\\GameServiceTests.cs",
-              "ToolTip": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\AirHockeyTests\\Services\\GameServiceTests.cs",
-              "RelativeToolTip": "AirHockeyTests\\Services\\GameServiceTests.cs",
-              "ViewState": "AQIAAGUAAAAAAAAAAAAqwH4AAAAVAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-28T17:39:21.908Z",
+              "WhenOpened": "2024-10-29T21:42:56.772Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "LowGravityBehaviorTests.cs",
-              "DocumentMoniker": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\AirHockeyTests\\Effects\\Behaviors\\LowGravityBehaviorTests.cs",
-              "RelativeDocumentMoniker": "AirHockeyTests\\Effects\\Behaviors\\LowGravityBehaviorTests.cs",
-              "ToolTip": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\AirHockeyTests\\Effects\\Behaviors\\LowGravityBehaviorTests.cs",
-              "RelativeToolTip": "AirHockeyTests\\Effects\\Behaviors\\LowGravityBehaviorTests.cs",
-              "ViewState": "AQIAAEAAAAAAAAAAAAAiwFUAAAAVAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-28T17:15:40.199Z",
-=======
-              "DocumentIndex": 1,
-              "Title": "GameServiceTests.cs",
-              "DocumentMoniker": "C:\\Users\\37061\\Desktop\\AirHockey\\AirHockeyTests\\Services\\GameServiceTests.cs",
-              "RelativeDocumentMoniker": "AirHockeyTests\\Services\\GameServiceTests.cs",
-              "ToolTip": "C:\\Users\\37061\\Desktop\\AirHockey\\AirHockeyTests\\Services\\GameServiceTests.cs",
-              "RelativeToolTip": "AirHockeyTests\\Services\\GameServiceTests.cs",
-              "ViewState": "AQIAADYAAAAAAAAAAAAowEkAAABsAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-29T19:53:29.696Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "AirHockey",
-              "DocumentMoniker": "C:\\Users\\37061\\Desktop\\AirHockey\\AirHockey.csproj",
-              "RelativeDocumentMoniker": "AirHockey.csproj",
-              "ToolTip": "C:\\Users\\37061\\Desktop\\AirHockey\\AirHockey.csproj",
-              "RelativeToolTip": "AirHockey.csproj",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-10-29T19:53:03.114Z",
->>>>>>> Stashed changes
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-<<<<<<< Updated upstream
               "DocumentIndex": 7,
-              "Title": "LowGravityBehavior.cs",
-              "DocumentMoniker": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\Effects\\Behaviors\\LowGravityBehavior.cs",
-              "RelativeDocumentMoniker": "Effects\\Behaviors\\LowGravityBehavior.cs",
-              "ToolTip": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\Effects\\Behaviors\\LowGravityBehavior.cs",
-              "RelativeToolTip": "Effects\\Behaviors\\LowGravityBehavior.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAAAAAA",
+              "Title": "QuickCollisionTests.cs",
+              "DocumentMoniker": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\AirHockeyTests\\Strategies\\QuickCollisionTests.cs",
+              "RelativeDocumentMoniker": "AirHockeyTests\\Strategies\\QuickCollisionTests.cs",
+              "ToolTip": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\AirHockeyTests\\Strategies\\QuickCollisionTests.cs",
+              "RelativeToolTip": "AirHockeyTests\\Strategies\\QuickCollisionTests.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADEAAABiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-21T14:43:15.296Z",
+              "WhenOpened": "2024-10-29T21:41:36.57Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "GameHub.cs",
-              "DocumentMoniker": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\Hubs\\GameHub.cs",
-              "RelativeDocumentMoniker": "Hubs\\GameHub.cs",
-              "ToolTip": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\Hubs\\GameHub.cs",
-              "RelativeToolTip": "Hubs\\GameHub.cs",
-              "ViewState": "AQIAAAUAAAAAAAAAAAAxwB8AAABlAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-29T12:39:27.2Z"
-=======
-              "DocumentIndex": 2,
-              "Title": "AirHockeyTests",
-              "DocumentMoniker": "C:\\Users\\37061\\Desktop\\AirHockey\\AirHockeyTests\\AirHockeyTests.csproj",
-              "RelativeDocumentMoniker": "AirHockeyTests\\AirHockeyTests.csproj",
-              "ToolTip": "C:\\Users\\37061\\Desktop\\AirHockey\\AirHockeyTests\\AirHockeyTests.csproj",
-              "RelativeToolTip": "AirHockeyTests\\AirHockeyTests.csproj",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-10-29T19:52:42.4Z",
-              "EditorCaption": ""
->>>>>>> Stashed changes
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "WindBehavior.cs",
-              "DocumentMoniker": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\Effects\\Behaviors\\WindBehavior.cs",
-              "RelativeDocumentMoniker": "Effects\\Behaviors\\WindBehavior.cs",
-              "ToolTip": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\Effects\\Behaviors\\WindBehavior.cs",
-              "RelativeToolTip": "Effects\\Behaviors\\WindBehavior.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABwAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-21T14:43:41.133Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "EnvironmentalEffect.cs",
-              "DocumentMoniker": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\Effects\\EnvironmentalEffect.cs",
-              "RelativeDocumentMoniker": "Effects\\EnvironmentalEffect.cs",
-              "ToolTip": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\Effects\\EnvironmentalEffect.cs",
-              "RelativeToolTip": "Effects\\EnvironmentalEffect.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAqwBkAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-21T14:16:14.916Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "GlobalFieldEffectTests.cs",
-              "DocumentMoniker": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\AirHockeyTests\\Effects\\Areas\\GlobalFieldEffectTests.cs",
-              "RelativeDocumentMoniker": "AirHockeyTests\\Effects\\Areas\\GlobalFieldEffectTests.cs",
-              "ToolTip": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\AirHockeyTests\\Effects\\Areas\\GlobalFieldEffectTests.cs",
-              "RelativeToolTip": "AirHockeyTests\\Effects\\Areas\\GlobalFieldEffectTests.cs",
-              "ViewState": "AQIAAFkAAAAAAAAAAAAiwG8AAAA8AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-28T16:37:59.24Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-<<<<<<< Updated upstream
-              "DocumentIndex": 1,
-              "Title": "LocalFieldEffectTests.cs",
-              "DocumentMoniker": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\AirHockeyTests\\Effects\\Areas\\LocalFieldEffectTests.cs",
-              "RelativeDocumentMoniker": "AirHockeyTests\\Effects\\Areas\\LocalFieldEffectTests.cs",
-              "ToolTip": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\AirHockeyTests\\Effects\\Areas\\LocalFieldEffectTests.cs",
-              "RelativeToolTip": "AirHockeyTests\\Effects\\Areas\\LocalFieldEffectTests.cs",
-              "ViewState": "AQIAAFMAAAAAAAAAAAAlwGwAAAA7AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-28T16:53:47.643Z",
-=======
-              "DocumentIndex": 0,
-              "Title": "GameHubIntegrationTests.cs",
-              "DocumentMoniker": "C:\\Users\\37061\\Desktop\\AirHockey\\AirHockeyTests\\Integration\\GameHubIntegrationTests.cs",
-              "RelativeDocumentMoniker": "AirHockeyTests\\Integration\\GameHubIntegrationTests.cs",
-              "ToolTip": "C:\\Users\\37061\\Desktop\\AirHockey\\AirHockeyTests\\Integration\\GameHubIntegrationTests.cs",
-              "RelativeToolTip": "AirHockeyTests\\Integration\\GameHubIntegrationTests.cs",
-              "ViewState": "AQIAAB4AAAAAAAAAAAAAAB4AAAAOAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-29T19:44:15.681Z",
->>>>>>> Stashed changes
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-<<<<<<< Updated upstream
-              "DocumentIndex": 14,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAABEAAAAAAAAAAAAAwCEAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-18T10:15:45.07Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "GameHubIntegrationTests.cs",
-              "DocumentMoniker": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\AirHockeyTests\\Integration\\GameHubIntegrationTests.cs",
-              "RelativeDocumentMoniker": "AirHockeyTests\\Integration\\GameHubIntegrationTests.cs",
-              "ToolTip": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\AirHockeyTests\\Integration\\GameHubIntegrationTests.cs",
-              "RelativeToolTip": "AirHockeyTests\\Integration\\GameHubIntegrationTests.cs",
-              "ViewState": "AQIAABQAAAAAAAAAAAA4wCYAAABSAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-29T12:06:44.599Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "PowerupFactoryTests.cs",
-              "DocumentMoniker": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\AirHockeyTests\\Actors\\Powerups\\PowerupFactoryTests.cs",
-              "RelativeDocumentMoniker": "AirHockeyTests\\Actors\\Powerups\\PowerupFactoryTests.cs",
-              "ToolTip": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\AirHockeyTests\\Actors\\Powerups\\PowerupFactoryTests.cs",
-              "RelativeToolTip": "AirHockeyTests\\Actors\\Powerups\\PowerupFactoryTests.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-29T13:25:34.532Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "GameSessionManager.cs",
-              "DocumentMoniker": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\Managers\\GameSessionManager.cs",
-              "RelativeDocumentMoniker": "Managers\\GameSessionManager.cs",
-              "ToolTip": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\Managers\\GameSessionManager.cs",
-              "RelativeToolTip": "Managers\\GameSessionManager.cs",
-              "ViewState": "AQIAACMAAAAAAAAAAAAIwCAAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-17T14:09:40.807Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "game.js",
-              "DocumentMoniker": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\wwwroot\\game.js",
-              "RelativeDocumentMoniker": "wwwroot\\game.js",
-              "ToolTip": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\wwwroot\\game.js",
-              "RelativeToolTip": "wwwroot\\game.js",
-              "ViewState": "AQIAAEIAAAAAAAAAAAAAAEcAAAAhAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-10-17T12:01:26.511Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 9,
-              "Title": "BaseCollision.cs",
-              "DocumentMoniker": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\Strategies\\BaseCollision.cs",
-              "RelativeDocumentMoniker": "Strategies\\BaseCollision.cs",
-              "ToolTip": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\Strategies\\BaseCollision.cs",
-              "RelativeToolTip": "Strategies\\BaseCollision.cs",
-              "ViewState": "AQIAAAUAAAAAAAAAAAAQwBwAAAAxAAAA",
+              "Title": "BaseCollisionTests.cs",
+              "DocumentMoniker": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\AirHockeyTests\\Strategies\\BaseCollisionTests.cs",
+              "RelativeDocumentMoniker": "AirHockeyTests\\Strategies\\BaseCollisionTests.cs",
+              "ToolTip": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\AirHockeyTests\\Strategies\\BaseCollisionTests.cs",
+              "RelativeToolTip": "AirHockeyTests\\Strategies\\BaseCollisionTests.cs",
+              "ViewState": "AQIAABcAAAAAAAAAAAAwwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-18T13:03:15.85Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "canvasRenderer.js",
-              "DocumentMoniker": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\wwwroot\\canvasRenderer.js",
-              "RelativeDocumentMoniker": "wwwroot\\canvasRenderer.js",
-              "ToolTip": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\wwwroot\\canvasRenderer.js",
-              "RelativeToolTip": "wwwroot\\canvasRenderer.js",
-              "ViewState": "AQIAANQAAAAAAAAAAAAiwO4AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-10-17T12:17:21.517Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "Game.cs",
-              "DocumentMoniker": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\Actors\\Game.cs",
-              "RelativeDocumentMoniker": "Actors\\Game.cs",
-              "ToolTip": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\Actors\\Game.cs",
-              "RelativeToolTip": "Actors\\Game.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAYAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-17T11:59:16.922Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "GameSessionManagerTests.cs",
-              "DocumentMoniker": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\AirHockeyTests\\Managers\\GameSessionManagerTests.cs",
-              "RelativeDocumentMoniker": "AirHockeyTests\\Managers\\GameSessionManagerTests.cs",
-              "ToolTip": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\AirHockeyTests\\Managers\\GameSessionManagerTests.cs",
-              "RelativeToolTip": "AirHockeyTests\\Managers\\GameSessionManagerTests.cs",
-              "ViewState": "AQIAAA0AAAAAAAAAAAAnwJMAAAApAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-28T16:34:49.063Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "Player.cs",
-              "DocumentMoniker": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\Actors\\Player.cs",
-              "RelativeDocumentMoniker": "Actors\\Player.cs",
-              "ToolTip": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\Actors\\Player.cs",
-              "RelativeToolTip": "Actors\\Player.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAIAxwAsAAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-17T12:05:21.939Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "Puck.cs",
-              "DocumentMoniker": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\Actors\\Puck.cs",
-              "RelativeDocumentMoniker": "Actors\\Puck.cs",
-              "ToolTip": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\Actors\\Puck.cs",
-              "RelativeToolTip": "Actors\\Puck.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAXAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-17T13:33:11.904Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "Room.cs",
-              "DocumentMoniker": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\Actors\\Room.cs",
-              "RelativeDocumentMoniker": "Actors\\Room.cs",
-              "ToolTip": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\Actors\\Room.cs",
-              "RelativeToolTip": "Actors\\Room.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAwwA8AAAAgAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-17T11:46:22.696Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "Entity.cs",
-              "DocumentMoniker": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\Actors\\Entity.cs",
-              "RelativeDocumentMoniker": "Actors\\Entity.cs",
-              "ToolTip": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\Actors\\Entity.cs",
-              "RelativeToolTip": "Actors\\Entity.cs",
-              "ViewState": "AQIAAB4AAAAAAAAAAAAowCgAAAAmAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-17T11:39:45.691Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "GlobalFieldEffect.cs",
-              "DocumentMoniker": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\Effects\\Areas\\GlobalFieldEffect.cs",
-              "RelativeDocumentMoniker": "Effects\\Areas\\GlobalFieldEffect.cs",
-              "ToolTip": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\Effects\\Areas\\GlobalFieldEffect.cs",
-              "RelativeToolTip": "Effects\\Areas\\GlobalFieldEffect.cs",
-              "ViewState": "AQIAAA0AAAAAAAAAAAAgwBsAAAANAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-21T14:34:25.201Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "LocalFieldEffect.cs",
-              "DocumentMoniker": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\Effects\\Areas\\LocalFieldEffect.cs",
-              "RelativeDocumentMoniker": "Effects\\Areas\\LocalFieldEffect.cs",
-              "ToolTip": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\Effects\\Areas\\LocalFieldEffect.cs",
-              "RelativeToolTip": "Effects\\Areas\\LocalFieldEffect.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAowBgAAAAhAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-21T14:19:33.993Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "UnitTest1.cs",
-              "DocumentMoniker": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\AirHockeyTests\\UnitTest1.cs",
-              "RelativeDocumentMoniker": "AirHockeyTests\\UnitTest1.cs",
-              "ToolTip": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\AirHockeyTests\\UnitTest1.cs",
-              "RelativeToolTip": "AirHockeyTests\\UnitTest1.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAaAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-28T15:45:45.894Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "IEffectBehavior.cs",
-              "DocumentMoniker": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\Effects\\IEffectBehavior.cs",
-              "RelativeDocumentMoniker": "Effects\\IEffectBehavior.cs",
-              "ToolTip": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\Effects\\IEffectBehavior.cs",
-              "RelativeToolTip": "Effects\\IEffectBehavior.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAwAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-21T14:08:31.1Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "FileLoggerTests.cs",
-              "DocumentMoniker": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\AirHockeyTests\\Analytics\\Loggers\\FileLoggerTests.cs",
-              "RelativeDocumentMoniker": "AirHockeyTests\\Analytics\\Loggers\\FileLoggerTests.cs",
-              "ToolTip": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\AirHockeyTests\\Analytics\\Loggers\\FileLoggerTests.cs",
-              "RelativeToolTip": "AirHockeyTests\\Analytics\\Loggers\\FileLoggerTests.cs",
-              "ViewState": "AQIAAEMAAAAAAAAAAADwv38AAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-28T16:11:38.084Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "ConsoleLoggerTests.cs",
-              "DocumentMoniker": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\AirHockeyTests\\Analytics\\Loggers\\ConsoleLoggerTests.cs",
-              "RelativeDocumentMoniker": "AirHockeyTests\\Analytics\\Loggers\\ConsoleLoggerTests.cs",
-              "ToolTip": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\AirHockeyTests\\Analytics\\Loggers\\ConsoleLoggerTests.cs",
-              "RelativeToolTip": "AirHockeyTests\\Analytics\\Loggers\\ConsoleLoggerTests.cs",
-              "ViewState": "AQIAAD4AAAAAAAAAAIBJwCsAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-28T16:08:45.721Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "FileLoggerAdapterTests.cs",
-              "DocumentMoniker": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\AirHockeyTests\\Analytics\\FileLoggerAdapterTests.cs",
-              "RelativeDocumentMoniker": "AirHockeyTests\\Analytics\\FileLoggerAdapterTests.cs",
-              "ToolTip": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\AirHockeyTests\\Analytics\\FileLoggerAdapterTests.cs",
-              "RelativeToolTip": "AirHockeyTests\\Analytics\\FileLoggerAdapterTests.cs",
-              "ViewState": "AQIAABMAAAAAAAAAAAAgwHQAAAAFAAAA",
-=======
-              "DocumentIndex": 5,
-              "Title": "PushPowerup.cs",
-              "DocumentMoniker": "C:\\Users\\37061\\Desktop\\AirHockey\\Actors\\Powerups\\PushPowerup.cs",
-              "RelativeDocumentMoniker": "Actors\\Powerups\\PushPowerup.cs",
-              "ToolTip": "C:\\Users\\37061\\Desktop\\AirHockey\\Actors\\Powerups\\PushPowerup.cs",
-              "RelativeToolTip": "Actors\\Powerups\\PushPowerup.cs",
-              "ViewState": "AQIAAA4AAAAAAAAAAAAAABQAAAAlAAAA",
->>>>>>> Stashed changes
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-29T19:38:36.714Z",
+              "WhenOpened": "2024-10-29T21:41:31.355Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-<<<<<<< Updated upstream
-              "DocumentIndex": 30,
-              "Title": "ConsoleLoggerAdapter.cs",
-              "DocumentMoniker": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\Analytics\\ConsoleLoggerAdapter.cs",
-              "RelativeDocumentMoniker": "Analytics\\ConsoleLoggerAdapter.cs",
-              "ToolTip": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\Analytics\\ConsoleLoggerAdapter.cs",
-              "RelativeToolTip": "Analytics\\ConsoleLoggerAdapter.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAYAAAA",
-=======
               "DocumentIndex": 6,
-              "Title": "PowerupFactory.cs",
-              "DocumentMoniker": "C:\\Users\\37061\\Desktop\\AirHockey\\Actors\\Powerups\\PowerupFactory.cs",
-              "RelativeDocumentMoniker": "Actors\\Powerups\\PowerupFactory.cs",
-              "ToolTip": "C:\\Users\\37061\\Desktop\\AirHockey\\Actors\\Powerups\\PowerupFactory.cs",
-              "RelativeToolTip": "Actors\\Powerups\\PowerupFactory.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
->>>>>>> Stashed changes
+              "Title": "ScrolingCollisionTests.cs",
+              "DocumentMoniker": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\AirHockeyTests\\Strategies\\ScrolingCollisionTests.cs",
+              "RelativeDocumentMoniker": "AirHockeyTests\\Strategies\\ScrolingCollisionTests.cs",
+              "ToolTip": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\AirHockeyTests\\Strategies\\ScrolingCollisionTests.cs",
+              "RelativeToolTip": "AirHockeyTests\\Strategies\\ScrolingCollisionTests.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAABpAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-29T19:38:31.275Z",
+              "WhenOpened": "2024-10-29T21:41:27.798Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-<<<<<<< Updated upstream
-              "DocumentIndex": 31,
-              "Title": "FileLogger.cs",
-              "DocumentMoniker": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\Analytics\\Loggers\\FileLogger.cs",
-              "RelativeDocumentMoniker": "Analytics\\Loggers\\FileLogger.cs",
-              "ToolTip": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\Analytics\\Loggers\\FileLogger.cs",
-              "RelativeToolTip": "Analytics\\Loggers\\FileLogger.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAWAAAA",
+              "DocumentIndex": 5,
+              "Title": "TeleportCollisionTests.cs",
+              "DocumentMoniker": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\AirHockeyTests\\Strategies\\TeleportCollisionTests.cs",
+              "RelativeDocumentMoniker": "AirHockeyTests\\Strategies\\TeleportCollisionTests.cs",
+              "ToolTip": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\AirHockeyTests\\Strategies\\TeleportCollisionTests.cs",
+              "RelativeToolTip": "AirHockeyTests\\Strategies\\TeleportCollisionTests.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAHQAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-28T16:02:25.398Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 32,
-=======
-              "DocumentIndex": 4,
-              "Title": "PushPowerupTests.cs",
-              "DocumentMoniker": "C:\\Users\\37061\\Desktop\\AirHockey\\AirHockeyTests\\Actors\\Powerups\\PushPowerupTests.cs",
-              "RelativeDocumentMoniker": "AirHockeyTests\\Actors\\Powerups\\PushPowerupTests.cs",
-              "ToolTip": "C:\\Users\\37061\\Desktop\\AirHockey\\AirHockeyTests\\Actors\\Powerups\\PushPowerupTests.cs",
-              "RelativeToolTip": "AirHockeyTests\\Actors\\Powerups\\PushPowerupTests.cs",
-              "ViewState": "AQIAADwAAAAAAAAAAAAowGMAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-29T19:28:03.083Z",
+              "WhenOpened": "2024-10-29T21:41:16.399Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
->>>>>>> Stashed changes
-              "Title": "MoveCommandTests.cs",
-              "DocumentMoniker": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\AirHockeyTests\\Actors\\Command\\MoveCommandTests.cs",
-              "RelativeDocumentMoniker": "AirHockeyTests\\Actors\\Command\\MoveCommandTests.cs",
-              "ToolTip": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\AirHockeyTests\\Actors\\Command\\MoveCommandTests.cs",
-              "RelativeToolTip": "AirHockeyTests\\Actors\\Command\\MoveCommandTests.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAJAAAA",
+              "Title": "BouncyCollisionTests.cs",
+              "DocumentMoniker": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\AirHockeyTests\\Strategies\\BouncyCollisionTests.cs",
+              "RelativeDocumentMoniker": "AirHockeyTests\\Strategies\\BouncyCollisionTests.cs",
+              "ToolTip": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\AirHockeyTests\\Strategies\\BouncyCollisionTests.cs",
+              "RelativeToolTip": "AirHockeyTests\\Strategies\\BouncyCollisionTests.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAGIAAAAOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-<<<<<<< Updated upstream
-              "WhenOpened": "2024-10-28T15:49:30.527Z"
+              "WhenOpened": "2024-10-29T21:40:57.015Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "QuickCollision.cs",
+              "DocumentMoniker": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\Strategies\\QuickCollision.cs",
+              "RelativeDocumentMoniker": "Strategies\\QuickCollision.cs",
+              "ToolTip": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\Strategies\\QuickCollision.cs",
+              "RelativeToolTip": "Strategies\\QuickCollision.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-29T21:40:37.947Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ScrolingCollision.cs",
+              "DocumentMoniker": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\Strategies\\ScrolingCollision.cs",
+              "RelativeDocumentMoniker": "Strategies\\ScrolingCollision.cs",
+              "ToolTip": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\Strategies\\ScrolingCollision.cs",
+              "RelativeToolTip": "Strategies\\ScrolingCollision.cs",
+              "ViewState": "AQIAAD0AAAAAAAAAAAAgwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-29T21:40:37.949Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "GameServiceTests.cs",
+              "DocumentMoniker": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\AirHockeyTests\\Services\\GameServiceTests.cs",
+              "RelativeDocumentMoniker": "AirHockeyTests\\Services\\GameServiceTests.cs",
+              "ToolTip": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\AirHockeyTests\\Services\\GameServiceTests.cs",
+              "RelativeToolTip": "AirHockeyTests\\Services\\GameServiceTests.cs",
+              "ViewState": "AQIAAGUAAAAAAAAAAAAqwH4AAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-29T21:40:37.793Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "WindBehaviorTests.cs",
+              "DocumentMoniker": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\AirHockeyTests\\Effects\\Behaviors\\WindBehaviorTests.cs",
+              "RelativeDocumentMoniker": "AirHockeyTests\\Effects\\Behaviors\\WindBehaviorTests.cs",
+              "ToolTip": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\AirHockeyTests\\Effects\\Behaviors\\WindBehaviorTests.cs",
+              "RelativeToolTip": "AirHockeyTests\\Effects\\Behaviors\\WindBehaviorTests.cs",
+              "ViewState": "AQIAAEoAAAAAAAAAAAAqwF8AAAA+AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-29T21:40:37.755Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "LowGravityBehaviorTests.cs",
+              "DocumentMoniker": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\AirHockeyTests\\Effects\\Behaviors\\LowGravityBehaviorTests.cs",
+              "RelativeDocumentMoniker": "AirHockeyTests\\Effects\\Behaviors\\LowGravityBehaviorTests.cs",
+              "ToolTip": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\AirHockeyTests\\Effects\\Behaviors\\LowGravityBehaviorTests.cs",
+              "RelativeToolTip": "AirHockeyTests\\Effects\\Behaviors\\LowGravityBehaviorTests.cs",
+              "ViewState": "AQIAAEAAAAAAAAAAAAAiwFUAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-29T21:40:37.796Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "LowGravityBehavior.cs",
+              "DocumentMoniker": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\Effects\\Behaviors\\LowGravityBehavior.cs",
+              "RelativeDocumentMoniker": "Effects\\Behaviors\\LowGravityBehavior.cs",
+              "ToolTip": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\Effects\\Behaviors\\LowGravityBehavior.cs",
+              "RelativeToolTip": "Effects\\Behaviors\\LowGravityBehavior.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-29T21:40:37.804Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "GameHub.cs",
+              "DocumentMoniker": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\Hubs\\GameHub.cs",
+              "RelativeDocumentMoniker": "Hubs\\GameHub.cs",
+              "ToolTip": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\Hubs\\GameHub.cs",
+              "RelativeToolTip": "Hubs\\GameHub.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAxwB8AAABlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-29T21:40:37.807Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "WindBehavior.cs",
+              "DocumentMoniker": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\Effects\\Behaviors\\WindBehavior.cs",
+              "RelativeDocumentMoniker": "Effects\\Behaviors\\WindBehavior.cs",
+              "ToolTip": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\Effects\\Behaviors\\WindBehavior.cs",
+              "RelativeToolTip": "Effects\\Behaviors\\WindBehavior.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABwAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-29T21:40:37.811Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "EnvironmentalEffect.cs",
+              "DocumentMoniker": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\Effects\\EnvironmentalEffect.cs",
+              "RelativeDocumentMoniker": "Effects\\EnvironmentalEffect.cs",
+              "ToolTip": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\Effects\\EnvironmentalEffect.cs",
+              "RelativeToolTip": "Effects\\EnvironmentalEffect.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwBkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-29T21:40:37.813Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "GlobalFieldEffectTests.cs",
+              "DocumentMoniker": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\AirHockeyTests\\Effects\\Areas\\GlobalFieldEffectTests.cs",
+              "RelativeDocumentMoniker": "AirHockeyTests\\Effects\\Areas\\GlobalFieldEffectTests.cs",
+              "ToolTip": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\AirHockeyTests\\Effects\\Areas\\GlobalFieldEffectTests.cs",
+              "RelativeToolTip": "AirHockeyTests\\Effects\\Areas\\GlobalFieldEffectTests.cs",
+              "ViewState": "AQIAAFkAAAAAAAAAAAAiwG8AAAA8AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-29T21:40:37.816Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "LocalFieldEffectTests.cs",
+              "DocumentMoniker": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\AirHockeyTests\\Effects\\Areas\\LocalFieldEffectTests.cs",
+              "RelativeDocumentMoniker": "AirHockeyTests\\Effects\\Areas\\LocalFieldEffectTests.cs",
+              "ToolTip": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\AirHockeyTests\\Effects\\Areas\\LocalFieldEffectTests.cs",
+              "RelativeToolTip": "AirHockeyTests\\Effects\\Areas\\LocalFieldEffectTests.cs",
+              "ViewState": "AQIAAFMAAAAAAAAAAAAlwGwAAAA7AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-29T21:40:37.819Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAABEAAAAAAAAAAAAAwCEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-29T21:40:37.821Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "GameHubIntegrationTests.cs",
+              "DocumentMoniker": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\AirHockeyTests\\Integration\\GameHubIntegrationTests.cs",
+              "RelativeDocumentMoniker": "AirHockeyTests\\Integration\\GameHubIntegrationTests.cs",
+              "ToolTip": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\AirHockeyTests\\Integration\\GameHubIntegrationTests.cs",
+              "RelativeToolTip": "AirHockeyTests\\Integration\\GameHubIntegrationTests.cs",
+              "ViewState": "AQIAABQAAAAAAAAAAAA4wCYAAABSAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-29T21:40:37.823Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "PowerupFactoryTests.cs",
+              "DocumentMoniker": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\AirHockeyTests\\Actors\\Powerups\\PowerupFactoryTests.cs",
+              "RelativeDocumentMoniker": "AirHockeyTests\\Actors\\Powerups\\PowerupFactoryTests.cs",
+              "ToolTip": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\AirHockeyTests\\Actors\\Powerups\\PowerupFactoryTests.cs",
+              "RelativeToolTip": "AirHockeyTests\\Actors\\Powerups\\PowerupFactoryTests.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-29T21:40:37.826Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "GameSessionManager.cs",
+              "DocumentMoniker": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\Managers\\GameSessionManager.cs",
+              "RelativeDocumentMoniker": "Managers\\GameSessionManager.cs",
+              "ToolTip": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\Managers\\GameSessionManager.cs",
+              "RelativeToolTip": "Managers\\GameSessionManager.cs",
+              "ViewState": "AQIAACMAAAAAAAAAAAAIwCAAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-29T21:40:37.829Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "game.js",
+              "DocumentMoniker": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\wwwroot\\game.js",
+              "RelativeDocumentMoniker": "wwwroot\\game.js",
+              "ToolTip": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\wwwroot\\game.js",
+              "RelativeToolTip": "wwwroot\\game.js",
+              "ViewState": "AQIAAEIAAAAAAAAAAAAAAEcAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-10-29T21:40:37.831Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "BaseCollision.cs",
+              "DocumentMoniker": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\Strategies\\BaseCollision.cs",
+              "RelativeDocumentMoniker": "Strategies\\BaseCollision.cs",
+              "ToolTip": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\Strategies\\BaseCollision.cs",
+              "RelativeToolTip": "Strategies\\BaseCollision.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAQwBwAAAAxAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-29T21:40:37.834Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "canvasRenderer.js",
+              "DocumentMoniker": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\wwwroot\\canvasRenderer.js",
+              "RelativeDocumentMoniker": "wwwroot\\canvasRenderer.js",
+              "ToolTip": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\wwwroot\\canvasRenderer.js",
+              "RelativeToolTip": "wwwroot\\canvasRenderer.js",
+              "ViewState": "AQIAANQAAAAAAAAAAAAiwO4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-10-29T21:40:37.837Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "Game.cs",
+              "DocumentMoniker": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\Actors\\Game.cs",
+              "RelativeDocumentMoniker": "Actors\\Game.cs",
+              "ToolTip": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\Actors\\Game.cs",
+              "RelativeToolTip": "Actors\\Game.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-29T21:40:37.84Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "GameSessionManagerTests.cs",
+              "DocumentMoniker": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\AirHockeyTests\\Managers\\GameSessionManagerTests.cs",
+              "RelativeDocumentMoniker": "AirHockeyTests\\Managers\\GameSessionManagerTests.cs",
+              "ToolTip": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\AirHockeyTests\\Managers\\GameSessionManagerTests.cs",
+              "RelativeToolTip": "AirHockeyTests\\Managers\\GameSessionManagerTests.cs",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAnwJMAAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-29T21:40:37.842Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 29,
-              "Title": "FileLoggerAdapter.cs",
-              "DocumentMoniker": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\Analytics\\FileLoggerAdapter.cs",
-              "RelativeDocumentMoniker": "Analytics\\FileLoggerAdapter.cs",
-              "ToolTip": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\Analytics\\FileLoggerAdapter.cs",
-              "RelativeToolTip": "Analytics\\FileLoggerAdapter.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAYAAAA",
+              "Title": "Player.cs",
+              "DocumentMoniker": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\Actors\\Player.cs",
+              "RelativeDocumentMoniker": "Actors\\Player.cs",
+              "ToolTip": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\Actors\\Player.cs",
+              "RelativeToolTip": "Actors\\Player.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAIAxwAsAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-17T14:09:25.536Z"
+              "WhenOpened": "2024-10-29T21:40:37.845Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "Puck.cs",
+              "DocumentMoniker": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\Actors\\Puck.cs",
+              "RelativeDocumentMoniker": "Actors\\Puck.cs",
+              "ToolTip": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\Actors\\Puck.cs",
+              "RelativeToolTip": "Actors\\Puck.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-29T21:40:37.848Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "Room.cs",
+              "DocumentMoniker": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\Actors\\Room.cs",
+              "RelativeDocumentMoniker": "Actors\\Room.cs",
+              "ToolTip": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\Actors\\Room.cs",
+              "RelativeToolTip": "Actors\\Room.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAwwA8AAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-29T21:40:37.85Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 33,
-              "Title": "ConsoleLogger.cs",
-              "DocumentMoniker": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\Analytics\\Loggers\\ConsoleLogger.cs",
-              "RelativeDocumentMoniker": "Analytics\\Loggers\\ConsoleLogger.cs",
-              "ToolTip": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\Analytics\\Loggers\\ConsoleLogger.cs",
-              "RelativeToolTip": "Analytics\\Loggers\\ConsoleLogger.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAaAAAA",
+              "Title": "Entity.cs",
+              "DocumentMoniker": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\Actors\\Entity.cs",
+              "RelativeDocumentMoniker": "Actors\\Entity.cs",
+              "ToolTip": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\Actors\\Entity.cs",
+              "RelativeToolTip": "Actors\\Entity.cs",
+              "ViewState": "AQIAAB4AAAAAAAAAAAAowCgAAAAmAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-17T14:09:16.929Z"
+              "WhenOpened": "2024-10-29T21:40:37.852Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
-              "Title": "MassMultiplierDecorator.cs",
-              "DocumentMoniker": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\Actors\\Powerups\\PowerupDecorators\\MassMultiplierDecorator.cs",
-              "RelativeDocumentMoniker": "Actors\\Powerups\\PowerupDecorators\\MassMultiplierDecorator.cs",
-              "ToolTip": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\Actors\\Powerups\\PowerupDecorators\\MassMultiplierDecorator.cs",
-              "RelativeToolTip": "Actors\\Powerups\\PowerupDecorators\\MassMultiplierDecorator.cs",
-              "ViewState": "AQIAAAUAAAAAAAAAAAAxwCIAAAAAAAAA",
+              "DocumentIndex": 31,
+              "Title": "GlobalFieldEffect.cs",
+              "DocumentMoniker": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\Effects\\Areas\\GlobalFieldEffect.cs",
+              "RelativeDocumentMoniker": "Effects\\Areas\\GlobalFieldEffect.cs",
+              "ToolTip": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\Effects\\Areas\\GlobalFieldEffect.cs",
+              "RelativeToolTip": "Effects\\Areas\\GlobalFieldEffect.cs",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAgwBsAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-25T07:54:27.067Z"
+              "WhenOpened": "2024-10-29T21:40:37.855Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "LocalFieldEffect.cs",
+              "DocumentMoniker": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\Effects\\Areas\\LocalFieldEffect.cs",
+              "RelativeDocumentMoniker": "Effects\\Areas\\LocalFieldEffect.cs",
+              "ToolTip": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\Effects\\Areas\\LocalFieldEffect.cs",
+              "RelativeToolTip": "Effects\\Areas\\LocalFieldEffect.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAowBgAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-29T21:40:37.857Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "UnitTest1.cs",
+              "DocumentMoniker": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\AirHockeyTests\\UnitTest1.cs",
+              "RelativeDocumentMoniker": "AirHockeyTests\\UnitTest1.cs",
+              "ToolTip": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\AirHockeyTests\\UnitTest1.cs",
+              "RelativeToolTip": "AirHockeyTests\\UnitTest1.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-29T21:40:37.861Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 34,
-              "Title": "IGameAnalytics.cs",
-              "DocumentMoniker": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\Analytics\\IGameAnalytics.cs",
-              "RelativeDocumentMoniker": "Analytics\\IGameAnalytics.cs",
-              "ToolTip": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\Analytics\\IGameAnalytics.cs",
-              "RelativeToolTip": "Analytics\\IGameAnalytics.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Title": "IEffectBehavior.cs",
+              "DocumentMoniker": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\Effects\\IEffectBehavior.cs",
+              "RelativeDocumentMoniker": "Effects\\IEffectBehavior.cs",
+              "ToolTip": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\Effects\\IEffectBehavior.cs",
+              "RelativeToolTip": "Effects\\IEffectBehavior.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAwAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-18T12:58:22.13Z"
+              "WhenOpened": "2024-10-29T21:40:37.864Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 64,
+              "DocumentIndex": 36,
+              "Title": "FileLoggerTests.cs",
+              "DocumentMoniker": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\AirHockeyTests\\Analytics\\Loggers\\FileLoggerTests.cs",
+              "RelativeDocumentMoniker": "AirHockeyTests\\Analytics\\Loggers\\FileLoggerTests.cs",
+              "ToolTip": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\AirHockeyTests\\Analytics\\Loggers\\FileLoggerTests.cs",
+              "RelativeToolTip": "AirHockeyTests\\Analytics\\Loggers\\FileLoggerTests.cs",
+              "ViewState": "AQIAAEMAAAAAAAAAAADwv38AAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-29T21:40:37.867Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "ConsoleLoggerTests.cs",
+              "DocumentMoniker": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\AirHockeyTests\\Analytics\\Loggers\\ConsoleLoggerTests.cs",
+              "RelativeDocumentMoniker": "AirHockeyTests\\Analytics\\Loggers\\ConsoleLoggerTests.cs",
+              "ToolTip": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\AirHockeyTests\\Analytics\\Loggers\\ConsoleLoggerTests.cs",
+              "RelativeToolTip": "AirHockeyTests\\Analytics\\Loggers\\ConsoleLoggerTests.cs",
+              "ViewState": "AQIAAD4AAAAAAAAAAIBJwCsAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-29T21:40:37.87Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "FileLoggerAdapterTests.cs",
+              "DocumentMoniker": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\AirHockeyTests\\Analytics\\FileLoggerAdapterTests.cs",
+              "RelativeDocumentMoniker": "AirHockeyTests\\Analytics\\FileLoggerAdapterTests.cs",
+              "ToolTip": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\AirHockeyTests\\Analytics\\FileLoggerAdapterTests.cs",
+              "RelativeToolTip": "AirHockeyTests\\Analytics\\FileLoggerAdapterTests.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAAgwHQAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-29T21:40:37.873Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "ConsoleLoggerAdapter.cs",
+              "DocumentMoniker": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\Analytics\\ConsoleLoggerAdapter.cs",
+              "RelativeDocumentMoniker": "Analytics\\ConsoleLoggerAdapter.cs",
+              "ToolTip": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\Analytics\\ConsoleLoggerAdapter.cs",
+              "RelativeToolTip": "Analytics\\ConsoleLoggerAdapter.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-29T21:40:37.875Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "FileLogger.cs",
+              "DocumentMoniker": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\Analytics\\Loggers\\FileLogger.cs",
+              "RelativeDocumentMoniker": "Analytics\\Loggers\\FileLogger.cs",
+              "ToolTip": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\Analytics\\Loggers\\FileLogger.cs",
+              "RelativeToolTip": "Analytics\\Loggers\\FileLogger.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-29T21:40:37.879Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "MoveCommandTests.cs",
+              "DocumentMoniker": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\AirHockeyTests\\Actors\\Command\\MoveCommandTests.cs",
+              "RelativeDocumentMoniker": "AirHockeyTests\\Actors\\Command\\MoveCommandTests.cs",
+              "ToolTip": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\AirHockeyTests\\Actors\\Command\\MoveCommandTests.cs",
+              "RelativeToolTip": "AirHockeyTests\\Actors\\Command\\MoveCommandTests.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAIBJwDgAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-29T21:40:37.882Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "FileLoggerAdapter.cs",
+              "DocumentMoniker": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\Analytics\\FileLoggerAdapter.cs",
+              "RelativeDocumentMoniker": "Analytics\\FileLoggerAdapter.cs",
+              "ToolTip": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\Analytics\\FileLoggerAdapter.cs",
+              "RelativeToolTip": "Analytics\\FileLoggerAdapter.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-29T21:40:37.885Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "ConsoleLogger.cs",
+              "DocumentMoniker": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\Analytics\\Loggers\\ConsoleLogger.cs",
+              "RelativeDocumentMoniker": "Analytics\\Loggers\\ConsoleLogger.cs",
+              "ToolTip": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\Analytics\\Loggers\\ConsoleLogger.cs",
+              "RelativeToolTip": "Analytics\\Loggers\\ConsoleLogger.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-29T21:40:37.887Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
+              "Title": "MassMultiplierDecorator.cs",
+              "DocumentMoniker": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\Actors\\Powerups\\PowerupDecorators\\MassMultiplierDecorator.cs",
+              "RelativeDocumentMoniker": "Actors\\Powerups\\PowerupDecorators\\MassMultiplierDecorator.cs",
+              "ToolTip": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\Actors\\Powerups\\PowerupDecorators\\MassMultiplierDecorator.cs",
+              "RelativeToolTip": "Actors\\Powerups\\PowerupDecorators\\MassMultiplierDecorator.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAxwCIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-29T21:40:37.89Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "IGameAnalytics.cs",
+              "DocumentMoniker": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\Analytics\\IGameAnalytics.cs",
+              "RelativeDocumentMoniker": "Analytics\\IGameAnalytics.cs",
+              "ToolTip": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\Analytics\\IGameAnalytics.cs",
+              "RelativeToolTip": "Analytics\\IGameAnalytics.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-29T21:40:37.893Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 72,
               "Title": "AirHockey.AssemblyInfo.cs",
               "DocumentMoniker": "C:\\Users\\37061\\Desktop\\AirHockey\\obj\\Release\\net8.0\\AirHockey.AssemblyInfo.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\37061\\Desktop\\AirHockey\\obj\\Release\\net8.0\\AirHockey.AssemblyInfo.cs",
@@ -886,7 +879,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 63,
+              "DocumentIndex": 71,
               "Title": ".NETCoreApp,Version=v8.0.AssemblyAttributes.cs",
               "DocumentMoniker": "C:\\Users\\37061\\Desktop\\AirHockey\\AirHockeyTests\\obj\\Release\\net8.0\\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\37061\\Desktop\\AirHockey\\AirHockeyTests\\obj\\Release\\net8.0\\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs",
@@ -898,464 +891,303 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
-=======
-              "WhenOpened": "2024-10-29T19:20:08.229Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
->>>>>>> Stashed changes
+              "DocumentIndex": 45,
               "Title": "MoveCommand.cs",
-              "DocumentMoniker": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\Actors\\Command\\MoveCommand.cs",
+              "DocumentMoniker": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\Actors\\Command\\MoveCommand.cs",
               "RelativeDocumentMoniker": "Actors\\Command\\MoveCommand.cs",
-              "ToolTip": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\Actors\\Command\\MoveCommand.cs",
+              "ToolTip": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\Actors\\Command\\MoveCommand.cs",
               "RelativeToolTip": "Actors\\Command\\MoveCommand.cs",
-<<<<<<< Updated upstream
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAAXAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-28T15:49:12.869Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 39,
-              "Title": "AccelerationMultiplierDecorator.cs",
-              "DocumentMoniker": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\Actors\\Powerups\\PowerupDecorators\\AccelerationMultiplierDecorator.cs",
-              "RelativeDocumentMoniker": "Actors\\Powerups\\PowerupDecorators\\AccelerationMultiplierDecorator.cs",
-              "ToolTip": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\Actors\\Powerups\\PowerupDecorators\\AccelerationMultiplierDecorator.cs",
-              "RelativeToolTip": "Actors\\Powerups\\PowerupDecorators\\AccelerationMultiplierDecorator.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAADAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-25T07:56:06.116Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 36,
-              "Title": "SpeedMultiplierDecorator.cs",
-              "DocumentMoniker": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\Actors\\Powerups\\PowerupDecorators\\SpeedMultiplierDecorator.cs",
-              "RelativeDocumentMoniker": "Actors\\Powerups\\PowerupDecorators\\SpeedMultiplierDecorator.cs",
-              "ToolTip": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\Actors\\Powerups\\PowerupDecorators\\SpeedMultiplierDecorator.cs",
-              "RelativeToolTip": "Actors\\Powerups\\PowerupDecorators\\SpeedMultiplierDecorator.cs",
-              "ViewState": "AQIAAA0AAAAAAAAAAAAgwCkAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-25T07:40:54.772Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 37,
-              "Title": "PowerupDecorator.cs",
-              "DocumentMoniker": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\Actors\\Powerups\\PowerupDecorators\\PowerupDecorator.cs",
-              "RelativeDocumentMoniker": "Actors\\Powerups\\PowerupDecorators\\PowerupDecorator.cs",
-              "ToolTip": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\Actors\\Powerups\\PowerupDecorators\\PowerupDecorator.cs",
-              "RelativeToolTip": "Actors\\Powerups\\PowerupDecorators\\PowerupDecorator.cs",
-              "ViewState": "AQIAAAIAAAAAAAAAAAAxwA0AAAAsAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-25T07:13:32.93Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 40,
-              "Title": "PushPowerup.cs",
-              "DocumentMoniker": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\Actors\\Powerups\\PushPowerup.cs",
-              "RelativeDocumentMoniker": "Actors\\Powerups\\PushPowerup.cs",
-              "ToolTip": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\Actors\\Powerups\\PushPowerup.cs",
-              "RelativeToolTip": "Actors\\Powerups\\PushPowerup.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEoAAAAAAAAA",
-=======
-              "ViewState": "AQIAAB8AAAAAAAAAAAAwwBMAAAAAAAAA",
->>>>>>> Stashed changes
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-29T19:20:56.888Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-<<<<<<< Updated upstream
-              "DocumentIndex": 41,
-              "Title": "DashPowerup.cs",
-              "DocumentMoniker": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\Actors\\Powerups\\DashPowerup.cs",
-              "RelativeDocumentMoniker": "Actors\\Powerups\\DashPowerup.cs",
-              "ToolTip": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\Actors\\Powerups\\DashPowerup.cs",
-              "RelativeToolTip": "Actors\\Powerups\\DashPowerup.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAfAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-11T09:42:45.044Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 42,
-              "Title": "Powerup.cs",
-              "DocumentMoniker": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\Actors\\Powerups\\Powerup.cs",
-              "RelativeDocumentMoniker": "Actors\\Powerups\\Powerup.cs",
-              "ToolTip": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\Actors\\Powerups\\Powerup.cs",
-              "RelativeToolTip": "Actors\\Powerups\\Powerup.cs",
-              "ViewState": "AQIAABcAAAAAAAAAAAAIwAQAAAAqAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-03T22:20:42.541Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 43,
-=======
-              "DocumentIndex": 9,
-              "Title": "StaticWallBuilderTests.cs",
-              "DocumentMoniker": "C:\\Users\\37061\\Desktop\\AirHockey\\AirHockeyTests\\Actors\\Walls\\WallBuilder\\StaticWallBuilderTests.cs",
-              "RelativeDocumentMoniker": "AirHockeyTests\\Actors\\Walls\\WallBuilder\\StaticWallBuilderTests.cs",
-              "ToolTip": "C:\\Users\\37061\\Desktop\\AirHockey\\AirHockeyTests\\Actors\\Walls\\WallBuilder\\StaticWallBuilderTests.cs",
-              "RelativeToolTip": "AirHockeyTests\\Actors\\Walls\\WallBuilder\\StaticWallBuilderTests.cs",
-              "ViewState": "AQIAAHIAAAAAAAAAAAAowG4AAAAxAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-29T19:02:36.491Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "DynamicWallBuilderTests.cs",
-              "DocumentMoniker": "C:\\Users\\37061\\Desktop\\AirHockey\\AirHockeyTests\\Actors\\Walls\\WallBuilder\\DynamicWallBuilderTests.cs",
-              "RelativeDocumentMoniker": "AirHockeyTests\\Actors\\Walls\\WallBuilder\\DynamicWallBuilderTests.cs",
-              "ToolTip": "C:\\Users\\37061\\Desktop\\AirHockey\\AirHockeyTests\\Actors\\Walls\\WallBuilder\\DynamicWallBuilderTests.cs",
-              "RelativeToolTip": "AirHockeyTests\\Actors\\Walls\\WallBuilder\\DynamicWallBuilderTests.cs",
-              "ViewState": "AQIAADsAAAAAAAAAAAAAwFMAAAAzAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-29T19:10:05.137Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "FreezePowerupTests.cs",
-              "DocumentMoniker": "C:\\Users\\37061\\Desktop\\AirHockey\\AirHockeyTests\\Actors\\Powerups\\FreezePowerupTests.cs",
-              "RelativeDocumentMoniker": "AirHockeyTests\\Actors\\Powerups\\FreezePowerupTests.cs",
-              "ToolTip": "C:\\Users\\37061\\Desktop\\AirHockey\\AirHockeyTests\\Actors\\Powerups\\FreezePowerupTests.cs",
-              "RelativeToolTip": "AirHockeyTests\\Actors\\Powerups\\FreezePowerupTests.cs",
-              "ViewState": "AQIAACYAAAAAAAAAAAAQwDkAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-29T19:26:49.042Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
->>>>>>> Stashed changes
-              "Title": "FreezePowerup.cs",
-              "DocumentMoniker": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\Actors\\Powerups\\FreezePowerup.cs",
-              "RelativeDocumentMoniker": "Actors\\Powerups\\FreezePowerup.cs",
-              "ToolTip": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\Actors\\Powerups\\FreezePowerup.cs",
-              "RelativeToolTip": "Actors\\Powerups\\FreezePowerup.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAwAAAA0AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-29T19:18:21.426Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-<<<<<<< Updated upstream
-              "DocumentIndex": 44,
-              "Title": "PowerupFactory.cs",
-              "DocumentMoniker": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\Actors\\Powerups\\PowerupFactory.cs",
-              "RelativeDocumentMoniker": "Actors\\Powerups\\PowerupFactory.cs",
-              "ToolTip": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\Actors\\Powerups\\PowerupFactory.cs",
-              "RelativeToolTip": "Actors\\Powerups\\PowerupFactory.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-11T09:47:25.689Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 45,
-              "Title": "player.js",
-              "DocumentMoniker": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\wwwroot\\player.js",
-              "RelativeDocumentMoniker": "wwwroot\\player.js",
-              "ToolTip": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\wwwroot\\player.js",
-              "RelativeToolTip": "wwwroot\\player.js",
-              "ViewState": "AQIAADQAAAAAAAAAAAAmwDcAAAAcAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-10-17T12:08:49.442Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 46,
-              "Title": "powerup.js",
-              "DocumentMoniker": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\wwwroot\\powerup.js",
-              "RelativeDocumentMoniker": "wwwroot\\powerup.js",
-              "ToolTip": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\wwwroot\\powerup.js",
-              "RelativeToolTip": "wwwroot\\powerup.js",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAqwB0AAAArAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-10-17T12:07:54.653Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 47,
-              "Title": "Wall.cs",
-              "DocumentMoniker": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\Actors\\Walls\\Wall.cs",
-              "RelativeDocumentMoniker": "Actors\\Walls\\Wall.cs",
-              "ToolTip": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\Actors\\Walls\\Wall.cs",
-              "RelativeToolTip": "Actors\\Walls\\Wall.cs",
-              "ViewState": "AQIAABkAAAAAAAAAAAAawC4AAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-17T11:35:35.813Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 51,
-              "Title": "ICollision.cs",
-              "DocumentMoniker": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\Strategies\\ICollision.cs",
-              "RelativeDocumentMoniker": "Strategies\\ICollision.cs",
-              "ToolTip": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\Strategies\\ICollision.cs",
-              "RelativeToolTip": "Strategies\\ICollision.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-18T13:02:29.165Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 52,
-=======
-              "DocumentIndex": 14,
-              "Title": "DynamicWallFactoryTests.cs",
-              "DocumentMoniker": "C:\\Users\\37061\\Desktop\\AirHockey\\AirHockeyTests\\Actors\\Walls\\DynamicWallFactoryTests.cs",
-              "RelativeDocumentMoniker": "AirHockeyTests\\Actors\\Walls\\DynamicWallFactoryTests.cs",
-              "ToolTip": "C:\\Users\\37061\\Desktop\\AirHockey\\AirHockeyTests\\Actors\\Walls\\DynamicWallFactoryTests.cs",
-              "RelativeToolTip": "AirHockeyTests\\Actors\\Walls\\DynamicWallFactoryTests.cs",
-              "ViewState": "AQIAABMAAAAAAAAAAAAiwBsAAAAbAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-29T19:12:41.459Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{004be353-6879-467c-9d1e-9ac23cdf6d49}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "DynamicWallBuilder.cs",
-              "DocumentMoniker": "C:\\Users\\37061\\Desktop\\AirHockey\\Actors\\Walls\\WallBuilder\\DynamicWallBuilder.cs",
-              "RelativeDocumentMoniker": "Actors\\Walls\\WallBuilder\\DynamicWallBuilder.cs",
-              "ToolTip": "C:\\Users\\37061\\Desktop\\AirHockey\\Actors\\Walls\\WallBuilder\\DynamicWallBuilder.cs",
-              "RelativeToolTip": "Actors\\Walls\\WallBuilder\\DynamicWallBuilder.cs",
-              "ViewState": "AQIAAAcAAAAAAAAAAAAmwCIAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-29T19:12:46.751Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
->>>>>>> Stashed changes
-              "Title": "StaticWallBuilder.cs",
-              "DocumentMoniker": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\Actors\\Walls\\WallBuilder\\StaticWallBuilder.cs",
-              "RelativeDocumentMoniker": "Actors\\Walls\\WallBuilder\\StaticWallBuilder.cs",
-              "ToolTip": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\Actors\\Walls\\WallBuilder\\StaticWallBuilder.cs",
-              "RelativeToolTip": "Actors\\Walls\\WallBuilder\\StaticWallBuilder.cs",
-<<<<<<< Updated upstream
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-18T13:01:49.82Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 53,
-              "Title": "IWallBuilder.cs",
-              "DocumentMoniker": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\Actors\\Walls\\WallBuilder\\IWallBuilder.cs",
-              "RelativeDocumentMoniker": "Actors\\Walls\\WallBuilder\\IWallBuilder.cs",
-              "ToolTip": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\Actors\\Walls\\WallBuilder\\IWallBuilder.cs",
-              "RelativeToolTip": "Actors\\Walls\\WallBuilder\\IWallBuilder.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-18T13:01:40.173Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 50,
-              "Title": "QuickCollision.cs",
-              "DocumentMoniker": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\Strategies\\QuickCollision.cs",
-              "RelativeDocumentMoniker": "Strategies\\QuickCollision.cs",
-              "ToolTip": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\Strategies\\QuickCollision.cs",
-              "RelativeToolTip": "Strategies\\QuickCollision.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-18T13:02:41.025Z"
+              "WhenOpened": "2024-10-29T21:40:37.903Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 49,
-              "Title": "ScrolingCollision.cs",
-              "DocumentMoniker": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\Strategies\\ScrolingCollision.cs",
-              "RelativeDocumentMoniker": "Strategies\\ScrolingCollision.cs",
-              "ToolTip": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\Strategies\\ScrolingCollision.cs",
-              "RelativeToolTip": "Strategies\\ScrolingCollision.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Title": "AccelerationMultiplierDecorator.cs",
+              "DocumentMoniker": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\Actors\\Powerups\\PowerupDecorators\\AccelerationMultiplierDecorator.cs",
+              "RelativeDocumentMoniker": "Actors\\Powerups\\PowerupDecorators\\AccelerationMultiplierDecorator.cs",
+              "ToolTip": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\Actors\\Powerups\\PowerupDecorators\\AccelerationMultiplierDecorator.cs",
+              "RelativeToolTip": "Actors\\Powerups\\PowerupDecorators\\AccelerationMultiplierDecorator.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-18T13:02:58.491Z"
+              "WhenOpened": "2024-10-29T21:40:37.906Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 48,
-              "Title": "TeleportCollision.cs",
-              "DocumentMoniker": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\Strategies\\TeleportCollision.cs",
-              "RelativeDocumentMoniker": "Strategies\\TeleportCollision.cs",
-              "ToolTip": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\Strategies\\TeleportCollision.cs",
-              "RelativeToolTip": "Strategies\\TeleportCollision.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAkAAAA",
+              "DocumentIndex": 46,
+              "Title": "SpeedMultiplierDecorator.cs",
+              "DocumentMoniker": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\Actors\\Powerups\\PowerupDecorators\\SpeedMultiplierDecorator.cs",
+              "RelativeDocumentMoniker": "Actors\\Powerups\\PowerupDecorators\\SpeedMultiplierDecorator.cs",
+              "ToolTip": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\Actors\\Powerups\\PowerupDecorators\\SpeedMultiplierDecorator.cs",
+              "RelativeToolTip": "Actors\\Powerups\\PowerupDecorators\\SpeedMultiplierDecorator.cs",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAgwCkAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-18T13:03:29.081Z"
+              "WhenOpened": "2024-10-29T21:40:37.909Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "PowerupDecorator.cs",
+              "DocumentMoniker": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\Actors\\Powerups\\PowerupDecorators\\PowerupDecorator.cs",
+              "RelativeDocumentMoniker": "Actors\\Powerups\\PowerupDecorators\\PowerupDecorator.cs",
+              "ToolTip": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\Actors\\Powerups\\PowerupDecorators\\PowerupDecorator.cs",
+              "RelativeToolTip": "Actors\\Powerups\\PowerupDecorators\\PowerupDecorator.cs",
+              "ViewState": "AQIAAAIAAAAAAAAAAAAxwA0AAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-29T21:40:37.912Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 50,
+              "Title": "PushPowerup.cs",
+              "DocumentMoniker": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\Actors\\Powerups\\PushPowerup.cs",
+              "RelativeDocumentMoniker": "Actors\\Powerups\\PushPowerup.cs",
+              "ToolTip": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\Actors\\Powerups\\PushPowerup.cs",
+              "RelativeToolTip": "Actors\\Powerups\\PushPowerup.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-29T21:40:37.915Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 51,
+              "Title": "DashPowerup.cs",
+              "DocumentMoniker": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\Actors\\Powerups\\DashPowerup.cs",
+              "RelativeDocumentMoniker": "Actors\\Powerups\\DashPowerup.cs",
+              "ToolTip": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\Actors\\Powerups\\DashPowerup.cs",
+              "RelativeToolTip": "Actors\\Powerups\\DashPowerup.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-29T21:40:37.918Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 52,
+              "Title": "Powerup.cs",
+              "DocumentMoniker": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\Actors\\Powerups\\Powerup.cs",
+              "RelativeDocumentMoniker": "Actors\\Powerups\\Powerup.cs",
+              "ToolTip": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\Actors\\Powerups\\Powerup.cs",
+              "RelativeToolTip": "Actors\\Powerups\\Powerup.cs",
+              "ViewState": "AQIAABcAAAAAAAAAAAAIwAQAAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-29T21:40:37.92Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 53,
+              "Title": "FreezePowerup.cs",
+              "DocumentMoniker": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\Actors\\Powerups\\FreezePowerup.cs",
+              "RelativeDocumentMoniker": "Actors\\Powerups\\FreezePowerup.cs",
+              "ToolTip": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\Actors\\Powerups\\FreezePowerup.cs",
+              "RelativeToolTip": "Actors\\Powerups\\FreezePowerup.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAxwCEAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-29T21:40:37.923Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 54,
-              "Title": "DynamicWallFactory.cs",
-              "DocumentMoniker": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\Actors\\Walls\\DynamicWallFactory.cs",
-              "RelativeDocumentMoniker": "Actors\\Walls\\DynamicWallFactory.cs",
-              "ToolTip": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\Actors\\Walls\\DynamicWallFactory.cs",
-              "RelativeToolTip": "Actors\\Walls\\DynamicWallFactory.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAABAAAA",
+              "Title": "PowerupFactory.cs",
+              "DocumentMoniker": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\Actors\\Powerups\\PowerupFactory.cs",
+              "RelativeDocumentMoniker": "Actors\\Powerups\\PowerupFactory.cs",
+              "ToolTip": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\Actors\\Powerups\\PowerupFactory.cs",
+              "RelativeToolTip": "Actors\\Powerups\\PowerupFactory.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-17T11:37:57.893Z"
+              "WhenOpened": "2024-10-29T21:40:37.926Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 55,
-              "Title": "AbstractWallFactory.cs",
-              "DocumentMoniker": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\Actors\\Walls\\AbstractWallFactory.cs",
-              "RelativeDocumentMoniker": "Actors\\Walls\\AbstractWallFactory.cs",
-              "ToolTip": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\Actors\\Walls\\AbstractWallFactory.cs",
-              "RelativeToolTip": "Actors\\Walls\\AbstractWallFactory.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAANAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-17T11:37:55.952Z"
+              "Title": "player.js",
+              "DocumentMoniker": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\wwwroot\\player.js",
+              "RelativeDocumentMoniker": "wwwroot\\player.js",
+              "ToolTip": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\wwwroot\\player.js",
+              "RelativeToolTip": "wwwroot\\player.js",
+              "ViewState": "AQIAADQAAAAAAAAAAAAmwDcAAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-10-29T21:40:37.93Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 56,
-              "Title": "puck.js",
-              "DocumentMoniker": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\wwwroot\\puck.js",
-              "RelativeDocumentMoniker": "wwwroot\\puck.js",
-              "ToolTip": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\wwwroot\\puck.js",
-              "RelativeToolTip": "wwwroot\\puck.js",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAkAAAAFAAAA",
+              "Title": "powerup.js",
+              "DocumentMoniker": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\wwwroot\\powerup.js",
+              "RelativeDocumentMoniker": "wwwroot\\powerup.js",
+              "ToolTip": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\wwwroot\\powerup.js",
+              "RelativeToolTip": "wwwroot\\powerup.js",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwB0AAAArAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-10-17T17:00:45.87Z"
+              "WhenOpened": "2024-10-29T21:40:37.932Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 57,
-              "Title": "signalrConnection.js",
-              "DocumentMoniker": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\wwwroot\\signalrConnection.js",
-              "RelativeDocumentMoniker": "wwwroot\\signalrConnection.js",
-              "ToolTip": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\wwwroot\\signalrConnection.js",
-              "RelativeToolTip": "wwwroot\\signalrConnection.js",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-10-17T14:25:55.439Z"
+              "Title": "Wall.cs",
+              "DocumentMoniker": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\Actors\\Walls\\Wall.cs",
+              "RelativeDocumentMoniker": "Actors\\Walls\\Wall.cs",
+              "ToolTip": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\Actors\\Walls\\Wall.cs",
+              "RelativeToolTip": "Actors\\Walls\\Wall.cs",
+              "ViewState": "AQIAABkAAAAAAAAAAAAawC4AAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-29T21:40:37.935Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 59,
-              "Title": "StaticWallFactory.cs",
-              "DocumentMoniker": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\Actors\\Walls\\StaticWallFactory.cs",
-              "RelativeDocumentMoniker": "Actors\\Walls\\StaticWallFactory.cs",
-              "ToolTip": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\Actors\\Walls\\StaticWallFactory.cs",
-              "RelativeToolTip": "Actors\\Walls\\StaticWallFactory.cs",
+              "Title": "ICollision.cs",
+              "DocumentMoniker": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\Strategies\\ICollision.cs",
+              "RelativeDocumentMoniker": "Strategies\\ICollision.cs",
+              "ToolTip": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\Strategies\\ICollision.cs",
+              "RelativeToolTip": "Strategies\\ICollision.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-17T11:38:10.043Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 61,
-              "Title": "ScrollingWall.cs",
-              "DocumentMoniker": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\Actors\\Walls\\ScrollingWall.cs",
-              "RelativeDocumentMoniker": "Actors\\Walls\\ScrollingWall.cs",
-              "ToolTip": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\Actors\\Walls\\ScrollingWall.cs",
-              "RelativeToolTip": "Actors\\Walls\\ScrollingWall.cs",
-              "ViewState": "AQIAAB4AAAAAAAAAAMBkwAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-17T12:01:55.797Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 58,
-=======
-              "ViewState": "AQIAAFYAAAAAAAAAAAAkwGoAAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-29T19:05:25.896Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
->>>>>>> Stashed changes
-              "Title": "TeleportingWall.cs",
-              "DocumentMoniker": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\Actors\\Walls\\TeleportingWall.cs",
-              "RelativeDocumentMoniker": "Actors\\Walls\\TeleportingWall.cs",
-              "ToolTip": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\Actors\\Walls\\TeleportingWall.cs",
-              "RelativeToolTip": "Actors\\Walls\\TeleportingWall.cs",
-              "ViewState": "AQIAAA0AAAAAAAAAAAAcwBkAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-29T19:00:34.457Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-<<<<<<< Updated upstream
-              "DocumentIndex": 62,
-              "Title": "BouncyWall.cs",
-              "DocumentMoniker": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\Actors\\Walls\\BouncyWall.cs",
-              "RelativeDocumentMoniker": "Actors\\Walls\\BouncyWall.cs",
-              "ToolTip": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\Actors\\Walls\\BouncyWall.cs",
-              "RelativeToolTip": "Actors\\Walls\\BouncyWall.cs",
-              "ViewState": "AQIAAB0AAAAAAAAAAAAqwAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-17T11:37:52.67Z"
+              "WhenOpened": "2024-10-29T21:40:37.937Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 60,
-              "Title": "StandardWall.cs",
-              "DocumentMoniker": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\Actors\\Walls\\StandardWall.cs",
-              "RelativeDocumentMoniker": "Actors\\Walls\\StandardWall.cs",
-              "ToolTip": "C:\\Users\\armin\\Desktop\\AirHockey\\AirHockey\\Actors\\Walls\\StandardWall.cs",
-              "RelativeToolTip": "Actors\\Walls\\StandardWall.cs",
-              "ViewState": "AQIAAAUAAAAAAAAAAAAQwAAAAAAAAAAA",
+              "Title": "StaticWallBuilder.cs",
+              "DocumentMoniker": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\Actors\\Walls\\WallBuilder\\StaticWallBuilder.cs",
+              "RelativeDocumentMoniker": "Actors\\Walls\\WallBuilder\\StaticWallBuilder.cs",
+              "ToolTip": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\Actors\\Walls\\WallBuilder\\StaticWallBuilder.cs",
+              "RelativeToolTip": "Actors\\Walls\\WallBuilder\\StaticWallBuilder.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-17T11:37:27.492Z"
-=======
-              "DocumentIndex": 16,
-              "Title": "TeleportingWallTests.cs",
-              "DocumentMoniker": "C:\\Users\\37061\\Desktop\\AirHockey\\AirHockeyTests\\Actors\\Walls\\TeleportingWallTests.cs",
-              "RelativeDocumentMoniker": "AirHockeyTests\\Actors\\Walls\\TeleportingWallTests.cs",
-              "ToolTip": "C:\\Users\\37061\\Desktop\\AirHockey\\AirHockeyTests\\Actors\\Walls\\TeleportingWallTests.cs",
-              "RelativeToolTip": "AirHockeyTests\\Actors\\Walls\\TeleportingWallTests.cs",
-              "ViewState": "AQIAAC8AAAAAAAAAAAAYwD0AAAAfAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-29T19:00:23.564Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-29T21:40:37.941Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "WallTests.cs",
-              "DocumentMoniker": "C:\\Users\\37061\\Desktop\\AirHockey\\AirHockeyTests\\Actors\\Walls\\WallTests.cs",
-              "RelativeDocumentMoniker": "AirHockeyTests\\Actors\\Walls\\WallTests.cs",
-              "ToolTip": "C:\\Users\\37061\\Desktop\\AirHockey\\AirHockeyTests\\Actors\\Walls\\WallTests.cs",
-              "RelativeToolTip": "AirHockeyTests\\Actors\\Walls\\WallTests.cs",
-              "ViewState": "AQIAAKYAAAAAAAAAAAAIwL4AAAAdAAAA",
+              "DocumentIndex": 61,
+              "Title": "IWallBuilder.cs",
+              "DocumentMoniker": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\Actors\\Walls\\WallBuilder\\IWallBuilder.cs",
+              "RelativeDocumentMoniker": "Actors\\Walls\\WallBuilder\\IWallBuilder.cs",
+              "ToolTip": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\Actors\\Walls\\WallBuilder\\IWallBuilder.cs",
+              "RelativeToolTip": "Actors\\Walls\\WallBuilder\\IWallBuilder.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-29T18:55:56.008Z",
-              "EditorCaption": ""
->>>>>>> Stashed changes
+              "WhenOpened": "2024-10-29T21:40:37.944Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 58,
+              "Title": "TeleportCollision.cs",
+              "DocumentMoniker": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\Strategies\\TeleportCollision.cs",
+              "RelativeDocumentMoniker": "Strategies\\TeleportCollision.cs",
+              "ToolTip": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\Strategies\\TeleportCollision.cs",
+              "RelativeToolTip": "Strategies\\TeleportCollision.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-29T21:40:37.953Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 62,
+              "Title": "DynamicWallFactory.cs",
+              "DocumentMoniker": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\Actors\\Walls\\DynamicWallFactory.cs",
+              "RelativeDocumentMoniker": "Actors\\Walls\\DynamicWallFactory.cs",
+              "ToolTip": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\Actors\\Walls\\DynamicWallFactory.cs",
+              "RelativeToolTip": "Actors\\Walls\\DynamicWallFactory.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-29T21:40:37.956Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 63,
+              "Title": "AbstractWallFactory.cs",
+              "DocumentMoniker": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\Actors\\Walls\\AbstractWallFactory.cs",
+              "RelativeDocumentMoniker": "Actors\\Walls\\AbstractWallFactory.cs",
+              "ToolTip": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\Actors\\Walls\\AbstractWallFactory.cs",
+              "RelativeToolTip": "Actors\\Walls\\AbstractWallFactory.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-29T21:40:37.958Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 64,
+              "Title": "puck.js",
+              "DocumentMoniker": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\wwwroot\\puck.js",
+              "RelativeDocumentMoniker": "wwwroot\\puck.js",
+              "ToolTip": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\wwwroot\\puck.js",
+              "RelativeToolTip": "wwwroot\\puck.js",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAkAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-10-29T21:40:37.96Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 65,
+              "Title": "signalrConnection.js",
+              "DocumentMoniker": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\wwwroot\\signalrConnection.js",
+              "RelativeDocumentMoniker": "wwwroot\\signalrConnection.js",
+              "ToolTip": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\wwwroot\\signalrConnection.js",
+              "RelativeToolTip": "wwwroot\\signalrConnection.js",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-10-29T21:40:37.963Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 67,
+              "Title": "StaticWallFactory.cs",
+              "DocumentMoniker": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\Actors\\Walls\\StaticWallFactory.cs",
+              "RelativeDocumentMoniker": "Actors\\Walls\\StaticWallFactory.cs",
+              "ToolTip": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\Actors\\Walls\\StaticWallFactory.cs",
+              "RelativeToolTip": "Actors\\Walls\\StaticWallFactory.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-29T21:40:37.965Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 69,
+              "Title": "ScrollingWall.cs",
+              "DocumentMoniker": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\Actors\\Walls\\ScrollingWall.cs",
+              "RelativeDocumentMoniker": "Actors\\Walls\\ScrollingWall.cs",
+              "ToolTip": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\Actors\\Walls\\ScrollingWall.cs",
+              "RelativeToolTip": "Actors\\Walls\\ScrollingWall.cs",
+              "ViewState": "AQIAAB4AAAAAAAAAAMBkwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-29T21:40:37.968Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 66,
+              "Title": "TeleportingWall.cs",
+              "DocumentMoniker": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\Actors\\Walls\\TeleportingWall.cs",
+              "RelativeDocumentMoniker": "Actors\\Walls\\TeleportingWall.cs",
+              "ToolTip": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\Actors\\Walls\\TeleportingWall.cs",
+              "RelativeToolTip": "Actors\\Walls\\TeleportingWall.cs",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAgwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-29T21:40:37.971Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 70,
+              "Title": "BouncyWall.cs",
+              "DocumentMoniker": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\Actors\\Walls\\BouncyWall.cs",
+              "RelativeDocumentMoniker": "Actors\\Walls\\BouncyWall.cs",
+              "ToolTip": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\Actors\\Walls\\BouncyWall.cs",
+              "RelativeToolTip": "Actors\\Walls\\BouncyWall.cs",
+              "ViewState": "AQIAAB0AAAAAAAAAAAAqwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-29T21:40:37.973Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 68,
+              "Title": "StandardWall.cs",
+              "DocumentMoniker": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\Actors\\Walls\\StandardWall.cs",
+              "RelativeDocumentMoniker": "Actors\\Walls\\StandardWall.cs",
+              "ToolTip": "C:\\Users\\juliu\\Desktop\\testavimas\\AirHockey\\Actors\\Walls\\StandardWall.cs",
+              "RelativeToolTip": "Actors\\Walls\\StandardWall.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAQwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-29T21:40:37.976Z"
             }
           ]
         }

@@ -245,7 +245,7 @@ var assemblies = [
       { "name": "AirHockey.Actors.Walls.StaticWallFactory", "rp": "AirHockey_StaticWallFactory.html", "cl": 4, "ucl": 0, "cal": 4, "tl": 12, "cb": 0, "tb": 0, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [], "metrics": { } },
       { "name": "AirHockey.Actors.Walls.TeleportingWall", "rp": "AirHockey_TeleportingWall.html", "cl": 25, "ucl": 0, "cal": 25, "tl": 43, "cb": 6, "tb": 6, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [], "metrics": { } },
       { "name": "AirHockey.Actors.Walls.UndoWall", "rp": "AirHockey_UndoWall.html", "cl": 26, "ucl": 0, "cal": 26, "tl": 42, "cb": 4, "tb": 4, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [], "metrics": { } },
-      { "name": "AirHockey.Actors.Walls.Wall", "rp": "AirHockey_Wall.html", "cl": 46, "ucl": 0, "cal": 46, "tl": 78, "cb": 17, "tb": 20, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [], "metrics": { } },
+      { "name": "AirHockey.Actors.Walls.Wall", "rp": "AirHockey_Wall.html", "cl": 46, "ucl": 0, "cal": 46, "tl": 78, "cb": 18, "tb": 20, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [], "metrics": { } },
       { "name": "AirHockey.Actors.Walls.WallBuilder.DynamicWallBuilder", "rp": "AirHockey_DynamicWallBuilder.html", "cl": 58, "ucl": 0, "cal": 58, "tl": 107, "cb": 14, "tb": 14, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [], "metrics": { } },
       { "name": "AirHockey.Actors.Walls.WallBuilder.StaticWallBuilder", "rp": "AirHockey_StaticWallBuilder.html", "cl": 56, "ucl": 0, "cal": 56, "tl": 107, "cb": 22, "tb": 22, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [], "metrics": { } },
       { "name": "AirHockey.Actors.Walls.WallBuilder.WallDirector", "rp": "AirHockey_WallDirector.html", "cl": 15, "ucl": 0, "cal": 15, "tl": 25, "cb": 0, "tb": 0, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [], "metrics": { } },
@@ -261,11 +261,10 @@ var assemblies = [
       { "name": "AirHockey.Managers.GameSessionManager", "rp": "AirHockey_GameSessionManager.html", "cl": 39, "ucl": 0, "cal": 39, "tl": 73, "cb": 2, "tb": 2, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [], "metrics": { } },
       { "name": "AirHockey.Observers.ResetPositionObserver", "rp": "AirHockey_ResetPositionObserver.html", "cl": 15, "ucl": 0, "cal": 15, "tl": 28, "cb": 0, "tb": 0, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [], "metrics": { } },
       { "name": "AirHockey.Strategies.BaseCollision", "rp": "AirHockey_BaseCollision.html", "cl": 28, "ucl": 0, "cal": 28, "tl": 46, "cb": 2, "tb": 2, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [], "metrics": { } },
-      { "name": "AirHockey.Strategies.BouncyCollision", "rp": "AirHockey_BouncyCollision.html", "cl": 54, "ucl": 41, "cal": 95, "tl": 128, "cb": 17, "tb": 42, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [], "metrics": { } },
+      { "name": "AirHockey.Strategies.BouncyCollision", "rp": "AirHockey_BouncyCollision.html", "cl": 85, "ucl": 0, "cal": 85, "tl": 114, "cb": 40, "tb": 40, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [], "metrics": { } },
       { "name": "AirHockey.Strategies.QuickCollision", "rp": "AirHockey_QuickCollision.html", "cl": 7, "ucl": 0, "cal": 7, "tl": 17, "cb": 2, "tb": 2, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [], "metrics": { } },
-      { "name": "AirHockey.Strategies.ScrolingCollision", "rp": "AirHockey_ScrolingCollision.html", "cl": 47, "ucl": 35, "cal": 82, "tl": 112, "cb": 14, "tb": 28, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [], "metrics": { } },
-      { "name": "AirHockey.Strategies.TeleportCollision", "rp": "AirHockey_TeleportCollision.html", "cl": 12, "ucl": 2, "cal": 14, "tl": 27, "cb": 13, "tb": 16, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [], "metrics": { } },
-      { "name": "AirHockey.Strategies.UndoCollision", "rp": "AirHockey_UndoCollision.html", "cl": 0, "ucl": 2, "cal": 2, "tl": 12, "cb": 0, "tb": 0, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [], "metrics": { } },
+      { "name": "AirHockey.Strategies.ScrolingCollision", "rp": "AirHockey_ScrolingCollision.html", "cl": 82, "ucl": 0, "cal": 82, "tl": 112, "cb": 28, "tb": 28, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [], "metrics": { } },
+      { "name": "AirHockey.Strategies.TeleportCollision", "rp": "AirHockey_TeleportCollision.html", "cl": 14, "ucl": 0, "cal": 14, "tl": 27, "cb": 14, "tb": 16, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [], "metrics": { } },
       { "name": "AirHockey.Strategies.WallCollision", "rp": "AirHockey_WallCollision.html", "cl": 23, "ucl": 0, "cal": 23, "tl": 43, "cb": 4, "tb": 4, "cm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "hc": [], "metrics": { } },
     ]},
 ];
@@ -283,19 +282,19 @@ var riskHotspots = [
   {
     "assembly": "AirHockey", "class": "AirHockey.Strategies.BouncyCollision", "reportPath": "AirHockey_BouncyCollision.html", "methodName": "ResolveCollision(AirHockey.Actors.Entity,AirHockey.Actors.Entity)", "methodShortName": "ResolveCollision(...)", "fileIndex": 0, "line": 9,
     "metrics": [
-      { "value": 183.82, "exceeded": true },
-      { "value": 42, "exceeded": true },
+      { "value": 40, "exceeded": true },
+      { "value": 40, "exceeded": true },
     ]},
   {
     "assembly": "AirHockey", "class": "AirHockey.Strategies.ScrolingCollision", "reportPath": "AirHockey_ScrolingCollision.html", "methodName": "ResolveCollision(AirHockey.Actors.Entity,AirHockey.Actors.Entity)", "methodShortName": "ResolveCollision(...)", "fileIndex": 0, "line": 9,
     "metrics": [
-      { "value": 89, "exceeded": true },
+      { "value": 28, "exceeded": false },
       { "value": 28, "exceeded": true },
     ]},
   {
     "assembly": "AirHockey", "class": "AirHockey.Strategies.TeleportCollision", "reportPath": "AirHockey_TeleportCollision.html", "methodName": "ResolveCollision(AirHockey.Actors.Entity,AirHockey.Actors.Entity)", "methodShortName": "ResolveCollision(...)", "fileIndex": 0, "line": 10,
     "metrics": [
-      { "value": 16.75, "exceeded": false },
+      { "value": 16, "exceeded": false },
       { "value": 16, "exceeded": true },
     ]},
 ];

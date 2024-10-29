@@ -20,8 +20,8 @@ namespace AirHockey.Strategies.Tests
         {
             QuickSandWall quickSandWall = new QuickSandWall(1, 100, 200) { X = 50, Y = 50 };
             Puck puck = new Puck { X = 45, Y = 50, VelocityX = 2, VelocityY = 1, Radius = 10 };
-            float expectedVelocityX = puck.VelocityX * quickSandWall.GetSlowFactor(); // 10 * 0.5 = 5
-            float expectedVelocityY = puck.VelocityY * quickSandWall.GetSlowFactor(); // 5 * 0.5 = 2.5
+            float expectedVelocityX = puck.VelocityX * quickSandWall.GetSlowFactor(); 
+            float expectedVelocityY = puck.VelocityY * quickSandWall.GetSlowFactor(); 
 
             _quickCollision.ResolveCollision(quickSandWall, puck);
 
@@ -47,7 +47,7 @@ namespace AirHockey.Strategies.Tests
         public void ResolveCollision_WithFastPuck_VelocityCappedAfterCollision()
         {
             QuickSandWall quickSandWall = new QuickSandWall(1, 100, 200) { X = 50, Y = 50 };
-            Puck puck = new Puck { X = 45, Y = 50, VelocityX = 20, VelocityY = 20, Radius = 10 }; // Initial velocity exceeds MaxSpeed
+            Puck puck = new Puck { X = 45, Y = 50, VelocityX = 20, VelocityY = 20, Radius = 10 }; 
 
             _quickCollision.ResolveCollision(quickSandWall, puck);
 
