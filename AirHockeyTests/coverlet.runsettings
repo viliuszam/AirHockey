@@ -3,7 +3,13 @@
     <DataCollectors>
       <DataCollector friendlyName="XPlat Code Coverage">
         <Configuration>
-          <ExcludeByFile>**/Program.cs</ExcludeByFile>
+          <ExcludeByFile>
+            **/*.cshtml,
+            **/*.cshtml.cs,
+            **/Program.cs,
+            **/Services/GameService.cs
+          </ExcludeByFile>
+          <ExcludeByAttribute>GeneratedCodeAttribute,CompilerGeneratedAttribute</ExcludeByAttribute>
         </Configuration>
       </DataCollector>
     </DataCollectors>

@@ -1,7 +1,11 @@
-﻿namespace AirHockey.Actors.Powerups
+﻿using System.Diagnostics.CodeAnalysis;
+
+namespace AirHockey.Actors.Powerups
 {
     public class PushPowerup : Powerup
     {
+        public System.Timers.Timer ActiveTimer { get; private set; }
+
         public float PushForce;
         public float Duration;
         public float PushRadius; 
@@ -29,13 +33,14 @@
                 ApplyPushForce(player.Room.Puck, player.AngleFacing, PushForce);
             }
 
-            System.Timers.Timer timer = new(Duration * 1000);
-            timer.Elapsed += (sender, e) =>
+            ActiveTimer = new System.Timers.Timer(Duration * 1000);
+            ActiveTimer.Elapsed += (sender, e) =>
             {
-                timer.Stop();
-                timer.Dispose(); 
+                ActiveTimer.Stop();
+                ActiveTimer.Dispose();
+                ActiveTimer = null;
             };
-            timer.Start();
+            ActiveTimer.Start();
         }
 
         private void ApplyPushForce(Entity entity, float angle, float force)
@@ -56,6 +61,7 @@
             return distanceSquared <= (PushRadius * PushRadius);
         }
 
+        [ExcludeFromCodeCoverage]
         public override void Update()
         {
             

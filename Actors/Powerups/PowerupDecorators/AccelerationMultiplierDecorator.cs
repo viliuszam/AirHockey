@@ -1,5 +1,6 @@
 ﻿namespace AirHockey.Actors.Powerups.PowerupDecorators
 {
+    using System.Diagnostics.CodeAnalysis;
     using System.Timers;
 
     public class AccelerationMultiplierDecorator : PowerupDecorator
@@ -52,9 +53,9 @@
             return new AccelerationMultiplierDecorator(WrappedPowerup.CloneDeep(), _accelerationMultiplier, _duration);
         }
 
+        [ExcludeFromCodeCoverage]
         public override void Update()
         {
-            // Any additional update logic
         }
     }
 }

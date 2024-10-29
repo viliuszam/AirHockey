@@ -1,4 +1,6 @@
-﻿namespace AirHockey.Actors.Powerups
+﻿using System.Diagnostics.CodeAnalysis;
+
+namespace AirHockey.Actors.Powerups
 {
     public class DashPowerup : Powerup
     {
@@ -35,6 +37,7 @@
             return (DashPowerup)this.MemberwiseClone();
         }
 
+        [ExcludeFromCodeCoverage]
         public override void Update()
         {
 

@@ -159,5 +159,43 @@ namespace AirHockey.Actors.Walls.Tests
                 Assert.That(wall.VelocityY, Is.EqualTo(-2.5f));  // -(5 * 0.5f)
             });
         }
+
+        [Test]
+        public void IsColliding_WithEntity_DetectsCollision()
+        {
+            Puck puck = new Puck();
+            puck.X = 0;
+            puck.Y = 0;
+
+            wall.X = 0f;
+            wall.Y = 0f;
+            wall.Width = 50f;
+            wall.Height = 50f;
+
+            // Act
+            bool isColliding = wall.IsColliding(puck);
+
+            // Assert
+            Assert.That(isColliding, Is.True, "Expected a collision when entity is within wall bounds.");
+        }
+
+        [Test]
+        public void IsColliding_WithEntity_NoCollision()
+        {
+            Puck puck = new Puck();
+            puck.X = 100;
+            puck.Y = 100;
+
+            wall.X = 0f;
+            wall.Y = 0f;
+            wall.Width = 50f;
+            wall.Height = 50f;
+
+            // Act
+            bool isColliding = wall.IsColliding(puck);
+
+            // Assert
+            Assert.That(isColliding, Is.False, "Expected no collision when entity is outside wall bounds.");
+        }
     }
 }

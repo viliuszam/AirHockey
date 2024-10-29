@@ -94,5 +94,25 @@ namespace AirHockey.Actors.Powerups.Tests
             Assert.AreEqual(original.PushRadius, (clone as PushPowerup).PushRadius);
             Assert.AreSame(original.GetType(), clone.GetType());
         }
+
+        [Test]
+        public async Task PushPowerup_Activate_TimerDisposedAfterDuration()
+        {
+            var room = new Room("TestRoom");
+            var player = new Player("TestPlayer1", "red", 100, 100, "Tester1", room);
+            room.AddPlayer(player);
+
+            float testDuration = 0.1f; // 100ms
+            var pushPowerup = new PushPowerup(150, 150, 1, 30, 2f, testDuration);
+            room.Powerups.Add(pushPowerup);
+
+            pushPowerup.Activate(player);
+
+            Assert.That(pushPowerup.ActiveTimer, Is.Not.Null);
+            Assert.That(pushPowerup.ActiveTimer.Enabled, Is.True);
+            await Task.Delay((int)(testDuration * 1000) + 50);
+
+            Assert.That(pushPowerup.ActiveTimer.Enabled, Is.True);
+        }
     }
 }

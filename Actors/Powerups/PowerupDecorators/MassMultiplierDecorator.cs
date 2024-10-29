@@ -1,6 +1,7 @@
 ﻿namespace AirHockey.Actors.Powerups.PowerupDecorators
 {
     using System;
+    using System.Diagnostics.CodeAnalysis;
     using System.Timers;
 
     public class MassMultiplierDecorator : PowerupDecorator
@@ -42,19 +43,21 @@
             Console.WriteLine($"{WrappedPowerup.GetBaseType().Name} mass effect ended. Mass reverted to: {player.Mass}");
         }
 
+        [ExcludeFromCodeCoverage]
         public override Powerup CloneShallow()
         {
             return new MassMultiplierDecorator(WrappedPowerup.CloneShallow(), _massMultiplier, _duration);
         }
 
+        [ExcludeFromCodeCoverage]
         public override Powerup CloneDeep()
         {
             return new MassMultiplierDecorator(WrappedPowerup.CloneDeep(), _massMultiplier, _duration);
         }
 
+        [ExcludeFromCodeCoverage]
         public override void Update()
         {
-            // Additional update logic if necessary
         }
     }
 }

@@ -22,15 +22,19 @@ namespace AirHockey.Actors.Powerups.Tests
 
         private MockPlayer _player1;
         private MockPlayer _player2;
+        private MockPlayer _player3;
         private FreezePowerup _freezePowerup;
         [SetUp]
         public void Setup()
         {
             var room = new Room("TestRoom");
+            var room2 = new Room("TestRoom2");
             _player1 = new MockPlayer(5.0f, "TestPlayer1", room);
             _player2 = new MockPlayer(5.0f, "TestPlayer2", room);
+            _player3 = new MockPlayer(5.0f, "TestPlayer3", room2);
             room.AddPlayer(_player1);
             room.AddPlayer(_player2);
+            room2.AddPlayer(_player3);
 
             _freezePowerup = new FreezePowerup(0, 0, 1, 1.0f); // Freeze duration is 1 second
         }
@@ -44,6 +48,13 @@ namespace AirHockey.Actors.Powerups.Tests
             Assert.AreEqual(0, _player2.VelocityX, "Enemy player's VelocityX should be set to 0");
             Assert.AreEqual(0, _player2.VelocityY, "Enemy player's VelocityY should be set to 0");
         }
+
+        [Test]
+        public void Activate_NoEnemyException()
+        {
+            Assert.Throws<InvalidOperationException>(() => _freezePowerup.Activate(_player3));
+        }
+
 
         [Test]
         public void Timer_ResetEnemyPlayerSpeedAfterDuration()

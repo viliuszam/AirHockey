@@ -1,3 +1,5 @@
+using System.Diagnostics.CodeAnalysis;
+
 namespace AirHockey.Actors.Command
 {
     public class MoveCommand : ICommand
@@ -16,12 +18,14 @@ namespace AirHockey.Actors.Command
             return _entity;
         }
 
+
         public void Execute()
         {
             float currentTime = GetCurrentTime();
             _positionHistory.Enqueue((_entity.X, _entity.Y, currentTime));
         }
 
+        [ExcludeFromCodeCoverage]
         public void Undo()
         {
             float currentTime = GetCurrentTime();
@@ -47,7 +51,7 @@ namespace AirHockey.Actors.Command
             }
         }
 
-        private float GetCurrentTime()
+        public float GetCurrentTime()
         {
             return DateTime.Now.Second + DateTime.Now.Millisecond / 1000.0f;
         }

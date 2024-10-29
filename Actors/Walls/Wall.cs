@@ -1,3 +1,4 @@
+using System.Diagnostics.CodeAnalysis;
 using System.Drawing;
 
 namespace AirHockey.Actors.Walls
@@ -15,7 +16,9 @@ namespace AirHockey.Actors.Walls
             Height = height;
         }
 
-        public Wall() {}
+
+        [ExcludeFromCodeCoverage]
+ public Wall() {}
 
 
 

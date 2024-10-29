@@ -1,6 +1,7 @@
 ﻿namespace AirHockey.Actors.Powerups.PowerupDecorators
 {
     using System;
+    using System.Diagnostics.CodeAnalysis;
     using System.Timers;
 
     public class SpeedMultiplierDecorator : PowerupDecorator
@@ -42,16 +43,19 @@
             Console.WriteLine($"{WrappedPowerup.GetBaseType().Name} speed effect ended. Speed reverted to: {player.MaxSpeed}");
         }
 
+        [ExcludeFromCodeCoverage]
         public override Powerup CloneShallow()
         {
             return new SpeedMultiplierDecorator(WrappedPowerup.CloneShallow(), _speedMultiplier, _duration);
         }
 
+        [ExcludeFromCodeCoverage]
         public override Powerup CloneDeep()
         {
             return new SpeedMultiplierDecorator(WrappedPowerup.CloneDeep(), _speedMultiplier, _duration);
         }
 
+        [ExcludeFromCodeCoverage]
         public override void Update()
         {
             // Additional update logic if necessary

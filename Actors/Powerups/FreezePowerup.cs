@@ -1,4 +1,6 @@
-﻿namespace AirHockey.Actors.Powerups
+﻿using System.Diagnostics.CodeAnalysis;
+
+namespace AirHockey.Actors.Powerups
 {
     public class FreezePowerup : Powerup
     {
@@ -10,7 +12,7 @@
 
         public override void Activate(Player player)
         {
-            var enemyPlayer = player.Room?.Players.FirstOrDefault(p => p.Id != player.Id);
+            var enemyPlayer = player.Room.Players.FirstOrDefault(p => p.Id != player.Id);
             if (enemyPlayer == null)
             {
                 throw new InvalidOperationException("No valid enemy player found in the room. " + player.Room.Players.Count);
@@ -38,6 +40,7 @@
             return (FreezePowerup)this.MemberwiseClone();
         }
 
+        [ExcludeFromCodeCoverage]
         public override void Update()
         {
 

@@ -28,7 +28,7 @@ namespace AirHockeyTests.Integration
         private Dictionary<string, object> _player1ReceivedData;
         private Dictionary<string, object> _player2ReceivedData;
 
-        [OneTimeSetUp]
+        [SetUp]
         public async Task Setup()
         {
             var webHostBuilder = new WebHostBuilder()
@@ -142,7 +142,7 @@ namespace AirHockeyTests.Integration
             Assert.That(_player2Connection.State, Is.EqualTo(HubConnectionState.Connected));
         }
 
-        [OneTimeTearDown]
+        [TearDown]
         public async Task TearDown()
         {
             await _player1Connection.DisposeAsync();
