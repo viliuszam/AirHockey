@@ -27,7 +27,6 @@ namespace AirHockey.Services
         private readonly IHubContext<GameHub> _hubContext;
         private System.Timers.Timer gameLoopTimer;
         ResetPositionObserver _resetOb;
-        ScoreObserver _scoreOb;
         private ICollision collisions;
         //SoundEffectObserver _soundOb;
         private const float MIN_X = 0f; 
@@ -51,8 +50,6 @@ namespace AirHockey.Services
             gameLoopTimer.Elapsed += GameLoop;
             gameLoopTimer.Start();
             _resetOb = new ResetPositionObserver();
-            _scoreOb = new ScoreObserver(analytics, hubContext);
-            //_soundOb = new SoundEffectObserver("test.mp3");
             collisions = col;
         }
         public void SetStrategy(ICollision newCollisionStrategy)
@@ -293,6 +290,21 @@ namespace AirHockey.Services
             if (scorer != null)
             {
                 game.GoalScored(scorer);
+
+                string roomCode = game.Room.RoomCode;
+
+                await _hubContext.Clients.Group(roomCode).SendAsync("GoalScored",
+                    scorer.Nickname, game.Player1Score, game.Player2Score);
+
+                // log goal
+                _analytics.LogEvent(roomCode, "GoalScored", new Dictionary<string, object>
+                {
+                    { "ScoringPlayer", scorer.Nickname },
+                    { "Score", $"{game.Player1Score} - {game.Player2Score}" },
+                    { "TimeStamp", DateTime.Now }
+                });
+
+                Console.WriteLine($"{scorer.Nickname} scored! Score is now {game.Player1Score} - {game.Player2Score}");
             }
         }
 
@@ -311,8 +323,6 @@ namespace AirHockey.Services
                     if (!game.HasObservers)
                     {
                         game.RegisterObserver(_resetOb);
-                        game.RegisterObserver(_scoreOb);
-                        //game.RegisterObserver(_soundOb);
                         game.HasObservers = true;
                     }
                     var player1 = game.Room.Players[0];
