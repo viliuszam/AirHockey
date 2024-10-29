@@ -1,10 +1,6 @@
 {
   "Version": 1,
-<<<<<<< HEAD
-  "Hash": "sEouRYC9G5vPaQNI/B3zbC9Tv2iUYz0h/JiGOZCLY3Y=",
-=======
-  "Hash": "bGRKoxFo9XbTNS4wvtHmF+rZWb8pL8Wyp5AnADjM9go=",
->>>>>>> 3e03017d9d72a5d818c266db1c8d653278e535f0
+  "Hash": "qe65GqeLMUHrL1aREZYT6H4HAtstN0oWlzxAEVZFTJo=",
   "Source": "AirHockey",
   "BasePath": "_content/AirHockey",
   "Mode": "Default",
@@ -14,28 +10,17 @@
     {
       "Name": "AirHockey\\wwwroot",
       "Source": "AirHockey",
-<<<<<<< HEAD
       "ContentRoot": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\",
-=======
-      "ContentRoot": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\",
->>>>>>> 3e03017d9d72a5d818c266db1c8d653278e535f0
       "BasePath": "_content/AirHockey",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-<<<<<<< HEAD
       "Identity": "C:\\Users\\37061\\Desktop\\AirHockey\\obj\\Debug\\net8.0\\scopedcss\\bundle\\AirHockey.styles.css",
       "SourceId": "AirHockey",
       "SourceType": "Computed",
       "ContentRoot": "C:\\Users\\37061\\Desktop\\AirHockey\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
-=======
-      "Identity": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\obj\\Debug\\net8.0\\scopedcss\\bundle\\AirHockey.styles.css",
-      "SourceId": "AirHockey",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
->>>>>>> 3e03017d9d72a5d818c266db1c8d653278e535f0
       "BasePath": "_content/AirHockey",
       "RelativePath": "AirHockey.styles.css",
       "AssetKind": "All",
@@ -48,7 +33,6 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-<<<<<<< HEAD
       "OriginalItemSpec": "C:\\Users\\37061\\Desktop\\AirHockey\\obj\\Debug\\net8.0\\scopedcss\\bundle\\AirHockey.styles.css"
     },
     {
@@ -56,15 +40,6 @@
       "SourceId": "AirHockey",
       "SourceType": "Computed",
       "ContentRoot": "C:\\Users\\37061\\Desktop\\AirHockey\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\",
-=======
-      "OriginalItemSpec": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\obj\\Debug\\net8.0\\scopedcss\\bundle\\AirHockey.styles.css"
-    },
-    {
-      "Identity": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\AirHockey.bundle.scp.css",
-      "SourceId": "AirHockey",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\",
->>>>>>> 3e03017d9d72a5d818c266db1c8d653278e535f0
       "BasePath": "_content/AirHockey",
       "RelativePath": "AirHockey.bundle.scp.css",
       "AssetKind": "All",
@@ -77,7 +52,6 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-<<<<<<< HEAD
       "OriginalItemSpec": "C:\\Users\\37061\\Desktop\\AirHockey\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\AirHockey.bundle.scp.css"
     },
     {
@@ -85,15 +59,6 @@
       "SourceId": "AirHockey",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\",
-=======
-      "OriginalItemSpec": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\AirHockey.bundle.scp.css"
-    },
-    {
-      "Identity": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\canvasRenderer.js",
-      "SourceId": "AirHockey",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\",
->>>>>>> 3e03017d9d72a5d818c266db1c8d653278e535f0
       "BasePath": "_content/AirHockey",
       "RelativePath": "canvasRenderer.js",
       "AssetKind": "All",
@@ -109,17 +74,10 @@
       "OriginalItemSpec": "wwwroot\\canvasRenderer.js"
     },
     {
-<<<<<<< HEAD
       "Identity": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\css\\site.css",
       "SourceId": "AirHockey",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\",
-=======
-      "Identity": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\css\\site.css",
-      "SourceId": "AirHockey",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\",
->>>>>>> 3e03017d9d72a5d818c266db1c8d653278e535f0
       "BasePath": "_content/AirHockey",
       "RelativePath": "css/site.css",
       "AssetKind": "All",
@@ -135,17 +93,10 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
-<<<<<<< HEAD
       "Identity": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\favicon.ico",
       "SourceId": "AirHockey",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\",
-=======
-      "Identity": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\favicon.ico",
-      "SourceId": "AirHockey",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\",
->>>>>>> 3e03017d9d72a5d818c266db1c8d653278e535f0
       "BasePath": "_content/AirHockey",
       "RelativePath": "favicon.ico",
       "AssetKind": "All",
@@ -161,17 +112,10 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-<<<<<<< HEAD
       "Identity": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\game.js",
       "SourceId": "AirHockey",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\",
-=======
-      "Identity": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\game.js",
-      "SourceId": "AirHockey",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\",
->>>>>>> 3e03017d9d72a5d818c266db1c8d653278e535f0
       "BasePath": "_content/AirHockey",
       "RelativePath": "game.js",
       "AssetKind": "All",
@@ -187,17 +131,10 @@
       "OriginalItemSpec": "wwwroot\\game.js"
     },
     {
-<<<<<<< HEAD
       "Identity": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\js\\site.js",
       "SourceId": "AirHockey",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\",
-=======
-      "Identity": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\js\\site.js",
-      "SourceId": "AirHockey",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\",
->>>>>>> 3e03017d9d72a5d818c266db1c8d653278e535f0
       "BasePath": "_content/AirHockey",
       "RelativePath": "js/site.js",
       "AssetKind": "All",
@@ -213,225 +150,10 @@
       "OriginalItemSpec": "wwwroot\\js\\site.js"
     },
     {
-<<<<<<< HEAD
-      "Identity": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
-      "SourceId": "AirHockey",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\",
-=======
-      "Identity": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
-      "SourceId": "AirHockey",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\",
->>>>>>> 3e03017d9d72a5d818c266db1c8d653278e535f0
-      "BasePath": "_content/AirHockey",
-      "RelativePath": "lib/bootstrap/dist/css/bootstrap.css",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css"
-    },
-    {
-<<<<<<< HEAD
-      "Identity": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
-      "SourceId": "AirHockey",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\",
-=======
-      "Identity": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
-      "SourceId": "AirHockey",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\",
->>>>>>> 3e03017d9d72a5d818c266db1c8d653278e535f0
-      "BasePath": "_content/AirHockey",
-      "RelativePath": "lib/bootstrap/dist/css/bootstrap.css.map",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
-    },
-    {
-<<<<<<< HEAD
-      "Identity": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
-      "SourceId": "AirHockey",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\",
-=======
-      "Identity": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
-      "SourceId": "AirHockey",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\",
->>>>>>> 3e03017d9d72a5d818c266db1c8d653278e535f0
-      "BasePath": "_content/AirHockey",
-      "RelativePath": "lib/bootstrap/dist/css/bootstrap.min.css",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
-    },
-    {
-<<<<<<< HEAD
-      "Identity": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
-      "SourceId": "AirHockey",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\",
-=======
-      "Identity": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
-      "SourceId": "AirHockey",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\",
->>>>>>> 3e03017d9d72a5d818c266db1c8d653278e535f0
-      "BasePath": "_content/AirHockey",
-      "RelativePath": "lib/bootstrap/dist/css/bootstrap.min.css.map",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
-    },
-    {
-<<<<<<< HEAD
-      "Identity": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
-      "SourceId": "AirHockey",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\",
-=======
-      "Identity": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
-      "SourceId": "AirHockey",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\",
->>>>>>> 3e03017d9d72a5d818c266db1c8d653278e535f0
-      "BasePath": "_content/AirHockey",
-      "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.css",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
-    },
-    {
-<<<<<<< HEAD
-      "Identity": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
-      "SourceId": "AirHockey",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\",
-=======
-      "Identity": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
-      "SourceId": "AirHockey",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\",
->>>>>>> 3e03017d9d72a5d818c266db1c8d653278e535f0
-      "BasePath": "_content/AirHockey",
-      "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.css.map",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
-    },
-    {
-<<<<<<< HEAD
-      "Identity": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
-      "SourceId": "AirHockey",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\",
-=======
-      "Identity": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
-      "SourceId": "AirHockey",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\",
->>>>>>> 3e03017d9d72a5d818c266db1c8d653278e535f0
-      "BasePath": "_content/AirHockey",
-      "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.min.css",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
-    },
-    {
-<<<<<<< HEAD
-      "Identity": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
-      "SourceId": "AirHockey",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\",
-=======
-      "Identity": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
-      "SourceId": "AirHockey",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\",
->>>>>>> 3e03017d9d72a5d818c266db1c8d653278e535f0
-      "BasePath": "_content/AirHockey",
-      "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.min.css.map",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
-    },
-    {
-<<<<<<< HEAD
       "Identity": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "SourceId": "AirHockey",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\",
-=======
-      "Identity": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
-      "SourceId": "AirHockey",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\",
->>>>>>> 3e03017d9d72a5d818c266db1c8d653278e535f0
       "BasePath": "_content/AirHockey",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.css",
       "AssetKind": "All",
@@ -447,17 +169,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-<<<<<<< HEAD
       "Identity": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "SourceId": "AirHockey",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\",
-=======
-      "Identity": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
-      "SourceId": "AirHockey",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\",
->>>>>>> 3e03017d9d72a5d818c266db1c8d653278e535f0
       "BasePath": "_content/AirHockey",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.css.map",
       "AssetKind": "All",
@@ -473,17 +188,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-<<<<<<< HEAD
       "Identity": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "SourceId": "AirHockey",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\",
-=======
-      "Identity": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
-      "SourceId": "AirHockey",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\",
->>>>>>> 3e03017d9d72a5d818c266db1c8d653278e535f0
       "BasePath": "_content/AirHockey",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.min.css",
       "AssetKind": "All",
@@ -499,17 +207,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-<<<<<<< HEAD
       "Identity": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "SourceId": "AirHockey",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\",
-=======
-      "Identity": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
-      "SourceId": "AirHockey",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\",
->>>>>>> 3e03017d9d72a5d818c266db1c8d653278e535f0
       "BasePath": "_content/AirHockey",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.min.css.map",
       "AssetKind": "All",
@@ -525,17 +226,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-<<<<<<< HEAD
       "Identity": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "SourceId": "AirHockey",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\",
-=======
-      "Identity": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
-      "SourceId": "AirHockey",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\",
->>>>>>> 3e03017d9d72a5d818c266db1c8d653278e535f0
       "BasePath": "_content/AirHockey",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.css",
       "AssetKind": "All",
@@ -551,17 +245,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-<<<<<<< HEAD
       "Identity": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "SourceId": "AirHockey",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\",
-=======
-      "Identity": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
-      "SourceId": "AirHockey",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\",
->>>>>>> 3e03017d9d72a5d818c266db1c8d653278e535f0
       "BasePath": "_content/AirHockey",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map",
       "AssetKind": "All",
@@ -577,17 +264,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-<<<<<<< HEAD
       "Identity": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "SourceId": "AirHockey",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\",
-=======
-      "Identity": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
-      "SourceId": "AirHockey",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\",
->>>>>>> 3e03017d9d72a5d818c266db1c8d653278e535f0
       "BasePath": "_content/AirHockey",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css",
       "AssetKind": "All",
@@ -603,17 +283,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-<<<<<<< HEAD
       "Identity": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "SourceId": "AirHockey",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\",
-=======
-      "Identity": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
-      "SourceId": "AirHockey",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\",
->>>>>>> 3e03017d9d72a5d818c266db1c8d653278e535f0
       "BasePath": "_content/AirHockey",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map",
       "AssetKind": "All",
@@ -629,17 +302,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-<<<<<<< HEAD
       "Identity": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "SourceId": "AirHockey",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\",
-=======
-      "Identity": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
-      "SourceId": "AirHockey",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\",
->>>>>>> 3e03017d9d72a5d818c266db1c8d653278e535f0
       "BasePath": "_content/AirHockey",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.css",
       "AssetKind": "All",
@@ -655,17 +321,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-<<<<<<< HEAD
       "Identity": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "SourceId": "AirHockey",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\",
-=======
-      "Identity": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
-      "SourceId": "AirHockey",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\",
->>>>>>> 3e03017d9d72a5d818c266db1c8d653278e535f0
       "BasePath": "_content/AirHockey",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.css.map",
       "AssetKind": "All",
@@ -681,17 +340,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-<<<<<<< HEAD
       "Identity": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "SourceId": "AirHockey",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\",
-=======
-      "Identity": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
-      "SourceId": "AirHockey",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\",
->>>>>>> 3e03017d9d72a5d818c266db1c8d653278e535f0
       "BasePath": "_content/AirHockey",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.min.css",
       "AssetKind": "All",
@@ -707,17 +359,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-<<<<<<< HEAD
       "Identity": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "SourceId": "AirHockey",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\",
-=======
-      "Identity": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
-      "SourceId": "AirHockey",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\",
->>>>>>> 3e03017d9d72a5d818c266db1c8d653278e535f0
       "BasePath": "_content/AirHockey",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.min.css.map",
       "AssetKind": "All",
@@ -733,17 +378,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-<<<<<<< HEAD
       "Identity": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "SourceId": "AirHockey",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\",
-=======
-      "Identity": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
-      "SourceId": "AirHockey",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\",
->>>>>>> 3e03017d9d72a5d818c266db1c8d653278e535f0
       "BasePath": "_content/AirHockey",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.css",
       "AssetKind": "All",
@@ -759,17 +397,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-<<<<<<< HEAD
       "Identity": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "SourceId": "AirHockey",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\",
-=======
-      "Identity": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
-      "SourceId": "AirHockey",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\",
->>>>>>> 3e03017d9d72a5d818c266db1c8d653278e535f0
       "BasePath": "_content/AirHockey",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map",
       "AssetKind": "All",
@@ -785,17 +416,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-<<<<<<< HEAD
       "Identity": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "SourceId": "AirHockey",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\",
-=======
-      "Identity": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
-      "SourceId": "AirHockey",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\",
->>>>>>> 3e03017d9d72a5d818c266db1c8d653278e535f0
       "BasePath": "_content/AirHockey",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css",
       "AssetKind": "All",
@@ -811,17 +435,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-<<<<<<< HEAD
       "Identity": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "SourceId": "AirHockey",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\",
-=======
-      "Identity": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
-      "SourceId": "AirHockey",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\",
->>>>>>> 3e03017d9d72a5d818c266db1c8d653278e535f0
       "BasePath": "_content/AirHockey",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map",
       "AssetKind": "All",
@@ -837,17 +454,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-<<<<<<< HEAD
       "Identity": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "SourceId": "AirHockey",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\",
-=======
-      "Identity": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
-      "SourceId": "AirHockey",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\",
->>>>>>> 3e03017d9d72a5d818c266db1c8d653278e535f0
       "BasePath": "_content/AirHockey",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.css",
       "AssetKind": "All",
@@ -863,17 +473,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-<<<<<<< HEAD
       "Identity": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "SourceId": "AirHockey",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\",
-=======
-      "Identity": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
-      "SourceId": "AirHockey",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\",
->>>>>>> 3e03017d9d72a5d818c266db1c8d653278e535f0
       "BasePath": "_content/AirHockey",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.css.map",
       "AssetKind": "All",
@@ -889,17 +492,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-<<<<<<< HEAD
       "Identity": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "SourceId": "AirHockey",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\",
-=======
-      "Identity": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
-      "SourceId": "AirHockey",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\",
->>>>>>> 3e03017d9d72a5d818c266db1c8d653278e535f0
       "BasePath": "_content/AirHockey",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.min.css",
       "AssetKind": "All",
@@ -915,17 +511,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-<<<<<<< HEAD
       "Identity": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "SourceId": "AirHockey",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\",
-=======
-      "Identity": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
-      "SourceId": "AirHockey",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\",
->>>>>>> 3e03017d9d72a5d818c266db1c8d653278e535f0
       "BasePath": "_content/AirHockey",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.min.css.map",
       "AssetKind": "All",
@@ -941,17 +530,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-<<<<<<< HEAD
       "Identity": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "SourceId": "AirHockey",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\",
-=======
-      "Identity": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
-      "SourceId": "AirHockey",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\",
->>>>>>> 3e03017d9d72a5d818c266db1c8d653278e535f0
       "BasePath": "_content/AirHockey",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.css",
       "AssetKind": "All",
@@ -967,17 +549,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-<<<<<<< HEAD
       "Identity": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "SourceId": "AirHockey",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\",
-=======
-      "Identity": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
-      "SourceId": "AirHockey",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\",
->>>>>>> 3e03017d9d72a5d818c266db1c8d653278e535f0
       "BasePath": "_content/AirHockey",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map",
       "AssetKind": "All",
@@ -993,17 +568,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-<<<<<<< HEAD
       "Identity": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "SourceId": "AirHockey",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\",
-=======
-      "Identity": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
-      "SourceId": "AirHockey",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\",
->>>>>>> 3e03017d9d72a5d818c266db1c8d653278e535f0
       "BasePath": "_content/AirHockey",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css",
       "AssetKind": "All",
@@ -1019,17 +587,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-<<<<<<< HEAD
       "Identity": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "SourceId": "AirHockey",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\",
-=======
-      "Identity": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
-      "SourceId": "AirHockey",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\",
->>>>>>> 3e03017d9d72a5d818c266db1c8d653278e535f0
       "BasePath": "_content/AirHockey",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map",
       "AssetKind": "All",
@@ -1045,17 +606,162 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-<<<<<<< HEAD
+      "Identity": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "SourceId": "AirHockey",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\",
+      "BasePath": "_content/AirHockey",
+      "RelativePath": "lib/bootstrap/dist/css/bootstrap.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Identity": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "SourceId": "AirHockey",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\",
+      "BasePath": "_content/AirHockey",
+      "RelativePath": "lib/bootstrap/dist/css/bootstrap.css.map",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Identity": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "SourceId": "AirHockey",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\",
+      "BasePath": "_content/AirHockey",
+      "RelativePath": "lib/bootstrap/dist/css/bootstrap.min.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Identity": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "SourceId": "AirHockey",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\",
+      "BasePath": "_content/AirHockey",
+      "RelativePath": "lib/bootstrap/dist/css/bootstrap.min.css.map",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Identity": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "SourceId": "AirHockey",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\",
+      "BasePath": "_content/AirHockey",
+      "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Identity": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "SourceId": "AirHockey",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\",
+      "BasePath": "_content/AirHockey",
+      "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.css.map",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Identity": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "SourceId": "AirHockey",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\",
+      "BasePath": "_content/AirHockey",
+      "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.min.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Identity": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "SourceId": "AirHockey",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\",
+      "BasePath": "_content/AirHockey",
+      "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.min.css.map",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
       "Identity": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "SourceId": "AirHockey",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\",
-=======
-      "Identity": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
-      "SourceId": "AirHockey",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\",
->>>>>>> 3e03017d9d72a5d818c266db1c8d653278e535f0
       "BasePath": "_content/AirHockey",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.js",
       "AssetKind": "All",
@@ -1071,17 +777,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-<<<<<<< HEAD
       "Identity": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "SourceId": "AirHockey",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\",
-=======
-      "Identity": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
-      "SourceId": "AirHockey",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\",
->>>>>>> 3e03017d9d72a5d818c266db1c8d653278e535f0
       "BasePath": "_content/AirHockey",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.js.map",
       "AssetKind": "All",
@@ -1097,17 +796,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-<<<<<<< HEAD
       "Identity": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "SourceId": "AirHockey",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\",
-=======
-      "Identity": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
-      "SourceId": "AirHockey",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\",
->>>>>>> 3e03017d9d72a5d818c266db1c8d653278e535f0
       "BasePath": "_content/AirHockey",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.min.js",
       "AssetKind": "All",
@@ -1123,17 +815,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-<<<<<<< HEAD
       "Identity": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "SourceId": "AirHockey",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\",
-=======
-      "Identity": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
-      "SourceId": "AirHockey",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\",
->>>>>>> 3e03017d9d72a5d818c266db1c8d653278e535f0
       "BasePath": "_content/AirHockey",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.min.js.map",
       "AssetKind": "All",
@@ -1149,17 +834,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-<<<<<<< HEAD
       "Identity": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "SourceId": "AirHockey",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\",
-=======
-      "Identity": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
-      "SourceId": "AirHockey",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\",
->>>>>>> 3e03017d9d72a5d818c266db1c8d653278e535f0
       "BasePath": "_content/AirHockey",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.js",
       "AssetKind": "All",
@@ -1175,17 +853,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-<<<<<<< HEAD
       "Identity": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "SourceId": "AirHockey",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\",
-=======
-      "Identity": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
-      "SourceId": "AirHockey",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\",
->>>>>>> 3e03017d9d72a5d818c266db1c8d653278e535f0
       "BasePath": "_content/AirHockey",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.js.map",
       "AssetKind": "All",
@@ -1201,17 +872,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-<<<<<<< HEAD
       "Identity": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "SourceId": "AirHockey",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\",
-=======
-      "Identity": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
-      "SourceId": "AirHockey",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\",
->>>>>>> 3e03017d9d72a5d818c266db1c8d653278e535f0
       "BasePath": "_content/AirHockey",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.min.js",
       "AssetKind": "All",
@@ -1227,17 +891,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-<<<<<<< HEAD
       "Identity": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "SourceId": "AirHockey",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\",
-=======
-      "Identity": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
-      "SourceId": "AirHockey",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\",
->>>>>>> 3e03017d9d72a5d818c266db1c8d653278e535f0
       "BasePath": "_content/AirHockey",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.min.js.map",
       "AssetKind": "All",
@@ -1253,17 +910,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
-<<<<<<< HEAD
       "Identity": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "SourceId": "AirHockey",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\",
-=======
-      "Identity": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
-      "SourceId": "AirHockey",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\",
->>>>>>> 3e03017d9d72a5d818c266db1c8d653278e535f0
       "BasePath": "_content/AirHockey",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.js",
       "AssetKind": "All",
@@ -1279,17 +929,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-<<<<<<< HEAD
       "Identity": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "SourceId": "AirHockey",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\",
-=======
-      "Identity": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
-      "SourceId": "AirHockey",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\",
->>>>>>> 3e03017d9d72a5d818c266db1c8d653278e535f0
       "BasePath": "_content/AirHockey",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.js.map",
       "AssetKind": "All",
@@ -1305,17 +948,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-<<<<<<< HEAD
       "Identity": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "SourceId": "AirHockey",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\",
-=======
-      "Identity": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
-      "SourceId": "AirHockey",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\",
->>>>>>> 3e03017d9d72a5d818c266db1c8d653278e535f0
       "BasePath": "_content/AirHockey",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.min.js",
       "AssetKind": "All",
@@ -1331,17 +967,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-<<<<<<< HEAD
       "Identity": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "SourceId": "AirHockey",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\",
-=======
-      "Identity": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
-      "SourceId": "AirHockey",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\",
->>>>>>> 3e03017d9d72a5d818c266db1c8d653278e535f0
       "BasePath": "_content/AirHockey",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.min.js.map",
       "AssetKind": "All",
@@ -1357,17 +986,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-<<<<<<< HEAD
       "Identity": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\lib\\bootstrap\\LICENSE",
       "SourceId": "AirHockey",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\",
-=======
-      "Identity": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\lib\\bootstrap\\LICENSE",
-      "SourceId": "AirHockey",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\",
->>>>>>> 3e03017d9d72a5d818c266db1c8d653278e535f0
       "BasePath": "_content/AirHockey",
       "RelativePath": "lib/bootstrap/LICENSE",
       "AssetKind": "All",
@@ -1383,251 +1005,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\LICENSE"
     },
     {
-<<<<<<< HEAD
-      "Identity": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\lib\\jquery\\dist\\jquery.js",
-      "SourceId": "AirHockey",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\",
-=======
-      "Identity": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\lib\\jquery\\dist\\jquery.js",
-      "SourceId": "AirHockey",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\",
->>>>>>> 3e03017d9d72a5d818c266db1c8d653278e535f0
-      "BasePath": "_content/AirHockey",
-      "RelativePath": "lib/jquery/dist/jquery.js",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.js"
-    },
-    {
-<<<<<<< HEAD
-      "Identity": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
-      "SourceId": "AirHockey",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\",
-=======
-      "Identity": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
-      "SourceId": "AirHockey",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\",
->>>>>>> 3e03017d9d72a5d818c266db1c8d653278e535f0
-      "BasePath": "_content/AirHockey",
-      "RelativePath": "lib/jquery/dist/jquery.min.js",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.js"
-    },
-    {
-<<<<<<< HEAD
-      "Identity": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
-      "SourceId": "AirHockey",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\",
-=======
-      "Identity": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
-      "SourceId": "AirHockey",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\",
->>>>>>> 3e03017d9d72a5d818c266db1c8d653278e535f0
-      "BasePath": "_content/AirHockey",
-      "RelativePath": "lib/jquery/dist/jquery.min.map",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.map"
-    },
-    {
-<<<<<<< HEAD
-      "Identity": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\lib\\jquery\\LICENSE.txt",
-      "SourceId": "AirHockey",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\",
-=======
-      "Identity": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\lib\\jquery\\LICENSE.txt",
-      "SourceId": "AirHockey",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\",
->>>>>>> 3e03017d9d72a5d818c266db1c8d653278e535f0
-      "BasePath": "_content/AirHockey",
-      "RelativePath": "lib/jquery/LICENSE.txt",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\jquery\\LICENSE.txt"
-    },
-    {
-<<<<<<< HEAD
-      "Identity": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
-      "SourceId": "AirHockey",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\",
-=======
-      "Identity": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
-      "SourceId": "AirHockey",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\",
->>>>>>> 3e03017d9d72a5d818c266db1c8d653278e535f0
-      "BasePath": "_content/AirHockey",
-      "RelativePath": "lib/jquery-validation/dist/additional-methods.js",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js"
-    },
-    {
-<<<<<<< HEAD
-      "Identity": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
-      "SourceId": "AirHockey",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\",
-=======
-      "Identity": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
-      "SourceId": "AirHockey",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\",
->>>>>>> 3e03017d9d72a5d818c266db1c8d653278e535f0
-      "BasePath": "_content/AirHockey",
-      "RelativePath": "lib/jquery-validation/dist/additional-methods.min.js",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js"
-    },
-    {
-<<<<<<< HEAD
-      "Identity": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
-      "SourceId": "AirHockey",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\",
-=======
-      "Identity": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
-      "SourceId": "AirHockey",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\",
->>>>>>> 3e03017d9d72a5d818c266db1c8d653278e535f0
-      "BasePath": "_content/AirHockey",
-      "RelativePath": "lib/jquery-validation/dist/jquery.validate.js",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js"
-    },
-    {
-<<<<<<< HEAD
-      "Identity": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
-      "SourceId": "AirHockey",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\",
-=======
-      "Identity": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
-      "SourceId": "AirHockey",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\",
->>>>>>> 3e03017d9d72a5d818c266db1c8d653278e535f0
-      "BasePath": "_content/AirHockey",
-      "RelativePath": "lib/jquery-validation/dist/jquery.validate.min.js",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
-    },
-    {
-<<<<<<< HEAD
-      "Identity": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
-      "SourceId": "AirHockey",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\",
-=======
-      "Identity": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
-      "SourceId": "AirHockey",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\",
->>>>>>> 3e03017d9d72a5d818c266db1c8d653278e535f0
-      "BasePath": "_content/AirHockey",
-      "RelativePath": "lib/jquery-validation/LICENSE.md",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\LICENSE.md"
-    },
-    {
-<<<<<<< HEAD
       "Identity": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "SourceId": "AirHockey",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\",
-=======
-      "Identity": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
-      "SourceId": "AirHockey",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\",
->>>>>>> 3e03017d9d72a5d818c266db1c8d653278e535f0
       "BasePath": "_content/AirHockey",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",
       "AssetKind": "All",
@@ -1643,17 +1024,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-<<<<<<< HEAD
       "Identity": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "SourceId": "AirHockey",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\",
-=======
-      "Identity": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
-      "SourceId": "AirHockey",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\",
->>>>>>> 3e03017d9d72a5d818c266db1c8d653278e535f0
       "BasePath": "_content/AirHockey",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js",
       "AssetKind": "All",
@@ -1669,17 +1043,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-<<<<<<< HEAD
       "Identity": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "SourceId": "AirHockey",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\",
-=======
-      "Identity": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
-      "SourceId": "AirHockey",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\",
->>>>>>> 3e03017d9d72a5d818c266db1c8d653278e535f0
       "BasePath": "_content/AirHockey",
       "RelativePath": "lib/jquery-validation-unobtrusive/LICENSE.txt",
       "AssetKind": "All",
@@ -1695,17 +1062,181 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-<<<<<<< HEAD
+      "Identity": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "SourceId": "AirHockey",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\",
+      "BasePath": "_content/AirHockey",
+      "RelativePath": "lib/jquery-validation/dist/additional-methods.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Identity": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "SourceId": "AirHockey",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\",
+      "BasePath": "_content/AirHockey",
+      "RelativePath": "lib/jquery-validation/dist/additional-methods.min.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Identity": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "SourceId": "AirHockey",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\",
+      "BasePath": "_content/AirHockey",
+      "RelativePath": "lib/jquery-validation/dist/jquery.validate.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Identity": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "SourceId": "AirHockey",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\",
+      "BasePath": "_content/AirHockey",
+      "RelativePath": "lib/jquery-validation/dist/jquery.validate.min.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Identity": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "SourceId": "AirHockey",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\",
+      "BasePath": "_content/AirHockey",
+      "RelativePath": "lib/jquery-validation/LICENSE.md",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Identity": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "SourceId": "AirHockey",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\",
+      "BasePath": "_content/AirHockey",
+      "RelativePath": "lib/jquery/dist/jquery.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Identity": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "SourceId": "AirHockey",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\",
+      "BasePath": "_content/AirHockey",
+      "RelativePath": "lib/jquery/dist/jquery.min.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Identity": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "SourceId": "AirHockey",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\",
+      "BasePath": "_content/AirHockey",
+      "RelativePath": "lib/jquery/dist/jquery.min.map",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Identity": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "SourceId": "AirHockey",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\",
+      "BasePath": "_content/AirHockey",
+      "RelativePath": "lib/jquery/LICENSE.txt",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\lib\\jquery\\LICENSE.txt"
+    },
+    {
       "Identity": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\player.js",
       "SourceId": "AirHockey",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\",
-=======
-      "Identity": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\player.js",
-      "SourceId": "AirHockey",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\",
->>>>>>> 3e03017d9d72a5d818c266db1c8d653278e535f0
       "BasePath": "_content/AirHockey",
       "RelativePath": "player.js",
       "AssetKind": "All",
@@ -1721,17 +1252,10 @@
       "OriginalItemSpec": "wwwroot\\player.js"
     },
     {
-<<<<<<< HEAD
       "Identity": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\powerup.js",
       "SourceId": "AirHockey",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\",
-=======
-      "Identity": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\powerup.js",
-      "SourceId": "AirHockey",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\",
->>>>>>> 3e03017d9d72a5d818c266db1c8d653278e535f0
       "BasePath": "_content/AirHockey",
       "RelativePath": "powerup.js",
       "AssetKind": "All",
@@ -1747,17 +1271,10 @@
       "OriginalItemSpec": "wwwroot\\powerup.js"
     },
     {
-<<<<<<< HEAD
       "Identity": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\puck.js",
       "SourceId": "AirHockey",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\",
-=======
-      "Identity": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\puck.js",
-      "SourceId": "AirHockey",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\",
->>>>>>> 3e03017d9d72a5d818c266db1c8d653278e535f0
       "BasePath": "_content/AirHockey",
       "RelativePath": "puck.js",
       "AssetKind": "All",
@@ -1773,17 +1290,10 @@
       "OriginalItemSpec": "wwwroot\\puck.js"
     },
     {
-<<<<<<< HEAD
       "Identity": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\signalrConnection.js",
       "SourceId": "AirHockey",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\",
-=======
-      "Identity": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\signalrConnection.js",
-      "SourceId": "AirHockey",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\",
->>>>>>> 3e03017d9d72a5d818c266db1c8d653278e535f0
       "BasePath": "_content/AirHockey",
       "RelativePath": "signalrConnection.js",
       "AssetKind": "All",
@@ -1799,17 +1309,10 @@
       "OriginalItemSpec": "wwwroot\\signalrConnection.js"
     },
     {
-<<<<<<< HEAD
       "Identity": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\table.png",
       "SourceId": "AirHockey",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\",
-=======
-      "Identity": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\table.png",
-      "SourceId": "AirHockey",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\",
->>>>>>> 3e03017d9d72a5d818c266db1c8d653278e535f0
       "BasePath": "_content/AirHockey",
       "RelativePath": "table.png",
       "AssetKind": "All",
@@ -1825,17 +1328,10 @@
       "OriginalItemSpec": "wwwroot\\table.png"
     },
     {
-<<<<<<< HEAD
       "Identity": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\wall.js",
       "SourceId": "AirHockey",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\37061\\Desktop\\AirHockey\\wwwroot\\",
-=======
-      "Identity": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\wall.js",
-      "SourceId": "AirHockey",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\juliu\\Desktop\\test\\AirHockey\\wwwroot\\",
->>>>>>> 3e03017d9d72a5d818c266db1c8d653278e535f0
       "BasePath": "_content/AirHockey",
       "RelativePath": "wall.js",
       "AssetKind": "All",

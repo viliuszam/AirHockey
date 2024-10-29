@@ -16,9 +16,11 @@ using AirHockey.Effects.Areas;
 using AirHockey.Effects.Behaviors;
 using AirHockey.Actors.Powerups.PowerupDecorators;
 using AirHockey.Actors.Command;
+using System.Diagnostics.CodeAnalysis;
 
 namespace AirHockey.Services
 {
+    [ExcludeFromCodeCoverage]
     public class GameService
     {
         private readonly IGameAnalytics _analytics;

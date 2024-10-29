@@ -2,7 +2,10 @@
 using AirHockey.Managers;
 using AirHockey.Services;
 using Microsoft.AspNetCore.SignalR;
+using System.Diagnostics.CodeAnalysis;
 
+
+[ExcludeFromCodeCoverage]
 public class GameHub : Hub
 {
     private readonly GameService _gameService;

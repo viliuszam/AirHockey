@@ -1,0 +1,16 @@
+<RunSettings>
+  <DataCollectionRunSettings>
+    <DataCollectors>
+      <DataCollector friendlyName="XPlat Code Coverage">
+        <Configuration>
+          <ExcludeByFile>**/Program.cs</ExcludeByFile>
+          <ExcludeByFile>**/Services/GameService.cs</ExcludeByFile>
+		  <ExcludeByFile>../Pages/**/*,</ExcludeByFile>
+              <Exclude>
+                <Source>.*cshtml.*</Source> <!-- Ignore the pre-compiled views for code coverage -->
+              </Exclude>
+        </Configuration>
+      </DataCollector>
+    </DataCollectors>
+  </DataCollectionRunSettings>
+</RunSettings>
