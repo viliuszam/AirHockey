@@ -21,5 +21,5 @@ namespace AirHockey.Effects
 
         public IEffectBehavior GetBehavior() { return _behavior; }
 
-        }
+    }
 }

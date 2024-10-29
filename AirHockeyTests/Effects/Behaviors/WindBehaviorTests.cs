@@ -92,5 +92,19 @@ namespace AirHockey.Effects.Behaviors.Tests
             Assert.That(_puck.VelocityX, Is.EqualTo(windedVelocityX), "Puck's velocity in X direction should remain unchanged after revert.");
             Assert.That(_puck.VelocityY, Is.EqualTo(windedVelocityY), "Puck's velocity in Y direction should remain unchanged after revert.");
         }
+        [Test]
+        public void Identifier_ReturnsExpectedPrefixAndAngle()
+        {
+            // Act
+            var result = _windBehavior.Identifier();
+
+            // Assert
+            StringAssert.StartsWith("WIND,", result, "The identifier should start with 'WIND,'.");
+
+            // Check that the angle part is a valid float number after the comma
+            var anglePart = result.Substring(5);
+            Assert.That(float.TryParse(anglePart, out _), Is.True, "The identifier should contain a valid angle after 'WIND,'.");
+        }
+
     }
 }

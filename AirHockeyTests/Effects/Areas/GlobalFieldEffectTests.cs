@@ -105,5 +105,14 @@ namespace AirHockey.Effects.Areas.Tests
             }
             _mockBehavior.Verify(b => b.Revert(_mockRoom.Puck), Times.Never);
         }
+        [Test]
+        public void GetBehavior_ReturnsCorrectBehavior()
+        {
+            // Act
+            var behavior = _globalFieldEffect.GetBehavior();
+
+            // Assert
+            Assert.That(behavior, Is.SameAs(_mockBehavior.Object), "GetBehavior should return the correct behavior instance.");
+        }
     }
 }

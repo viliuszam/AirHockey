@@ -77,5 +77,14 @@ namespace AirHockey.Effects.Behaviors.Tests
             // Assert
             Assert.That(_puck.Mass, Is.EqualTo(originalMass), "Puck mass should revert back to original.");
         }
+        [Test]
+        public void Identifier_ReturnsExpectedIdentifier()
+        {
+            // Act
+            var result = _lowGravityBehavior.Identifier();
+
+            // Assert
+            Assert.That(result, Is.EqualTo("LOW_GRAVITY"), "The identifier should be 'LOW_GRAVITY'.");
+        }
     }
 }

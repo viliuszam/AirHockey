@@ -102,5 +102,14 @@ namespace AirHockey.Effects.Areas.Tests
             // Assert
             _mockBehavior.Verify(b => b.Revert(It.IsAny<Entity>()), Times.Once); // Only Player1 should have been reverted
         }
+        [Test]
+        public void GetBehavior_ReturnsCorrectBehavior()
+        {
+            // Act
+            var behavior = _localFieldEffect.GetBehavior();
+
+            // Assert
+            Assert.That(behavior, Is.SameAs(_mockBehavior.Object), "GetBehavior should return the correct behavior instance.");
+        }
     }
 }

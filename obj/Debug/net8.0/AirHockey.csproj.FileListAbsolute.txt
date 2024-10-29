@@ -212,3 +212,13 @@ C:\Users\juliu\Desktop\testavimas\AirHockey\obj\Debug\net8.0\refint\AirHockey.dl
 C:\Users\juliu\Desktop\testavimas\AirHockey\obj\Debug\net8.0\AirHockey.pdb
 C:\Users\juliu\Desktop\testavimas\AirHockey\obj\Debug\net8.0\AirHockey.genruntimeconfig.cache
 C:\Users\juliu\Desktop\testavimas\AirHockey\obj\Debug\net8.0\ref\AirHockey.dll
+C:\Users\armin\Desktop\AirHockey\AirHockey\bin\Debug\net8.0\Castle.Core.dll
+C:\Users\armin\Desktop\AirHockey\AirHockey\bin\Debug\net8.0\Moq.dll
+C:\Users\armin\Desktop\AirHockey\AirHockey\bin\Debug\net8.0\NAudio.dll
+C:\Users\armin\Desktop\AirHockey\AirHockey\bin\Debug\net8.0\NAudio.Asio.dll
+C:\Users\armin\Desktop\AirHockey\AirHockey\bin\Debug\net8.0\NAudio.Core.dll
+C:\Users\armin\Desktop\AirHockey\AirHockey\bin\Debug\net8.0\NAudio.Midi.dll
+C:\Users\armin\Desktop\AirHockey\AirHockey\bin\Debug\net8.0\NAudio.Wasapi.dll
+C:\Users\armin\Desktop\AirHockey\AirHockey\bin\Debug\net8.0\NAudio.WinMM.dll
+C:\Users\armin\Desktop\AirHockey\AirHockey\bin\Debug\net8.0\System.Windows.Extensions.dll
+C:\Users\armin\Desktop\AirHockey\AirHockey\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Windows.Extensions.dll
