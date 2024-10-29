@@ -76,6 +76,11 @@ namespace AirHockey.Services
             commandLists.Add(puckMoveCommand);
         }
 
+        public bool RoomExists(string room)
+        {
+            return GameSessionManager.Instance.RoomExists(room);
+        }
+
         private void TrackEntityMovement()
         {
             foreach(ICommand commandList in commandLists){
@@ -383,7 +388,7 @@ namespace AirHockey.Services
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine($"Error in game loop: {ex.Message}");
+                    //Console.WriteLine($"Error in game loop: {ex.Message}");
                 }
             }
         }

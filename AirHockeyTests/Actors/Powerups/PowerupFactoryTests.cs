@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AirHockeyTests.Actors.Powerups
+namespace AirHockey.Actors.Powerups.Tests
 {
     public class PowerupFactoryTests
     {

@@ -34,7 +34,7 @@ public class GameHub : Hub
         }
         else
         {
-            await Clients.Caller.SendAsync("RoomCreationFailed", "Room already exists.");
+            await Clients.Caller.SendAsync("RoomCreationFailed", "Room " + roomCode  + " already exists.");
         }
     }
 
@@ -82,7 +82,7 @@ public class GameHub : Hub
         }
         else
         {
-            await Clients.Caller.SendAsync("RoomNotFound", "The room you are trying to join does not exist.");
+            await Clients.Caller.SendAsync("RoomNotFound", "The room you are trying to join (" + roomCode + ") does not exist.");
         }
     }
 
