@@ -25,7 +25,7 @@ namespace AirHockey.Actors.Powerups.Tests
         [SetUp]
         public void Setup()
         {
-            _player = new MockPlayer(5.0f); // Original MaxSpeed
+            _player = new MockPlayer(5.0f);
             _dashPowerup = new DashPowerup(0, 0, 1, 8f, 0.25f);
         }
 
@@ -44,7 +44,6 @@ namespace AirHockey.Actors.Powerups.Tests
         {
             _dashPowerup.Activate(_player);
 
-            // Simulate the end of the Dash duration
             System.Threading.Thread.Sleep((int)(_dashPowerup.DashDuration * 1000) + 50);
 
             Assert.AreEqual(5.0f, _player.MaxSpeed, "Player MaxSpeed should be reset to original value after duration");

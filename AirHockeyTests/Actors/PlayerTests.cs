@@ -49,7 +49,6 @@ namespace AirHockey.Actors.Tests
         [Test]
         public void Update_ClampsVelocityToMaxSpeed()
         {
-            // Set velocity above max speed
             player.VelocityX = 10f;
             player.VelocityY = -10f;
 
@@ -120,7 +119,6 @@ namespace AirHockey.Actors.Tests
         [Test]
         public void UsePowerup_WithActivePowerup_ActivatesAndClearsPowerup()
         {
-            // Setup mock powerup
             var powerupMock = new Mock<Powerup>(30f, 30f, 1);
             player.ActivePowerup = powerupMock.Object;
 
@@ -165,7 +163,6 @@ namespace AirHockey.Actors.Tests
 
             player.Update();
 
-            // Check if Move() from Entity base class was called
             Assert.Multiple(() =>
             {
                 Assert.That(Math.Abs(player.X - expectedX), Is.LessThan(0.01f));
@@ -180,14 +177,12 @@ namespace AirHockey.Actors.Tests
 
             bool isColliding = player.IsColliding(otherPlayer);
 
-            // Given the radius of 20f and the distance between players, they should be colliding
             Assert.That(isColliding, Is.True);
         }
 
         [Test]
         public void Accelerate_RespectsMaxSpeed()
         {
-            // Accelerate multiple times in the same direction
             for (int i = 0; i < 20; i++)
             {
                 player.Accelerate(1f, 1f);

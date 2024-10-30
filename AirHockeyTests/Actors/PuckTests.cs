@@ -36,7 +36,6 @@ namespace AirHockey.Actors.Tests
         [Test]
         public void Update_AppliesFriction()
         {
-            // Set initial velocities
             puck.VelocityX = 10f;
             puck.VelocityY = 5f;
 
@@ -72,7 +71,6 @@ namespace AirHockey.Actors.Tests
         [Test]
         public void Update_CapsVelocityAtMaxSpeed()
         {
-            // Set velocity higher than max speed
             puck.VelocityX = 20f;
             puck.VelocityY = 20f;
 
@@ -109,7 +107,6 @@ namespace AirHockey.Actors.Tests
             float initialVelocityX = puck.VelocityX;
             puck.Update();
 
-            // Should only be affected by friction, not capping
             Assert.That(puck.VelocityX, Is.EqualTo(initialVelocityX * puck.Friction));
         }
 
@@ -153,7 +150,7 @@ namespace AirHockey.Actors.Tests
         {
             var otherPuck = new Puck
             {
-                X = puck.X + puck.Radius + 5f, // Slightly more than radius apart
+                X = puck.X + puck.Radius + 5f,
                 Y = puck.Y
             };
 

@@ -6,12 +6,10 @@ using System.Threading.Tasks;
 
 namespace AirHockey.Actors.Tests
 {
-    // Concrete implementation of Entity for testing
     public class TestEntity : Entity
     {
         public override void Update()
         {
-            // Simple implementation for testing
             Move();
             ApplyFriction();
         }
@@ -96,7 +94,6 @@ namespace AirHockey.Actors.Tests
         [Test]
         public void IsColliding_WhenColliding_ReturnsTrue()
         {
-            // Position entities close enough to collide
             entity.X = 100f;
             entity.Y = 100f;
             otherEntity.X = 110f;
@@ -110,7 +107,6 @@ namespace AirHockey.Actors.Tests
         [Test]
         public void IsColliding_WhenNotColliding_ReturnsFalse()
         {
-            // Position entities far apart
             entity.X = 100f;
             entity.Y = 100f;
             otherEntity.X = 200f;
@@ -152,13 +148,11 @@ namespace AirHockey.Actors.Tests
             entity.VelocityX = initialVelocityX;
             entity.VelocityY = initialVelocityY;
 
-            // Test X velocity reversal
-            entity.X = -5f; // Outside left boundary
+            entity.X = -5f; 
             entity.ConstrainToBounds(0f, 0f, 200f, 200f);
             Assert.That(entity.VelocityX, Is.EqualTo(-initialVelocityX * 0.8f));
 
-            // Test Y velocity reversal
-            entity.Y = -5f; // Outside top boundary
+            entity.Y = -5f;
             entity.ConstrainToBounds(0f, 0f, 200f, 200f);
             Assert.That(entity.VelocityY, Is.EqualTo(-initialVelocityY * 0.8f));
         }
@@ -175,10 +169,8 @@ namespace AirHockey.Actors.Tests
 
             Assert.Multiple(() =>
             {
-                // Position should change
                 Assert.That(entity.X, Is.Not.EqualTo(initialX));
                 Assert.That(entity.Y, Is.Not.EqualTo(initialY));
-                // Velocity should be reduced by friction
                 Assert.That(entity.VelocityX, Is.EqualTo(initialVelocityX * entity.Friction));
                 Assert.That(entity.VelocityY, Is.EqualTo(initialVelocityY * entity.Friction));
             });

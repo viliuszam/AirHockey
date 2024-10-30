@@ -36,7 +36,7 @@ namespace AirHockey.Actors.Powerups.Tests
             room.AddPlayer(_player2);
             room2.AddPlayer(_player3);
 
-            _freezePowerup = new FreezePowerup(0, 0, 1, 1.0f); // Freeze duration is 1 second
+            _freezePowerup = new FreezePowerup(0, 0, 1, 1.0f);
         }
 
         [Test]

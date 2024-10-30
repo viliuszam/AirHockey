@@ -14,7 +14,6 @@ namespace AirHockey.Actors.Powerups.Tests
         [Test]
         public void PushPowerup_Activate_AppliesPushForceCorrectly()
         {
-            // Arrange
             var room = new Room("TestRoom");
             var p1 = new Player("TestPlayer1", "red", 100, 100, "Tester1", room);
             var p2 = new Player("TestPlayer2", "red", 170, 170, "Tester2", room);
@@ -27,10 +26,8 @@ namespace AirHockey.Actors.Powerups.Tests
             var pushPowerup = new PushPowerup(150, 150, 1, 30, 2f, 600);
             room.Powerups.Add(pushPowerup);
 
-            // Act
             pushPowerup.Activate(p1);
 
-            // Assert
             Assert.Greater(Math.Abs(p2.VelocityX), 0.01f);
             Assert.Less(Math.Abs(p2.VelocityY), 0.01f);
             Assert.Greater(Math.Abs(puck.VelocityX), 0.01f);
@@ -40,7 +37,6 @@ namespace AirHockey.Actors.Powerups.Tests
         [Test]
         public void PushPowerup_Activate_DoesNotApplyForceOutsideRadius()
         {
-            // Arrange
             var room = new Room("TestRoom");
             var p1 = new Player("TestPlayer1", "red", 100, 100, "Tester1", room);
             var p2 = new Player("TestPlayer2", "red", 170, 170, "Tester2", room);
@@ -53,10 +49,8 @@ namespace AirHockey.Actors.Powerups.Tests
             var pushPowerup = new PushPowerup(150, 150, 1, 30, 2f, 600);
             room.Powerups.Add(pushPowerup);
 
-            // Act
             pushPowerup.Activate(p1);
 
-            // Assert
             Assert.Greater(Math.Abs(p2.VelocityX), 0.01f);
             Assert.Less(Math.Abs(p2.VelocityY), 0.01f);
             Assert.Greater(Math.Abs(puck.VelocityX), 0.01f);

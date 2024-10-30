@@ -22,7 +22,6 @@ namespace AirHockey.Actors.Tests
         [SetUp]
         public void Setup()
         {
-            // Create a room with two players
             room = new Room("TEST123");
 
             player1 = new Player("p1", "red", 50, 50, "player1", room);
@@ -30,13 +29,10 @@ namespace AirHockey.Actors.Tests
             room.AddPlayer(player1);
             room.AddPlayer(player2);
 
-            // Initialize game with the room
             game = new Game(room);
 
-            // Setup mock observer
             observerMock = new Mock<IGoalObserver>();
 
-            // Setup mock environmental effect
             effectMock = new Mock<EnvironmentalEffect>(
                 1,
                 Mock.Of<IEffectBehavior>(),
@@ -130,7 +126,6 @@ namespace AirHockey.Actors.Tests
         [Test]
         public void StartGame_ResetsScores()
         {
-            // Set some initial scores
             game.Player1Score = 5;
             game.Player2Score = 3;
 
@@ -146,11 +141,9 @@ namespace AirHockey.Actors.Tests
         [Test]
         public void ActiveEffects_CanAddAndRemoveEffects()
         {
-            // Add effect
             game.ActiveEffects.Add(effectMock.Object);
             Assert.That(game.ActiveEffects, Has.Count.EqualTo(1));
 
-            // Remove effect
             game.ActiveEffects.Remove(effectMock.Object);
             Assert.That(game.ActiveEffects, Is.Empty);
         }
