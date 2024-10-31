@@ -9,9 +9,9 @@ namespace AirHockey.Actors.Powerups.Tests
     [TestFixture]
     public class DashPowerupTests
     {
-        private class MockPlayer : Player
+        private class PlayerStub : Player
         {
-            public MockPlayer(float maxSpeed) : base("TestPlayer", "red", 50, 50, "Tester", new Room("TestRoom"))
+            public PlayerStub(float maxSpeed) : base("StubPlayer", "red", 50, 50, "Stub", new Room("TestRoom"))
             {
                 MaxSpeed = maxSpeed;
                 VelocityX = 1;
@@ -19,13 +19,13 @@ namespace AirHockey.Actors.Powerups.Tests
             }
         }
 
-        private MockPlayer _player;
+        private PlayerStub _player;
         private DashPowerup _dashPowerup;
 
         [SetUp]
         public void Setup()
         {
-            _player = new MockPlayer(5.0f);
+            _player = new PlayerStub(5.0f);
             _dashPowerup = new DashPowerup(0, 0, 1, 8f, 0.25f);
         }
 

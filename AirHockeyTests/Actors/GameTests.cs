@@ -12,6 +12,20 @@ namespace AirHockey.Actors.Tests
     [TestFixture]
     public class GameTests
     {
+        class StubEnvironmentalEffect : EnvironmentalEffect
+        {
+            public bool EffectState { get; set; }
+            public StubEnvironmentalEffect() : base(1, Mock.Of<IEffectBehavior>(), 10.0f)
+            {
+                EffectState = false;
+            }
+
+            public override void ApplyEffect(Room room){ EffectState = true; }
+
+            public override void RemoveEffect(Room room) { EffectState = false; }
+        }
+
+
         private Game game;
         private Room room;
         private Mock<IGoalObserver> observerMock;
@@ -141,11 +155,17 @@ namespace AirHockey.Actors.Tests
         [Test]
         public void ActiveEffects_CanAddAndRemoveEffects()
         {
-            game.ActiveEffects.Add(effectMock.Object);
+            var effectStub = new StubEnvironmentalEffect();
+            game.ActiveEffects.Add(effectStub);
+            effectStub.ApplyEffect(game.Room);
             Assert.That(game.ActiveEffects, Has.Count.EqualTo(1));
+            Assert.That(effectStub.EffectState, Is.True);
 
-            game.ActiveEffects.Remove(effectMock.Object);
+
+            effectStub.RemoveEffect(game.Room);
+            game.ActiveEffects.Remove(effectStub);
             Assert.That(game.ActiveEffects, Is.Empty);
+            Assert.That(effectStub.EffectState, Is.False);
         }
 
         [Test]

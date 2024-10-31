@@ -28,6 +28,45 @@ namespace AirHockeyTests.Integration
         private Dictionary<string, object> _player1ReceivedData;
         private Dictionary<string, object> _player2ReceivedData;
 
+        class StubGameAnalytics : IGameAnalytics
+        {
+            public List<string> LoggedEvents { get; } = new List<string>();
+
+            public void LogEvent(string roomCode, string eventName, Dictionary<string, object> eventData)
+            {
+                LoggedEvents.Add($"Room ({roomCode}):" + eventName + "- " + eventData);
+            }
+        }
+        public class GameHubDriver
+        {
+            private readonly HubConnection _connection;
+
+            public GameHubDriver(HubConnection connection)
+            {
+                _connection = connection;
+            }
+
+            public Task CreateRoom(string roomCode, string nickname)
+            {
+                return _connection.InvokeAsync("CreateRoom", roomCode, nickname);
+            }
+
+            public Task JoinRoom(string roomCode, string nickname)
+            {
+                return _connection.InvokeAsync("JoinRoom", roomCode, nickname);
+            }
+
+            public Task UpdateInput(string roomCode, string playerId, bool up, bool down, bool left, bool right, bool attack)
+            {
+                return _connection.InvokeAsync("UpdateInput", roomCode, playerId, up, down, left, right, attack);
+            }
+        }
+
+        private GameHubDriver _player1Driver;
+        private GameHubDriver _player2Driver;
+
+        private StubGameAnalytics _stubGameAnalytics;
+
         [SetUp]
         public async Task Setup()
         {
@@ -36,7 +75,7 @@ namespace AirHockeyTests.Integration
                 {
                     services.AddControllersWithViews();
                     services.AddSignalR();
-                    services.AddSingleton<IGameAnalytics, ConsoleLoggerAdapter>();
+                    services.AddSingleton<IGameAnalytics, StubGameAnalytics>();
                     //services.AddSingleton<IGameAnalytics>(sp => new FileLoggerAdapter("./"));
                     services.AddSingleton<GameService>();
                     services.AddSingleton<ICollision, BaseCollision>();
@@ -63,6 +102,10 @@ namespace AirHockeyTests.Integration
                 });
 
             _testServer = new TestServer(webHostBuilder);
+
+            _stubGameAnalytics = _testServer.Services.GetService<IGameAnalytics>() as StubGameAnalytics;
+
+            Assert.NotNull(_stubGameAnalytics, "Analytics could not be retrieved.");
 
             _player1Connection = new HubConnectionBuilder()
                 .WithUrl($"{_testServer.BaseAddress}gameHub", options =>
@@ -135,6 +178,9 @@ namespace AirHockeyTests.Integration
                 _player2ReceivedData["NotFound"] = message;
             });
 
+            _player1Driver = new GameHubDriver(_player1Connection);
+            _player2Driver = new GameHubDriver(_player2Connection);
+
             await _player1Connection.StartAsync();
             await _player2Connection.StartAsync();
 
@@ -150,6 +196,29 @@ namespace AirHockeyTests.Integration
             _testServer.Dispose();
         }
 
+        [Test]
+        public async Task Goal_Scored_WhenPuckIsTeleportedToGoal_LogsGoalEvent()
+        {
+            await _player1Driver.CreateRoom(TEST_ROOM, "Player1");
+            await _player2Driver.JoinRoom(TEST_ROOM, "Player2");
+            var player2Id = _player2ReceivedData["PlayerId"].ToString();
+
+            var room = GameSessionManager.Instance.GetRoom(TEST_ROOM);
+            var puck = room.Puck;
+
+            // set puck in goal
+            puck.X = 10;
+            puck.Y = 240;
+
+            // send some updates
+            for (int i = 0; i < 50; i++)
+            {
+                await _player1Driver.UpdateInput(TEST_ROOM, player2Id, true, false, true, false, false);
+            }
+
+            Assert.That(_stubGameAnalytics.LoggedEvents, Has.Some.Contains("GoalScored"));
+        }
+
         [SetUp]
         public void TestSetup()
         {
@@ -162,7 +231,7 @@ namespace AirHockeyTests.Integration
         [Test]
         public async Task CreateRoom_WhenRoomDoesNotExist_CreatesRoomSuccessfully()
         {
-            await _player1Connection.InvokeAsync("CreateRoom", TEST_ROOM, "Player1");
+            await _player1Driver.CreateRoom(TEST_ROOM, "Player1");
 
             Assert.That(_receivedMessages, Contains.Item("Player1WaitingForPlayer"));
             Assert.That(_player1ReceivedData.ContainsKey("PlayerId"), Is.True);
@@ -172,8 +241,8 @@ namespace AirHockeyTests.Integration
         [Test]
         public async Task CreateRoom_WhenRoomExists_FailsToCreateRoom()
         {
-            await _player2Connection.InvokeAsync("CreateRoom", TEST_ROOM, "Player2");
-            await _player1Connection.InvokeAsync("CreateRoom", TEST_ROOM, "Player1");
+            await _player2Driver.CreateRoom(TEST_ROOM, "Player2");
+            await _player1Driver.CreateRoom(TEST_ROOM, "Player1");
 
             await Task.Delay(100);
 
@@ -183,9 +252,8 @@ namespace AirHockeyTests.Integration
         [Test]
         public async Task JoinRoom_WhenRoomExistsAndNotFull_JoinsSuccessfully()
         {
-            await _player1Connection.InvokeAsync("CreateRoom", TEST_ROOM, "Player1");
-
-            await _player2Connection.InvokeAsync("JoinRoom", TEST_ROOM, "Player2");
+            await _player1Driver.CreateRoom(TEST_ROOM, "Player1");
+            await _player2Driver.JoinRoom(TEST_ROOM, "Player2");
 
             var room = GameSessionManager.Instance.GetRoom(TEST_ROOM);
             Assert.That(room.Players.Count, Is.EqualTo(2));
@@ -196,7 +264,7 @@ namespace AirHockeyTests.Integration
         [Test]
         public async Task JoinRoom_WhenRoomDoesNotExist_FailsToJoin()
         {
-            await _player1Connection.InvokeAsync("JoinRoom", "NONEXISTENT", "Player1");
+            await _player1Driver.JoinRoom("NONEXISTENT", "Player1");
             await Task.Delay(100);
             Assert.That(_player1ReceivedData["NotFound"], Is.EqualTo("The room you are trying to join (NONEXISTENT) does not exist."));
         }
@@ -204,11 +272,11 @@ namespace AirHockeyTests.Integration
         [Test]
         public async Task UpdateInput_SendsPlayerMovementCorrectly()
         {
-            await _player1Connection.InvokeAsync("CreateRoom", TEST_ROOM, "Player1");
-            await _player2Connection.InvokeAsync("JoinRoom", TEST_ROOM, "Player2");
+            await _player1Driver.CreateRoom(TEST_ROOM, "Player1");
+            await _player2Driver.JoinRoom(TEST_ROOM, "Player2");
             var player1Id = _player1ReceivedData["PlayerId"].ToString();
 
-            await _player1Connection.InvokeAsync("UpdateInput", TEST_ROOM, player1Id, true, false, false, true, false);
+            await _player1Driver.UpdateInput(TEST_ROOM, player1Id, true, false, false, true, false);
 
             var room = GameSessionManager.Instance.GetRoom(TEST_ROOM);
             var player = room.GetPlayerById(player1Id);
@@ -218,8 +286,8 @@ namespace AirHockeyTests.Integration
         [Test]
         public async Task PlayerDisconnect_RemovesPlayerAndNotifiesOthers()
         {
-            await _player1Connection.InvokeAsync("CreateRoom", TEST_ROOM, "Player1");
-            await _player2Connection.InvokeAsync("JoinRoom", TEST_ROOM, "Player2");
+            await _player1Driver.CreateRoom(TEST_ROOM, "Player1");
+            await _player2Driver.JoinRoom(TEST_ROOM, "Player2");
 
             bool player2ReceivedDisconnectMessage = false;
             _player2Connection.On<string>("PlayerDisconnected", (message) =>
@@ -239,13 +307,13 @@ namespace AirHockeyTests.Integration
         [Test]
         public async Task PlayerMovement_ConfinedWithinBounds()
         {
-            await _player1Connection.InvokeAsync("CreateRoom", TEST_ROOM, "Player1");
-            await _player2Connection.InvokeAsync("JoinRoom", TEST_ROOM, "Player2");
+            await _player1Driver.CreateRoom(TEST_ROOM, "Player1");
+            await _player2Driver.JoinRoom(TEST_ROOM, "Player2");
             var player1Id = _player1ReceivedData["PlayerId"].ToString();
 
             for (int i = 0; i < 2000; i++)
             {
-                await _player1Connection.InvokeAsync("UpdateInput", TEST_ROOM, player1Id, true, false, false, false, false);
+                await _player1Driver.UpdateInput(TEST_ROOM, player1Id, true, false, false, false, false);
             }
 
             var room = GameSessionManager.Instance.GetRoom(TEST_ROOM);
