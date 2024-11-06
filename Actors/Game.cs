@@ -1,5 +1,4 @@
 ﻿using AirHockey.Effects;
-using AirHockey.Observers;
 
 namespace AirHockey.Actors
 {
@@ -8,9 +7,6 @@ namespace AirHockey.Actors
         public Room Room { get; private set; }
         public int Player1Score { get; set; } = 0;
         public int Player2Score { get; set; } = 0;
-
-        private List<IGoalObserver> observers = new List<IGoalObserver>();
-        public bool HasObservers { get; set; } = false;
         public bool IsInitialized { get; set; } = false;
 
         public List<EnvironmentalEffect> ActiveEffects;
@@ -21,24 +17,6 @@ namespace AirHockey.Actors
             ActiveEffects = new List<EnvironmentalEffect>();
         }
 
-        public void RegisterObserver(IGoalObserver observer)
-        {
-            observers.Add(observer);
-        }
-
-        public void UnregisterObserver(IGoalObserver observer)
-        {
-            observers.Remove(observer);
-        }
-
-        public void NotifyObservers(Player scorer)
-        {
-            foreach (var observer in observers)
-            {
-                observer.OnGoalScored(scorer, this);
-            }
-        }
-
         public void GoalScored(Player scorer)
         {
             if (scorer == Room.Players[0]) //Player1
@@ -46,9 +24,25 @@ namespace AirHockey.Actors
             else
                 Player2Score++;
 
-            NotifyObservers(scorer);
+            ResetPositions();
         }
+        private void ResetPositions()
+        {
+            Room.Puck.X = 855 / 2;
+            Room.Puck.Y = 541 / 2;
+            Room.Puck.VelocityX = 0;
+            Room.Puck.VelocityY = 0;
 
+            Room.Players[0].X = 227;
+            Room.Players[0].Y = 260;
+            Room.Players[1].X = 633;
+            Room.Players[1].Y = 260;
+
+            Room.Players[0].VelocityX = 0;
+            Room.Players[0].VelocityY = 0;
+            Room.Players[1].VelocityX = 0;
+            Room.Players[1].VelocityY = 0;
+        }
         public void StartGame()
         {
             Player1Score = 0;

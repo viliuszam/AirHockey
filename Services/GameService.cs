@@ -3,7 +3,6 @@ using AirHockey.Actors.Walls;
 using AirHockey.Actors.Powerups;
 using AirHockey.Analytics;
 using AirHockey.Managers;
-using AirHockey.Observers;
 using AirHockey.Strategies;
 using Microsoft.AspNetCore.SignalR;
 using System.Collections;
@@ -26,9 +25,7 @@ namespace AirHockey.Services
         private readonly IGameAnalytics _analytics;
         private readonly IHubContext<GameHub> _hubContext;
         private System.Timers.Timer gameLoopTimer;
-        ResetPositionObserver _resetOb;
         private ICollision collisions;
-        //SoundEffectObserver _soundOb;
         private const float MIN_X = 0f; 
         private const float MAX_X = 855f;
         private const float MIN_Y = 0f;
@@ -49,7 +46,6 @@ namespace AirHockey.Services
             gameLoopTimer = new System.Timers.Timer(16);  // 16*60 ~ apie 60 FPS
             gameLoopTimer.Elapsed += GameLoop;
             gameLoopTimer.Start();
-            _resetOb = new ResetPositionObserver();
             collisions = col;
         }
         public void SetStrategy(ICollision newCollisionStrategy)
@@ -318,12 +314,6 @@ namespace AirHockey.Services
                     {
                         InitializeCommands(game);
                         game.IsInitialized = true;
-                    }
-
-                    if (!game.HasObservers)
-                    {
-                        game.RegisterObserver(_resetOb);
-                        game.HasObservers = true;
                     }
                     var player1 = game.Room.Players[0];
                     var player2 = game.Room.Players[1];
