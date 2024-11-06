@@ -58,3 +58,24 @@ bin/**/*
 # Ignore temporary system files
 Thumbs.db
 .DS_Store
+
+# Visual Studio files
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+.vs/AirHockey/v17/.suo
+.vs/AirHockey/v17/DocumentLayout.json
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+build/
+bld/
+[Bb]in/
+[Oo]bj/

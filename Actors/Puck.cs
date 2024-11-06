@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Hosting.Server;
 
 namespace AirHockey.Actors
 {
-    public class Puck : Entity
+    public class Puck : Entity, ISubject
     {
         public float MaxSpeed = 15f;
         private List<IObserver> _observers = new List<IObserver>();
@@ -67,7 +67,7 @@ namespace AirHockey.Actors
             _observers.Remove(observer);
         }
 
-        private void Notify(int scorer)
+        public void Notify(int scorer)
         {
             foreach (var observer in _observers)
             {
