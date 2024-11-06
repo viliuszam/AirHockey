@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\juliu\\Desktop\\new\\AirHockey\\AirHockey.csproj": {}
+    "C:\\Users\\juliu\\Desktop\\w\\AirHockey\\AirHockey.csproj": {}
   },
   "projects": {
-    "C:\\Users\\juliu\\Desktop\\new\\AirHockey\\AirHockey.csproj": {
+    "C:\\Users\\juliu\\Desktop\\w\\AirHockey\\AirHockey.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\juliu\\Desktop\\new\\AirHockey\\AirHockey.csproj",
+        "projectUniqueName": "C:\\Users\\juliu\\Desktop\\w\\AirHockey\\AirHockey.csproj",
         "projectName": "AirHockey",
-        "projectPath": "C:\\Users\\juliu\\Desktop\\new\\AirHockey\\AirHockey.csproj",
+        "projectPath": "C:\\Users\\juliu\\Desktop\\w\\AirHockey\\AirHockey.csproj",
         "packagesPath": "C:\\Users\\juliu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\juliu\\Desktop\\new\\AirHockey\\obj\\",
+        "outputPath": "C:\\Users\\juliu\\Desktop\\w\\AirHockey\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
