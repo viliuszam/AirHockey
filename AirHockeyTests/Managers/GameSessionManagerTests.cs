@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AirHockey.Actors;
+using System.Collections.Concurrent;
 
 namespace AirHockey.Managers.Tests
 {
@@ -134,6 +135,101 @@ namespace AirHockey.Managers.Tests
             var retrievedGame = _manager.GetGame("NonExistentRoom");
 
             Assert.That(retrievedGame, Is.Null, "GetGame did not return null for a non-existent game.");
+        }
+
+        // -----------------------------------------
+        // Thread safety tests
+
+        [Test]
+        public void AddRoom_ShouldBeThreadSafe()
+        {
+            var manager = GameSessionManager.Instance;
+            var concurrentRooms = new ConcurrentDictionary<string, Room>();
+
+            Parallel.For(0, 1000, i =>
+            {
+                var room = new Room($"ROOM{i}");
+                manager.AddRoom(room);
+                concurrentRooms.TryAdd(room.RoomCode, room);
+            });
+
+            foreach (var room in concurrentRooms)
+            {
+                Assert.True(manager.RoomExists(room.Key));
+            }
+        }
+
+        [Test]
+        public void RemoveRoom_ShouldBeThreadSafe()
+        {
+            var manager = GameSessionManager.Instance;
+            var concurrentRooms = new ConcurrentDictionary<string, Room>();
+
+            Parallel.For(0, 1000, i =>
+            {
+                var room = new Room($"ROOM{i}");
+                manager.AddRoom(room);
+                concurrentRooms.TryAdd(room.RoomCode, room);
+            });
+
+            Parallel.ForEach(concurrentRooms, room =>
+            {
+                manager.RemoveRoom(room.Key);
+            });
+
+            foreach (var room in concurrentRooms)
+            {
+                Assert.False(manager.RoomExists(room.Key));
+            }
+        }
+
+        [Test]
+        public void StartNewGame_ShouldBeThreadSafe()
+        {
+            var manager = GameSessionManager.Instance;
+            var concurrentRooms = new ConcurrentDictionary<string, Room>();
+
+            Parallel.For(0, 1000, i =>
+            {
+                var room = new Room($"ROOM{i}");
+                manager.AddRoom(room);
+                concurrentRooms.TryAdd(room.RoomCode, room);
+            });
+
+            Parallel.ForEach(concurrentRooms, room =>
+            {
+                manager.StartNewGame(room.Value);
+            });
+
+            foreach (var room in concurrentRooms)
+            {
+                Assert.NotNull(manager.GetGame(room.Key));
+            }
+        }
+
+        [Test]
+        public void EndGame_ShouldBeThreadSafe()
+        {
+            var manager = GameSessionManager.Instance;
+            var concurrentRooms = new ConcurrentDictionary<string, Room>();
+
+            Parallel.For(0, 1000, i =>
+            {
+                var room = new Room($"ROOM{i}");
+                manager.AddRoom(room);
+                manager.StartNewGame(room);
+                concurrentRooms.TryAdd(room.RoomCode, room);
+            });
+
+            Parallel.ForEach(concurrentRooms, room =>
+            {
+                manager.EndGame(room.Key);
+            });
+
+            foreach (var room in concurrentRooms)
+            {
+                Assert.Null(manager.GetGame(room.Key));
+            }
         }
     }
 }
