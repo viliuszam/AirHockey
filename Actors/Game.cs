@@ -1,8 +1,9 @@
 ﻿using AirHockey.Effects;
+using AirHockey.Observers;
 
 namespace AirHockey.Actors
 {
-    public class Game
+    public class Game: IObserver
     {
         public Room Room { get; private set; }
         public int Player1Score { get; set; } = 0;
@@ -10,21 +11,31 @@ namespace AirHockey.Actors
         public bool IsInitialized { get; set; } = false;
 
         public List<EnvironmentalEffect> ActiveEffects;
+        int lastScorer;
 
         public Game(Room room)
         {
             Room = room;
             ActiveEffects = new List<EnvironmentalEffect>();
+            lastScorer = -1;
         }
 
-        public void GoalScored(Player scorer)
+        public void GoalScored(int scorer)
         {
-            if (scorer == Room.Players[0]) //Player1
+            if (scorer == 0) //Player1
                 Player1Score++;
             else
                 Player2Score++;
-
+            lastScorer = scorer;
             ResetPositions();
+        }
+        public int GetLast()
+        {
+            return lastScorer;
+        }
+        public void SetLast()
+        {
+            lastScorer = -1;
         }
         private void ResetPositions()
         {

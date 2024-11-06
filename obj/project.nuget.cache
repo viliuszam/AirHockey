@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "1YmxZjzMBEFD3Uw+rWIB5Fr2dM+PwnhNV2Lh0vaqtRzie8Tk7iBfalXfTMMjCuuTZNedkHiqVjb5zACTRZS7hA==",
+  "dgSpecHash": "kz/uH5sxDxW/PZ+1XwGTyBl6smjgvc2nCQzElrrv5niNdy9xXenEpAmbpZL55sTqeASjuvdgDy9pnUAvBObIuQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\juliu\\Desktop\\last\\AirHockey\\AirHockey.csproj",
+  "projectFilePath": "C:\\Users\\juliu\\Desktop\\new\\AirHockey\\AirHockey.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\juliu\\.nuget\\packages\\castle.core\\5.1.1\\castle.core.5.1.1.nupkg.sha512",
     "C:\\Users\\juliu\\.nuget\\packages\\coverlet.collector\\6.0.2\\coverlet.collector.6.0.2.nupkg.sha512",

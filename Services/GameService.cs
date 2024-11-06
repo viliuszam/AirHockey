@@ -262,45 +262,26 @@ namespace AirHockey.Services
             return effects[new Random().Next(availableEffects.Count)];
         }
 
-        private Player? GetScorer(Game game)
-        {
-            var player1 = game.Room.Players[0];
-            var player2 = game.Room.Players[1];
-            var puck = game.Room.Puck;
-            if (puck.X <= GOAL_WIDTH && puck.Y >= GOAL_Y_MIN && puck.Y <= GOAL_Y_MAX)
-            {
-                return player2;
-            }
-
-            if (puck.X >= (MAX_X - GOAL_WIDTH) && puck.Y >= GOAL_Y_MIN && puck.Y <= GOAL_Y_MAX)
-            {
-                return player1;
-            }
-
-            return null;
-        }
-
         private async void CheckGoal(Game game)
         {
-            Player? scorer = GetScorer(game);
-            if (scorer != null)
+            if (game.GetLast() != -1)
             {
-                game.GoalScored(scorer);
 
                 string roomCode = game.Room.RoomCode;
 
                 await _hubContext.Clients.Group(roomCode).SendAsync("GoalScored",
-                    scorer.Nickname, game.Player1Score, game.Player2Score);
+                    game.Room.Players[game.GetLast()].Nickname, game.Player1Score, game.Player2Score);
 
                 // log goal
                 _analytics.LogEvent(roomCode, "GoalScored", new Dictionary<string, object>
                 {
-                    { "ScoringPlayer", scorer.Nickname },
+                    { "ScoringPlayer", game.Room.Players[game.GetLast()].Nickname },
                     { "Score", $"{game.Player1Score} - {game.Player2Score}" },
                     { "TimeStamp", DateTime.Now }
                 });
 
-                Console.WriteLine($"{scorer.Nickname} scored! Score is now {game.Player1Score} - {game.Player2Score}");
+                Console.WriteLine($"{game.Room.Players[game.GetLast()].Nickname} scored! Score is now {game.Player1Score} - {game.Player2Score}");
+                game.SetLast();
             }
         }
 
@@ -314,11 +295,11 @@ namespace AirHockey.Services
                     {
                         InitializeCommands(game);
                         game.IsInitialized = true;
+                        game.Room.Puck.Attach(game);
                     }
                     var player1 = game.Room.Players[0];
                     var player2 = game.Room.Players[1];
                     var puck = game.Room.Puck;
-
                     player1.Update();
                     player2.Update();
                     puck.Update();
