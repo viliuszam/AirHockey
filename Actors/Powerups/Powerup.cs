@@ -2,7 +2,7 @@
 
 namespace AirHockey.Actors.Powerups
 {
-    public abstract class Powerup : Entity
+    public abstract class Powerup : Entity, ICloneable
     {
         public int Id { get; set; }
         public bool IsActive { get; private set; }
@@ -49,5 +49,9 @@ namespace AirHockey.Actors.Powerups
             return this.GetType();
         }
 
+        public object Clone()
+        {
+            return (Powerup)this.MemberwiseClone();
+        }
     }
 }

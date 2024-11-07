@@ -516,6 +516,15 @@ namespace AirHockey.Services
             PowerupFactory powerupFactory = new PowerupFactory();
 
             Powerup dashPrototype = powerupFactory.CreatePowerup(0, 0, 1, "Dash");
+            // CloneShallow comparison
+            Powerup dashShallowClone = dashPrototype.CloneShallow();
+            Console.WriteLine($"Dash Prototype Hash Code: {dashPrototype.GetHashCode()}");
+            Console.WriteLine($"Dash Shallow Clone Hash Code: {dashShallowClone.GetHashCode()}");
+
+            // CloneDeep comparison
+            Powerup dashDeepClone = dashPrototype.CloneDeep();
+            Console.WriteLine($"Dash Deep Clone Hash Code: {dashDeepClone.GetHashCode()}");
+
             Powerup freezePrototype = powerupFactory.CreatePowerup(0, 0, 2, "Freeze");
             Powerup pushPrototype = powerupFactory.CreatePowerup(0, 0, 3, "Push");
 
