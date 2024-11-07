@@ -73,7 +73,8 @@ public class GameHub : Hub
                     await Clients.Group(roomCode).SendAsync("AddWall", wall.Id, wall.X, wall.Y, wall.Width, wall.Height, wall.GetType().Name);
                 }
                 _gameService.SpawnPowerups(room);
-                foreach (var powerup in room.Powerups)
+
+                foreach (var powerup in _gameService.GetPowerupsByRoom(room))
                 {
                     Console.WriteLine($"Powerup id: {powerup.Id}");
                     Console.WriteLine($"X: {powerup.X}, Y: {powerup.Y}");

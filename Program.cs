@@ -1,4 +1,5 @@
 using AirHockey.Analytics;
+using AirHockey.Facades;
 using AirHockey.Services;
 using AirHockey.Strategies;
 
@@ -14,6 +15,7 @@ namespace AirHockey
             builder.Services.AddSignalR();
             //services.AddSingleton<IGameAnalytics, ConsoleLoggerAdapter>();
             builder.Services.AddSingleton<IGameAnalytics>(sp => new FileLoggerAdapter("./"));
+            builder.Services.AddSingleton<Facade>();
             builder.Services.AddSingleton<GameService>();
             builder.Services.AddSingleton<ICollision, BaseCollision>();
             builder.Services.AddSingleton<ICollision, WallCollision>();

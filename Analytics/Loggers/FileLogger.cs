@@ -27,7 +27,13 @@ namespace AirHockey.Analytics.Loggers
             };
 
             string jsonLogEntry = JsonConvert.SerializeObject(logEntry, Formatting.Indented);
-            File.AppendAllText(filePath, jsonLogEntry + Environment.NewLine);
+            using (var fileStream = new FileStream(filePath, FileMode.Append, FileAccess.Write, FileShare.ReadWrite))
+            using (var writer = new StreamWriter(fileStream))
+            {
+                writer.WriteLine(jsonLogEntry);
+            }
+
+
         }
 
         private void InitializeFileLogger()
