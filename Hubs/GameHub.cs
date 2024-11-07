@@ -32,7 +32,7 @@ public class GameHub : Hub
             var game = GameSessionManager.Instance.GetGame(roomCode);
             if (game != null)
             {
-                await Clients.Caller.SendAsync("UpdateScores", game.Player1Score, game.Player2Score);
+                await Clients.Caller.SendAsync("UpdateScores", game.Room.Player1Score, game.Room.Player2Score);
             }
         }
         else
@@ -80,7 +80,7 @@ public class GameHub : Hub
                     await Clients.Group(roomCode).SendAsync("AddPowerup", powerup.Id, powerup.X, powerup.Y, powerup.GetBaseType().Name, powerup.IsActive);
                 }
                 await Clients.Group(roomCode).SendAsync("StartGame",
-                    player1Nickname, player2Nickname, game.Player1Score, game.Player2Score);
+                    player1Nickname, player2Nickname, game.Room.Player1Score, game.Room.Player2Score);
             }
         }
         else

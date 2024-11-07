@@ -31,10 +31,6 @@ namespace AirHockey.Services
         private const float MIN_Y = 0f;
         private const float MAX_Y = 541f;
 
-        private const float GOAL_WIDTH = 25f;
-        private const float GOAL_Y_MIN = 180f;
-        private const float GOAL_Y_MAX = 365f;
-
         private const int maxEffects = 5;
 
         private List<ICommand> commandLists = new List<ICommand>();
@@ -264,24 +260,24 @@ namespace AirHockey.Services
 
         private async void CheckGoal(Game game)
         {
-            if (game.GetLast() != -1)
+            if (game.Room.GetLast() != -1)
             {
 
                 string roomCode = game.Room.RoomCode;
 
                 await _hubContext.Clients.Group(roomCode).SendAsync("GoalScored",
-                    game.Room.Players[game.GetLast()].Nickname, game.Player1Score, game.Player2Score);
+                    game.Room.Players[game.Room.GetLast()].Nickname, game.Room.Player1Score, game.Room.Player2Score);
 
                 // log goal
                 _analytics.LogEvent(roomCode, "GoalScored", new Dictionary<string, object>
                 {
-                    { "ScoringPlayer", game.Room.Players[game.GetLast()].Nickname },
-                    { "Score", $"{game.Player1Score} - {game.Player2Score}" },
+                    { "ScoringPlayer", game.Room.Players[game.Room.GetLast()].Nickname },
+                    { "Score", $"{game.Room.Player1Score} - {game.Room.Player2Score}" },
                     { "TimeStamp", DateTime.Now }
                 });
 
-                Console.WriteLine($"{game.Room.Players[game.GetLast()].Nickname} scored! Score is now {game.Player1Score} - {game.Player2Score}");
-                game.SetLast();
+                Console.WriteLine($"{game.Room.Players[game.Room.GetLast()].Nickname} scored! Score is now {game.Room.Player1Score} - {game.Room.Player2Score}");
+                game.Room.SetLast();
             }
         }
 
@@ -295,7 +291,7 @@ namespace AirHockey.Services
                     {
                         InitializeCommands(game);
                         game.IsInitialized = true;
-                        game.Room.Puck.Attach(game);
+                        game.Room.Puck.Attach(game.Room);
                     }
                     var player1 = game.Room.Players[0];
                     var player2 = game.Room.Players[1];
