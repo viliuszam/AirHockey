@@ -8,9 +8,11 @@ export class Wall {
         this.wallType = wallType;
     }
 
-    move(x, y) {
+    move(x, y, width, height) {
         this.x = x;
         this.y = y;
+        this.width = width;
+        this.height = height;
     }
 
     render(ctx) {

@@ -229,6 +229,8 @@ namespace AirHockey.Facades
                 else if (wall is TeleportingWall) SetStrategy(new TeleportCollision());
                 else if (wall is ScrollingWall) SetStrategy(new ScrolingCollision());
                 else if (wall is BouncyWall) SetStrategy(new BouncyCollision());
+                else if (wall is BreakingWall) SetStrategy(new BreakingColision());
+
                 else if (wall is UndoWall) SetStrategy(new UndoCollision());
 
                 else SetStrategy(new WallCollision());
@@ -278,6 +280,7 @@ namespace AirHockey.Facades
                     else if (wall is ScrollingWall) SetStrategy(new ScrolingCollision());
                     else if (wall is BouncyWall) SetStrategy(new BouncyCollision());
                     else if (wall is UndoWall) SetStrategy(new UndoCollision());
+                    else if (wall is BreakingWall) SetStrategy(new BreakingColision());
 
                     else SetStrategy(new WallCollision());
                     if (wall != otherWall && wall.IsColliding(otherWall))

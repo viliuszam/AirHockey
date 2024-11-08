@@ -54,7 +54,7 @@ function updateWallPosition(sentWalls) {
     sentWalls.forEach(sentWall => {
         let matchingWall = walls.find(wall => wall.wallId == sentWall.id); 
         if (matchingWall) {
-            matchingWall.move(sentWall.x, sentWall.y);
+            matchingWall.move(sentWall.x, sentWall.y, sentWall.width, sentWall.height);
         }
     });
 }

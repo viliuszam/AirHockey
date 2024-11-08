@@ -1,19 +1,27 @@
+using System;
+using AirHockey.Actors.Walls;
+
 namespace AirHockey.Actors.Walls.WallBuilder
 {
+    public enum WallType
+    {
+        Bouncy,
+        Scrolling,
+        Breaking 
+    }
+
     public class DynamicWallBuilder : IWallBuilder
     {
         private int _id;
         private float _width;
         private float _height;
-        private string? _type;
-        private float _X;
-        private float _Y;
-        private float _VelocityX;
-        private float _VelocityY;
-        private float _Acceleration;
-        private float _Mass;
-
-        private readonly string[] _allowedTypes = { "Bouncy", "Scrolling" };
+        private WallType? _type;
+        private float _x;
+        private float _y;
+        private float _velocityX;
+        private float _velocityY;
+        private float _acceleration;
+        private float _mass;
 
         public IWallBuilder SetId(int id)
         {
@@ -28,78 +36,69 @@ namespace AirHockey.Actors.Walls.WallBuilder
             return this;
         }
 
-        public IWallBuilder SetType(string type)
+        public IWallBuilder SetPosition(float x, float y)
         {
-            if (!_allowedTypes.Contains(type))
-            {
-                throw new ArgumentException($"Invalid wall type: {type}.");
-            }
-            _type = type;
+            _x = x;
+            _y = y;
             return this;
         }
 
-        public IWallBuilder SetPosition(float x, float y)
+        public IWallBuilder SetType(string type)
         {
-            _X = x;
-            _Y = y;
-            return this;
+            if (Enum.TryParse(type, true, out WallType parsedType))
+            {
+                _type = parsedType;
+                return this;
+            }
+            throw new ArgumentException($"Invalid wall type: {type}");
         }
 
         public IWallBuilder SetVelocity(float velocityX = 0f, float velocityY = 0f)
         {
-            _VelocityX = velocityX;
-            _VelocityY = velocityY;
+            _velocityX = velocityX;
+            _velocityY = velocityY;
             return this;
         }
-        
+
         public IWallBuilder SetAcceleration()
         {
-            switch (_type)
+            if (_type.HasValue)
             {
-                case "Bouncy":
-                    _Acceleration = 0.95f;
-                    break;
-                case "Scrolling":
-                    _Acceleration = 0.75f;
-                    break;
+                _acceleration = _type == WallType.Bouncy ? 0.95f : 0.75f;
             }
             return this;
         }
 
         public IWallBuilder SetMass()
         {
-            switch (_type)
+            if (_type.HasValue)
             {
-                case "Bouncy":
-                    _Mass = 0.1f;
-                    break;
-                case "Scrolling":
-                    _Mass = 1.0f;
-                    break;
+                _mass = _type == WallType.Bouncy ? 0.1f : 1.0f;
             }
             return this;
         }
 
         public Wall Build()
         {
-            Wall wall;
-            switch (_type)
+            if (!_type.HasValue)
             {
-                case "Bouncy":
-                    wall = new BouncyWall(_id, _width, _height, true);
-                    break;
-                case "Scrolling":
-                    wall = new ScrollingWall(_id, _width, _height);
-                    break;
-                default:
-                    throw new ArgumentException("Invalid wall type");
+                throw new InvalidOperationException("Wall type must be set before building the wall.");
             }
-            wall.X = _X;
-            wall.Y = _Y;
-            wall.VelocityX = _VelocityX;
-            wall.VelocityY = _VelocityY;
-            wall.Acceleration = _Acceleration;
-            wall.Mass = _Mass;
+
+            Wall wall = _type.Value switch
+            {
+                WallType.Bouncy => new BouncyWall(_id, _width, _height, true),
+                WallType.Scrolling => new ScrollingWall(_id, _width, _height),
+                WallType.Breaking => new BreakingWall(_id, _width, _height),
+                _ => throw new InvalidOperationException("Invalid wall type specified.")
+            };
+
+            wall.X = _x;
+            wall.Y = _y;
+            wall.VelocityX = _velocityX;
+            wall.VelocityY = _velocityY;
+            wall.Acceleration = _acceleration;
+            wall.Mass = _mass;
 
             return wall;
         }

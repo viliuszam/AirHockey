@@ -1,16 +1,27 @@
+using System;
+using AirHockey.Actors.Walls;
+
 namespace AirHockey.Actors.Walls.WallBuilder
 {
+    public enum StaticWallType
+    {
+        Teleporting,
+        QuickSand,
+        Standard,
+        Bouncy,
+        Undo
+    }
+
     public class StaticWallBuilder : IWallBuilder
     {
         private int _id;
         private float _width;
         private float _height;
-        private string? _type;
+        private StaticWallType? _type;
         private float _X;
         private float _Y;
         private float _Acceleration;
         private float _Mass;
-        private readonly string[] _allowedTypes = { "Teleporting", "QuickSand", "Standard", "Bouncy", "Undo" };
 
         public IWallBuilder SetId(int id)
         {
@@ -27,12 +38,12 @@ namespace AirHockey.Actors.Walls.WallBuilder
 
         public IWallBuilder SetType(string type)
         {
-            if (!_allowedTypes.Contains(type))
+            if (Enum.TryParse(type, true, out StaticWallType parsedType))
             {
-                throw new ArgumentException($"Invalid wall type: {type}.");
+                _type = parsedType;
+                return this;
             }
-            _type = type;
-            return this;
+            throw new ArgumentException($"Invalid wall type: {type}");
         }
 
         public IWallBuilder SetPosition(float x, float y)
@@ -44,6 +55,7 @@ namespace AirHockey.Actors.Walls.WallBuilder
 
         public IWallBuilder SetVelocity(float velocityX = 0f, float velocityY = 0f)
         {
+            // Static walls do not use velocity, so this method does nothing
             return this;
         }
 
@@ -55,47 +67,30 @@ namespace AirHockey.Actors.Walls.WallBuilder
 
         public IWallBuilder SetMass()
         {
-            switch (_type)
+            if (_type.HasValue)
             {
-                case "Teleporting":
-                case "QuickSand":
-                case "Undo":
-                    _Mass = 0f;
-                    break;
-                case "Standard":
-                case "Bouncy":
-                    _Mass = 500f;
-                    break;
+                _Mass = _type == StaticWallType.Standard || _type == StaticWallType.Bouncy ? 500f : 0f;
             }
             return this;
         }
 
         public Wall Build()
         {
-            Wall wall;
-            switch (_type)
+            if (!_type.HasValue)
             {
-                case "Teleporting":
-                    wall = new TeleportingWall(_id, _width, _height);
-
-                    break;
-                case "QuickSand":
-                    wall = new QuickSandWall(_id, _width, _height);
-
-                    break;
-                case "Standard":
-                    wall = new StandardWall(_id, _width, _height, false);
-
-                    break;
-                case "Bouncy":
-                    wall = new BouncyWall(_id, _width, _height, false);
-                    break;
-                case "Undo":
-                    wall = new UndoWall(_id, _width, _height);
-                    break;
-                default:
-                    throw new ArgumentException("Invalid wall type");
+                throw new InvalidOperationException("Wall type must be set before building the wall.");
             }
+
+            Wall wall = _type.Value switch
+            {
+                StaticWallType.Teleporting => new TeleportingWall(_id, _width, _height),
+                StaticWallType.QuickSand => new QuickSandWall(_id, _width, _height),
+                StaticWallType.Standard => new StandardWall(_id, _width, _height, false),
+                StaticWallType.Bouncy => new BouncyWall(_id, _width, _height, false),
+                StaticWallType.Undo => new UndoWall(_id, _width, _height),
+                _ => throw new ArgumentException("Invalid wall type")
+            };
+
             wall.X = _X;
             wall.Y = _Y;
             wall.Acceleration = _Acceleration;

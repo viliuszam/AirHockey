@@ -5,8 +5,16 @@ namespace AirHockey.Actors.Walls
     {
         public override Wall CreateWall(int id, float width, float height, string type, float x, float y)
         {
-            WallDirector director = new WallDirector(new DynamicWallBuilder());
-            return director.BuildWall(id, width, height, type, x, y);
+            DynamicWallBuilder buider = new DynamicWallBuilder();
+            return buider
+                .SetId(id)
+                .SetDimensions(width, height)
+                .SetType(type)
+                .SetPosition(x, y)
+                .SetVelocity()
+                .SetAcceleration()
+                .SetMass()
+                .Build();
         }
     }
 }
