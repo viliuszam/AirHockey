@@ -3,16 +3,43 @@ using AirHockey.Actors.Powerups;
 using AirHockey.Actors;
 using AirHockey.Actors.Walls;
 using System.Drawing;
+using AirHockey.Strategies;
+using AirHockey.Actors.Command;
 
 namespace AirHockey.Facades
 {
     public class Facade
     {
         private static Random random;
-
+        private List<ICommand> commandLists = new List<ICommand>();
+        private ICollision collisions;
         public Facade()
         {
             random = new Random();
+        }
+        public void InitializeCommands(Game game)
+        {
+
+            commandLists.Clear();
+
+            var player1 = game.Room.Players[0];
+            var player2 = game.Room.Players[1];
+            var puck = game.Room.Puck;
+
+            var player1MoveCommand = new MoveCommand(player1, new Queue<(float X, float Y, float timestamp)>());
+            var player2MoveCommand = new MoveCommand(player2, new Queue<(float X, float Y, float timestamp)>());
+            var puckMoveCommand = new MoveCommand(puck, new Queue<(float X, float Y, float timestamp)>());
+
+            commandLists.Add(player1MoveCommand);
+            commandLists.Add(player2MoveCommand);
+            commandLists.Add(puckMoveCommand);
+        }
+        public void TrackEntityMovement()
+        {
+            foreach (ICommand commandList in commandLists)
+            {
+                commandList.Execute();
+            }
         }
         public void SpawnPowerups(Room room)
         {
@@ -173,6 +200,116 @@ namespace AirHockey.Facades
         public List<Powerup> GetAllPowerupsByRoom(Room room)
         {
             return room.Powerups.ToList();
+        }
+        public void SetStrategy(ICollision newCollisionStrategy)
+        {
+            collisions = newCollisionStrategy;
+        }
+        public void HandleCollisions(Game game)
+        {
+            var player1 = game.Room.Players[0];
+            var player2 = game.Room.Players[1];
+            var puck = game.Room.Puck;
+            SetStrategy(new BaseCollision());
+            if (player1.IsColliding(player2))
+            {
+                collisions.ResolveCollision(player1, player2);
+            }
+            if (player1.IsColliding(puck))
+            {
+                collisions.ResolveCollision(player1, puck);
+            }
+            if (player2.IsColliding(puck))
+            {
+                collisions.ResolveCollision(player2, puck);
+            }
+            foreach (var wall in game.Room.Walls)
+            {
+                if (wall is QuickSandWall) SetStrategy(new QuickCollision());
+                else if (wall is TeleportingWall) SetStrategy(new TeleportCollision());
+                else if (wall is ScrollingWall) SetStrategy(new ScrolingCollision());
+                else if (wall is BouncyWall) SetStrategy(new BouncyCollision());
+                else if (wall is UndoWall) SetStrategy(new UndoCollision());
+
+                else SetStrategy(new WallCollision());
+                if (wall.IsColliding(player1))
+                {
+                    if (wall is UndoWall undoWall)
+                    {
+                        if (undoWall.isActive())
+                        {
+                            UndoOnCollision(player1);
+                            undoWall.setInactive();
+                        }
+                    }
+                    collisions.ResolveCollision(wall, player1);
+                }
+
+                if (wall.IsColliding(player2))
+                {
+                    if (wall is UndoWall undoWall)
+                    {
+                        if (undoWall.isActive())
+                        {
+                            UndoOnCollision(player2);
+                            undoWall.setInactive();
+                        }
+                    }
+                    collisions.ResolveCollision(wall, player2);
+                }
+
+                if (wall.IsColliding(puck))
+                {
+                    if (wall is UndoWall undoWall)
+                    {
+                        if (undoWall.isActive())
+                        {
+                            UndoOnCollision(puck);
+                            undoWall.setInactive();
+                        }
+                    }
+                    collisions.ResolveCollision(wall, puck);
+                }
+
+                foreach (var otherWall in game.Room.Walls)
+                {
+                    if (wall is QuickSandWall) SetStrategy(new QuickCollision());
+                    else if (wall is TeleportingWall) SetStrategy(new TeleportCollision());
+                    else if (wall is ScrollingWall) SetStrategy(new ScrolingCollision());
+                    else if (wall is BouncyWall) SetStrategy(new BouncyCollision());
+                    else if (wall is UndoWall) SetStrategy(new UndoCollision());
+
+                    else SetStrategy(new WallCollision());
+                    if (wall != otherWall && wall.IsColliding(otherWall))
+                    {
+                        collisions.ResolveCollision(wall, otherWall);
+                    }
+                }
+            }
+
+            foreach (var powerup in game.Room.Powerups)
+            {
+                if (powerup.IsColliding(player1))
+                {
+                    powerup.ResolveCollision(player1);
+                }
+                if (powerup.IsColliding(player2))
+                {
+                    powerup.ResolveCollision(player2);
+                }
+            }
+
+        }
+        public void UndoOnCollision(Entity entity)
+        {
+            foreach (var command in commandLists)
+            {
+                if (command is MoveCommand moveCommand && moveCommand.getEntity() == entity)
+                {
+                    moveCommand.Undo();
+                    break;
+                }
+            }
         }
     }
 }

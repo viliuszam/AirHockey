@@ -26,7 +26,6 @@ namespace AirHockey.Services
         private readonly IGameAnalytics _analytics;
         private readonly IHubContext<GameHub> _hubContext;
         private System.Timers.Timer gameLoopTimer;
-        private ICollision collisions;
         private const float MIN_X = 0f; 
         private const float MAX_X = 855f;
         private const float MIN_Y = 0f;
@@ -34,22 +33,20 @@ namespace AirHockey.Services
 
         private const int maxEffects = 5;
 
-        private List<ICommand> commandLists = new List<ICommand>();
         private Facade facade;
 
-        public GameService(IHubContext<GameHub> hubContext, IGameAnalytics analytics, ICollision col, Facade fac)
+        public GameService(IHubContext<GameHub> hubContext, IGameAnalytics analytics)
         {
             _hubContext = hubContext;
             _analytics = analytics;
             gameLoopTimer = new System.Timers.Timer(16);  // 16*60 ~ apie 60 FPS
             gameLoopTimer.Elapsed += GameLoop;
             gameLoopTimer.Start();
-            collisions = col;
-            facade = fac;
+            facade = new Facade();
         }
         public void SetStrategy(ICollision newCollisionStrategy)
         {
-            collisions = newCollisionStrategy;
+            facade.SetStrategy(newCollisionStrategy);
         }
         public List<Powerup> GetPowerupsByRoom(Room room)
         {
@@ -57,20 +54,7 @@ namespace AirHockey.Services
         }
         private void InitializeCommands(Game game)
         {
-
-            commandLists.Clear(); 
-
-            var player1 = game.Room.Players[0];
-            var player2 = game.Room.Players[1];
-            var puck = game.Room.Puck;
-
-            var player1MoveCommand = new MoveCommand(player1, new Queue<(float X, float Y, float timestamp)>());
-            var player2MoveCommand = new MoveCommand(player2, new Queue<(float X, float Y, float timestamp)>());
-            var puckMoveCommand = new MoveCommand(puck, new Queue<(float X, float Y, float timestamp)>());
-
-            commandLists.Add(player1MoveCommand);
-            commandLists.Add(player2MoveCommand);
-            commandLists.Add(puckMoveCommand);
+            facade.InitializeCommands(game);
         }
 
         public bool RoomExists(string room)
@@ -80,114 +64,7 @@ namespace AirHockey.Services
 
         private void TrackEntityMovement()
         {
-            foreach(ICommand commandList in commandLists){
-                commandList.Execute();
-            }
-        }
-
-        private void HandleCollisions(Game game)
-        {
-            var player1 = game.Room.Players[0];
-            var player2 = game.Room.Players[1];
-            var puck = game.Room.Puck;
-            SetStrategy(new BaseCollision());
-            if (player1.IsColliding(player2))
-            {
-                collisions.ResolveCollision(player1, player2);
-            }
-            if (player1.IsColliding(puck))
-            {
-                collisions.ResolveCollision(player1, puck);
-            }
-            if (player2.IsColliding(puck))
-            {
-                collisions.ResolveCollision(player2,puck);
-            }
-            foreach (var wall in game.Room.Walls)
-            {
-                if (wall is QuickSandWall) SetStrategy(new QuickCollision());
-                else if (wall is TeleportingWall) SetStrategy(new TeleportCollision());
-                else if (wall is ScrollingWall) SetStrategy(new ScrolingCollision());
-                else if (wall is BouncyWall) SetStrategy(new BouncyCollision());
-                else if (wall is UndoWall) SetStrategy(new UndoCollision());
-
-                else SetStrategy(new WallCollision());
-                if (wall.IsColliding(player1))
-                {
-                    if (wall is UndoWall undoWall)
-                    {
-                        if(undoWall.isActive()){
-                            UndoOnCollision(player1);
-                            undoWall.setInactive();
-                        }
-                    }
-                    collisions.ResolveCollision(wall, player1);
-                }
-
-                if (wall.IsColliding(player2))
-                {
-                    if (wall is UndoWall undoWall)
-                    {
-                        if(undoWall.isActive()){
-                            UndoOnCollision(player2);
-                            undoWall.setInactive();
-                        }
-                    }
-                    collisions.ResolveCollision(wall, player2);
-                }
-
-                if (wall.IsColliding(puck))
-                {
-                    if (wall is UndoWall undoWall)
-                    {
-                        if(undoWall.isActive()){
-                            UndoOnCollision(puck);
-                            undoWall.setInactive();
-                        }
-                    }
-                    collisions.ResolveCollision(wall, puck);
-                }
-
-                foreach (var otherWall in game.Room.Walls)
-                {
-                    if (wall is QuickSandWall) SetStrategy(new QuickCollision());
-                    else if (wall is TeleportingWall) SetStrategy(new TeleportCollision());
-                    else if (wall is ScrollingWall) SetStrategy(new ScrolingCollision());
-                    else if (wall is BouncyWall) SetStrategy(new BouncyCollision());
-                    else if (wall is UndoWall) SetStrategy(new UndoCollision());
-
-                    else SetStrategy(new WallCollision());
-                    if (wall != otherWall && wall.IsColliding(otherWall))
-                    {
-                        collisions.ResolveCollision(wall,otherWall);
-                    }
-                }
-            }
-
-            foreach (var powerup in game.Room.Powerups)
-            {
-                if (powerup.IsColliding(player1))
-                {
-                    powerup.ResolveCollision(player1);
-                }
-                if (powerup.IsColliding(player2))
-                {
-                    powerup.ResolveCollision(player2);
-                }
-            }
-            
-        }
-
-        private void UndoOnCollision(Entity entity)
-        {
-            foreach (var command in commandLists)
-            {
-                if (command is MoveCommand moveCommand && moveCommand.getEntity() == entity)
-                {
-                    moveCommand.Undo();
-                    break;
-                }
-            }
+            facade.TrackEntityMovement();
         }
 
         public void UpdateEnvironmentalEffects(Game game)
@@ -266,26 +143,39 @@ namespace AirHockey.Services
 
         private async void CheckGoal(Game game)
         {
-            if (game.Room.GetLast() != -1)
+            if (game.Room.GetLast() != -1 && game.Room.Players != null && game.Room.Players.Count > 0)
             {
+                int lastIndex = game.Room.GetLast();
 
-                string roomCode = game.Room.RoomCode;
-
-                await _hubContext.Clients.Group(roomCode).SendAsync("GoalScored",
-                    game.Room.Players[game.Room.GetLast()].Nickname, game.Room.Player1Score, game.Room.Player2Score);
-
-                // log goal
-                _analytics.LogEvent(roomCode, "GoalScored", new Dictionary<string, object>
+                if (lastIndex >= 0 && lastIndex < game.Room.Players.Count)
                 {
-                    { "ScoringPlayer", game.Room.Players[game.Room.GetLast()].Nickname },
-                    { "Score", $"{game.Room.Player1Score} - {game.Room.Player2Score}" },
-                    { "TimeStamp", DateTime.Now }
-                });
+                    string roomCode = game.Room.RoomCode;
 
-                Console.WriteLine($"{game.Room.Players[game.Room.GetLast()].Nickname} scored! Score is now {game.Room.Player1Score} - {game.Room.Player2Score}");
-                game.Room.SetLast();
+                    await _hubContext.Clients.Group(roomCode).SendAsync("GoalScored",
+                        game.Room.Players[lastIndex].Nickname, game.Room.Player1Score, game.Room.Player2Score);
+
+                    // Log goal
+                    _analytics.LogEvent(roomCode, "GoalScored", new Dictionary<string, object>
+            {
+                { "ScoringPlayer", game.Room.Players[lastIndex].Nickname },
+                { "Score", $"{game.Room.Player1Score} - {game.Room.Player2Score}" },
+                { "TimeStamp", DateTime.Now }
+            });
+
+                    Console.WriteLine($"{game.Room.Players[lastIndex].Nickname} scored! Score is now {game.Room.Player1Score} - {game.Room.Player2Score}");
+                    game.Room.SetLast();
+                }
+                else
+                {
+                    Console.WriteLine($"Invalid last index: {lastIndex}. Player list count: {game.Room.Players.Count}");
+                }
+            }
+            else
+            {
+                Console.WriteLine("No recent goal or invalid player collection.");
             }
         }
+
 
         private async void GameLoop(object sender, ElapsedEventArgs e)
         {
@@ -314,7 +204,7 @@ namespace AirHockey.Services
                         wall.ConstrainToBounds(MIN_X, MIN_Y, MAX_X, MAX_Y);
                     }
 
-                    HandleCollisions(game);
+                    facade.HandleCollisions(game);
                     CheckGoal(game);
 
                     player1.ConstrainToBounds(MIN_X, MIN_Y, MAX_X, MAX_Y);
