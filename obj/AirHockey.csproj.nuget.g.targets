@@ -1,7 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
-<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <Import Project="$(NuGetPackageRoot)coverlet.msbuild\6.0.2\build\coverlet.msbuild.targets" Condition="Exists('$(NuGetPackageRoot)coverlet.msbuild\6.0.2\build\coverlet.msbuild.targets')" />
-    <Import Project="$(NuGetPackageRoot)coverlet.collector\6.0.2\build\netstandard2.0\coverlet.collector.targets" Condition="Exists('$(NuGetPackageRoot)coverlet.collector\6.0.2\build\netstandard2.0\coverlet.collector.targets')" />
-  </ImportGroup>
-</Project>
