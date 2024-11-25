@@ -26,3 +26,30 @@ Unit tested using NUnit.<br>
 
 
 </div>
+
+## Patterns
+
+Design Patterns to be implemented into the game:
+- Singleton ✔️
+- Factory ✔️
+- Abstract Factory ✔️
+- Strategy ✔️
+- Observer ✔️
+- Builder ✔️
+- Adapter ✔️
+- Prototype ✔️
+- Decorator ✔️
+- Command ✔️
+- Façade ✔️
+- Bridge ✔️
+
+- Template method
+- Iterator
+- Flyweight
+- State
+- Proxy
+- Chain Of Responsibility
+- Visitor
+- Interpreter
+- Mediator
+- Memento
