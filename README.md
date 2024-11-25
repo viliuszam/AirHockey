@@ -2,7 +2,7 @@
 
 # AirHockey
 
-A lightweight web game created for Kaunas University of Techology Design Pattern module.<br>
+A lightweight web game created for Kaunas University of Technology Design Pattern module.<br>
 Live game instance available at http://hockey.info.gf/ (if I am not out of credits 😭).<br>
 Unit tested using NUnit.<br>
 
