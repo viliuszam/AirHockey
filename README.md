@@ -14,7 +14,8 @@ Unit tested using NUnit.<br>
 ---
 
 ## Previews
-
+<div align="center">
+  
 | ![pre-game](https://github.com/user-attachments/assets/1b509494-c7d2-4c6f-bb4a-3af7b901a568) | 
 |:--:| 
 | *Game Lobby view* |
@@ -23,3 +24,5 @@ Unit tested using NUnit.<br>
 |:--:| 
 | *Ingame view (random map seed)* |
 
+
+</div>
