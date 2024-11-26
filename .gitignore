@@ -4,6 +4,9 @@
 [Oo]bj/
 [Bb]in/
 
+# test coverage reports
+AirHockeyTests/coverageresults
+
 # Visual Studio specific files
 .vs/
 *.suo
