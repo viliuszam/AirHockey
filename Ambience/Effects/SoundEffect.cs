@@ -2,11 +2,11 @@
 {
     public enum SoundType
     {
-        Collision,
-        GoalScored,
-        PowerupActivated,
-        GameStart,
-        GameEnd
+        // ids used in mp3 names
+        GoalScored = 1,
+        PowerupActivated = 2,
+        Collision = 3,
+        GameStart = 4
     }
 
     public class SoundEffect

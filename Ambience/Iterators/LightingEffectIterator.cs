@@ -7,7 +7,7 @@ namespace AirHockey.Ambience.Iterators
         private readonly List<LightingEffect> _effects;
         private int _position;
 
-        public LightingEffectIterator(List<LightingEffect> effects)
+        public LightingEffectIterator(ref List<LightingEffect> effects)
         {
             _effects = effects;
             _position = 0;

@@ -6,7 +6,7 @@ namespace AirHockey.Ambience.Iterators
     {
         private readonly Queue<SoundEffect> _effects;
 
-        public SoundEffectIterator(Queue<SoundEffect> effects)
+        public SoundEffectIterator(ref Queue<SoundEffect> effects)
         {
             _effects = effects;
         }

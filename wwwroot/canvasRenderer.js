@@ -187,16 +187,57 @@ class GlobalFieldEffect {
     }
 }
 
-function drawGame(roomCode) {
+class LightingEffect {
+    constructor(x, y, width, height, duration, color) {
+        this.x = x;
+        this.y = y;
+        this.width = width;
+        this.height = height;
+        this.duration = duration;
+        this.color = color;
+        this.startTime = Date.now();
+    }
 
+    isExpired() {
+        return Date.now() - this.startTime > this.duration;
+    }
+
+    render(ctx) {
+        ctx.save();
+        //ctx.globalAlpha = 0.5; // Semi-transparent effect
+        ctx.fillStyle = this.color;
+        ctx.fillRect(this.x, this.y, this.width, this.height);
+        ctx.restore();
+    }
+}
+
+let lightingEffects = [];
+
+export function addLightingEffect(x, y, width, height, duration, color) {
+    const alpha = ((color >> 24) & 0xff) / 255; // Extract alpha and normalize to 0-1
+    const red = (color >> 16) & 0xff;
+    const green = (color >> 8) & 0xff;
+    const blue = color & 0xff;
+    const rgbaColor = `rgba(${red}, ${green}, ${blue}, ${alpha})`;
+
+
+    lightingEffects.push(new LightingEffect(x, y, width, height, duration, rgbaColor));
+}
+function clearExpiredLightingEffects() {
+    lightingEffects = lightingEffects.filter(effect => !effect.isExpired());
+}
+
+function drawGame(roomCode) {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     if (tableImageLoaded) {
         ctx.drawImage(tableImage, 0, 0, 855, 541);
     }
 
-    effects.forEach(effect => effect.render(ctx));
+    clearExpiredLightingEffects();
+    lightingEffects.forEach(effect => effect.render(ctx));
 
+    effects.forEach(effect => effect.render(ctx));
     walls.forEach(wall => wall.render(ctx));
     powerups.forEach(powerup => powerup.render(ctx));
     player1.render(ctx);
@@ -207,7 +248,6 @@ function drawGame(roomCode) {
     ctx.fillStyle = "black";
     ctx.textAlign = "center";
     ctx.fillText(`${player1.nickname} (${player1.score}) - ${player2.nickname} (${player2.score})`, canvas.width / 2, canvas.height - 30);
-
     ctx.fillText(`Room: ${roomCode}`, canvas.width / 2, canvas.height - 10);
 
     if (scoreMessage) {

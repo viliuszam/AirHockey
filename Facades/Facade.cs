@@ -5,6 +5,7 @@ using AirHockey.Actors.Walls;
 using System.Drawing;
 using AirHockey.Strategies;
 using AirHockey.Actors.Command;
+using AirHockey.Ambience.Effects;
 
 namespace AirHockey.Facades
 {
@@ -13,9 +14,11 @@ namespace AirHockey.Facades
         private static Random random;
         private List<ICommand> commandLists = new List<ICommand>();
         private ICollision collisions;
+        private int ticksWithoutCollisionSound;
         public Facade()
         {
             random = new Random();
+            ticksWithoutCollisionSound = 0;
         }
         public void InitializeCommands(Game game)
         {
@@ -205,6 +208,16 @@ namespace AirHockey.Facades
         {
             collisions = newCollisionStrategy;
         }
+
+        private void PlayCollisionSound(Game game)
+        {
+            if (ticksWithoutCollisionSound >= 30) // 1/2 sekundes
+            {
+                game.SoundEffects.AddEffect(new SoundEffect(SoundType.Collision, 0.2f));
+                ticksWithoutCollisionSound = 0;
+            }
+        }
+
         public void HandleCollisions(Game game)
         {
             var player1 = game.Room.Players[0];
@@ -213,14 +226,17 @@ namespace AirHockey.Facades
             SetStrategy(new BaseCollision());
             if (player1.IsColliding(player2))
             {
+                PlayCollisionSound(game);
                 collisions.ResolveCollision(player1, player2);
             }
             if (player1.IsColliding(puck))
             {
+                PlayCollisionSound(game);
                 collisions.ResolveCollision(player1, puck);
             }
             if (player2.IsColliding(puck))
             {
+                PlayCollisionSound(game);
                 collisions.ResolveCollision(player2, puck);
             }
             foreach (var wall in game.Room.Walls)
@@ -302,6 +318,7 @@ namespace AirHockey.Facades
                 }
             }
 
+            ticksWithoutCollisionSound++;
         }
         public void UndoOnCollision(Entity entity)
         {

@@ -1,4 +1,5 @@
 ﻿using AirHockey.Actors;
+using AirHockey.Ambience.Effects;
 using AirHockey.Managers;
 using AirHockey.Services;
 using Microsoft.AspNetCore.SignalR;
@@ -82,6 +83,8 @@ public class GameHub : Hub
                 }
                 await Clients.Group(roomCode).SendAsync("StartGame",
                     player1Nickname, player2Nickname, game.Room.Player1Score, game.Room.Player2Score);
+
+                game.SoundEffects.AddEffect(new SoundEffect(SoundType.GameStart, 0.2f));
             }
         }
         else
@@ -106,6 +109,7 @@ public class GameHub : Hub
 
                 if (powerup)
                 {
+                    game.SoundEffects.AddEffect(new SoundEffect(SoundType.PowerupActivated, 0.2f));
                     player.UsePowerup();
                 }
 

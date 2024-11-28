@@ -7,7 +7,7 @@ namespace AirHockey.Ambience.Iterators
         private readonly HashSet<ParticleEffect> _effects;
         private IEnumerator<ParticleEffect> _enumerator;
 
-        public ParticleEffectIterator(HashSet<ParticleEffect> effects)
+        public ParticleEffectIterator(ref HashSet<ParticleEffect> effects)
         {
             _effects = effects;
             _enumerator = _effects.GetEnumerator();

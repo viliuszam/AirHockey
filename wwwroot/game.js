@@ -1,5 +1,5 @@
 ﻿import { connection, createRoom, joinRoom, roomCode } from './signalrConnection.js';
-import { drawGame, updatePlayerPosition, updatePuckPosition, player1, player2, addWall, updateWallPosition, clearWalls, addPowerup, updateEffects, updatePowerups, updatePlayerActivePowerups } from './canvasRenderer.js';
+import { drawGame, updatePlayerPosition, updatePuckPosition, player1, player2, addWall, updateWallPosition, clearWalls, addPowerup, updateEffects, updatePowerups, updatePlayerActivePowerups, addLightingEffect } from './canvasRenderer.js';
 
 const roomCodeInput = document.getElementById('roomCode');
 const createRoomBtn = document.getElementById('createRoomBtn');
@@ -14,6 +14,27 @@ let isMoving = false;
 export let scoreMessage = null;
 let scoreMessageTimeout = null;
 let isGameActive = false;
+
+const soundEffects = {
+    1: new Audio('/sounds/scored.mp3'),
+    2: new Audio('/sounds/powerup.mp3'),
+    3: new Audio('/sounds/collision.mp3'),
+    4: new Audio('/sounds/gamestart.mp3')
+};
+
+function playSoundEffect(effectName) {
+    const sound = soundEffects[effectName];
+    if (sound) {
+        sound.currentTime = 0; // Reset playback to the beginning
+        sound.play().catch((error) => {
+            console.error(`Error playing sound "${effectName}":`, error);
+        });
+        console.log("played it fr");
+    } else {
+        console.warn(`Sound effect "${effectName}" not found.`);
+    }
+}
+
 createRoomBtn.addEventListener('click', function () {
     const roomCode = roomCodeInput.value;
     const nickname = document.getElementById('nickname').value;
@@ -81,6 +102,14 @@ connection.on("WaitingForPlayer", function () {
 
 connection.on("RoomFull", function (message) {
     alert(message);
+});
+
+connection.on("ShowLightingEffect", function (x, y, width, height, duration, color) {
+    addLightingEffect(x, y, width, height, duration, color);
+});
+connection.on("PlaySoundEffect", function (type, volume) {
+    console.log("sound: " + type + " " + volume);
+    playSoundEffect(type);
 });
 
 connection.on("UpdateGameState", function (player1X, player1Y, player2X, player2Y, puckX, puckY, sentWalls, activeEffects, activePowerups, playerActivePowerups) {

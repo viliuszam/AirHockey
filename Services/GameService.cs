@@ -164,8 +164,11 @@ namespace AirHockey.Services
             });
 
                     // Add a lighting effect on goal area after goal scored
-                    Rectangle goalArea = lastIndex == 0 ? new Rectangle(0, 180, 25 , 185) : new Rectangle(830, 180, 25, 185);
-                    game.LightingEffects.AddEffect(new LightingEffect(goalArea, 500, Color.FromArgb(100, 255, 255, 0)));
+                    Rectangle goalArea = lastIndex == 0 ? new Rectangle(830, 180, 25, 185) : new Rectangle(0, 180, 25, 185);
+                    game.LightingEffects.AddEffect(new LightingEffect(goalArea, 1500, Color.FromArgb(100, 255, 255, 0)));
+
+                    // play goal sound
+                    game.SoundEffects.AddEffect(new SoundEffect(SoundType.GoalScored, 0.2f));
 
                     Console.WriteLine($"{game.Room.Players[lastIndex].Nickname} scored! Score is now {game.Room.Player1Score} - {game.Room.Player2Score}");
                     game.Room.SetLast();
@@ -292,6 +295,7 @@ namespace AirHockey.Services
             while (soundIterator.HasNext())
             {
                 SoundEffect effect = soundIterator.Next();
+                if (effect == null) continue;
                 await _hubContext.Clients.Group(game.Room.RoomCode).SendAsync("PlaySoundEffect",
                     effect.Type, effect.Volume);
             }
