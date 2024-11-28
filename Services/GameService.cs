@@ -17,6 +17,7 @@ using AirHockey.Actors.Powerups.PowerupDecorators;
 using AirHockey.Actors.Command;
 using System.Diagnostics.CodeAnalysis;
 using AirHockey.Facades;
+using AirHockey.Ambience.Effects;
 
 namespace AirHockey.Services
 {
@@ -162,6 +163,10 @@ namespace AirHockey.Services
                 { "TimeStamp", DateTime.Now }
             });
 
+                    // Add a lighting effect on goal area after goal scored
+                    Rectangle goalArea = lastIndex == 0 ? new Rectangle(0, 180, 25 , 185) : new Rectangle(830, 180, 25, 185);
+                    game.LightingEffects.AddEffect(new LightingEffect(goalArea, 500, Color.FromArgb(100, 255, 255, 0)));
+
                     Console.WriteLine($"{game.Room.Players[lastIndex].Nickname} scored! Score is now {game.Room.Player1Score} - {game.Room.Player2Score}");
                     game.Room.SetLast();
                 }
@@ -243,6 +248,8 @@ namespace AirHockey.Services
                         })
                         .ToList();
 
+                    await SendAmbientEffects(game);
+
                     await _hubContext.Clients.Group(game.Room.RoomCode).SendAsync("UpdateGameState",
                         player1.X, player1.Y,
                         player2.X, player2.Y,
@@ -252,6 +259,41 @@ namespace AirHockey.Services
                 {
                     //Console.WriteLine($"Error in game loop: {ex.Message}");
                 }
+            }
+        }
+
+        private async Task SendAmbientEffects(Game game)
+        {
+            var lightingIterator = game.LightingEffects.CreateIterator();
+            var particleIterator = game.ParticleEffects.CreateIterator();
+            var soundIterator = game.SoundEffects.CreateIterator();
+
+            while (lightingIterator.HasNext())
+            {
+                LightingEffect effect = lightingIterator.Next();
+                await _hubContext.Clients.Group(game.Room.RoomCode).SendAsync("ShowLightingEffect",
+                    effect.Area.X, effect.Area.Y, effect.Area.Width, effect.Area.Height,
+                    effect.Duration,
+                    effect.Color.ToArgb());
+
+                lightingIterator.Remove(effect);
+            }
+
+            while (particleIterator.HasNext())
+            {
+                ParticleEffect effect = particleIterator.Next();
+                await _hubContext.Clients.Group(game.Room.RoomCode).SendAsync("ShowParticleEffect",
+                    effect.Type, effect.Position.X, effect.Position.Y,
+                    effect.Lifetime);
+
+                particleIterator.Remove(effect);
+            }
+
+            while (soundIterator.HasNext())
+            {
+                SoundEffect effect = soundIterator.Next();
+                await _hubContext.Clients.Group(game.Room.RoomCode).SendAsync("PlaySoundEffect",
+                    effect.Type, effect.Volume);
             }
         }
 

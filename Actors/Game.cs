@@ -1,4 +1,5 @@
-﻿using AirHockey.Effects;
+﻿using AirHockey.Ambience.Collections;
+using AirHockey.Effects;
 using AirHockey.Observers;
 
 namespace AirHockey.Actors
@@ -9,6 +10,11 @@ namespace AirHockey.Actors
         public bool IsInitialized { get; set; } = false;
 
         public List<EnvironmentalEffect> ActiveEffects;
+
+        public LightingEffectCollection LightingEffects { get; } = new LightingEffectCollection();
+        public SoundEffectCollection SoundEffects { get; } = new SoundEffectCollection();
+        public ParticleEffectCollection ParticleEffects { get; } = new ParticleEffectCollection();
+
 
         public Game(Room room)
         {

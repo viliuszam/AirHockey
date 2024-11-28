@@ -14,16 +14,14 @@ namespace AirHockey.Ambience.Effects
         public ParticleType Type { get; set; }
         public Vector2 Position { get; set; }
         public float Lifetime { get; set; }
-        public int ParticleCount { get; set; }
 
         private float _elapsedTime;
 
-        public ParticleEffect(ParticleType type, Vector2 position, float lifetime, int particleCount)
+        public ParticleEffect(ParticleType type, Vector2 position, float lifetime)
         {
             Type = type;
             Position = position;
             Lifetime = lifetime;
-            ParticleCount = particleCount;
             _elapsedTime = 0;
         }
 
