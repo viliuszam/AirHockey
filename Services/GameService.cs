@@ -267,6 +267,8 @@ namespace AirHockey.Services
 
         private async Task SendAmbientEffects(Game game)
         {
+            // pridet efektam priority, apsisieit su vienu iterator instance, padaryt foreachus vietoj while'u
+
             var lightingIterator = game.LightingEffects.CreateIterator();
             var particleIterator = game.ParticleEffects.CreateIterator();
             var soundIterator = game.SoundEffects.CreateIterator();
@@ -327,6 +329,14 @@ namespace AirHockey.Services
 
                     isValidPosition = true;
 
+                    switch (wallType)
+                    {
+                        case 1:
+                            if (IsPositionValid(wall, room, wallsToAdd)) { }
+                            if (IsPositionValid(wall, room, wallsToAdd)) { }
+                            break;
+                    }
+                    
                     switch (wallType)
                     {
                         case 1:

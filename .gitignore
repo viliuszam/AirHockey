@@ -19,6 +19,11 @@ AirHockeyTests/coverageresults
 # Rider specific files
 .idea/
 
+# sonarqube
+.sonarqube/
+.editorconfig
+
+
 # Logs
 *.log
 

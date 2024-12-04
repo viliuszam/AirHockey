@@ -35,6 +35,7 @@ namespace AirHockey.Services.Tests
         private Mock<IGameAnalytics> _mockAnalytics;
         private Mock<ICollision> _mockCollision;
 
+
         [SetUp]
         public void SetUp()
         {
@@ -42,7 +43,7 @@ namespace AirHockey.Services.Tests
             _mockAnalytics = new Mock<IGameAnalytics>();
             _mockCollision = new Mock<ICollision>();
 
-            _gameService = new GameService(_mockHubContext.Object, _mockAnalytics.Object, _mockCollision.Object);
+            _gameService = new GameService(_mockHubContext.Object, _mockAnalytics.Object);
         }
 
         [Test]

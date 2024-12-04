@@ -12,6 +12,8 @@ namespace AirHockey.Actors
 
         public List<EnvironmentalEffect> ActiveEffects;
 
+
+        // TODO: tik vienas effectcollection, skirtingi iteratoriai
         public LightingEffectCollection LightingEffects { get; } = new LightingEffectCollection();
         public SoundEffectCollection SoundEffects { get; } = new SoundEffectCollection();
         public ParticleEffectCollection ParticleEffects { get; } = new ParticleEffectCollection();

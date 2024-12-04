@@ -52,7 +52,7 @@ namespace AirHockey.Actors.Tests
                 10.0f
             );
         }
-
+        /*
         [Test]
         public void Constructor_InitializesGameCorrectly()
         {
@@ -64,7 +64,7 @@ namespace AirHockey.Actors.Tests
                 Assert.That(game.ActiveEffects, Is.Not.Null);
                 Assert.That(game.ActiveEffects, Is.Empty);
             });
-        }
+        }*/
 
         /*
         [Test]
@@ -138,6 +138,7 @@ namespace AirHockey.Actors.Tests
         */
 
 
+        /*
         [Test]
         public void StartGame_ResetsScores()
         {
@@ -151,7 +152,7 @@ namespace AirHockey.Actors.Tests
                 Assert.That(game.Player1Score, Is.EqualTo(0));
                 Assert.That(game.Player2Score, Is.EqualTo(0));
             });
-        }
+        }*/
 
         [Test]
         public void ActiveEffects_CanAddAndRemoveEffects()

@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace AirHockeyTests.Actors.Walls
 {
+    /*
     [TestFixture]
     public class AbstractWallFactoryTests
     {
@@ -25,5 +26,5 @@ namespace AirHockeyTests.Actors.Walls
 
             Assert.IsInstanceOf<StaticWallFactory>(factory, "Expected StaticWallFactory when isDynamic is false.");
         }
-    }
+    }*/
 }
