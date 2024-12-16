@@ -7,8 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AirHockey", "AirHockey.cspr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AirHockeyTests", "AirHockeyTests\AirHockeyTests.csproj", "{20266D35-43A8-4173-81F4-6DC784EB5C82}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirHockeyAnalyzer", "AirHockeyAnalyzer\AirHockeyAnalyzer.csproj", "{051E3733-8749-4B89-9F89-8883A40503CE}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,10 +21,6 @@ Global
 		{20266D35-43A8-4173-81F4-6DC784EB5C82}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{20266D35-43A8-4173-81F4-6DC784EB5C82}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{20266D35-43A8-4173-81F4-6DC784EB5C82}.Release|Any CPU.Build.0 = Release|Any CPU
-		{051E3733-8749-4B89-9F89-8883A40503CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{051E3733-8749-4B89-9F89-8883A40503CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{051E3733-8749-4B89-9F89-8883A40503CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{051E3733-8749-4B89-9F89-8883A40503CE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

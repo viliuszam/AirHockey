@@ -16,8 +16,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Analyzer Include="Lib\CustomLinter.dll" />
-    <PackageReference Include="AirHockeyAnalyzer" Version="1.0.0" /> 
     <PackageReference Include="coverlet.collector" Version="6.0.2">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
@@ -38,10 +36,6 @@
 
   <ItemGroup>
     <Folder Include="wwwroot\sounds\" />
-  </ItemGroup>
-
-  <ItemGroup> 
-    <Analyzer Include="Lib/AirHockeyAnalyzer.dll" /> 
   </ItemGroup>
 
 </Project>
