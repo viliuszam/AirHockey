@@ -204,7 +204,7 @@ function sendInputState() {
 function startInputLoop() {
     isGameActive = true;
     setInterval(() => {
-        if (isGameActive && isMoving) {
+        if (isGameActive) {
             sendInputState();
         }
     }, 16); // 60 kartu per sekunde siuncia inputus
