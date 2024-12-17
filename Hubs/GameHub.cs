@@ -4,6 +4,7 @@ using AirHockey.Managers;
 using AirHockey.Services;
 using Microsoft.AspNetCore.SignalR;
 using System.Diagnostics.CodeAnalysis;
+using AirHockey.Handlers;
 
 
 [ExcludeFromCodeCoverage]
@@ -98,26 +99,37 @@ public class GameHub : Hub
         Console.WriteLine($"Received input from {connectionId} in room {roomCode}: Up={up}, Down={down}, Left={left}, Right={right}, Powerup={powerup}");
 
         var game = GameSessionManager.Instance.GetGame(roomCode);
-        if (game != null)
+        if (game == null) return;
+
+        var player = game.Room.GetPlayerById(connectionId);
+        if (player == null) return;
+
+        var inputs = new Dictionary<string, bool>
         {
-            var player = game.Room.GetPlayerById(connectionId);
+            { "up", up },
+            { "down", down },
+            { "left", left },
+            { "right", right },
+            { "powerup", powerup }
+        };
 
-            if (player != null)
-            {
-                float xDirection = (left ? -1 : 0) + (right ? 1 : 0);
-                float yDirection = (up ? -1 : 0) + (down ? 1 : 0);
+        var context = new InputContext
+        {
+            RoomCode = roomCode,
+            ConnectionId = connectionId,
+            Inputs = inputs,
+            Game = game,
+            Player = player
+        };
 
-                if (powerup)
-                {
-                    game.SoundEffects.AddEffect(new SoundEffect(SoundType.PowerupActivated, 0.2f));
-                    player.UsePowerup();
-                }
-
-                Console.WriteLine($"Player {connectionId} accelerates in direction: ({xDirection}, {yDirection})");
-
-                player.Accelerate(xDirection, yDirection);
-            }
-        }
+        // Set up the chain directly
+        var movementHandler = new MovementHandler();
+        var powerupHandler = new PowerupHandler();
+        
+        movementHandler.SetNext(powerupHandler);
+        
+        // Start the chain
+        movementHandler.Handle(context);
     }
 
     public override async Task OnDisconnectedAsync(Exception exception)
