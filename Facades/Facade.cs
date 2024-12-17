@@ -233,11 +233,13 @@ namespace AirHockey.Facades
             {
                 PlayCollisionSound(game);
                 collisions.ResolveCollision(player1, puck);
+                player1.DistanceToGoalLastCollision = Math.Abs(830 - player1.X);
             }
             if (player2.IsColliding(puck))
             {
                 PlayCollisionSound(game);
                 collisions.ResolveCollision(player2, puck);
+                player2.DistanceToGoalLastCollision = Math.Abs(25 - player2.X);
             }
             foreach (var wall in game.Room.Walls)
             {

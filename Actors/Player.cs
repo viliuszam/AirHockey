@@ -1,8 +1,9 @@
-﻿using AirHockey.Actors.Powerups;
+﻿using AirHockey.Achievement;
+using AirHockey.Actors.Powerups;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 namespace AirHockey.Actors
 {
-    public class Player : Entity
+    public class Player : Entity, IAchievementElement
     {
         public string Id { get; set; }
         public string Color { get; set; }
@@ -11,6 +12,9 @@ namespace AirHockey.Actors
         public string Nickname { get; set; }
         public Room Room { get; private set; }
         public Powerup? ActivePowerup { get; set; }
+
+        // How far the player is from his goal when colliding with puck (for achievement)
+        public float DistanceToGoalLastCollision { get; set; }
 
         public Player(string id, string color, float X, float Y, string nickname, Room room)
         {
@@ -24,6 +28,7 @@ namespace AirHockey.Actors
             Room = room;
             AngleFacing = 0f;
             Nickname = nickname;
+            DistanceToGoalLastCollision = 0f;
         }
 
         public override void Update()
@@ -51,6 +56,11 @@ namespace AirHockey.Actors
                 ActivePowerup.Activate(this);
                 ActivePowerup = null;
             }
+        }
+
+        public void Accept(IAchievementVisitor visitor)
+        {
+            visitor.Visit(this);
         }
     }
 

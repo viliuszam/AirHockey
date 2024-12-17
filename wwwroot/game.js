@@ -1,5 +1,5 @@
 ﻿import { connection, createRoom, joinRoom, roomCode } from './signalrConnection.js';
-import { drawGame, updatePlayerPosition, updatePuckPosition, player1, player2, addWall, updateWallPosition, clearWalls, addPowerup, updateEffects, updatePowerups, updatePlayerActivePowerups, addLightingEffect } from './canvasRenderer.js';
+import { drawGame, updatePlayerPosition, updatePuckPosition, player1, player2, addWall, addAchievement, updateWallPosition, clearWalls, addPowerup, updateEffects, updatePowerups, updatePlayerActivePowerups, addLightingEffect } from './canvasRenderer.js';
 
 const roomCodeInput = document.getElementById('roomCode');
 const createRoomBtn = document.getElementById('createRoomBtn');
@@ -95,6 +95,11 @@ connection.on("StartGame", function (player1Nickname, player2Nickname, player1Sc
     console.log("Game is starting!");
     startGame();
 });
+
+connection.on("Achievement", function (message) {
+    console.log(message);
+    addAchievement(message);
+} );
 
 connection.on("WaitingForPlayer", function () {
     alert("Waiting for another player to join...");

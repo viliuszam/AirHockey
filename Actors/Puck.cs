@@ -9,6 +9,7 @@ namespace AirHockey.Actors
     {
         public float MaxSpeed = 15f;
         private List<IObserver> _observers = new List<IObserver>();
+        public float TimeSinceReset { get; set; }
 
         private const float GOAL_WIDTH = 25f;
         private const float GOAL_Y_MIN = 180f;
@@ -30,6 +31,8 @@ namespace AirHockey.Actors
             Move();
             CapVelocity();
             CheckForGoal();
+            
+            TimeSinceReset += 0.016f; // 16 ms frame
         }
 
         private void CheckForGoal()

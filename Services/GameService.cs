@@ -16,6 +16,8 @@ using AirHockey.Effects.Behaviors;
 using AirHockey.Actors.Powerups.PowerupDecorators;
 using AirHockey.Actors.Command;
 using System.Diagnostics.CodeAnalysis;
+using AirHockey.Achievement;
+using AirHockey.Achievement.Achievements;
 using AirHockey.Facades;
 using AirHockey.Ambience.Effects;
 
@@ -36,6 +38,9 @@ namespace AirHockey.Services
 
         private Facade facade;
 
+        private Dictionary<string, List<IAchievementVisitor>> _achievementVisitors 
+            = new Dictionary<string, List<IAchievementVisitor>>();
+        
         public GameService(IHubContext<GameHub> hubContext, IGameAnalytics analytics)
         {
             _hubContext = hubContext;
@@ -113,6 +118,19 @@ namespace AirHockey.Services
             return new Random().NextDouble() < 0.005;
         }
 
+        public void RegisterAchievementVisitors(string roomCode)
+        {
+            if (!_achievementVisitors.ContainsKey(roomCode))
+            {
+                _achievementVisitors[roomCode] = new List<IAchievementVisitor>
+                {
+                    new FastGoalAchievementVisitor(_hubContext),
+                    new GoalStreakAchievementVisitor(_hubContext),
+                    new LongDistanceGoalAchievementVisitor(_hubContext)
+                };
+            }
+        }
+        
         private EnvironmentalEffect? GetRandomEffect(List<EnvironmentalEffect> exclusions)
         {
             float GetRandomX() => (float)(random.NextDouble() * (MAX_X - MIN_X) + MIN_X);
@@ -151,17 +169,24 @@ namespace AirHockey.Services
                 if (lastIndex >= 0 && lastIndex < game.Room.Players.Count)
                 {
                     string roomCode = game.Room.RoomCode;
+                    var scoringPlayer = game.Room.Players[lastIndex];
 
+                    foreach (var visitor in _achievementVisitors[roomCode])
+                    {
+                        game.Room.Accept(visitor);
+                        scoringPlayer.Accept(visitor);
+                    }
+                    
                     await _hubContext.Clients.Group(roomCode).SendAsync("GoalScored",
                         game.Room.Players[lastIndex].Nickname, game.Room.Player1Score, game.Room.Player2Score);
 
                     // Log goal
                     _analytics.LogEvent(roomCode, "GoalScored", new Dictionary<string, object>
-            {
-                { "ScoringPlayer", game.Room.Players[lastIndex].Nickname },
-                { "Score", $"{game.Room.Player1Score} - {game.Room.Player2Score}" },
-                { "TimeStamp", DateTime.Now }
-            });
+                    {
+                        { "ScoringPlayer", game.Room.Players[lastIndex].Nickname },
+                        { "Score", $"{game.Room.Player1Score} - {game.Room.Player2Score}" },
+                        { "TimeStamp", DateTime.Now }
+                    });
 
                     // Add a lighting effect on goal area after goal scored
                     Rectangle goalArea = lastIndex == 0 ? new Rectangle(830, 180, 25, 185) : new Rectangle(0, 180, 25, 185);
@@ -180,7 +205,7 @@ namespace AirHockey.Services
             }
             else
             {
-                Console.WriteLine("No recent goal or invalid player collection.");
+                //Console.WriteLine("No recent goal or invalid player collection.");
             }
         }
 
@@ -200,6 +225,12 @@ namespace AirHockey.Services
                     var player1 = game.Room.Players[0];
                     var player2 = game.Room.Players[1];
                     var puck = game.Room.Puck;
+                    
+                    if (!_achievementVisitors.ContainsKey(game.Room.RoomCode))
+                    {
+                        RegisterAchievementVisitors(game.Room.RoomCode);
+                    }
+                    
                     player1.Update();
                     player2.Update();
                     puck.Update();
@@ -328,14 +359,6 @@ namespace AirHockey.Services
                     int wallType = random.Next(1, 9);
 
                     isValidPosition = true;
-
-                    switch (wallType)
-                    {
-                        case 1:
-                            if (IsPositionValid(wall, room, wallsToAdd)) { }
-                            if (IsPositionValid(wall, room, wallsToAdd)) { }
-                            break;
-                    }
                     
                     switch (wallType)
                     {
@@ -350,6 +373,8 @@ namespace AirHockey.Services
 
                             wall = abstractWallFactory.CreateWall(i, width, height, "Teleporting", x, y);
 
+                            
+                            
                             // Teleporter 2
                             if (IsPositionValid(wall, room, wallsToAdd))
                             {

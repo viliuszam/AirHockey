@@ -3,6 +3,7 @@ import { Puck } from './puck.js';
 import { scoreMessage } from './game.js';
 import { Wall } from './wall.js';
 import { Powerup } from './powerup.js';
+import { Achievement } from './Achievement.js';
 
 let canvas = document.getElementById("gameCanvas");
 let ctx = canvas.getContext("2d");
@@ -13,6 +14,9 @@ let puck = new Puck(400, 270);
 let walls = [];
 let powerups = [];
 let effects = [];
+let achievementsQueue = [];
+const trophyIcon = new Image();
+trophyIcon.src = "trophy.png";
 
 const tableImage = new Image();
 tableImage.src = "table.png";
@@ -48,6 +52,26 @@ function addEffect(effectType, duration, behavior, x, y, radius) {
 
 export function clearEffects() {
     effects = [];
+}
+
+export function addAchievement(message) {
+    const achievement = new Achievement(message);
+    achievementsQueue.push(achievement);
+}
+
+function updateAndRenderAchievements(ctx) {
+    const currentTime = Date.now();
+    let yOffset = 0;
+
+    achievementsQueue = achievementsQueue.filter((achievement) => {
+        const elapsedTime = currentTime - achievement.startTime;
+        const isActive = achievement.update(elapsedTime);
+
+        achievement.render(ctx, yOffset, trophyIcon);
+        yOffset += 60; 
+
+        return isActive;
+    });
 }
 
 function updateWallPosition(sentWalls) {
@@ -255,6 +279,8 @@ function drawGame(roomCode) {
         ctx.fillStyle = "red";
         ctx.fillText(scoreMessage, canvas.width / 2, canvas.height / 2);
     }
+    
+    updateAndRenderAchievements(ctx);
 }
 
 function updatePlayerPosition(playerId, x, y) {

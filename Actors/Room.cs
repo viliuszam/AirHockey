@@ -1,10 +1,11 @@
-﻿using AirHockey.Actors.Walls;
+﻿using AirHockey.Achievement;
+using AirHockey.Actors.Walls;
 using AirHockey.Actors.Powerups;
 using AirHockey.Observers;
 
 namespace AirHockey.Actors
 {
-    public class Room : IObserver
+    public class Room : IObserver, IAchievementElement
     {
         public string RoomCode { get; private set; }
         public List<Player> Players { get; set; }
@@ -14,6 +15,7 @@ namespace AirHockey.Actors
         public int Player1Score { get; set; } = 0;
         public int Player2Score { get; set; } = 0;
         int lastScorer;
+        
         public Room(string roomCode)
         {
             RoomCode = roomCode;
@@ -85,6 +87,11 @@ namespace AirHockey.Actors
             Players[0].VelocityY = 0;
             Players[1].VelocityX = 0;
             Players[1].VelocityY = 0;
+        }
+
+        public void Accept(IAchievementVisitor visitor)
+        {
+            visitor.Visit(this);
         }
     }
 }
