@@ -4,7 +4,9 @@ namespace AirHockey.Actors.Powerups
 {
     public abstract class Powerup : Entity, ICloneable
     {
+        private System.Timers.Timer _timer;
         public int Id { get; set; }
+        public float Duration { get; protected init;}
         public bool IsActive { get; private set; }
 
         public Powerup(float x, float y, int id)
@@ -38,7 +40,29 @@ namespace AirHockey.Actors.Powerups
             return distanceSquared < (this.Radius * this.Radius);
         }
 
-        public abstract void Activate(Player player);
+        public void Activate(Player player)
+        {
+            ApplyEffect(player);
+            Console.WriteLine($"Powerup {this.GetType()} has a duration of {this.Duration}");
+            
+            _timer = new System.Timers.Timer(Duration * 1000);
+            _timer.Elapsed += (sender, e) =>
+            {
+                RemoveEffect(player);
+                _timer.Stop();
+            };
+            _timer.Start();
+        }
+
+        protected virtual void ApplyEffect(Player player)
+        {
+            
+        }
+        
+        protected virtual void RemoveEffect(Player player)
+        {
+            
+        }
 
         public abstract Powerup CloneShallow();
 

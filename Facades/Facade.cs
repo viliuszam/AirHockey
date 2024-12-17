@@ -93,7 +93,7 @@ namespace AirHockey.Facades
                     powerup.Y = y;
                     powerup.Id = i + 1;
 
-                    powerup = ApplyRandomDecorators(powerup);
+                    // powerup = ApplyRandomDecorators(powerup);
 
                     if (IsPowerupPositionValid(powerup, room, powerupsToAdd))
                     {

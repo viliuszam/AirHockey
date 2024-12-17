@@ -14,7 +14,7 @@ namespace AirHockey.Actors.Powerups.PowerupDecorators
         //note: sitie excludinami nes coverinami implementacijose
 
         [ExcludeFromCodeCoverage]
-        public override void Activate(Player player)
+        public void Activate(Player player)
         {
             WrappedPowerup.Activate(player);
         }

@@ -22,7 +22,7 @@
             _timer = timer;
         }
 
-        public override void Activate(Player player)
+        public void Activate(Player player)
         {
             _originalMass = player.Mass;
             WrappedPowerup.Activate(player);

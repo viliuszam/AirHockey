@@ -4,11 +4,8 @@ namespace AirHockey.Actors.Powerups
 {
     public class PushPowerup : Powerup
     {
-        public System.Timers.Timer ActiveTimer { get; private set; }
-
-        public float PushForce;
-        public float Duration;
-        public float PushRadius; 
+        public readonly float PushForce;
+        public readonly float PushRadius; 
 
         public PushPowerup(float x, float y, int id, float pushForce = 5f, float duration = 2f, float radius = 300f)
             : base(x, y, id)
@@ -17,8 +14,9 @@ namespace AirHockey.Actors.Powerups
             Duration = duration;
             PushRadius = radius;
         }
+        
 
-        public override void Activate(Player player)
+        protected sealed override void ApplyEffect(Player player)
         {
             foreach (var otherPlayer in player.Room.Players)
             {
@@ -32,15 +30,11 @@ namespace AirHockey.Actors.Powerups
             {
                 ApplyPushForce(player.Room.Puck, player.AngleFacing, PushForce);
             }
+        }
 
-            ActiveTimer = new System.Timers.Timer(Duration * 1000);
-            ActiveTimer.Elapsed += (sender, e) =>
-            {
-                ActiveTimer.Stop();
-                ActiveTimer.Dispose();
-                ActiveTimer = null;
-            };
-            ActiveTimer.Start();
+        protected sealed override void RemoveEffect(Player player)
+        {
+            // No removal logic needed
         }
 
         private void ApplyPushForce(Entity entity, float angle, float force)
