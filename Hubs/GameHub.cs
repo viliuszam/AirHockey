@@ -96,7 +96,7 @@ public class GameHub : Hub
 
     public async Task UpdateInput(string roomCode, string connectionId, bool up, bool down, bool left, bool right, bool powerup)
     {
-        Console.WriteLine($"Received input from {connectionId} in room {roomCode}: Up={up}, Down={down}, Left={left}, Right={right}, Powerup={powerup}");
+        //Console.WriteLine($"Received input from {connectionId} in room {roomCode}: Up={up}, Down={down}, Left={left}, Right={right}, Powerup={powerup}");
 
         var game = GameSessionManager.Instance.GetGame(roomCode);
         if (game == null) return;
@@ -160,5 +160,20 @@ public class GameHub : Hub
         }
 
         await base.OnDisconnectedAsync(exception);
+    }
+
+    public async Task ProcessCommand(string roomCode, string connectionId, string command)
+    {
+        var game = GameSessionManager.Instance.GetGame(roomCode);
+        if (game == null) return;
+        var player = game.Room.GetPlayerById(connectionId);
+        if (player == null) return;
+        _gameService.ProcessCommand(player, command);
+        if (command.StartsWith("setscore"))
+        {
+            var player1Score = game.Room.Player1Score;
+            var player2Score = game.Room.Player2Score;
+            await Clients.Group(roomCode).SendAsync("UpdateScores", player1Score, player2Score);
+        }
     }
 }

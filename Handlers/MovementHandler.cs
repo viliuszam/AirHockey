@@ -11,7 +11,7 @@ public class MovementHandler : InputHandler
         float yDirection = (context.Inputs.GetValueOrDefault("up") ? -1 : 0) + 
                            (context.Inputs.GetValueOrDefault("down") ? 1 : 0);
 
-        Console.WriteLine($"Player {context.ConnectionId} accelerates in direction: ({xDirection}, {yDirection})");
+        //Console.WriteLine($"Player {context.ConnectionId} accelerates in direction: ({xDirection}, {yDirection})");
         context.Player.Accelerate(xDirection, yDirection);
 
         PassToNext(context);

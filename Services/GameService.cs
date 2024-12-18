@@ -20,6 +20,7 @@ using AirHockey.Achievement;
 using AirHockey.Achievement.Achievements;
 using AirHockey.Facades;
 using AirHockey.Ambience.Effects;
+using AirHockey.Interpreters;
 
 namespace AirHockey.Services
 {
@@ -29,6 +30,7 @@ namespace AirHockey.Services
         private readonly IGameAnalytics _analytics;
         private readonly IHubContext<GameHub> _hubContext;
         private System.Timers.Timer gameLoopTimer;
+        private CommandInterpreter _commandInterpreter;
         private const float MIN_X = 0f; 
         private const float MAX_X = 855f;
         private const float MIN_Y = 0f;
@@ -49,6 +51,7 @@ namespace AirHockey.Services
             gameLoopTimer.Elapsed += GameLoop;
             gameLoopTimer.Start();
             facade = new Facade();
+            _commandInterpreter = new CommandInterpreter();
         }
         public void SetStrategy(ICollision newCollisionStrategy)
         {
@@ -516,6 +519,15 @@ namespace AirHockey.Services
         public void SpawnPowerups(Room room)
         {
             facade.SpawnPowerups(room);
+        }
+
+        public void ProcessCommand(Player player, string input)
+        {
+            var command = _commandInterpreter.ParseCommand(input);
+            if (command != null)
+            {
+                command.Execute(player);
+            }
         }
     }
 }

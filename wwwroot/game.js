@@ -10,6 +10,7 @@ const roomSelectionContainer = document.getElementById('room-selection');
 let playerId;
 let keys = { w: false, a: false, s: false, d: false, e: false};
 let isMoving = false;
+let consoleActive = false;
 
 export let scoreMessage = null;
 let scoreMessageTimeout = null;
@@ -153,6 +154,7 @@ function startGame() {
 }
 
 document.addEventListener('keydown', function (event) {
+    if (consoleActive) return;
     if (event.key === 'w') keys.w = true;
     if (event.key === 'a') keys.a = true;
     if (event.key === 's') keys.s = true;
@@ -162,6 +164,7 @@ document.addEventListener('keydown', function (event) {
 });
 
 document.addEventListener('keyup', function (event) {
+    if (consoleActive) return;
     if (event.key === 'w') keys.w = false;
     if (event.key === 'a') keys.a = false;
     if (event.key === 's') keys.s = false;
@@ -193,7 +196,7 @@ connection.on("AddPowerup", function (powerupId, x, y, powerupType, isActive) {
 
 function sendInputState() {
     if (isGameActive && roomCode != null && playerId != null) {
-        console.log("Sending input:" + roomCode + " " + playerId + " " + keys.w + " " + keys.s + " " + keys.a + " " + keys.d + " " + keys.e);
+        //console.log("Sending input:" + roomCode + " " + playerId + " " + keys.w + " " + keys.s + " " + keys.a + " " + keys.d + " " + keys.e);
         connection.invoke("UpdateInput", roomCode, playerId, keys.w, keys.s, keys.a, keys.d, keys.e)
             .catch(function (err) {
                 console.error("Error sending input state:", err.toString());
@@ -209,3 +212,50 @@ function startInputLoop() {
         }
     }, 16); // 60 kartu per sekunde siuncia inputus
 }
+
+function toggleConsole() {
+    const consoleInput = document.getElementById("consoleInput");
+
+    if (!consoleInput) {
+        const input = document.createElement("input");
+        input.id = "consoleInput";
+        input.type = "text";
+        input.placeholder = "Enter command...";
+        input.style.position = "absolute";
+        input.style.bottom = "10px";
+        input.style.left = "10px";
+        input.style.width = "calc(100% - 20px)";
+        input.style.padding = "10px";
+        input.style.fontSize = "16px";
+        input.style.zIndex = "1000";
+        document.body.appendChild(input);
+        
+        input.addEventListener("keydown", (e) => {
+            if (e.key === "Enter") {
+                processCommand(input.value);
+                input.value = "";
+            } 
+        });
+
+        input.focus();
+    } else {
+        consoleInput.remove();
+    }
+
+    consoleActive = !consoleActive;
+}
+
+// Function to process console commands
+function processCommand(command) {
+    connection.invoke("ProcessCommand", roomCode, playerId, command)
+        .catch(function (err) {
+            console.error("Error sending input state:", err.toString());
+        });
+}
+
+document.addEventListener("keydown", (e) => {
+    if (e.key === "`") { 
+        e.preventDefault();
+        toggleConsole();
+    }
+});
