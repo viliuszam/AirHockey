@@ -315,10 +315,24 @@ function showWinnerMessage(winnerNickname, score) {
         winnerText.textContent = `${winnerNickname} wins the game with a score of ${score}`;
 
         winnerBox.appendChild(winnerText);
+
+        // Create "New Game" button
+        const newGameButton = document.createElement("button");
+        newGameButton.textContent = "New Game";
+        newGameButton.style.marginTop = "20px";
+        newGameButton.style.padding = "10px 20px";
+        newGameButton.style.fontSize = "16px";
+        newGameButton.style.cursor = "pointer";
+        newGameButton.addEventListener("click", function () {
+            window.location.reload(); // Reload the page to start a new game
+        });
+
+        winnerBox.appendChild(newGameButton);
         winnerOverlay.appendChild(winnerBox);
         document.body.appendChild(winnerOverlay);
     }
 }
+
 function toggleConsole() {
     const consoleInput = document.getElementById("consoleInput");
 
