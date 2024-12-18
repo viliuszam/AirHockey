@@ -58,7 +58,6 @@ public class GameHub : Hub
 
             var player = new Player(Context.ConnectionId, "blue", 633, 260, nickname, room);
             room.AddPlayer(player);
-
             await Groups.AddToGroupAsync(Context.ConnectionId, roomCode);
             await Clients.Caller.SendAsync("AssignPlayer", Context.ConnectionId, nickname);
 
@@ -171,6 +170,7 @@ public class GameHub : Hub
 
         await base.OnDisconnectedAsync(exception);
     }
+
 
     public async Task ProcessCommand(string roomCode, string connectionId, string command)
     {

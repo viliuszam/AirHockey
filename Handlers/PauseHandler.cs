@@ -13,16 +13,13 @@ namespace AirHockey.Handlers
             {
                 var currentState = context.Player.Room.GetCurrentState();
 
-                // Using a switch to handle state transitions
                 switch (currentState)
                 {
                     case PlayingState _:
-                        // Transition to the Paused state
                         context.Player.Room.SetState(new PausedState());
                         break;
 
                     case PausedState _:
-                        // If it's already paused, transition back to Playing
                         context.Player.Room.SetState(new PlayingState());
                         break;
 
@@ -31,7 +28,6 @@ namespace AirHockey.Handlers
                 }
             }
 
-            // Pass the context to the next handler (if any)
             PassToNext(context);
             return true;
         }

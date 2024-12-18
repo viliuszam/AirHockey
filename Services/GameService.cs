@@ -22,6 +22,7 @@ using AirHockey.Facades;
 using AirHockey.Ambience.Effects;
 using AirHockey.Interpreters;
 using AirHockey.Actors.Walls.Flyweight;
+using AirHockey.States;
 
 namespace AirHockey.Services
 {
@@ -238,7 +239,6 @@ namespace AirHockey.Services
                     player1.Update();
                     player2.Update();
                     puck.Update();
-                    
                     TrackEntityMovement();
 
                     foreach (var wall in game.Room.Walls)
@@ -249,11 +249,26 @@ namespace AirHockey.Services
 
                     facade.HandleCollisions(game);
                     CheckGoal(game);
+                    if (game.Room.Player1Score >= 2 || game.Room.Player2Score >= 2)
+                    {
+                        if (game.Room.Player1Score >= 2)
+                        {
+                            await _hubContext.Clients.Group(game.Room.RoomCode).SendAsync("PlayerWon", player1.Nickname, game.Room.Player1Score);
+                        }
+                        else if (game.Room.Player2Score >= 2)
+                        {
+                            await _hubContext.Clients.Group(game.Room.RoomCode).SendAsync("PlayerWon", player2.Nickname, game.Room.Player2Score);
+                        }
 
+                        game.Room.SetState(new EndedState());
+                        GameSessionManager.Instance.RemoveRoom(game.Room.RoomCode);
+
+                        await _hubContext.Clients.Group(game.Room.RoomCode).SendAsync("GameOver", "Game over! The game has ended.");
+                    }
                     player1.ConstrainToBounds(MIN_X, MIN_Y, MAX_X, MAX_Y);
                     player2.ConstrainToBounds(MIN_X, MIN_Y, MAX_X, MAX_Y);
                     puck.ConstrainToBounds(MIN_X, MIN_Y, MAX_X, MAX_Y);
-
+                    
 
                     var activePowerups = facade.GetActivePowerups(game);
 
@@ -271,7 +286,10 @@ namespace AirHockey.Services
                         })
                         .ToList();
 
-                    UpdateEnvironmentalEffects(game);
+                    if (game.Room.GetCurrentState() is PlayingState)
+                    {
+                        UpdateEnvironmentalEffects(game);
+                    }
 
                     var activeEffects = game.ActiveEffects
                         .Select(eff => new
@@ -299,7 +317,6 @@ namespace AirHockey.Services
                 }
             }
         }
-
         private async Task SendAmbientEffects(Game game)
         {
             // pridet efektam priority, apsisieit su vienu iterator instance, padaryt foreachus vietoj while'u

@@ -138,7 +138,15 @@ connection.on("UpdateGameState", function (player1X, player1Y, player2X, player2
     //    console.log(`Wall Id: ${wall.id}, X: ${wall.x}, Y: ${wall.y}, Width: ${wall.width}, Height: ${wall.height}, Type: ${wall.name}`);
     //});
 });
+connection.on("PlayerWon", function (winnerNickname, score) {
+    alert(`${winnerNickname} wins the game with a score of ${score}!`);
 
+    showWinnerMessage(winnerNickname, score);
+
+    clearWalls();
+    clearPowerups();
+    resetGameUI();
+});
 connection.on("PlayerDisconnected", function (message) {
     alert(message);
     this.playerId = null;
@@ -275,7 +283,42 @@ connection.on("TogglePause", function (pausedId, pausedNickname) {
         }
     }
 });
+function showWinnerMessage(winnerNickname, score) {
+    const winnerOverlayId = "winnerOverlay";
+    let winnerOverlay = document.getElementById(winnerOverlayId);
 
+    if (!winnerOverlay) {
+        winnerOverlay = document.createElement("div");
+        winnerOverlay.id = winnerOverlayId;
+        winnerOverlay.style.position = "fixed";
+        winnerOverlay.style.top = "0";
+        winnerOverlay.style.left = "0";
+        winnerOverlay.style.width = "100%";
+        winnerOverlay.style.height = "100%";
+        winnerOverlay.style.backgroundColor = "rgba(0, 0, 0, 0.7)"; // Semi-transparent dark background
+        winnerOverlay.style.display = "flex";
+        winnerOverlay.style.alignItems = "center";
+        winnerOverlay.style.justifyContent = "center";
+        winnerOverlay.style.zIndex = "1000"; // Ensure it's above all other elements
+
+        const winnerBox = document.createElement("div");
+        winnerBox.style.backgroundColor = "white";
+        winnerBox.style.padding = "20px";
+        winnerBox.style.borderRadius = "10px";
+        winnerBox.style.boxShadow = "0 4px 8px rgba(0, 0, 0, 0.2)";
+        winnerBox.style.textAlign = "center";
+
+        const winnerText = document.createElement("p");
+        winnerText.style.margin = "0";
+        winnerText.style.fontSize = "24px";
+        winnerText.style.color = "black";
+        winnerText.textContent = `${winnerNickname} wins the game with a score of ${score}`;
+
+        winnerBox.appendChild(winnerText);
+        winnerOverlay.appendChild(winnerBox);
+        document.body.appendChild(winnerOverlay);
+    }
+}
 function toggleConsole() {
     const consoleInput = document.getElementById("consoleInput");
 

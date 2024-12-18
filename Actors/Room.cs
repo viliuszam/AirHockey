@@ -23,6 +23,7 @@ namespace AirHockey.Actors
         public int Player1Score { get; set; } = 0;
         public int Player2Score { get; set; } = 0;
         public IState State { get; private set; }
+        public StateContext Context { get; private set; }
         int lastScorer;
         
         public Room(string roomCode)
@@ -32,6 +33,7 @@ namespace AirHockey.Actors
             Puck = new Puck();
             lastScorer = -1;
             State = new WaitingState();
+            Context = null;
         }
 
         public void AddPlayer(Player player)
@@ -65,9 +67,17 @@ namespace AirHockey.Actors
         }
         public void SetState(IState newState)
         {
-            State = newState; 
-            State.Handle(this);
+            State = newState;
+
+            if (State is PlayingState && Context == null)
+            {
+                Context = new StateContext(this);  
+            }
+
+            State.Handle(this, Context);
         }
+
+
 
         public bool IsRoomFull()
         {
