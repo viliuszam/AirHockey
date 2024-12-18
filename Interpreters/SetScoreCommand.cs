@@ -14,6 +14,7 @@ public class SetScoreCommand : IGameCommand
     public void Execute(Player player)
     {
         if (player == null) return;
+        if (player.Room.State == Room.RoomState.Paused) return;
         var playerIndex = player.Room.Players.FindIndex(a => a == player);
         if (playerIndex == 0)
         {

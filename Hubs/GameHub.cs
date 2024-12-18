@@ -30,6 +30,7 @@ public class GameHub : Hub
             await Groups.AddToGroupAsync(Context.ConnectionId, roomCode);
             await Clients.Caller.SendAsync("AssignPlayer", Context.ConnectionId, nickname);
             await Clients.Caller.SendAsync("WaitingForPlayer");
+            room.SetState(Room.RoomState.Waiting);
 
             var game = GameSessionManager.Instance.GetGame(roomCode);
             if (game != null)
@@ -84,6 +85,7 @@ public class GameHub : Hub
                 }
                 await Clients.Group(roomCode).SendAsync("StartGame",
                     player1Nickname, player2Nickname, game.Room.Player1Score, game.Room.Player2Score);
+                room.SetState(Room.RoomState.Playing);
 
                 game.SoundEffects.AddEffect(new SoundEffect(SoundType.GameStart, 0.2f));
             }
@@ -94,7 +96,7 @@ public class GameHub : Hub
         }
     }
 
-    public async Task UpdateInput(string roomCode, string connectionId, bool up, bool down, bool left, bool right, bool powerup)
+    public async Task UpdateInput(string roomCode, string connectionId, bool up, bool down, bool left, bool right, bool powerup, bool pause)
     {
         //Console.WriteLine($"Received input from {connectionId} in room {roomCode}: Up={up}, Down={down}, Left={left}, Right={right}, Powerup={powerup}");
 
@@ -110,7 +112,8 @@ public class GameHub : Hub
             { "down", down },
             { "left", left },
             { "right", right },
-            { "powerup", powerup }
+            { "powerup", powerup },
+            { "pause", pause }
         };
 
         var context = new InputContext
@@ -122,13 +125,19 @@ public class GameHub : Hub
             Player = player
         };
 
-        // Set up the chain directly
+        if (pause)
+        {
+            await Clients.Group(roomCode).SendAsync("TogglePause", connectionId, player.Nickname);
+        }
+        
         var movementHandler = new MovementHandler();
         var powerupHandler = new PowerupHandler();
+        var pauseHandler = new PauseHandler();
         
-        movementHandler.SetNext(powerupHandler);
+        movementHandler
+            .SetNext(powerupHandler)
+            .SetNext(pauseHandler);
         
-        // Start the chain
         movementHandler.Handle(context);
     }
 
@@ -176,4 +185,5 @@ public class GameHub : Hub
             await Clients.Group(roomCode).SendAsync("UpdateScores", player1Score, player2Score);
         }
     }
+    
 }
