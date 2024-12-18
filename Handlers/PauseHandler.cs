@@ -1,31 +1,39 @@
 ﻿using AirHockey.Actors;
+using AirHockey.States;
 
-namespace AirHockey.Handlers;
-
-public class PauseHandler : InputHandler
+namespace AirHockey.Handlers
 {
-    public override bool Handle(InputContext context)
+    public class PauseHandler : InputHandler
     {
-        if (context.Player == null) return false;
-        if (context.Inputs.GetValueOrDefault("pause"))
+        public override bool Handle(InputContext context)
         {
-            switch (context.Player.Room.State)
+            if (context.Player == null) return false;
+
+            if (context.Inputs.GetValueOrDefault("pause"))
             {
-                case Room.RoomState.Playing:
-                    context.Player.Room.SetState(Room.RoomState.Paused);
-                    context.Player.Room.Players[0].VelocityX = 0;
-                    context.Player.Room.Players[0].VelocityY = 0;
-                    context.Player.Room.Players[1].VelocityX = 0;
-                    context.Player.Room.Players[1].VelocityY = 0;
-                    break;
-                case Room.RoomState.Paused:
-                    context.Player.Room.SetState(Room.RoomState.Playing);
-                    break;
-                default:
-                    return false;
+                var currentState = context.Player.Room.GetCurrentState();
+
+                // Using a switch to handle state transitions
+                switch (currentState)
+                {
+                    case PlayingState _:
+                        // Transition to the Paused state
+                        context.Player.Room.SetState(new PausedState());
+                        break;
+
+                    case PausedState _:
+                        // If it's already paused, transition back to Playing
+                        context.Player.Room.SetState(new PlayingState());
+                        break;
+
+                    default:
+                        return false;
+                }
             }
+
+            // Pass the context to the next handler (if any)
+            PassToNext(context);
+            return true;
         }
-        PassToNext(context);
-        return true;
     }
 }

@@ -1,6 +1,6 @@
 ﻿using AirHockey.Actors;
 using AirHockey.Actors.Powerups;
-
+using AirHockey.States;
 namespace AirHockey.Interpreters;
 
 public class SetPowerupCommand : IGameCommand
@@ -15,7 +15,7 @@ public class SetPowerupCommand : IGameCommand
     public void Execute(Player player)
     {
         if (player == null) return;
-        if (player.Room.State == Room.RoomState.Paused) return;
+        if (player.Room.State is PausedState) return;
         var powerupFactory = new PowerupFactory();
         var powerup = powerupFactory.CreatePowerup(0, 0, 0, _powerup);
         player.ActivePowerup = powerup;

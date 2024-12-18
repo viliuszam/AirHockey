@@ -1,5 +1,5 @@
 ﻿using AirHockey.Actors;
-
+using AirHockey.States;
 namespace AirHockey.Interpreters;
 
 public class SetScoreCommand : IGameCommand
@@ -14,7 +14,7 @@ public class SetScoreCommand : IGameCommand
     public void Execute(Player player)
     {
         if (player == null) return;
-        if (player.Room.State == Room.RoomState.Paused) return;
+        if (player.Room.State is PausedState) return;
         var playerIndex = player.Room.Players.FindIndex(a => a == player);
         if (playerIndex == 0)
         {

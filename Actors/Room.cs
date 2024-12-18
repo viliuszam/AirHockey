@@ -2,6 +2,7 @@
 using AirHockey.Actors.Walls;
 using AirHockey.Actors.Powerups;
 using AirHockey.Observers;
+using AirHockey.States;
 
 namespace AirHockey.Actors
 {
@@ -21,7 +22,7 @@ namespace AirHockey.Actors
         public Puck Puck { get; set; }
         public int Player1Score { get; set; } = 0;
         public int Player2Score { get; set; } = 0;
-        public RoomState State { get; private set; } = RoomState.Waiting;
+        public IState State { get; private set; }
         int lastScorer;
         
         public Room(string roomCode)
@@ -30,6 +31,7 @@ namespace AirHockey.Actors
             Players = new List<Player>();
             Puck = new Puck();
             lastScorer = -1;
+            State = new WaitingState();
         }
 
         public void AddPlayer(Player player)
@@ -57,10 +59,14 @@ namespace AirHockey.Actors
                 Players.Remove(player);
             }
         }
-        
-        public void SetState(RoomState newState)
+        public IState GetCurrentState()
         {
-            State = newState;
+            return State;
+        }
+        public void SetState(IState newState)
+        {
+            State = newState; 
+            State.Handle(this);
         }
 
         public bool IsRoomFull()

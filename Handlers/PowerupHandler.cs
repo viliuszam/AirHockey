@@ -1,6 +1,6 @@
 ﻿using AirHockey.Actors;
 using AirHockey.Ambience.Effects;
-
+using AirHockey.States;
 namespace AirHockey.Handlers;
 
 public class PowerupHandler : InputHandler
@@ -8,7 +8,7 @@ public class PowerupHandler : InputHandler
     public override bool Handle(InputContext context)
     {
         if (context.Player == null) return false;
-        if (context.Player.Room.State == Room.RoomState.Paused)
+        if (context.Player.Room.State is PausedState)
         {
             PassToNext(context);
             return false;

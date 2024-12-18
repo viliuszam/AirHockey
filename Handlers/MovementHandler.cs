@@ -1,5 +1,5 @@
 ﻿using AirHockey.Actors;
-
+using AirHockey.States;
 namespace AirHockey.Handlers;
 
 public class MovementHandler : InputHandler
@@ -7,7 +7,7 @@ public class MovementHandler : InputHandler
     public override bool Handle(InputContext context)
     {
         if (context.Player == null) return false;
-        if (context.Player.Room.State == Room.RoomState.Paused)
+        if (context.Player.Room.State is PausedState)
         {
             PassToNext(context);
             return false;

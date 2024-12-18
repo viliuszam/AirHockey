@@ -5,6 +5,7 @@ using AirHockey.Services;
 using Microsoft.AspNetCore.SignalR;
 using System.Diagnostics.CodeAnalysis;
 using AirHockey.Handlers;
+using AirHockey.States;
 
 
 [ExcludeFromCodeCoverage]
@@ -30,7 +31,7 @@ public class GameHub : Hub
             await Groups.AddToGroupAsync(Context.ConnectionId, roomCode);
             await Clients.Caller.SendAsync("AssignPlayer", Context.ConnectionId, nickname);
             await Clients.Caller.SendAsync("WaitingForPlayer");
-            room.SetState(Room.RoomState.Waiting);
+            room.SetState(new WaitingState());
 
             var game = GameSessionManager.Instance.GetGame(roomCode);
             if (game != null)
@@ -85,7 +86,7 @@ public class GameHub : Hub
                 }
                 await Clients.Group(roomCode).SendAsync("StartGame",
                     player1Nickname, player2Nickname, game.Room.Player1Score, game.Room.Player2Score);
-                room.SetState(Room.RoomState.Playing);
+                room.SetState(new PlayingState());
 
                 game.SoundEffects.AddEffect(new SoundEffect(SoundType.GameStart, 0.2f));
             }
