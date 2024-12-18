@@ -332,7 +332,7 @@ function showWinnerMessage(winnerNickname, score) {
         document.body.appendChild(winnerOverlay);
     }
 }
-
+git a
 function toggleConsole() {
     const consoleInput = document.getElementById("consoleInput");
 
