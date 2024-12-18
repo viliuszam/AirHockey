@@ -8,9 +8,11 @@ const gameContainer = document.getElementById('game-container');
 const roomSelectionContainer = document.getElementById('room-selection');
 
 let playerId;
-let keys = { w: false, a: false, s: false, d: false, e: false};
+let keys = { w: false, a: false, s: false, d: false, e: false };
 let isMoving = false;
 let consoleActive = false;
+let isGamePaused = false;
+let pausedPlayer;
 
 export let scoreMessage = null;
 let scoreMessageTimeout = null;
@@ -160,6 +162,7 @@ document.addEventListener('keydown', function (event) {
     if (event.key === 's') keys.s = true;
     if (event.key === 'd') keys.d = true;
     if (event.key === 'e') keys.e = true;
+    if (event.key === 'p') pauseGame();
     isMoving = keys.w || keys.a || keys.s || keys.d;
 });
 
@@ -197,7 +200,16 @@ connection.on("AddPowerup", function (powerupId, x, y, powerupType, isActive) {
 function sendInputState() {
     if (isGameActive && roomCode != null && playerId != null) {
         //console.log("Sending input:" + roomCode + " " + playerId + " " + keys.w + " " + keys.s + " " + keys.a + " " + keys.d + " " + keys.e);
-        connection.invoke("UpdateInput", roomCode, playerId, keys.w, keys.s, keys.a, keys.d, keys.e)
+        connection.invoke("UpdateInput", roomCode, playerId, keys.w, keys.s, keys.a, keys.d, keys.e, false)
+            .catch(function (err) {
+                console.error("Error sending input state:", err.toString());
+            });
+    }
+}
+
+function pauseGame() {
+    if(!isGamePaused || (isGamePaused && pausedPlayer === playerId)){
+        connection.invoke("UpdateInput", roomCode, playerId, keys.w, keys.s, keys.a, keys.d, keys.e, true)
             .catch(function (err) {
                 console.error("Error sending input state:", err.toString());
             });
@@ -212,6 +224,57 @@ function startInputLoop() {
         }
     }, 16); // 60 kartu per sekunde siuncia inputus
 }
+
+connection.on("TogglePause", function (pausedId, pausedNickname) {
+    isGamePaused = !isGamePaused;
+
+    const pauseOverlayId = "pauseOverlay";
+    let pauseOverlay = document.getElementById(pauseOverlayId);
+
+    if (isGamePaused) {
+        console.log("Game Paused");
+        pausedPlayer = pausedId
+        if (!pauseOverlay) {
+            pauseOverlay = document.createElement("div");
+            pauseOverlay.id = pauseOverlayId;
+            pauseOverlay.style.position = "fixed";
+            pauseOverlay.style.top = "0";
+            pauseOverlay.style.left = "0";
+            pauseOverlay.style.width = "100%";
+            pauseOverlay.style.height = "100%";
+            pauseOverlay.style.backgroundColor = "rgba(0, 0, 0, 0.5)"; // Semi-transparent gray
+            pauseOverlay.style.display = "flex";
+            pauseOverlay.style.alignItems = "center";
+            pauseOverlay.style.justifyContent = "center";
+            pauseOverlay.style.zIndex = "1000"; // Ensure it's above all other elements
+
+            const pauseBox = document.createElement("div");
+            pauseBox.style.backgroundColor = "white";
+            pauseBox.style.padding = "20px";
+            pauseBox.style.borderRadius = "10px";
+            pauseBox.style.boxShadow = "0 4px 8px rgba(0, 0, 0, 0.2)";
+            pauseBox.style.textAlign = "center";
+
+            const pauseText = document.createElement("p");
+            pauseText.style.margin = "0";
+            pauseText.style.fontSize = "20px";
+            pauseText.style.color = "black";
+            pauseText.textContent = `Game is Paused by ${pausedNickname || "Unknown Player"}`;
+
+            pauseBox.appendChild(pauseText);
+            pauseOverlay.appendChild(pauseBox);
+            document.body.appendChild(pauseOverlay);
+        }
+
+    } else {
+        console.log("Game Resumed");
+
+        // Remove overlay if it exists
+        if (pauseOverlay) {
+            pauseOverlay.remove();
+        }
+    }
+});
 
 function toggleConsole() {
     const consoleInput = document.getElementById("consoleInput");

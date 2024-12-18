@@ -7,6 +7,13 @@ namespace AirHockey.Actors
 {
     public class Room : IObserver, IAchievementElement
     {
+        public enum RoomState
+        {
+            Waiting,
+            Playing,
+            Paused,
+            Ended
+        }
         public string RoomCode { get; private set; }
         public List<Player> Players { get; set; }
         public List<Wall> Walls { get; set; } = new List<Wall>();
@@ -14,6 +21,7 @@ namespace AirHockey.Actors
         public Puck Puck { get; set; }
         public int Player1Score { get; set; } = 0;
         public int Player2Score { get; set; } = 0;
+        public RoomState State { get; private set; } = RoomState.Waiting;
         int lastScorer;
         
         public Room(string roomCode)
@@ -48,6 +56,11 @@ namespace AirHockey.Actors
             {
                 Players.Remove(player);
             }
+        }
+        
+        public void SetState(RoomState newState)
+        {
+            State = newState;
         }
 
         public bool IsRoomFull()

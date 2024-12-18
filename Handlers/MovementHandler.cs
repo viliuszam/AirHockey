@@ -1,13 +1,20 @@
-﻿namespace AirHockey.Handlers;
+﻿using AirHockey.Actors;
+
+namespace AirHockey.Handlers;
 
 public class MovementHandler : InputHandler
 {
     public override bool Handle(InputContext context)
     {
         if (context.Player == null) return false;
+        if (context.Player.Room.State == Room.RoomState.Paused)
+        {
+            PassToNext(context);
+            return false;
+        }
 
-        float xDirection = (context.Inputs.GetValueOrDefault("left") ? -1 : 0) + 
-                           (context.Inputs.GetValueOrDefault("right") ? 1 : 0);
+    float xDirection = (context.Inputs.GetValueOrDefault("left") ? -1 : 0) + 
+                       (context.Inputs.GetValueOrDefault("right") ? 1 : 0);
         float yDirection = (context.Inputs.GetValueOrDefault("up") ? -1 : 0) + 
                            (context.Inputs.GetValueOrDefault("down") ? 1 : 0);
 
