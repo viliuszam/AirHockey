@@ -37,6 +37,7 @@ namespace AirHockey.Services
         private const float MAX_X = 855f;
         private const float MIN_Y = 0f;
         private const float MAX_Y = 541f;
+        public const int MaxGoal = 2;
 
         private const int maxEffects = 5;
 
@@ -214,6 +215,26 @@ namespace AirHockey.Services
             }
         }
 
+        public async void EndGame(Game game, Player? resignedPlayer)
+        {
+            var player1 = game.Room.Players[0];
+            var player2 = game.Room.Players[1];
+            if (game.Room.Player1Score >= MaxGoal || resignedPlayer.Id == player2.Id)
+            {
+                Console.WriteLine("Calling end game for player 1");
+                await _hubContext.Clients.Group(game.Room.RoomCode).SendAsync("PlayerWon", player1.Nickname, game.Room.Player1Score);
+            }
+            else if (game.Room.Player2Score >= MaxGoal || resignedPlayer.Id == player1.Id)
+            {
+                Console.WriteLine("Calling end game for player 2");
+                await _hubContext.Clients.Group(game.Room.RoomCode).SendAsync("PlayerWon", player2.Nickname, game.Room.Player2Score);
+            }
+
+            game.Room.SetState(new EndedState());
+            GameSessionManager.Instance.RemoveRoom(game.Room.RoomCode);
+
+            await _hubContext.Clients.Group(game.Room.RoomCode).SendAsync("GameOver", "Game over! The game has ended.");
+        }
 
         private async void GameLoop(object sender, ElapsedEventArgs e)
         {
@@ -249,21 +270,10 @@ namespace AirHockey.Services
 
                     facade.HandleCollisions(game);
                     CheckGoal(game);
-                    if (game.Room.Player1Score >= 2 || game.Room.Player2Score >= 2)
+
+                    if (game.Room.Player1Score >= MaxGoal || game.Room.Player2Score >= MaxGoal)
                     {
-                        if (game.Room.Player1Score >= 2)
-                        {
-                            await _hubContext.Clients.Group(game.Room.RoomCode).SendAsync("PlayerWon", player1.Nickname, game.Room.Player1Score);
-                        }
-                        else if (game.Room.Player2Score >= 2)
-                        {
-                            await _hubContext.Clients.Group(game.Room.RoomCode).SendAsync("PlayerWon", player2.Nickname, game.Room.Player2Score);
-                        }
-
-                        game.Room.SetState(new EndedState());
-                        GameSessionManager.Instance.RemoveRoom(game.Room.RoomCode);
-
-                        await _hubContext.Clients.Group(game.Room.RoomCode).SendAsync("GameOver", "Game over! The game has ended.");
+                        EndGame(game, null);
                     }
                     player1.ConstrainToBounds(MIN_X, MIN_Y, MAX_X, MAX_Y);
                     player2.ConstrainToBounds(MIN_X, MIN_Y, MAX_X, MAX_Y);

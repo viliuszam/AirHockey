@@ -171,6 +171,7 @@ document.addEventListener('keydown', function (event) {
     if (event.key === 'd') keys.d = true;
     if (event.key === 'e') keys.e = true;
     if (event.key === 'p') pauseGame();
+    if (event.key === 'Escape') resignGame();
     isMoving = keys.w || keys.a || keys.s || keys.d;
 });
 
@@ -208,7 +209,7 @@ connection.on("AddPowerup", function (powerupId, x, y, powerupType, isActive) {
 function sendInputState() {
     if (isGameActive && roomCode != null && playerId != null) {
         //console.log("Sending input:" + roomCode + " " + playerId + " " + keys.w + " " + keys.s + " " + keys.a + " " + keys.d + " " + keys.e);
-        connection.invoke("UpdateInput", roomCode, playerId, keys.w, keys.s, keys.a, keys.d, keys.e, false)
+        connection.invoke("UpdateInput", roomCode, playerId, keys.w, keys.s, keys.a, keys.d, keys.e, false, false)
             .catch(function (err) {
                 console.error("Error sending input state:", err.toString());
             });
@@ -217,7 +218,16 @@ function sendInputState() {
 
 function pauseGame() {
     if(!isGamePaused || (isGamePaused && pausedPlayer === playerId)){
-        connection.invoke("UpdateInput", roomCode, playerId, keys.w, keys.s, keys.a, keys.d, keys.e, true)
+        connection.invoke("UpdateInput", roomCode, playerId, keys.w, keys.s, keys.a, keys.d, keys.e, true, false)
+            .catch(function (err) {
+                console.error("Error sending input state:", err.toString());
+            });
+    }
+}
+
+function resignGame(){
+    if(!isGamePaused){
+        connection.invoke("UpdateInput", roomCode, playerId, keys.w, keys.s, keys.a, keys.d, keys.e, false, true)
             .catch(function (err) {
                 console.error("Error sending input state:", err.toString());
             });
@@ -332,7 +342,7 @@ function showWinnerMessage(winnerNickname, score) {
         document.body.appendChild(winnerOverlay);
     }
 }
-git a
+
 function toggleConsole() {
     const consoleInput = document.getElementById("consoleInput");
 

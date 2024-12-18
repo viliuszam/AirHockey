@@ -96,7 +96,7 @@ public class GameHub : Hub
         }
     }
 
-    public async Task UpdateInput(string roomCode, string connectionId, bool up, bool down, bool left, bool right, bool powerup, bool pause)
+    public async Task UpdateInput(string roomCode, string connectionId, bool up, bool down, bool left, bool right, bool powerup, bool pause, bool resign)
     {
         //Console.WriteLine($"Received input from {connectionId} in room {roomCode}: Up={up}, Down={down}, Left={left}, Right={right}, Powerup={powerup}");
 
@@ -113,7 +113,8 @@ public class GameHub : Hub
             { "left", left },
             { "right", right },
             { "powerup", powerup },
-            { "pause", pause }
+            { "pause", pause },
+            { "resign", resign }
         };
 
         var context = new InputContext
@@ -122,7 +123,8 @@ public class GameHub : Hub
             ConnectionId = connectionId,
             Inputs = inputs,
             Game = game,
-            Player = player
+            Player = player,
+            Service = _gameService
         };
 
         if (pause)
@@ -133,10 +135,12 @@ public class GameHub : Hub
         var movementHandler = new MovementHandler();
         var powerupHandler = new PowerupHandler();
         var pauseHandler = new PauseHandler();
+        var resignHandler = new ResignHandler();
         
         movementHandler
             .SetNext(powerupHandler)
-            .SetNext(pauseHandler);
+            .SetNext(pauseHandler)
+            .SetNext(resignHandler);
         
         movementHandler.Handle(context);
     }
