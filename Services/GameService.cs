@@ -219,12 +219,12 @@ namespace AirHockey.Services
         {
             var player1 = game.Room.Players[0];
             var player2 = game.Room.Players[1];
-            if (game.Room.Player1Score >= MaxGoal || resignedPlayer.Id == player2.Id)
+            if (game.Room.Player1Score >= MaxGoal || (resignedPlayer != null && resignedPlayer.Id == player2.Id))
             {
                 Console.WriteLine("Calling end game for player 1");
                 await _hubContext.Clients.Group(game.Room.RoomCode).SendAsync("PlayerWon", player1.Nickname, game.Room.Player1Score);
             }
-            else if (game.Room.Player2Score >= MaxGoal || resignedPlayer.Id == player1.Id)
+            else if (game.Room.Player2Score >= MaxGoal || (resignedPlayer != null && resignedPlayer.Id == player1.Id))
             {
                 Console.WriteLine("Calling end game for player 2");
                 await _hubContext.Clients.Group(game.Room.RoomCode).SendAsync("PlayerWon", player2.Nickname, game.Room.Player2Score);
