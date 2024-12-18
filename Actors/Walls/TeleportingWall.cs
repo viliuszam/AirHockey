@@ -1,4 +1,4 @@
-using System;
+using AirHockey.Actors.Walls.Flyweight;
 
 namespace AirHockey.Actors.Walls
 {
@@ -7,8 +7,10 @@ namespace AirHockey.Actors.Walls
         public TeleportingWall? LinkedWall { get; private set; } = null;
         public bool IsLinked { get; private set; } = false;
         private Entity? lastTeleportedEntity = null;
-        public TeleportingWall(int id, float width, float height) 
-            : base(id, width, height)
+
+        // Updated constructor: Accept FlyweightWall and pass it to the base Wall constructor
+        public TeleportingWall(int id, FlyweightWall flyweight)
+            : base(id, flyweight)  // Pass the flyweight to the Wall constructor
         {
         }
 
@@ -31,10 +33,12 @@ namespace AirHockey.Actors.Walls
                 lastTeleportedEntity = null;
             }
         }
+
         public Entity? GetLast()
         {
             return lastTeleportedEntity;
         }
+
         public void SetLast(Entity entity)
         {
             lastTeleportedEntity = entity;

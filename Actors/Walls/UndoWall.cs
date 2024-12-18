@@ -1,5 +1,4 @@
-using System.Diagnostics.Eventing.Reader;
-using Microsoft.Extensions.Diagnostics.HealthChecks;
+using AirHockey.Actors.Walls.Flyweight;
 
 namespace AirHockey.Actors.Walls
 {
@@ -9,32 +8,34 @@ namespace AirHockey.Actors.Walls
         private int currentIter = 500;
         private int iterCount = 500;
 
-        public int GetIter()
-        {
-            return this.iterCount;
-        }
-
-        public UndoWall(int id, float width, float height)
-            : base(id, width, height)
+        // Updated constructor: Accept FlyweightWall and pass it to the base Wall constructor
+        public UndoWall(int id, FlyweightWall flyweight)
+            : base(id, flyweight)  // Pass the flyweight to the Wall constructor
         {
         }
 
-        public override void Update(){
-            if(!active){
-                if(currentIter >= iterCount){
+        public override void Update()
+        {
+            if (!active)
+            {
+                if (currentIter >= iterCount)
+                {
                     active = true;
                 }
-                else{
+                else
+                {
                     currentIter++;
                 }
             }
         }
 
-        public bool isActive(){
+        public bool isActive()
+        {
             return active;
         }
 
-        public void setInactive(){
+        public void setInactive()
+        {
             active = false;
             currentIter = 0;
         }

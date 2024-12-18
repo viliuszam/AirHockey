@@ -1,3 +1,5 @@
+using AirHockey.Actors.Walls.Flyweight;
+
 namespace AirHockey.Actors.Walls
 {
     public class BouncyWall : Wall
@@ -5,23 +7,27 @@ namespace AirHockey.Actors.Walls
         private const float BounceFactor = 0.99f;
         private bool Movable;
 
-        public BouncyWall(int id, float width, float height, bool moveable)
-            : base(id, width, height)
+        // Updated constructor: Accept FlyweightWall and pass it to the base Wall constructor
+        public BouncyWall(int id, FlyweightWall flyweight, bool movable)
+            : base(id, flyweight)  // Pass the flyweight to the Wall constructor
         {
-            Movable = moveable;
-
+            Movable = movable;
         }
 
-        public override void Update(){
-            if(Movable){
+        public override void Update()
+        {
+            if (Movable)
+            {
                 ApplyFriction();
                 Move();
             }
         }
+
         public bool getMove()
         {
             return Movable;
         }
+
         public float GetBounce()
         {
             return BounceFactor;

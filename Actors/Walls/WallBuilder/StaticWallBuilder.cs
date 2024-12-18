@@ -1,5 +1,6 @@
 using System;
 using AirHockey.Actors.Walls;
+using AirHockey.Actors.Walls.Flyweight;
 
 namespace AirHockey.Actors.Walls.WallBuilder
 {
@@ -22,6 +23,14 @@ namespace AirHockey.Actors.Walls.WallBuilder
         private float _Y;
         private float _Acceleration;
         private float _Mass;
+        private bool _movable;  // For movable walls (StandardWall and BouncyWall)
+
+        private FlyweightFactory _flyweightFactory; // FlyweightFactory to get FlyweightWall instances
+
+        public StaticWallBuilder(FlyweightFactory flyweightFactory)
+        {
+            _flyweightFactory = flyweightFactory;
+        }
 
         public IWallBuilder SetId(int id)
         {
@@ -74,6 +83,12 @@ namespace AirHockey.Actors.Walls.WallBuilder
             return this;
         }
 
+        public IWallBuilder SetMovable(bool movable)  // New method to set the movable flag
+        {
+            _movable = movable;
+            return this;
+        }
+
         public Wall Build()
         {
             if (!_type.HasValue)
@@ -81,13 +96,16 @@ namespace AirHockey.Actors.Walls.WallBuilder
                 throw new InvalidOperationException("Wall type must be set before building the wall.");
             }
 
+            // Use FlyweightFactory to get FlyweightWall instance
+            FlyweightWall flyweight = _flyweightFactory.GetFlyweightWall(_width, _height, _type.Value.ToString());
+
             Wall wall = _type.Value switch
             {
-                StaticWallType.Teleporting => new TeleportingWall(_id, _width, _height),
-                StaticWallType.QuickSand => new QuickSandWall(_id, _width, _height),
-                StaticWallType.Standard => new StandardWall(_id, _width, _height, false),
-                StaticWallType.Bouncy => new BouncyWall(_id, _width, _height, false),
-                StaticWallType.Undo => new UndoWall(_id, _width, _height),
+                StaticWallType.Teleporting => new TeleportingWall(_id, flyweight),
+                StaticWallType.QuickSand => new QuickSandWall(_id, flyweight),
+                StaticWallType.Standard => new StandardWall(_id, flyweight, _movable),
+                StaticWallType.Bouncy => new BouncyWall(_id, flyweight, _movable),
+                StaticWallType.Undo => new UndoWall(_id, flyweight),
                 _ => throw new ArgumentException("Invalid wall type")
             };
 

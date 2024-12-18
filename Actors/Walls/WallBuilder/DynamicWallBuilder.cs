@@ -1,5 +1,6 @@
 using System;
 using AirHockey.Actors.Walls;
+using AirHockey.Actors.Walls.Flyweight;
 
 namespace AirHockey.Actors.Walls.WallBuilder
 {
@@ -7,7 +8,7 @@ namespace AirHockey.Actors.Walls.WallBuilder
     {
         Bouncy,
         Scrolling,
-        Breaking 
+        Breaking
     }
 
     public class DynamicWallBuilder : IWallBuilder
@@ -22,6 +23,13 @@ namespace AirHockey.Actors.Walls.WallBuilder
         private float _velocityY;
         private float _acceleration;
         private float _mass;
+
+        private FlyweightFactory _flyweightFactory; // FlyweightFactory to get FlyweightWall instances
+
+        public DynamicWallBuilder(FlyweightFactory flyweightFactory)
+        {
+            _flyweightFactory = flyweightFactory;
+        }
 
         public IWallBuilder SetId(int id)
         {
@@ -85,11 +93,14 @@ namespace AirHockey.Actors.Walls.WallBuilder
                 throw new InvalidOperationException("Wall type must be set before building the wall.");
             }
 
+            // Use FlyweightFactory to get FlyweightWall instance
+            FlyweightWall flyweight = _flyweightFactory.GetFlyweightWall(_width, _height, _type.Value.ToString());
+
             Wall wall = _type.Value switch
             {
-                WallType.Bouncy => new BouncyWall(_id, _width, _height, true),
-                WallType.Scrolling => new ScrollingWall(_id, _width, _height),
-                WallType.Breaking => new BreakingWall(_id, _width, _height),
+                WallType.Bouncy => new BouncyWall(_id, flyweight, true),
+                WallType.Scrolling => new ScrollingWall(_id, flyweight),
+                WallType.Breaking => new BreakingWall(_id, flyweight),
                 _ => throw new InvalidOperationException("Invalid wall type specified.")
             };
 

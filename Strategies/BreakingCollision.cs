@@ -112,8 +112,6 @@ namespace AirHockey.Strategies
                 a.X += widthReduction / 2;
                 a.Y += heightReduction / 2;
 
-                a.Width -= widthReduction;
-                a.Height -= heightReduction;
 
             }
         }

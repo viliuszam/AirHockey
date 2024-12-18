@@ -21,6 +21,7 @@ using AirHockey.Achievement.Achievements;
 using AirHockey.Facades;
 using AirHockey.Ambience.Effects;
 using AirHockey.Interpreters;
+using AirHockey.Actors.Walls.Flyweight;
 
 namespace AirHockey.Services
 {
@@ -336,16 +337,17 @@ namespace AirHockey.Services
                     effect.Type, effect.Volume);
             }
         }
-
         private static Random random = new Random();
+
         public void GenerateWalls(Room room)
         {
+            // Create an instance of FlyweightFactory to pass to the wall factories
+            FlyweightFactory flyweightFactory = new FlyweightFactory();
+
             int numberOfWalls = random.Next(3, 6);
 
             AbstractWallFactory abstractWallFactory;
-
             List<Wall> wallsToAdd = new List<Wall>();
-
             int teleporterCount = 0;
 
             for (int i = 0; i < numberOfWalls;)
@@ -362,7 +364,7 @@ namespace AirHockey.Services
                     int wallType = random.Next(1, 9);
 
                     isValidPosition = true;
-                    
+
                     switch (wallType)
                     {
                         case 1:
@@ -372,12 +374,9 @@ namespace AirHockey.Services
                             }
 
                             // Teleporter 1
-                            abstractWallFactory = new StaticWallFactory();
-
+                            abstractWallFactory = new StaticWallFactory(flyweightFactory);
                             wall = abstractWallFactory.CreateWall(i, width, height, "Teleporting", x, y);
 
-                            
-                            
                             // Teleporter 2
                             if (IsPositionValid(wall, room, wallsToAdd))
                             {
@@ -390,7 +389,7 @@ namespace AirHockey.Services
                                     x2 = (float)(50 + random.NextDouble() * (705 - 50));
                                     y2 = (float)(50 + random.NextDouble() * (391 - 50));
                                     width2 = (float)(10 + random.NextDouble() * (150 - 10));
-                                    height2 = width2 > 75 ? (float)(10 + random.NextDouble() * (75 - 10)) : (float)(75 + random.NextDouble() * (150 - 75));       
+                                    height2 = width2 > 75 ? (float)(10 + random.NextDouble() * (75 - 10)) : (float)(75 + random.NextDouble() * (150 - 75));
                                     wall2 = abstractWallFactory.CreateWall(i, width2, height2, "Teleporting", x2, y2);
 
                                     if (IsPositionValid(wall2, room, wallsToAdd))
@@ -411,75 +410,43 @@ namespace AirHockey.Services
                                 }
                             }
                             break;
+
                         case 2:
-                            abstractWallFactory = new StaticWallFactory();
-                            wall = abstractWallFactory.CreateWall(i, width, height, "QuickSand", x, y);
-                            if (IsPositionValid(wall, room, wallsToAdd))
-                            {
-                                wallsToAdd.Add(wall);
-                                i++;
-                            }
-                            break;
                         case 3:
-                            abstractWallFactory = new StaticWallFactory();
-                            wall = abstractWallFactory.CreateWall(i, width, height, "Standard", x, y);
-                            if (IsPositionValid(wall, room, wallsToAdd))
-                            {
-                                wallsToAdd.Add(wall);
-                                i++;
-                            }
-                            break;
                         case 4:
-                            abstractWallFactory = new StaticWallFactory();
-                            wall = abstractWallFactory.CreateWall(i, width, height, "Bouncy", x, y);
-                            if (IsPositionValid(wall, room, wallsToAdd))
-                            {
-                                wallsToAdd.Add(wall);
-                                i++;
-                            }
-                            break;
-                        case 5:
-                            abstractWallFactory = new DynamicWallFactory();
-                            wall = abstractWallFactory.CreateWall(i, width, height, "Bouncy", x, y);
-                            if (IsPositionValid(wall, room, wallsToAdd))
-                            {
-                                wallsToAdd.Add(wall);
-                                i++;
-                            }
-                            break;
-                        case 6:
-                            abstractWallFactory = new DynamicWallFactory();
-                            wall = abstractWallFactory.CreateWall(i, width, height, "Scrolling", x, y);
-                            if (IsPositionValid(wall, room, wallsToAdd))
-                            {
-                                wallsToAdd.Add(wall);
-                                i++;
-                            }
-                            break;
                         case 7:
-                            abstractWallFactory = new StaticWallFactory();
-                            wall = abstractWallFactory.CreateWall(i, width, height, "Undo", x, y);
+                            // Static walls (QuickSand, Standard, Bouncy, Undo)
+                            abstractWallFactory = new StaticWallFactory(flyweightFactory);
+                            string wallTypeName = wallType == 2 ? "QuickSand" : wallType == 3 ? "Standard" : wallType == 4 ? "Bouncy" : "Undo";
+                            wall = abstractWallFactory.CreateWall(i, width, height, wallTypeName, x, y);
                             if (IsPositionValid(wall, room, wallsToAdd))
                             {
                                 wallsToAdd.Add(wall);
                                 i++;
                             }
                             break;
+
+                        case 5:
+                        case 6:
                         case 8:
-                            abstractWallFactory = new DynamicWallFactory();
-                            wall = abstractWallFactory.CreateWall(i, width, height, "Breaking", x, y);
+                            // Dynamic walls (Bouncy, Scrolling, Breaking)
+                            abstractWallFactory = new DynamicWallFactory(flyweightFactory);
+                            string dynamicWallType = wallType == 5 ? "Bouncy" : wallType == 6 ? "Scrolling" : "Breaking";
+                            wall = abstractWallFactory.CreateWall(i, width, height, dynamicWallType, x, y);
                             if (IsPositionValid(wall, room, wallsToAdd))
                             {
                                 wallsToAdd.Add(wall);
                                 i++;
                             }
                             break;
+
                         default:
                             break;
                     }
                 }
             }
 
+            // Add all the generated walls to the room
             foreach (var newWall in wallsToAdd)
             {
                 room.Walls.Add(newWall);

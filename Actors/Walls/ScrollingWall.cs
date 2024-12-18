@@ -1,3 +1,5 @@
+using AirHockey.Actors.Walls.Flyweight;
+
 namespace AirHockey.Actors.Walls
 {
     public class ScrollingWall : Wall
@@ -17,30 +19,37 @@ namespace AirHockey.Actors.Walls
             return this.direction;
         }
 
-        public ScrollingWall(int id, float width, float height)
-            : base(id, width, height)
+        // Updated constructor: Accept FlyweightWall and pass it to the base Wall constructor
+        public ScrollingWall(int id, FlyweightWall flyweight)
+            : base(id, flyweight)  // Pass the flyweight to the Wall constructor
         {
         }
 
-        public override void Update(){
+        public override void Update()
+        {
             MoveUpDown();
             ApplyFriction();
             Move();
         }
 
-        public void MoveUpDown(){
-            if(direction == "UP"){
+        public void MoveUpDown()
+        {
+            if (direction == "UP")
+            {
                 VelocityY += scrollSpeed;
                 currentIter++;
-                if(currentIter == iterCount){
+                if (currentIter == iterCount)
+                {
                     direction = "DOWN";
                     currentIter = 0;
                 }
             }
-            else if (direction == "DOWN"){
+            else if (direction == "DOWN")
+            {
                 VelocityY -= scrollSpeed;
                 currentIter++;
-                if(currentIter == iterCount){
+                if (currentIter == iterCount)
+                {
                     direction = "UP";
                     currentIter = 0;
                 }
