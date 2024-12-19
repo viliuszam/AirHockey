@@ -1,4 +1,5 @@
-﻿using AirHockey.Ambience.Effects;
+﻿using System.Collections;
+using AirHockey.Ambience.Effects;
 
 namespace AirHockey.Ambience.Iterators
 {
@@ -30,5 +31,10 @@ namespace AirHockey.Ambience.Iterators
         public void Add(LightingEffect item) => _effects.Add(item);
 
         public void Remove(LightingEffect item) => _effects.Remove(item);
+
+        public IEnumerator<LightingEffect> GetEnumerator() => _effects.GetEnumerator();
+
+        IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
     }
+
 }

@@ -16,7 +16,7 @@ namespace AirHockey.Ambience.Effects
         public float Lifetime { get; set; }
 
         private float _elapsedTime;
-
+        
         public ParticleEffect(ParticleType type, Vector2 position, float lifetime)
         {
             Type = type;

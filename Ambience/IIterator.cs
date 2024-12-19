@@ -1,6 +1,8 @@
-﻿namespace AirHockey.Ambience
+﻿using AirHockey.Ambience.Effects;
+
+namespace AirHockey.Ambience
 {
-    public interface IIterator<T>
+    public interface IIterator<T> : IEnumerable<T>
     {
         bool HasNext();
         T Next();

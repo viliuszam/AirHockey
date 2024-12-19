@@ -22,6 +22,8 @@ using AirHockey.Facades;
 using AirHockey.Ambience.Effects;
 using AirHockey.Interpreters;
 using AirHockey.Actors.Walls.Flyweight;
+using AirHockey.Ambience;
+using AirHockey.Ambience.Iterators;
 using AirHockey.States;
 
 namespace AirHockey.Services
@@ -45,6 +47,7 @@ namespace AirHockey.Services
 
         private Dictionary<string, List<IAchievementVisitor>> _achievementVisitors 
             = new Dictionary<string, List<IAchievementVisitor>>();
+        
         
         public GameService(IHubContext<GameHub> hubContext, IGameAnalytics analytics)
         {
@@ -329,15 +332,13 @@ namespace AirHockey.Services
         }
         private async Task SendAmbientEffects(Game game)
         {
-            // pridet efektam priority, apsisieit su vienu iterator instance, padaryt foreachus vietoj while'u
-
+            //padaryt foreachus
             var lightingIterator = game.LightingEffects.CreateIterator();
             var particleIterator = game.ParticleEffects.CreateIterator();
             var soundIterator = game.SoundEffects.CreateIterator();
 
-            while (lightingIterator.HasNext())
+            foreach (LightingEffect effect in lightingIterator)
             {
-                LightingEffect effect = lightingIterator.Next();
                 await _hubContext.Clients.Group(game.Room.RoomCode).SendAsync("ShowLightingEffect",
                     effect.Area.X, effect.Area.Y, effect.Area.Width, effect.Area.Height,
                     effect.Duration,
@@ -346,9 +347,8 @@ namespace AirHockey.Services
                 lightingIterator.Remove(effect);
             }
 
-            while (particleIterator.HasNext())
+            foreach (ParticleEffect effect in particleIterator)
             {
-                ParticleEffect effect = particleIterator.Next();
                 await _hubContext.Clients.Group(game.Room.RoomCode).SendAsync("ShowParticleEffect",
                     effect.Type, effect.Position.X, effect.Position.Y,
                     effect.Lifetime);
@@ -356,9 +356,8 @@ namespace AirHockey.Services
                 particleIterator.Remove(effect);
             }
 
-            while (soundIterator.HasNext())
+            foreach(SoundEffect effect in soundIterator)
             {
-                SoundEffect effect = soundIterator.Next();
                 if (effect == null) continue;
                 await _hubContext.Clients.Group(game.Room.RoomCode).SendAsync("PlaySoundEffect",
                     effect.Type, effect.Volume);

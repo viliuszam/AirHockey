@@ -1,4 +1,5 @@
-﻿using AirHockey.Ambience.Effects;
+﻿using System.Collections;
+using AirHockey.Ambience.Effects;
 
 namespace AirHockey.Ambience.Iterators
 {
@@ -30,5 +31,15 @@ namespace AirHockey.Ambience.Iterators
         {
             throw new NotSupportedException("Sound Queue has no removal, this shouldn't be called.");
         }
+        
+        public IEnumerator<SoundEffect> GetEnumerator()
+        {
+            while (_effects.Count > 0)
+            {
+                yield return _effects.Dequeue();
+            }
+        }
+
+        IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
     }
 }
