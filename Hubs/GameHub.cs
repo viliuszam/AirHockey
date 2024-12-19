@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.SignalR;
 using System.Diagnostics.CodeAnalysis;
 using AirHockey.Handlers;
 using AirHockey.States;
-
+using AirHockey.Mediators;
 
 [ExcludeFromCodeCoverage]
 public class GameHub : Hub
@@ -190,5 +190,25 @@ public class GameHub : Hub
             await Clients.Group(roomCode).SendAsync("UpdateScores", player1Score, player2Score);
         }
     }
-    
+    public async Task SendChatMessage(string roomCode, string playerId, string message)
+    {
+        var game = GameSessionManager.Instance.GetGame(roomCode);
+        if (game != null)
+        {
+            var room = game.Room;
+            var player = room.GetPlayerById(playerId);
+
+            if (player != null)
+            {
+                var nickname = player.Nickname; 
+
+                await Clients.Group(roomCode).SendAsync("ReceiveChatMessage", nickname, message);
+                player.SendChatMessage(message);
+            }
+        }
+    }
+
+
+
+
 }

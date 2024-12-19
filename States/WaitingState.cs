@@ -6,6 +6,7 @@ namespace AirHockey.States
     {
         public void Handle(Room room, StateContext _context)
         {
+            Console.WriteLine("Waiting for other player");
         }
     }
 }

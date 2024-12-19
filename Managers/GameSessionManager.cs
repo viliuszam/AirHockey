@@ -39,9 +39,12 @@ namespace AirHockey.Managers
 
         public void RemoveRoom(string roomCode)
         {
-            GetRoom(roomCode).Walls.Clear();
-            EndGame(roomCode);
-            ActiveRooms.TryRemove(roomCode, out _);
+            if (GetRoom(roomCode) != null)
+            {
+                GetRoom(roomCode).Walls.Clear();
+                EndGame(roomCode);
+                ActiveRooms.TryRemove(roomCode, out _);
+            }
         }
 
         public Room GetRoom(string roomCode)

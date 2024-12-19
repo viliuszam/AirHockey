@@ -3,10 +3,10 @@ using AirHockey.Actors.Walls;
 using AirHockey.Actors.Powerups;
 using AirHockey.Observers;
 using AirHockey.States;
-
+using AirHockey.Mediators;
 namespace AirHockey.Actors
 {
-    public class Room : IObserver, IAchievementElement
+    public class Room : IObserver, IAchievementElement, IMediator
     {
         public enum RoomState
         {
@@ -25,6 +25,7 @@ namespace AirHockey.Actors
         public IState State { get; private set; }
         public StateContext Context { get; private set; }
         int lastScorer;
+        int MaxGoal = 2;
         
         public Room(string roomCode)
         {
@@ -35,7 +36,10 @@ namespace AirHockey.Actors
             State = new WaitingState();
             Context = null;
         }
-
+        public int GetMaxGoal()
+        {
+            return MaxGoal;
+        }
         public void AddPlayer(Player player)
         {
             if (Players.Count < 2)
@@ -122,5 +126,29 @@ namespace AirHockey.Actors
         {
             visitor.Visit(this);
         }
+        public void RegisterPlayer(Player player)
+        {
+            Players.Add(player);
+            player.SetMediator(this);  
+        }
+
+        public void RemovePlayer(Player player)
+        {
+            Players.Remove(player);
+        }
+        public void SendMessage(string roomCode, string playerId, string message)
+        {
+            var player = GetPlayerById(playerId);
+            var nickname = player?.Nickname ?? "Unknown Player";
+
+            foreach (var p in Players)
+            {
+                if (p.Id != playerId)
+                {
+                    p.ReceiveMessage(nickname, message);
+                }
+            }
+        }
+
     }
 }

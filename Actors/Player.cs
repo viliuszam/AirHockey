@@ -1,5 +1,7 @@
 ﻿using AirHockey.Achievement;
 using AirHockey.Actors.Powerups;
+using AirHockey.Mediators;
+using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 namespace AirHockey.Actors
 {
@@ -12,9 +14,8 @@ namespace AirHockey.Actors
         public string Nickname { get; set; }
         public Room Room { get; private set; }
         public Powerup? ActivePowerup { get; set; }
-
-        // How far the player is from his goal when colliding with puck (for achievement)
         public float DistanceToGoalLastCollision { get; set; }
+        private IMediator mediator;
 
         public Player(string id, string color, float X, float Y, string nickname, Room room)
         {
@@ -61,6 +62,19 @@ namespace AirHockey.Actors
         public void Accept(IAchievementVisitor visitor)
         {
             visitor.Visit(this);
+        }
+        public void SendChatMessage(string message)
+        {
+            mediator.SendMessage(Room.RoomCode, this.Id, message);
+        }
+
+        public void SetMediator(IMediator mediator)
+        {
+            this.mediator = mediator;
+        }
+        public void ReceiveMessage(string senderNickname, string message)
+        {
+            Console.WriteLine($"{senderNickname}: {message}");
         }
     }
 

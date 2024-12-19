@@ -13,7 +13,7 @@ let isMoving = false;
 let consoleActive = false;
 let isGamePaused = false;
 let pausedPlayer;
-
+let isChatBoxActive = false;
 export let scoreMessage = null;
 let scoreMessageTimeout = null;
 let isGameActive = false;
@@ -37,6 +37,58 @@ function playSoundEffect(effectName) {
         console.warn(`Sound effect "${effectName}" not found.`);
     }
 }
+function displayMessage(sender, message) {
+    const chatMessagesId = "chatMessages";
+    let chatMessages = document.getElementById(chatMessagesId);
+
+    if (!chatMessages) {
+        chatMessages = document.createElement("div");
+        chatMessages.id = chatMessagesId;
+        chatMessages.style.position = "absolute";
+        chatMessages.style.bottom = "80px"; 
+        chatMessages.style.right = "20px"; 
+        chatMessages.style.width = "300px";
+        chatMessages.style.maxHeight = "200px";
+        chatMessages.style.overflowY = "auto";
+        chatMessages.style.backgroundColor = "rgba(0, 0, 0, 0.8)";
+        chatMessages.style.color = "white";
+        chatMessages.style.padding = "10px";
+        chatMessages.style.fontSize = "14px";
+        chatMessages.style.borderRadius = "5px";
+        chatMessages.style.zIndex = "1000";
+        document.body.appendChild(chatMessages);
+    }
+
+    const messageElement = document.createElement("div");
+    messageElement.textContent = `${sender}: ${message}`;
+    chatMessages.appendChild(messageElement);
+
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+document.addEventListener("keydown", (e) => {
+    if (consoleActive) return; // Prevent console toggling
+    if (isChatBoxActive) {
+        const chatInput = document.getElementById('chatInput');
+
+        // If the chat box is active and the input field is empty, allow closing with "c"
+        if (e.key === "c" && chatInput.value.trim() === "") {
+            e.preventDefault(); // Prevent typing "c" in the chat box input
+            toggleChatBox(); // Close chat box if input is empty
+        }
+    } else {
+        // Only open the chat box with "c" if it's not active and the input is empty
+        if (e.key === "c") {
+            e.preventDefault(); // Prevent typing "c" in the input field
+            toggleChatBox(); // Open chat box
+        }
+    }
+});
+
+
+// SignalR event to receive chat messages
+connection.on("ReceiveChatMessage", function (sender, message) {
+    displayMessage(sender, message);
+});
 
 createRoomBtn.addEventListener('click', function () {
     const roomCode = roomCodeInput.value;
@@ -165,6 +217,7 @@ function startGame() {
 
 document.addEventListener('keydown', function (event) {
     if (consoleActive) return;
+    if (isChatBoxActive) return;
     if (event.key === 'w') keys.w = true;
     if (event.key === 'a') keys.a = true;
     if (event.key === 's') keys.s = true;
@@ -177,6 +230,7 @@ document.addEventListener('keydown', function (event) {
 
 document.addEventListener('keyup', function (event) {
     if (consoleActive) return;
+    if (isChatBoxActive) return;
     if (event.key === 'w') keys.w = false;
     if (event.key === 'a') keys.a = false;
     if (event.key === 's') keys.s = false;
@@ -374,7 +428,57 @@ function toggleConsole() {
 
     consoleActive = !consoleActive;
 }
+function toggleChatBox() {
+    const chatInputId = "chatInput";
+    let chatInput = document.getElementById(chatInputId);
 
+    if (!chatInput) {
+        // Create the chat input field
+        chatInput = document.createElement("input");
+        chatInput.id = chatInputId;
+        chatInput.type = "text";
+        chatInput.placeholder = "Type your message...";
+        chatInput.style.position = "absolute";
+        chatInput.style.bottom = "20px"; // Space for the chat box
+        chatInput.style.right = "20px"; // Move to the right side of the page
+        chatInput.style.width = "300px"; // Fixed width for better alignment
+        chatInput.style.padding = "10px";
+        chatInput.style.fontSize = "16px";
+        chatInput.style.border = "1px solid #ccc"; // Add a border for better visibility
+        chatInput.style.borderRadius = "5px"; // Rounded corners
+        chatInput.style.boxShadow = "0 2px 5px rgba(0, 0, 0, 0.2)"; // Subtle shadow
+        chatInput.style.backgroundColor = "#ffffff"; // White background
+        chatInput.style.color = "#000000"; // Black text color
+        chatInput.style.zIndex = "1000";
+
+        // Append chat input to the page
+        document.body.appendChild(chatInput);
+
+        // Add Enter key event to send a message
+        chatInput.addEventListener("keydown", (e) => {
+            if (e.key === "Enter") {
+                sendMessage(chatInput.value);
+                chatInput.value = ""; // Clear input after sending
+            }
+        });
+
+        // Automatically focus on the chat input when opened
+        chatInput.focus();
+    } else {
+        // Remove the chat box when toggling off
+        chatInput.remove();
+    }
+
+    isChatBoxActive = !isChatBoxActive;
+}
+
+function sendMessage(message) {
+    if (!message.trim()) return; // Avoid empty messages
+    connection.invoke("SendChatMessage", roomCode, playerId, message)
+        .catch(function (err) {
+            console.error("Error sending chat message:", err.toString());
+        });
+}
 // Function to process console commands
 function processCommand(command) {
     connection.invoke("ProcessCommand", roomCode, playerId, command)
@@ -384,6 +488,7 @@ function processCommand(command) {
 }
 
 document.addEventListener("keydown", (e) => {
+    if (isChatBoxActive) return;
     if (e.key === "`") { 
         e.preventDefault();
         toggleConsole();

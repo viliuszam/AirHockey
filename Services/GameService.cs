@@ -219,22 +219,20 @@ namespace AirHockey.Services
         {
             var player1 = game.Room.Players[0];
             var player2 = game.Room.Players[1];
+
             if (game.Room.Player1Score >= MaxGoal || (resignedPlayer != null && resignedPlayer.Id == player2.Id))
             {
-                Console.WriteLine("Calling end game for player 1");
-                await _hubContext.Clients.Group(game.Room.RoomCode).SendAsync("PlayerWon", player1.Nickname, game.Room.Player1Score);
+                Console.WriteLine("Player 1 won the game.");
             }
             else if (game.Room.Player2Score >= MaxGoal || (resignedPlayer != null && resignedPlayer.Id == player1.Id))
             {
-                Console.WriteLine("Calling end game for player 2");
-                await _hubContext.Clients.Group(game.Room.RoomCode).SendAsync("PlayerWon", player2.Nickname, game.Room.Player2Score);
+                Console.WriteLine("Player 2 won the game.");
             }
 
-            game.Room.SetState(new EndedState());
+            game.Room.SetState(new EndedState(_hubContext));
             GameSessionManager.Instance.RemoveRoom(game.Room.RoomCode);
-
-            await _hubContext.Clients.Group(game.Room.RoomCode).SendAsync("GameOver", "Game over! The game has ended.");
         }
+
 
         private async void GameLoop(object sender, ElapsedEventArgs e)
         {
@@ -251,7 +249,8 @@ namespace AirHockey.Services
                     var player1 = game.Room.Players[0];
                     var player2 = game.Room.Players[1];
                     var puck = game.Room.Puck;
-                    
+                    player1.SetMediator(game.Room);
+                    player2.SetMediator(game.Room);
                     if (!_achievementVisitors.ContainsKey(game.Room.RoomCode))
                     {
                         RegisterAchievementVisitors(game.Room.RoomCode);
@@ -261,7 +260,6 @@ namespace AirHockey.Services
                     player2.Update();
                     puck.Update();
                     TrackEntityMovement();
-
                     foreach (var wall in game.Room.Walls)
                     {
                         wall.Update();
@@ -523,7 +521,7 @@ namespace AirHockey.Services
                 command.Execute(player);
             }
         }
-        
-        
+
+
     }
 }
