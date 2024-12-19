@@ -1,4 +1,6 @@
-﻿namespace AirHockey.Ambience
+﻿using AirHockey.Ambience.Effects;
+
+namespace AirHockey.Ambience
 {
     public interface IAggregate<T>
     {

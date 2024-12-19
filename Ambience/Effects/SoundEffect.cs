@@ -14,10 +14,12 @@
         public SoundType Type { get; set; }
         public float Volume { get; set; }
 
+        
         public SoundEffect(SoundType type, float volume)
         {
             Type = type;
             Volume = volume;
         }
+
     }
 }

@@ -1,4 +1,5 @@
-﻿using AirHockey.Ambience.Effects;
+﻿using System.Collections;
+using AirHockey.Ambience.Effects;
 
 namespace AirHockey.Ambience.Iterators
 {
@@ -30,5 +31,9 @@ namespace AirHockey.Ambience.Iterators
         public void Add(ParticleEffect item) => _effects.Add(item);
 
         public void Remove(ParticleEffect item) => _effects.Remove(item);
+        
+        public IEnumerator<ParticleEffect> GetEnumerator() => _effects.GetEnumerator();
+
+        IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
     }
 }

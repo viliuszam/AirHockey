@@ -1,5 +1,4 @@
 ﻿using System.Drawing;
-using System.Numerics;
 
 namespace AirHockey.Ambience.Effects
 {
@@ -10,7 +9,7 @@ namespace AirHockey.Ambience.Effects
         public Color Color { get; set; }
 
         private float _elapsedTime;
-
+        
         public LightingEffect(Rectangle area, float duration, Color color)
         {
             Area = area;
