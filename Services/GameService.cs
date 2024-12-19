@@ -222,17 +222,25 @@ namespace AirHockey.Services
         {
             var player1 = game.Room.Players[0];
             var player2 = game.Room.Players[1];
+            string winnerNickname = "";
+            int winnerScore = 0;
 
             if (game.Room.Player1Score >= MaxGoal || (resignedPlayer != null && resignedPlayer.Id == player2.Id))
             {
+                winnerNickname = player1.Nickname;
+                winnerScore = game.Room.Player1Score;
                 Console.WriteLine("Player 1 won the game.");
             }
             else if (game.Room.Player2Score >= MaxGoal || (resignedPlayer != null && resignedPlayer.Id == player1.Id))
             {
+                winnerNickname = player2.Nickname;
+                winnerScore = game.Room.Player2Score;
                 Console.WriteLine("Player 2 won the game.");
             }
 
-            game.Room.SetState(new EndedState(_hubContext));
+            var endedState = new EndedState(_hubContext, winnerNickname, winnerScore);
+            game.Room.SetState(endedState);
+
             GameSessionManager.Instance.RemoveRoom(game.Room.RoomCode);
         }
 

@@ -24,7 +24,7 @@ namespace AirHockey.Actors.Walls.WallBuilder
         private float _acceleration;
         private float _mass;
 
-        private FlyweightFactory _flyweightFactory; // FlyweightFactory to get FlyweightWall instances
+        private FlyweightFactory _flyweightFactory; 
 
         public DynamicWallBuilder(FlyweightFactory flyweightFactory)
         {
@@ -93,7 +93,6 @@ namespace AirHockey.Actors.Walls.WallBuilder
                 throw new InvalidOperationException("Wall type must be set before building the wall.");
             }
 
-            // Use FlyweightFactory to get FlyweightWall instance
             FlyweightWall flyweight = _flyweightFactory.GetFlyweightWall(_width, _height, _type.Value.ToString());
 
             Wall wall = _type.Value switch

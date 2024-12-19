@@ -23,9 +23,9 @@ namespace AirHockey.Actors.Walls.WallBuilder
         private float _Y;
         private float _Acceleration;
         private float _Mass;
-        private bool _movable;  // For movable walls (StandardWall and BouncyWall)
+        private bool _movable;  
 
-        private FlyweightFactory _flyweightFactory; // FlyweightFactory to get FlyweightWall instances
+        private FlyweightFactory _flyweightFactory; 
 
         public StaticWallBuilder(FlyweightFactory flyweightFactory)
         {
@@ -96,7 +96,6 @@ namespace AirHockey.Actors.Walls.WallBuilder
                 throw new InvalidOperationException("Wall type must be set before building the wall.");
             }
 
-            // Use FlyweightFactory to get FlyweightWall instance
             FlyweightWall flyweight = _flyweightFactory.GetFlyweightWall(_width, _height, _type.Value.ToString());
 
             Wall wall = _type.Value switch
