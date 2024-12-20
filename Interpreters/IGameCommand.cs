@@ -2,7 +2,7 @@
 
 namespace AirHockey.Interpreters;
 
-public interface IGameCommand
+public abstract class GameCommand
 {
-    void Execute(Player player);
+    public abstract void Execute(Player player);
 }

@@ -2,7 +2,7 @@
 using AirHockey.States;
 namespace AirHockey.Interpreters;
 
-public class SetScoreCommand : IGameCommand
+public class SetScoreCommand : GameCommand
 {
     private int _score;
 
@@ -11,7 +11,7 @@ public class SetScoreCommand : IGameCommand
         _score = score;
     }
 
-    public void Execute(Player player)
+    public override void Execute(Player player)
     {
         if (player == null) return;
         if (player.Room.State is PausedState) return;

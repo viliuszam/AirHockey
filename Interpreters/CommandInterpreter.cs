@@ -2,7 +2,7 @@
 
 public class CommandInterpreter
 {
-    public IGameCommand ParseCommand(string input)
+    public GameCommand ParseCommand(string input)
     {
         var parts = input.Split(' ');
         if (parts.Length == 0)

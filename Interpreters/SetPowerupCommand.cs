@@ -3,7 +3,7 @@ using AirHockey.Actors.Powerups;
 using AirHockey.States;
 namespace AirHockey.Interpreters;
 
-public class SetPowerupCommand : IGameCommand
+public class SetPowerupCommand : GameCommand
 {
     private string _powerup;
 
@@ -12,7 +12,7 @@ public class SetPowerupCommand : IGameCommand
         _powerup = powerup;
     }
     
-    public void Execute(Player player)
+    public override void Execute(Player player)
     {
         if (player == null) return;
         if (player.Room.State is PausedState) return;
